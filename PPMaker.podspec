@@ -25,7 +25,9 @@ Pod::Spec.new do |s|
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
   s.description  = <<-DESC
-                    总算有个终极版的UI创建方案了，很欣慰。
+                    总算有个终极版的UI创建方案了，很欣慰。最开始的时候，一步一步创建各种UI控件，然后一个一个属性点语法出来，代码重复且繁重，
+                    后来用对应category来处理，但是有些时候，某些参数并不是我想要的，但是方法中已经有了，直到昨天看到臧成威的文章，我自己写了
+                    这么几个类，以后就爽很多了。
                    DESC
 
   s.homepage     = "https://github.com/chinesemanbobo/PPMaker"
@@ -45,7 +47,7 @@ Pod::Spec.new do |s|
   
   s.ios.deployment_target = "8.0"
 
-  s.source       = { :git => "https://github.com/chinesemanbobo/PPMaker", :tag => "s.version" }
+  s.source       = { :git => "https://github.com/chinesemanbobo/PPMaker.git", :tag => s.version }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #

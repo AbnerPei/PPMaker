@@ -56,7 +56,7 @@ Pod::Spec.new do |s|
   #  Not including the public_header_files will make all headers public.
   #
 
-  s.source_files  = 'PPMaker/.h'
+  s.source_files  = 'PPMaker/PPMaker.h'
 
   s.subspec 'PPViewMaker' do |ss|
     ss.source_files = 'PPMaker/PPViewMaker/PPViewMaker.{h,m}'

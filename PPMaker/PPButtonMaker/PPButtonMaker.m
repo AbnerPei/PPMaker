@@ -57,7 +57,8 @@ static char KBtnActionBlockKey;
         //父视图
         _intoView = ^PPButtonMaker *(UIView *superV){
             PPBtMakerStrongSelf(self)
-            if (superV) {
+            //此处判断父视图，主要是为了严谨；不判断也OK
+            if (superV && !self.creatingBT.superview) {
                 [superV addSubview:self.creatingBT];
             }
             return self;
@@ -83,11 +84,32 @@ static char KBtnActionBlockKey;
             [self.creatingBT setTitleColor:titleColor forState:state];
             return self;
         };
+        _normalTitleColor = ^PPButtonMaker *(UIColor *normalTitleColor){
+            PPBtMakerStrongSelf(self)
+            [self.creatingBT setTitleColor:normalTitleColor forState:UIControlStateNormal];
+            return self;
+        };
+        _highlightedTitleColor = ^PPButtonMaker *(UIColor *highlightedTitleColor){
+            PPBtMakerStrongSelf(self)
+            [self.creatingBT setTitleColor:highlightedTitleColor forState:UIControlStateHighlighted];
+            return self;
+        };
+        
         
         //文字
         _title = ^PPButtonMaker *(NSString *title,UIControlState state){
             PPBtMakerStrongSelf(self)
             [self.creatingBT setTitle:title forState:state];
+            return self;
+        };
+        _normalTitle = ^PPButtonMaker *(NSString *normalTitle){
+            PPBtMakerStrongSelf(self)
+            [self.creatingBT setTitle:normalTitle forState:UIControlStateNormal];
+            return self;
+        };
+        _highlightedTitle = ^PPButtonMaker *(NSString *highlightedTitle){
+            PPBtMakerStrongSelf(self)
+            [self.creatingBT setTitle:highlightedTitle forState:UIControlStateHighlighted];
             return self;
         };
         

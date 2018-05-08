@@ -31,15 +31,13 @@
     }];
     
     [PPButtonMaker pp_btMake:^(PPButtonMaker *maker) {
-        maker.bgColor([UIColor orangeColor]).frame(CGRectMake(10, 200, 260, 40));
-        maker.title(@"点击一下哦", UIControlStateNormal)
-        .title(@"高亮了", UIControlStateHighlighted);
-        maker.titleColor([UIColor purpleColor], UIControlStateNormal)
-        .titleColor([UIColor cyanColor], UIControlStateHighlighted);
-        
+        maker.intoView(self.view).bgColor([UIColor orangeColor]).frame(CGRectMake(10, 200, 260, 40));
+        maker.normalTitle(@"点击一下哦").normalTitleColor([UIColor purpleColor]);
+        maker.highlightedTitle(@"高亮了").highlightedTitleColor([UIColor cyanColor]);
         maker.actionBlock(^{
             NSLog(@"单击了button");
-        }).intoView(self.view);
+        });
+        maker.intoView(self.view);
         
     }];
     

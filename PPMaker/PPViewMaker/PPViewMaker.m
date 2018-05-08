@@ -7,7 +7,9 @@
 //
 
 #import "PPViewMaker.h"
-#import "PPMaker.h"
+
+#define PPViewMakerWeakSelf(type)  __weak typeof(type) weak##type = type;
+#define PPViewMakerStrongSelf(type)  __strong typeof(type) type = weak##type;
 
 @interface PPViewMaker ()
 /** 要创建的view */
@@ -21,10 +23,10 @@
     self = [super init];
     if (self) {
         
-        PPMakerWeakSelf(self)
+        PPViewMakerWeakSelf(self)
         //父视图
         _intoView = ^PPViewMaker *(UIView *superV){
-            PPMakerStrongSelf(self)
+            PPViewMakerStrongSelf(self)
             if (superV) {
                 [superV addSubview:self.creatingView];
             }
@@ -33,14 +35,14 @@
         
         //背景色
         _bgColor = ^PPViewMaker *(UIColor *color){
-            PPMakerStrongSelf(self)
+            PPViewMakerStrongSelf(self)
             self.creatingView.backgroundColor = color;
             return self;
         };
         
         //frame
         _frame = ^PPViewMaker *(CGRect frame){
-            PPMakerStrongSelf(self)
+            PPViewMakerStrongSelf(self)
             self.creatingView.frame = frame;
             return self;
         };

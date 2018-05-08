@@ -9,9 +9,6 @@
 #ifndef PPMaker_h
 #define PPMaker_h
 
-#define PPMakerWeakSelf(type)  __weak typeof(type) weak##type = type;
-#define PPMakerStrongSelf(type)  __strong typeof(type) type = weak##type;
-
 #import "PPLabelMaker.h"
 #import "PPImageViewMaker.h"
 #import "PPButtonMaker.h"

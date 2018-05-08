@@ -8,7 +8,9 @@
 
 #import "PPButtonMaker.h"
 #import <objc/runtime.h>
-#import "PPMaker.h"
+
+#define PPBtMakerWeakSelf(type)  __weak typeof(type) weak##type = type;
+#define PPBtMakerStrongSelf(type)  __strong typeof(type) type = weak##type;
 
 static char KBtnActionBlockKey;
 
@@ -51,10 +53,10 @@ static char KBtnActionBlockKey;
 {
     self = [super init];
     if (self) {
-        PPMakerWeakSelf(self)
+        PPBtMakerWeakSelf(self)
         //父视图
         _intoView = ^PPButtonMaker *(UIView *superV){
-            PPMakerStrongSelf(self)
+            PPBtMakerStrongSelf(self)
             if (superV) {
                 [superV addSubview:self.creatingBT];
             }
@@ -63,35 +65,35 @@ static char KBtnActionBlockKey;
         
         //frame
         _frame = ^PPButtonMaker *(CGRect frame){
-            PPMakerStrongSelf(self)
+            PPBtMakerStrongSelf(self)
             self.creatingBT.frame = frame;
             return self;
         };
         
         //背景色
         _bgColor = ^PPButtonMaker *(UIColor *color){
-            PPMakerStrongSelf(self)
+            PPBtMakerStrongSelf(self)
             self.creatingBT.backgroundColor = color;
             return self;
         };
         
         //字体颜色
         _titleColor = ^PPButtonMaker *(UIColor *titleColor,UIControlState state){
-            PPMakerStrongSelf(self)
+            PPBtMakerStrongSelf(self)
             [self.creatingBT setTitleColor:titleColor forState:state];
             return self;
         };
         
         //文字
         _title = ^PPButtonMaker *(NSString *title,UIControlState state){
-            PPMakerStrongSelf(self)
+            PPBtMakerStrongSelf(self)
             [self.creatingBT setTitle:title forState:state];
             return self;
         };
         
         //点击事件
         _actionBlock = ^PPButtonMaker *(actionB block){
-            PPMakerStrongSelf(self)
+            PPBtMakerStrongSelf(self)
             if (block) {
                 self.creatingBtActionBlock = block;
             }

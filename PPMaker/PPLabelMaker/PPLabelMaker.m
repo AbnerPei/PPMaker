@@ -7,7 +7,8 @@
 //
 
 #import "PPLabelMaker.h"
-#import "PPMaker.h"
+#define PPLbMakerWeakSelf(type)  __weak typeof(type) weak##type = type;
+#define PPLbMakerStrongSelf(type)  __strong typeof(type) type = weak##type;
 
 @interface PPLabelMaker ()
 /** 要创建的UILabel对象 */
@@ -21,10 +22,10 @@
     self = [super init];
     if (self) {
     
-        PPMakerWeakSelf(self)
+        PPLbMakerWeakSelf(self)
         //父视图
         _intoView = ^PPLabelMaker *(UIView *superV){
-            PPMakerStrongSelf(self)
+            PPLbMakerStrongSelf(self)
             if (superV) {
                 [superV addSubview:self.creatingLB];
             }
@@ -33,48 +34,48 @@
         
         //frame
         _frame = ^PPLabelMaker *(CGRect frame){
-            PPMakerStrongSelf(self)
+            PPLbMakerStrongSelf(self)
             self.creatingLB.frame = frame;
             return self;
         };
         
         //背景色
         _bgColor = ^PPLabelMaker *(UIColor *color){
-            PPMakerStrongSelf(self)
+            PPLbMakerStrongSelf(self)
             self.creatingLB.backgroundColor = color;
             return self;
         };
         //字体颜色
         _textColor = ^PPLabelMaker *(UIColor *color){
-            PPMakerStrongSelf(self)
+            PPLbMakerStrongSelf(self)
             self.creatingLB.textColor = color;
             return self;
         };
         //文字
         _text = ^PPLabelMaker *(NSString *text){
-            PPMakerStrongSelf(self)
+            PPLbMakerStrongSelf(self)
             self.creatingLB.text = text;
             return self;
         };
         
         //font
         _font = ^PPLabelMaker *(UIFont *font){
-            PPMakerStrongSelf(self)
+            PPLbMakerStrongSelf(self)
             self.creatingLB.font = font;
             return self;
         };
         _fontSize = ^PPLabelMaker *(CGFloat fontSize){
-            PPMakerStrongSelf(self)
+            PPLbMakerStrongSelf(self)
             self.creatingLB.font = [UIFont systemFontOfSize:fontSize];
             return self;
         };
         _boldFontSize = ^PPLabelMaker *(CGFloat boldFontSize){
-            PPMakerStrongSelf(self)
+            PPLbMakerStrongSelf(self)
             self.creatingLB.font = [UIFont boldSystemFontOfSize:boldFontSize];
             return self;
         };
         _fontNameAndSize = ^PPLabelMaker *(NSString *fontName,CGFloat fontSize){
-            PPMakerStrongSelf(self)
+            PPLbMakerStrongSelf(self)
             self.creatingLB.font = [UIFont fontWithName:fontName size:fontSize];
             return self;
         };
@@ -83,14 +84,14 @@
         
         //对齐方式
         _textAlignment = ^PPLabelMaker *(NSTextAlignment textAlignment){
-            PPMakerStrongSelf(self)
+            PPLbMakerStrongSelf(self)
             self.creatingLB.textAlignment = textAlignment;
             return self;
         };
         
         //numberOfLines
         _numberOfLines = ^PPLabelMaker *(NSInteger numberOfLines){
-            PPMakerStrongSelf(self)
+            PPLbMakerStrongSelf(self)
             self.creatingLB.numberOfLines = numberOfLines;
             return self;
         };

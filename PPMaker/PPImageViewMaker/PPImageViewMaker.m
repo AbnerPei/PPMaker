@@ -7,7 +7,8 @@
 //
 
 #import "PPImageViewMaker.h"
-#import "PPMaker.h"
+#define PPImgVMakerWeakSelf(type)  __weak typeof(type) weak##type = type;
+#define PPImgVMakerStrongSelf(type)  __strong typeof(type) type = weak##type;
 
 @interface PPImageViewMaker ()
 /** 要创建的imageView */
@@ -19,10 +20,10 @@
 {
     self = [super init];
     if (self) {
-        PPMakerWeakSelf(self)
+        PPImgVMakerWeakSelf(self)
         //父视图
         _intoView = ^PPImageViewMaker *(UIView *superV){
-            PPMakerStrongSelf(self)
+            PPImgVMakerStrongSelf(self)
             if (superV) {
                 [superV addSubview:self.creatingImageView];
             }
@@ -31,14 +32,14 @@
         
         //frame
         _frame = ^PPImageViewMaker *(CGRect frame){
-            PPMakerStrongSelf(self)
+            PPImgVMakerStrongSelf(self)
             self.creatingImageView.frame = frame;
             return self;
         };
         
         //imageName
         _imageName = ^PPImageViewMaker *(NSString *imageName){
-            PPMakerStrongSelf(self)
+            PPImgVMakerStrongSelf(self)
             if (imageName && imageName.length > 0) {
                 self.creatingImageView.image = [UIImage imageNamed:imageName];
             }

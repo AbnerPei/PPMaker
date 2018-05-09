@@ -21,12 +21,23 @@
     
     [self ppmaker];
    
+    UILabel *lb = [[UILabel alloc]initWithFrame:CGRectMake(10, 10, 300, 50)];
+    [self.view addSubview:lb];
+    lb.backgroundColor = [UIColor whiteColor];
+    lb.text = @"我是一个lb";
+    lb.textColor = [UIColor blueColor];
+    lb.textAlignment = NSTextAlignmentCenter;
+    lb.font = [UIFont systemFontOfSize:18];
+    
+    
+    UIImageView *imgV = [UIImageView pp_]
+
     
 }
 
 -(void)ppmaker
 {
-   UILabel *lb = [UILabel pp_lbMake:^(PPLabelMaker *maker) {
+   UILabel *lb10 = [UILabel pp_lbMake:^(PPLabelMaker *maker) {
         maker.bgColor([UIColor redColor]).textAlignment(NSTextAlignmentCenter).intoView(self.view).numberOfLines(0);
         maker.textColor([UIColor purpleColor]).boldFontSize(25).frame(CGRectMake(10, 80, 300, 110));
 //        maker.text(@"笑傲江湖");
@@ -38,28 +49,70 @@
         } str:@"笑傲江湖笑傲江湖笑傲江湖笑傲江湖笑傲江湖笑傲江湖笑傲江湖笑傲江湖笑傲江湖笑傲江湖笑傲江湖笑傲江湖笑傲江湖笑傲江湖"]);
        
     }];
-
-
-
     
-    [UIButton pp_btMake:^(PPButtonMaker *maker) {
+    //常规lb
+    UILabel *lb = [UILabel pp_lbMake:^(PPLabelMaker *maker) {
+        maker.intoView(self.view).frame(CGRectMake(10, 80, 300, 110));
+        maker.textColor([UIColor purpleColor]).fontSize(18);
+        maker.text(@"PPMaker");
+    }];
+    
+    lb;
+    
+    //attributedText的lb
+    UILabel *lb1 = [UILabel pp_lbMake:^(PPLabelMaker *maker) {
+        maker.intoView(self.view);
+        maker.attributedText([NSMutableAttributedString pp_attributedStringMake:^(PPMutAttributedStringMaker *maker) {
+            maker.textColor([UIColor blueColor]);
+            maker.specialText(@"lb", [UIFont systemFontOfSize:18], [UIColor yellowColor]);
+        } str:@"含有attributedText的lb"]);
+    }];
+    
+    lb1;
+    
+    //特别字统一处理的lb
+    UILabel *lb2 = [UILabel pp_lbMake:^(PPLabelMaker *maker) {
+        maker.intoView(self.view);
+        maker.attributedText([NSMutableAttributedString pp_attributedStringMake:^(PPMutAttributedStringMaker *maker) {
+            maker.textColor([UIColor blueColor]);
+            maker.specialTextSet(@[@"有",@"lb"],
+                                 @[[UIFont systemFontOfSize:18],[UIFont boldSystemFontOfSize:20]],
+                                 @[[UIColor redColor],[UIColor purpleColor]]);
+        } str:@"含有attributedText的lb"]);
+    }];
+    
+    lb2;
+
+
+    //button的创建
+    UIButton *bt = [UIButton pp_btMake:^(PPButtonMaker *maker) {
         maker.intoView(self.view).bgColor([UIColor orangeColor]).frame(CGRectMake(10, 200, 260, 40));
-        maker.normalTitle(@"点击一下哦").normalTitleColor([UIColor purpleColor]);
+        maker.normalTitle(@"点击一下试试").normalTitleColor([UIColor purpleColor]);
         maker.highlightedTitle(@"高亮了").highlightedTitleColor([UIColor cyanColor]);
         maker.actionBlock(^{
             NSLog(@"单击了button");
         });
         maker.intoView(self.view);
-        
     }];
     
-    [UIImageView pp_imgVMake:^(PPImageViewMaker *maker) {
-        maker.intoView(self.view).frame(CGRectMake(10, 260, 80, 80)).imageName(@"1024");
+    bt;
+    
+    
+    //imageView的创建
+    UIImageView *imgV = [UIImageView pp_imgVMake:^(PPImageViewMaker *maker) {
+        maker.intoView(self.view).frame(CGRectMake(10, 260, 80, 80));
+        maker.imageName(@"1024");
     }];
     
-    [UIView pp_viewMake:^(PPViewMaker *maker) {
-        maker.intoView(self.view).bgColor([UIColor blueColor]).frame(CGRectMake(20, 360, 40, 40));
+    
+    //UIView的创建
+    UIView *view = [UIView pp_viewMake:^(PPViewMaker *maker) {
+        maker.intoView(self.view).frame(CGRectMake(20, 360, 40, 40));
+        maker.bgColor([UIColor yellowColor]);
     }];
+    
+    view;
+    
 }
 
 

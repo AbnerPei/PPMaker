@@ -2,8 +2,6 @@
 # iOS链式创建UI终结者 ➜ PPMaker
 
 
----
-
 > 做iOS开发，创建UI控件，必须的不说，还多，尤其你新入手一个项目。
 > 
 > 我自己写代码，向来想省事：**怎么能不一个一个属性写？**带着这个问题，我刚**开始创建了各种Tool**来处理，**后来用Category**（[证据在此](https://github.com/chinesemanbobo/PPDemo/blob/master/PPDemos/AllMds/EasilyCreatYYLabel.md)），可Category有个烦人的问题：**有些属性我不需要但是方法参数有，而有些属性我需要方法参数没有**。
@@ -51,48 +49,48 @@
 
 ### 起初：一个属性一个属性赋值
 ```
-UILabel *lb = [[UILabel alloc]initWithFrame:CGRectMake(10, 10, 300, 50)];
-[self.view addSubview:lb];
-lb.backgroundColor = [UIColor whiteColor];
-lb.text = @"我是一个lb";
-lb.textColor = [UIColor blueColor];
-lb.textAlignment = NSTextAlignmentCenter;
-lb.font = [UIFont systemFontOfSize:18];
+    UILabel *lb = [[UILabel alloc]initWithFrame:CGRectMake(10, 10, 300, 50)];
+    [self.view addSubview:lb];
+    lb.backgroundColor = [UIColor whiteColor];
+    lb.text = @"我是一个lb";
+    lb.textColor = [UIColor blueColor];
+    lb.textAlignment = NSTextAlignmentCenter;
+    lb.font = [UIFont systemFontOfSize:18];
 ```
 ### 后来：用Category快速创建
 ```
 @interface UILabel (EasyMake)
 +(UILabel *)lbMakeWithSuperV:(UIView *)superV
-frame:(CGRect)frame
-font:(UIFont *)font
-alignment:(NSTextAlignment)alignment
-text:(NSString *)text
-textColor:(UIColor *)textColor;
+                       frame:(CGRect)frame
+                        font:(UIFont *)font
+                   alignment:(NSTextAlignment)alignment
+                        text:(NSString *)text
+                   textColor:(UIColor *)textColor;
 
 @implementation UILabel (EasyMake)
 +(UILabel *)lbMakeWithSuperV:(UIView *)superV
-frame:(CGRect)frame
-font:(UIFont *)font
-alignment:(NSTextAlignment)alignment
-text:(NSString *)text
-textColor:(UIColor *)textColor
+                       frame:(CGRect)frame
+                        font:(UIFont *)font
+                   alignment:(NSTextAlignment)alignment
+                        text:(NSString *)text
+                   textColor:(UIColor *)textColor
 {
-UILabel *lb = [[UILabel alloc]init];
-if (superV) {
-[superV addSubview:lb];
-}
-if (font) {
-lb.font = font;
-}
-if (text) {
-lb.text = text;
-}
-if (textColor) {
-lb.textColor = textColor;
-}
-lb.frame = frame;
-lb.textAlignment = alignment;
-return lb;
+    UILabel *lb = [[UILabel alloc]init];
+    if (superV) {
+        [superV addSubview:lb];
+    }
+    if (font) {
+        lb.font = font;
+    }
+    if (text) {
+        lb.text = text;
+    }
+    if (textColor) {
+        lb.textColor = textColor;
+    }
+    lb.frame = frame;
+    lb.textAlignment = alignment;
+    return lb;
 }
 @end
 ```

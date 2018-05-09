@@ -15,5 +15,8 @@
 @property(nonatomic,copy) PPImageViewMaker *(^frame)(CGRect frame);
 @property(nonatomic,copy) PPImageViewMaker *(^imageName)(NSString *imageName);
 
-+(UIImageView *)pp_imageViewMake:(void(^)(PPImageViewMaker *maker))make;
+@end
+
+@interface UIImageView (PPMaker)
++(UIImageView *)pp_imgVMake:(void(^)(PPImageViewMaker *maker))make;
 @end

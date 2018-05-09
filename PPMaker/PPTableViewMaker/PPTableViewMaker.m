@@ -7,9 +7,6 @@
 //
 
 #import "PPTableViewMaker.h"
-
-
-#define PPTableVMakerWeakSelf(type)  __weak typeof(type) weak##type = type;
 #define PPTableVMakerStrongSelf(type)  __strong typeof(type) type = weak##type;
 
 @interface PPTableViewMaker ()
@@ -24,7 +21,7 @@
     self = [super init];
     if (self) {
         
-        PPTableVMakerWeakSelf(self)
+        __weak typeof(self) weakself = self;
         //父视图
         _intoView = ^PPTableViewMaker *(UIView *superV){
             PPTableVMakerStrongSelf(self)
@@ -69,7 +66,10 @@
     return self;
 }
 
-+(UITableView *)pp_tableViewMake:(void (^)(PPTableViewMaker *))make frame:(CGRect)frame isPlain:(BOOL)isPlain
+@end
+
+@implementation UITableView (PPMaker)
++(UITableView *)pp_tableVMake:(void (^)(PPTableViewMaker *))make frame:(CGRect)frame isPlain:(BOOL)isPlain
 {
     PPTableViewMaker *tableViewMaker = [[PPTableViewMaker alloc]init];
     tableViewMaker.creatingTableV = [[UITableView alloc]initWithFrame:frame style:isPlain?UITableViewStylePlain:UITableViewStyleGrouped];
@@ -78,5 +78,4 @@
     }
     return tableViewMaker.creatingTableV;
 }
-
 @end

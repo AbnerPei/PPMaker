@@ -7,7 +7,6 @@
 //
 
 #import "PPLabelMaker.h"
-#define PPLbMakerWeakSelf(type)  __weak typeof(type) weak##type = type;
 #define PPLbMakerStrongSelf(type)  __strong typeof(type) type = weak##type;
 
 @interface PPLabelMaker ()
@@ -22,7 +21,7 @@
     self = [super init];
     if (self) {
     
-        PPLbMakerWeakSelf(self)
+        __weak typeof(self) weakself = self;
         //父视图
         _intoView = ^PPLabelMaker *(UIView *superV){
             PPLbMakerStrongSelf(self)
@@ -55,6 +54,11 @@
         _text = ^PPLabelMaker *(NSString *text){
             PPLbMakerStrongSelf(self)
             self.creatingLB.text = text;
+            return self;
+        };
+        _attributedText = ^PPLabelMaker *(NSAttributedString *aStr){
+            PPLbMakerStrongSelf(self)
+            self.creatingLB.attributedText = aStr;
             return self;
         };
         
@@ -102,6 +106,16 @@
     return self;
 }
 
+-(UILabel *)creatingLB
+{
+    if (!_creatingLB) {
+        _creatingLB = [[UILabel alloc]init];
+    }
+    return _creatingLB;
+}
+@end
+
+@implementation UILabel (PPMaker)
 +(UILabel *)pp_lbMake:(void (^)(PPLabelMaker *))make
 {
     PPLabelMaker *lbMaker = [[PPLabelMaker alloc]init];
@@ -110,14 +124,4 @@
     }
     return lbMaker.creatingLB;
 }
--(UILabel *)creatingLB
-{
-    if (!_creatingLB) {
-        _creatingLB = [[UILabel alloc]init];
-    }
-    return _creatingLB;
-}
-
-
-
 @end

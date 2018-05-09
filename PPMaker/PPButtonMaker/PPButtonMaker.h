@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-typedef void(^actionB)(void);
+typedef void(^makerBtActionBlock)(void);
 
 @interface PPButtonMaker : NSObject
 
@@ -31,10 +31,18 @@ typedef void(^actionB)(void);
 /** 设置Highlighted对应的title */
 @property(nonatomic,copy) PPButtonMaker *(^highlightedTitle)(NSString *highlightedTitle);
 
-@property(nonatomic,copy) PPButtonMaker *(^actionBlock)(actionB block);
+@property(nonatomic,copy) PPButtonMaker *(^actionBlock)(makerBtActionBlock block);
 
-+(UIButton *)pp_btMake:(void(^)(PPButtonMaker *maker))make;
 @end
 
+@interface UIButton (PPMaker)
+
++(UIButton *)pp_btMake:(void(^)(PPButtonMaker *maker))make;
+
+-(void)maker_actionWithControlEvent:(UIControlEvents )event
+                          withBlock:(makerBtActionBlock)block;
+-(void)maker_actionWithBlock:(makerBtActionBlock)block;
+
+@end
 
 

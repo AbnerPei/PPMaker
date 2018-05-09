@@ -18,7 +18,17 @@
 /** 去掉多余的分割线 */
 @property(nonatomic,copy) PPTableViewMaker *(^hideExtraSeparator)(BOOL isHidden);
 
-+(UITableView *)pp_tableViewMake:(void(^)(PPTableViewMaker *maker))make
-                           frame:(CGRect)frame
-                         isPlain:(BOOL)isPlain;
+@end
+
+@interface UITableView (PPMaker)
+
+/**
+ * 创建UITableView对象，此处注意，需要frame和isPlain两个参数。
+ * 参考`UITableView`的`- (instancetype)initWithFrame:(CGRect)frame style:(UITableViewStyle)style NS_DESIGNATED_INITIALIZER;`方法，必须指定style。
+ * @param isPlain  YES/UITableViewStylePlain , NO/UITableViewStyleGrouped
+ */
++(UITableView *)pp_tableVMake:(void(^)(PPTableViewMaker *maker))make
+                        frame:(CGRect)frame
+                      isPlain:(BOOL)isPlain;
+
 @end

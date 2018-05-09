@@ -7,7 +7,6 @@
 //
 
 #import "PPImageViewMaker.h"
-#define PPImgVMakerWeakSelf(type)  __weak typeof(type) weak##type = type;
 #define PPImgVMakerStrongSelf(type)  __strong typeof(type) type = weak##type;
 
 @interface PPImageViewMaker ()
@@ -20,7 +19,8 @@
 {
     self = [super init];
     if (self) {
-        PPImgVMakerWeakSelf(self)
+        
+        __weak typeof(self) weakself = self;
         //父视图
         _intoView = ^PPImageViewMaker *(UIView *superV){
             PPImgVMakerStrongSelf(self)
@@ -48,14 +48,7 @@
     }
     return self;
 }
-+(UIImageView *)pp_imageViewMake:(void (^)(PPImageViewMaker *))make
-{
-    PPImageViewMaker *imgViewMaker = [[PPImageViewMaker alloc]init];
-    if (make) {
-        make(imgViewMaker);
-    }
-    return imgViewMaker.creatingImageView;
-}
+
 -(UIImageView *)creatingImageView
 {
     if (!_creatingImageView) {
@@ -63,5 +56,16 @@
         _creatingImageView.contentMode = UIViewContentModeScaleToFill;
     }
     return _creatingImageView;
+}
+@end
+
+@implementation UIImageView (PPMaker)
++(UIImageView *)pp_imgVMake:(void (^)(PPImageViewMaker *))make
+{
+    PPImageViewMaker *imgViewMaker = [[PPImageViewMaker alloc]init];
+    if (make) {
+        make(imgViewMaker);
+    }
+    return imgViewMaker.creatingImageView;
 }
 @end

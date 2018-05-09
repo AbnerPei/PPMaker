@@ -13,5 +13,6 @@
 #import "PPImageViewMaker.h"
 #import "PPButtonMaker.h"
 #import "PPViewMaker.h"
+#import "PPMutAttributedStringMaker.h"
 
 #endif /* PPMaker_h */

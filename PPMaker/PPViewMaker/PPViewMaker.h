@@ -18,8 +18,10 @@
 /** frame */
 @property(nonatomic,copy) PPViewMaker *(^frame)(CGRect frame);
 
-+(UIView *)pp_viewMake:(void(^)(PPViewMaker *maker))make;
+@end
 
+@interface UIView (PPMaker)
++(UIView *)pp_viewMake:(void(^)(PPViewMaker *maker))make;
 @end
 
 

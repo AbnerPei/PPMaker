@@ -17,6 +17,8 @@
 @property(nonatomic,copy) PPLabelMaker *(^bgColor)(UIColor *bgColor);
 @property(nonatomic,copy) PPLabelMaker *(^textColor)(UIColor *textColor);
 @property(nonatomic,copy) PPLabelMaker *(^text)(NSString *text);
+@property(nonatomic,copy) PPLabelMaker *(^attributedText)(NSAttributedString *attributedText);
+
 
 @property(nonatomic,copy) PPLabelMaker *(^font)(UIFont *font);
 @property(nonatomic,copy) PPLabelMaker *(^fontSize)(CGFloat fontSize);
@@ -26,5 +28,8 @@
 @property(nonatomic,copy) PPLabelMaker *(^textAlignment)(NSTextAlignment textAlignment);
 @property(nonatomic,copy) PPLabelMaker *(^numberOfLines)(NSInteger numberOfLines);
 
+@end
+
+@interface UILabel (PPMaker)
 +(UILabel *)pp_lbMake:(void(^)(PPLabelMaker *maker))make;
 @end

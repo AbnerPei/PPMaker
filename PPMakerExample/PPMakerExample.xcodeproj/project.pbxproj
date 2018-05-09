@@ -18,6 +18,7 @@
 		57CB439520A1BAAC00268DBE /* PPTableViewMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 57CB438C20A1BAAC00268DBE /* PPTableViewMaker.m */; };
 		57CB439620A1BAAC00268DBE /* PPImageViewMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 57CB438F20A1BAAC00268DBE /* PPImageViewMaker.m */; };
 		57CB439720A1BAAC00268DBE /* PPLabelMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 57CB439220A1BAAC00268DBE /* PPLabelMaker.m */; };
+		57CB43A120A286C800268DBE /* PPMutAttributedStringMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 57CB43A020A286C800268DBE /* PPMutAttributedStringMaker.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,8 @@
 		57CB438F20A1BAAC00268DBE /* PPImageViewMaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPImageViewMaker.m; sourceTree = "<group>"; };
 		57CB439120A1BAAC00268DBE /* PPLabelMaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPLabelMaker.h; sourceTree = "<group>"; };
 		57CB439220A1BAAC00268DBE /* PPLabelMaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPLabelMaker.m; sourceTree = "<group>"; };
+		57CB439F20A286C800268DBE /* PPMutAttributedStringMaker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMutAttributedStringMaker.h; sourceTree = "<group>"; };
+		57CB43A020A286C800268DBE /* PPMutAttributedStringMaker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPMutAttributedStringMaker.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +94,7 @@
 		57CB438220A1BAAC00268DBE /* PPMaker */ = {
 			isa = PBXGroup;
 			children = (
+				57CB439B20A2864800268DBE /* PPMutAttributedStringMaker */,
 				57CB438320A1BAAC00268DBE /* PPMaker.h */,
 				57CB438420A1BAAC00268DBE /* PPViewMaker */,
 				57CB438720A1BAAC00268DBE /* PPButtonMaker */,
@@ -145,6 +149,15 @@
 				57CB439220A1BAAC00268DBE /* PPLabelMaker.m */,
 			);
 			path = PPLabelMaker;
+			sourceTree = "<group>";
+		};
+		57CB439B20A2864800268DBE /* PPMutAttributedStringMaker */ = {
+			isa = PBXGroup;
+			children = (
+				57CB439F20A286C800268DBE /* PPMutAttributedStringMaker.h */,
+				57CB43A020A286C800268DBE /* PPMutAttributedStringMaker.m */,
+			);
+			path = PPMutAttributedStringMaker;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -224,6 +237,7 @@
 				57CB439420A1BAAC00268DBE /* PPButtonMaker.m in Sources */,
 				57CB439620A1BAAC00268DBE /* PPImageViewMaker.m in Sources */,
 				57CB436E20A1BA8A00268DBE /* AppDelegate.m in Sources */,
+				57CB43A120A286C800268DBE /* PPMutAttributedStringMaker.m in Sources */,
 				57CB439320A1BAAC00268DBE /* PPViewMaker.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

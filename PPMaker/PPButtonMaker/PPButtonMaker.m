@@ -8,43 +8,14 @@
 
 #import "PPButtonMaker.h"
 #import <objc/runtime.h>
-
-#define PPBtMakerWeakSelf(type)  __weak typeof(type) weak##type = type;
 #define PPBtMakerStrongSelf(type)  __strong typeof(type) type = weak##type;
-
 static char KBtnActionBlockKey;
-
-@interface UIButton (PPMakerActionBlock)
--(void)actionWithControlEvent:(UIControlEvents )event
-                    withBlock:(actionB)block;
--(void)actionWithBlock:(actionB)block;
-@end
-
-@implementation UIButton (PPMakerActionBlock)
--(void)actionWithControlEvent:(UIControlEvents )event
-                    withBlock:(actionB)block
-{
-    objc_setAssociatedObject(self, &KBtnActionBlockKey, block, OBJC_ASSOCIATION_COPY_NONATOMIC);
-    [self addTarget:self action:@selector(clickAction:) forControlEvents:UIControlEventTouchUpInside];
-}
--(void)actionWithBlock:(actionB)block
-{
-    [self actionWithControlEvent:UIControlEventTouchUpInside withBlock:block];
-}
-
--(void)clickAction:(UIButton *)button{
-    actionB block =objc_getAssociatedObject(self, &KBtnActionBlockKey);
-    if (block) {
-        block();
-    }
-}
-@end
 
 @interface PPButtonMaker ()
 /** 要创建的bt */
 @property(nonatomic,strong) UIButton *creatingBT;
 /** 记录bt的block点击事件 */
-@property(nonatomic,copy) actionB creatingBtActionBlock;
+@property(nonatomic,copy) makerBtActionBlock creatingBtActionBlock;
 
 @end
 
@@ -53,7 +24,8 @@ static char KBtnActionBlockKey;
 {
     self = [super init];
     if (self) {
-        PPBtMakerWeakSelf(self)
+        
+        __weak typeof(self) weakself = self;
         //父视图
         _intoView = ^PPButtonMaker *(UIView *superV){
             PPBtMakerStrongSelf(self)
@@ -114,7 +86,7 @@ static char KBtnActionBlockKey;
         };
         
         //点击事件
-        _actionBlock = ^PPButtonMaker *(actionB block){
+        _actionBlock = ^PPButtonMaker *(makerBtActionBlock block){
             PPBtMakerStrongSelf(self)
             if (block) {
                 self.creatingBtActionBlock = block;
@@ -124,6 +96,22 @@ static char KBtnActionBlockKey;
     }
     return self;
 }
+
+-(UIButton *)creatingBT
+{
+    if (!_creatingBT) {
+        _creatingBT = [UIButton buttonWithType:UIButtonTypeCustom];
+        [_creatingBT maker_actionWithBlock:^{
+            if (self.creatingBtActionBlock) {
+                self.creatingBtActionBlock();
+            }
+        }];
+    }
+    return _creatingBT;
+}
+@end
+
+@implementation UIButton (PPMaker)
 +(UIButton *)pp_btMake:(void (^)(PPButtonMaker *))make
 {
     PPButtonMaker *btMaker = [[PPButtonMaker alloc]init];
@@ -132,17 +120,23 @@ static char KBtnActionBlockKey;
     }
     return btMaker.creatingBT;
 }
--(UIButton *)creatingBT
+
+-(void)maker_actionWithControlEvent:(UIControlEvents )event
+                          withBlock:(makerBtActionBlock)block
 {
-    if (!_creatingBT) {
-        _creatingBT = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_creatingBT actionWithBlock:^{
-            if (self.creatingBtActionBlock) {
-                self.creatingBtActionBlock();
-            }
-        }];
+    objc_setAssociatedObject(self, &KBtnActionBlockKey, block, OBJC_ASSOCIATION_COPY_NONATOMIC);
+    [self addTarget:self action:@selector(clickAction:) forControlEvents:UIControlEventTouchUpInside];
+}
+-(void)maker_actionWithBlock:(makerBtActionBlock)block
+{
+    [self maker_actionWithControlEvent:UIControlEventTouchUpInside withBlock:block];
+}
+
+-(void)clickAction:(UIButton *)button{
+    makerBtActionBlock block =objc_getAssociatedObject(self, &KBtnActionBlockKey);
+    if (block) {
+        block();
     }
-    return _creatingBT;
 }
 @end
 

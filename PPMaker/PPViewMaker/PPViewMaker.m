@@ -7,8 +7,6 @@
 //
 
 #import "PPViewMaker.h"
-
-#define PPViewMakerWeakSelf(type)  __weak typeof(type) weak##type = type;
 #define PPViewMakerStrongSelf(type)  __strong typeof(type) type = weak##type;
 
 @interface PPViewMaker ()
@@ -23,7 +21,7 @@
     self = [super init];
     if (self) {
         
-        PPViewMakerWeakSelf(self)
+        __weak typeof(self) weakself = self;
         //父视图
         _intoView = ^PPViewMaker *(UIView *superV){
             PPViewMakerStrongSelf(self)
@@ -49,14 +47,7 @@
     }
     return self;
 }
-+(UIView *)pp_viewMake:(void (^)(PPViewMaker *))make
-{
-    PPViewMaker *viewMaker = [[PPViewMaker alloc]init];
-    if (make) {
-        make(viewMaker);
-    }
-    return viewMaker.creatingView;
-}
+
 
 #pragma mark --- 懒加载
 -(UIView *)creatingView
@@ -67,4 +58,15 @@
     return _creatingView;
 }
 
+@end
+
+@implementation UIView (PPMaker)
++(UIView *)pp_viewMake:(void (^)(PPViewMaker *))make
+{
+    PPViewMaker *viewMaker = [[PPViewMaker alloc]init];
+    if (make) {
+        make(viewMaker);
+    }
+    return viewMaker.creatingView;
+}
 @end

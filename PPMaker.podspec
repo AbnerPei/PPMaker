@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "PPMaker"
-  s.version      = "0.0.25"
+  s.version      = "0.0.23"
   s.summary      = "终极版、链式创建UIView/UIlabel/UIImageView/UIButton/UItableView等，像使用Masonry一样 to use !"
 
   # This description is used to generate tags and improve search results.
@@ -61,11 +61,12 @@ Pod::Spec.new do |s|
   s.source_files  = 'PPMaker/PPMaker.h'
 
   s.subspec 'PPMakeCategory' do |ss|
-    ss.source_files = 'PPMaker/PPMakeCategory/*'
+    ss.source_files = 'PPMaker/PPMakeCategory/*.{h,m}'
     end
 
   s.subspec 'PPMake' do |ss|
     ss.source_files = 'PPMaker/PPMake/PPMake*.{h,m}'
+    ss.dependency 'PPMaker/PPMakeCategory'
     end
 
   s.subspec 'PPMutAttributedStringMaker' do |ss|

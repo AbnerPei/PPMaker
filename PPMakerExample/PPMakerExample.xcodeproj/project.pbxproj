@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		572209CE20AD7EA700611BFA /* PPMake.m in Sources */ = {isa = PBXBuildFile; fileRef = 572209CD20AD7EA700611BFA /* PPMake.m */; };
+		572209D220AEBBA500611BFA /* UIButton+PPMakeSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 572209D120AEBBA500611BFA /* UIButton+PPMakeSupport.m */; };
 		57CB436E20A1BA8A00268DBE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 57CB436D20A1BA8A00268DBE /* AppDelegate.m */; };
 		57CB437120A1BA8A00268DBE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57CB437020A1BA8A00268DBE /* ViewController.m */; };
 		57CB437420A1BA8A00268DBE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57CB437220A1BA8A00268DBE /* Main.storyboard */; };
@@ -22,6 +24,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		572209CC20AD7EA700611BFA /* PPMake.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMake.h; sourceTree = "<group>"; };
+		572209CD20AD7EA700611BFA /* PPMake.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPMake.m; sourceTree = "<group>"; };
+		572209D020AEBBA500611BFA /* UIButton+PPMakeSupport.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+PPMakeSupport.h"; sourceTree = "<group>"; };
+		572209D120AEBBA500611BFA /* UIButton+PPMakeSupport.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+PPMakeSupport.m"; sourceTree = "<group>"; };
+		572209D320AEBBF700611BFA /* PPMakeCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMakeCategory.h; sourceTree = "<group>"; };
 		57CB436920A1BA8A00268DBE /* PPMakerExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PPMakerExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57CB436C20A1BA8A00268DBE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		57CB436D20A1BA8A00268DBE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -58,6 +65,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		572209CB20AD7E9600611BFA /* PPMake */ = {
+			isa = PBXGroup;
+			children = (
+				572209CC20AD7EA700611BFA /* PPMake.h */,
+				572209CD20AD7EA700611BFA /* PPMake.m */,
+			);
+			path = PPMake;
+			sourceTree = "<group>";
+		};
+		572209CF20AEBB6C00611BFA /* PPMakeCategory */ = {
+			isa = PBXGroup;
+			children = (
+				572209D320AEBBF700611BFA /* PPMakeCategory.h */,
+				572209D020AEBBA500611BFA /* UIButton+PPMakeSupport.h */,
+				572209D120AEBBA500611BFA /* UIButton+PPMakeSupport.m */,
+			);
+			path = PPMakeCategory;
+			sourceTree = "<group>";
+		};
 		57CB436020A1BA8A00268DBE = {
 			isa = PBXGroup;
 			children = (
@@ -94,6 +120,8 @@
 		57CB438220A1BAAC00268DBE /* PPMaker */ = {
 			isa = PBXGroup;
 			children = (
+				572209CF20AEBB6C00611BFA /* PPMakeCategory */,
+				572209CB20AD7E9600611BFA /* PPMake */,
 				57CB438320A1BAAC00268DBE /* PPMaker.h */,
 				57CB439B20A2864800268DBE /* PPMutAttributedStringMaker */,
 				57CB438420A1BAAC00268DBE /* PPViewMaker */,
@@ -231,12 +259,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				57CB439520A1BAAC00268DBE /* PPTableViewMaker.m in Sources */,
+				572209CE20AD7EA700611BFA /* PPMake.m in Sources */,
 				57CB439720A1BAAC00268DBE /* PPLabelMaker.m in Sources */,
 				57CB437120A1BA8A00268DBE /* ViewController.m in Sources */,
 				57CB437C20A1BA8D00268DBE /* main.m in Sources */,
 				57CB439420A1BAAC00268DBE /* PPButtonMaker.m in Sources */,
 				57CB439620A1BAAC00268DBE /* PPImageViewMaker.m in Sources */,
 				57CB436E20A1BA8A00268DBE /* AppDelegate.m in Sources */,
+				572209D220AEBBA500611BFA /* UIButton+PPMakeSupport.m in Sources */,
 				57CB43A120A286C800268DBE /* PPMutAttributedStringMaker.m in Sources */,
 				57CB439320A1BAAC00268DBE /* PPViewMaker.m in Sources */,
 			);

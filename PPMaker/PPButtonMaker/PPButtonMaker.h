@@ -13,25 +13,28 @@ typedef void(^makerBtActionBlock)(void);
 
 @interface PPButtonMaker : NSObject
 
-@property(nonatomic,copy) PPButtonMaker *(^intoView)(UIView *superV);
-@property(nonatomic,copy) PPButtonMaker *(^frame)(CGRect frame);
-@property(nonatomic,copy) PPButtonMaker *(^bgColor)(UIColor *bgColor);
-
-/**【通用】 设置state对应的titleColor */
-@property(nonatomic,copy) PPButtonMaker *(^titleColor)(UIColor *titleColor,UIControlState state);
-/** 设置normal对应的titleColor */
-@property(nonatomic,copy) PPButtonMaker *(^normalTitleColor)(UIColor *normalTitleColor);
-/** 设置Highlighted对应的titleColor */
-@property(nonatomic,copy) PPButtonMaker *(^highlightedTitleColor)(UIColor *highlightedTitleColor);
+@property(nonatomic,copy,readonly) PPButtonMaker *(^intoView)(UIView *superV);
+@property(nonatomic,copy,readonly) PPButtonMaker *(^frame)(CGRect frame);
+@property(nonatomic,copy,readonly) PPButtonMaker *(^bgColor)(UIColor *bgColor);
 
 /**【通用】 设置state对应的title */
-@property(nonatomic,copy) PPButtonMaker *(^title)(NSString *title,UIControlState state);
+@property(nonatomic,copy,readonly) PPButtonMaker *(^title)(NSString *title,UIControlState state);
 /** 设置normal对应的title */
-@property(nonatomic,copy) PPButtonMaker *(^normalTitle)(NSString *normalTitle);
+@property(nonatomic,copy,readonly) PPButtonMaker *(^normalTitle)(NSString *normalTitle);
 /** 设置Highlighted对应的title */
-@property(nonatomic,copy) PPButtonMaker *(^highlightedTitle)(NSString *highlightedTitle);
+@property(nonatomic,copy,readonly) PPButtonMaker *(^highlightedTitle)(NSString *highlightedTitle);
 
-@property(nonatomic,copy) PPButtonMaker *(^actionBlock)(makerBtActionBlock block);
+/**【通用】 设置state对应的titleColor */
+@property(nonatomic,copy,readonly) PPButtonMaker *(^titleColor)(UIColor *titleColor,UIControlState state);
+/** 设置normal对应的titleColor */
+@property(nonatomic,copy,readonly) PPButtonMaker *(^normalTitleColor)(UIColor *normalTitleColor);
+/** 设置Highlighted对应的titleColor */
+@property(nonatomic,copy,readonly) PPButtonMaker *(^highlightedTitleColor)(UIColor *highlightedTitleColor);
+
+@property(nonatomic,copy) PPButtonMaker *(^addTarget)(id target,SEL action,UIControlEvents controlEvents);
+@property(nonatomic,copy) PPButtonMaker *(^addTargetTouchUpInside)(id target,SEL action);
+
+@property(nonatomic,copy,readonly) PPButtonMaker *(^actionBlock)(makerBtActionBlock block);
 
 @end
 

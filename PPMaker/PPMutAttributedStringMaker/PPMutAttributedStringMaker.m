@@ -7,109 +7,116 @@
 //
 
 #import "PPMutAttributedStringMaker.h"
-#define PPMASMakerStrongSelf(type)  __strong typeof(type) type = weak##type;
 
 @interface PPMutAttributedStringMaker ()
 @property(nonatomic,strong) NSMutableAttributedString *mutAttrbutedStr;
 @end
 
 @implementation PPMutAttributedStringMaker
-
--(instancetype)init
+#pragma mark --- 字体
+-(PPMutAttributedStringMaker *(^)(UIFont *))font
 {
-    self = [super init];
-    if (self) {
-        __weak typeof(self) weakself = self;
-        //字体
-        _font = ^PPMutAttributedStringMaker *(UIFont *f){
-            PPMASMakerStrongSelf(self)
-            if (f) {
-                self.mutAttrbutedStr.maker_font = f;
-            }
-            return self;
-        };
-        _fontRange = ^PPMutAttributedStringMaker *(UIFont *f,NSRange r){
-            PPMASMakerStrongSelf(self)
-            if (f) {
-                [self.mutAttrbutedStr maker_setFont:f range:r];
-            }
-            return self;
-        };
-        
-        //颜色
-        _textColor = ^PPMutAttributedStringMaker *(UIColor *tc){
-            PPMASMakerStrongSelf(self)
-            if (tc) {
-                self.mutAttrbutedStr.maker_color = tc;
-            }
-            return self;
-        };
-        _textColorRange = ^PPMutAttributedStringMaker *(UIColor *tc,NSRange r){
-            PPMASMakerStrongSelf(self)
-            if (tc) {
-                [self.mutAttrbutedStr maker_setColor:tc range:r];
-            }
-            return self;
-        };
-        
-        //段落
-        _paragraphStyle = ^PPMutAttributedStringMaker *(NSParagraphStyle *ps){
-            PPMASMakerStrongSelf(self)
-            if (ps) {
-                self.mutAttrbutedStr.maker_paragraphStyle = ps;
-            }
-            return self;
-        };
-        _paragraphStyleRange = ^PPMutAttributedStringMaker *(NSParagraphStyle *ps,NSRange r){
-            PPMASMakerStrongSelf(self)
-            if (ps) {
-                [self.mutAttrbutedStr maker_setParagraphStyle:ps range:r];
-            }
-            return self;
-        };
-        
-        //行间距
-        _lineSpacing = ^PPMutAttributedStringMaker *(CGFloat ls){
-            PPMASMakerStrongSelf(self)
-            self.mutAttrbutedStr.maker_lineSpacing = ls;
-            return self;
-        };
-        _lineSpacingRange = ^PPMutAttributedStringMaker *(CGFloat ls,NSRange r){
-            PPMASMakerStrongSelf(self)
-            [self.mutAttrbutedStr maker_setLineSpacing:ls range:r];
-            return self;
-        };
-        
-        //字间距
-        _kern = ^PPMutAttributedStringMaker *(NSNumber *k){
-            PPMASMakerStrongSelf(self)
-            self.mutAttrbutedStr.maker_kern = k;
-            return self;
-        };
-        _kernRange = ^PPMutAttributedStringMaker *(NSNumber *k,NSRange r){
-            PPMASMakerStrongSelf(self)
-            [self.mutAttrbutedStr maker_setKern:k range:r];
-            return self;
-        };
-        
-        //某个特别文字处理
-        _specialText = ^PPMutAttributedStringMaker *(NSString *specialText,UIFont *specialFont,UIColor *specialColor){
-            PPMASMakerStrongSelf(self)
-            [self.mutAttrbutedStr maker_specialText:specialText specialFont:specialFont specialColor:specialColor];
-            return self;
-        };
-        
-        //特别文字统一处理
-        _specialTextSet = ^PPMutAttributedStringMaker *(NSArray<NSString *> *specialTextArray,NSArray<UIFont *> *specialTextFontArray,NSArray<UIColor *> *specialTextColorArray){
-            PPMASMakerStrongSelf(self)
-            [self.mutAttrbutedStr maker_specialTextArray:specialTextArray specialTextFontArray:specialTextFontArray specialTextColorArray:specialTextColorArray];
-            return self;
-        };
-        
-        
-    }
-    return self;
+    return ^PPMutAttributedStringMaker *(UIFont *f){
+        if (f) {
+            self.mutAttrbutedStr.maker_font = f;
+        }
+        return self;
+    };
 }
+-(PPMutAttributedStringMaker *(^)(UIFont *, NSRange))fontRange
+{
+    return ^PPMutAttributedStringMaker *(UIFont *f,NSRange r){
+        if (f) {
+            [self.mutAttrbutedStr maker_setFont:f range:r];
+        }
+        return self;
+    };
+}
+#pragma mark --- 颜色
+-(PPMutAttributedStringMaker *(^)(UIColor *))textColor
+{
+    return ^PPMutAttributedStringMaker *(UIColor *tc){
+        if (tc) {
+            self.mutAttrbutedStr.maker_color = tc;
+        }
+        return self;
+    };
+}
+-(PPMutAttributedStringMaker *(^)(UIColor *, NSRange))textColorRange
+{
+    return ^PPMutAttributedStringMaker *(UIColor *tc,NSRange r){
+        if (tc) {
+            [self.mutAttrbutedStr maker_setColor:tc range:r];
+        }
+        return self;
+    };
+}
+#pragma mark --- 段落
+-(PPMutAttributedStringMaker *(^)(NSParagraphStyle *))paragraphStyle
+{
+    return ^PPMutAttributedStringMaker *(NSParagraphStyle *ps){
+        if (ps) {
+            self.mutAttrbutedStr.maker_paragraphStyle = ps;
+        }
+        return self;
+    };
+}
+-(PPMutAttributedStringMaker *(^)(NSParagraphStyle *, NSRange))paragraphStyleRange
+{
+    return ^PPMutAttributedStringMaker *(NSParagraphStyle *ps,NSRange r){
+        if (ps) {
+            [self.mutAttrbutedStr maker_setParagraphStyle:ps range:r];
+        }
+        return self;
+    };
+}
+#pragma mark --- 行间距
+-(PPMutAttributedStringMaker *(^)(CGFloat))lineSpacing
+{
+    return ^PPMutAttributedStringMaker *(CGFloat ls){
+        self.mutAttrbutedStr.maker_lineSpacing = ls;
+        return self;
+    };
+}
+-(PPMutAttributedStringMaker *(^)(CGFloat, NSRange))lineSpacingRange
+{
+    return ^PPMutAttributedStringMaker *(CGFloat ls,NSRange r){
+        [self.mutAttrbutedStr maker_setLineSpacing:ls range:r];
+        return self;
+    };;
+}
+#pragma mark --- 字间距
+-(PPMutAttributedStringMaker *(^)(NSNumber *))kern
+{
+    return ^PPMutAttributedStringMaker *(NSNumber *k){
+        self.mutAttrbutedStr.maker_kern = k;
+        return self;
+    };
+}
+-(PPMutAttributedStringMaker *(^)(NSNumber *, NSRange))kernRange
+{
+    return ^PPMutAttributedStringMaker *(NSNumber *k,NSRange r){
+        [self.mutAttrbutedStr maker_setKern:k range:r];
+        return self;
+    };
+}
+#pragma mark --- 某个特别文字处理
+-(PPMutAttributedStringMaker *(^)(NSString *, UIFont *, UIColor *))specialText
+{
+    return ^PPMutAttributedStringMaker *(NSString *specialText,UIFont *specialFont,UIColor *specialColor){
+        [self.mutAttrbutedStr maker_specialText:specialText specialFont:specialFont specialColor:specialColor];
+        return self;
+    };
+}
+#pragma mark --- 特别文字统一处理
+-(PPMutAttributedStringMaker *(^)(NSArray<NSString *> *, NSArray<UIFont *> *, NSArray<UIColor *> *))specialTextSet
+{
+    return ^PPMutAttributedStringMaker *(NSArray<NSString *> *specialTextArray,NSArray<UIFont *> *specialTextFontArray,NSArray<UIColor *> *specialTextColorArray){
+        [self.mutAttrbutedStr maker_specialTextArray:specialTextArray specialTextFontArray:specialTextFontArray specialTextColorArray:specialTextColorArray];
+        return self;
+    };
+}
+
 
 @end
 

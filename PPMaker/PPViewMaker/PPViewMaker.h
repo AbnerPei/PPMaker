@@ -8,15 +8,26 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+/*
+ * 待做清单
+ * 1. 圆角支持
+ * 2. 点击事件
+ * 3. 一些简单动画
+ * ...
+ */
 
 @interface PPViewMaker : NSObject
-
 /** superView */
-@property(nonatomic,copy) PPViewMaker *(^intoView)(UIView *superV);
-/** 背景色 */
-@property(nonatomic,copy) PPViewMaker *(^bgColor)(UIColor *color);
+@property(nonatomic,copy,readonly) PPViewMaker *(^intoView)(UIView *superV);
 /** frame */
-@property(nonatomic,copy) PPViewMaker *(^frame)(CGRect frame);
+@property(nonatomic,copy,readonly) PPViewMaker *(^frame)(CGRect frame);
+/** 背景色 */
+@property(nonatomic,copy,readonly) PPViewMaker *(^bgColor)(UIColor *color);
+
+@property(nonatomic,copy,readonly) PPViewMaker *(^cornerRadius)(CGFloat cornerRadius);
+
+//【用CAShapeLayer创建一根线】
+//@property(nonatomic,copy) PPViewMaker *(^dashLine)(CGFloat lineItemWidth,CGFloat lineMargin);
 
 @end
 

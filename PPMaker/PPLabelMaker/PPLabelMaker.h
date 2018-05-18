@@ -9,27 +9,45 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-@interface PPLabelMaker : NSObject
+//待处理：text 一个一个字显示
 
-@property(nonatomic,copy) PPLabelMaker *(^intoView)(UIView *superV);
-@property(nonatomic,copy) PPLabelMaker *(^frame)(CGRect frame);
+@interface PPLabelMaker : NSObject 
 
-@property(nonatomic,copy) PPLabelMaker *(^bgColor)(UIColor *bgColor);
-@property(nonatomic,copy) PPLabelMaker *(^textColor)(UIColor *textColor);
-@property(nonatomic,copy) PPLabelMaker *(^text)(NSString *text);
-@property(nonatomic,copy) PPLabelMaker *(^attributedText)(NSAttributedString *attributedText);
+/** 创建的UILabel */
+@property(nonatomic,strong,readonly) UILabel *lb;
+
+@property(nonatomic,copy,readonly) PPLabelMaker *(^intoView)(UIView *superV);
+@property(nonatomic,copy,readonly) PPLabelMaker *(^frame)(CGRect frame);
+
+@property(nonatomic,copy,readonly) PPLabelMaker *(^bgColor)(UIColor *bgColor);
+@property(nonatomic,copy,readonly) PPLabelMaker *(^text)(NSString *text);
+@property(nonatomic,copy,readonly) PPLabelMaker *(^attributedText)(NSAttributedString *attributedText);
+@property(nonatomic,copy,readonly) PPLabelMaker *(^textColor)(UIColor *textColor);
 
 
-@property(nonatomic,copy) PPLabelMaker *(^font)(UIFont *font);
-@property(nonatomic,copy) PPLabelMaker *(^fontSize)(CGFloat fontSize);
-@property(nonatomic,copy) PPLabelMaker *(^boldFontSize)(CGFloat boldFontSize);
-@property(nonatomic,copy) PPLabelMaker *(^fontNameAndSize)(NSString *fontName,CGFloat fontSize);
+@property(nonatomic,copy,readonly) PPLabelMaker *(^font)(UIFont *font);
+@property(nonatomic,copy,readonly) PPLabelMaker *(^fontSize)(CGFloat fontSize);
+@property(nonatomic,copy,readonly) PPLabelMaker *(^boldFontSize)(CGFloat boldFontSize);
+@property(nonatomic,copy,readonly) PPLabelMaker *(^fontNameAndSize)(NSString *fontName,CGFloat fontSize);
 
-@property(nonatomic,copy) PPLabelMaker *(^textAlignment)(NSTextAlignment textAlignment);
-@property(nonatomic,copy) PPLabelMaker *(^numberOfLines)(NSInteger numberOfLines);
+@property(nonatomic,copy,readonly) PPLabelMaker *(^textAlignment)(NSTextAlignment textAlignment);
+@property(nonatomic,copy,readonly) PPLabelMaker *(^numberOfLines)(NSInteger numberOfLines);
+
+/**
+ NSLineBreakByTruncatingHead,     // Truncate at head of line: "...wxyz"
+ NSLineBreakByTruncatingTail,     // Truncate at tail of line: "abcd..."  默认
+ NSLineBreakByTruncatingMiddle    // Truncate middle of line:  "ab...yz"
+ */
+@property(nonatomic,copy,readonly) PPLabelMaker *(^lineBreakMode)(NSLineBreakMode lineBreakMode);
+
+/** 默认NO */
+@property(nonatomic,copy,readonly) PPLabelMaker *(^userInteractionEnabled)(BOOL userInteractionEnabled);
+
 
 @end
 
 @interface UILabel (PPMaker)
 +(UILabel *)pp_lbMake:(void(^)(PPLabelMaker *maker))make;
 @end
+
+

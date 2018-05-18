@@ -7,45 +7,47 @@
 //
 
 #import "PPViewMaker.h"
-#define PPViewMakerStrongSelf(type)  __strong typeof(type) type = weak##type;
 
 @interface PPViewMaker ()
 /** 要创建的view */
 @property(nonatomic,strong) UIView *creatingView;
+
 @end
 
 @implementation PPViewMaker
 
--(instancetype)init
+#pragma mark --- 父视图
+-(PPViewMaker *(^)(UIView *))intoView
 {
-    self = [super init];
-    if (self) {
-        
-        __weak typeof(self) weakself = self;
-        //父视图
-        _intoView = ^PPViewMaker *(UIView *superV){
-            PPViewMakerStrongSelf(self)
-            if (superV) {
-                [superV addSubview:self.creatingView];
-            }
-            return self;
-        };
-        
-        //背景色
-        _bgColor = ^PPViewMaker *(UIColor *color){
-            PPViewMakerStrongSelf(self)
-            self.creatingView.backgroundColor = color;
-            return self;
-        };
-        
-        //frame
-        _frame = ^PPViewMaker *(CGRect frame){
-            PPViewMakerStrongSelf(self)
-            self.creatingView.frame = frame;
-            return self;
-        };
-    }
-    return self;
+    return ^PPViewMaker *(UIView *superV){
+        if (superV) {
+            [superV addSubview:self.creatingView];
+        }
+        return self;
+    };
+}
+#pragma mark --- frame
+-(PPViewMaker *(^)(CGRect))frame
+{
+    return ^PPViewMaker *(CGRect frame){
+        self.creatingView.frame = frame;
+        return self;
+    };
+}
+#pragma mark --- 背景色
+-(PPViewMaker *(^)(UIColor *))bgColor
+{
+    return ^PPViewMaker *(UIColor *color){
+        self.creatingView.backgroundColor = color;
+        return self;
+    };
+}
+-(PPViewMaker *(^)(CGFloat))cornerRadius
+{
+    return ^PPViewMaker *(CGFloat cornerRadius){
+        self.creatingView.layer.cornerRadius = cornerRadius;
+        return self;
+    };
 }
 
 
@@ -58,6 +60,7 @@
     return _creatingView;
 }
 
+
 @end
 
 @implementation UIView (PPMaker)
@@ -69,4 +72,7 @@
     }
     return viewMaker.creatingView;
 }
+
 @end
+
+

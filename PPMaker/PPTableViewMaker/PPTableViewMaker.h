@@ -10,13 +10,13 @@
 #import <UIKit/UIKit.h>
 
 @interface PPTableViewMaker : NSObject
-@property(nonatomic,copy) PPTableViewMaker *(^intoView)(UIView *superV);
-@property(nonatomic,copy) PPTableViewMaker *(^bgColor)(UIColor *bgColor);
-@property(nonatomic,copy) PPTableViewMaker *(^delegate)(id delegate);
+@property(nonatomic,copy,readonly) PPTableViewMaker *(^intoView)(UIView *superV);
+@property(nonatomic,copy,readonly) PPTableViewMaker *(^bgColor)(UIColor *bgColor);
+@property(nonatomic,copy,readonly) PPTableViewMaker *(^delegate)(id delegate);
 /** 去掉所有的分割线 */
-@property(nonatomic,copy) PPTableViewMaker *(^hideAllSeparator)(BOOL ishidden);
+@property(nonatomic,copy,readonly) PPTableViewMaker *(^hideAllSeparator)(BOOL ishidden);
 /** 去掉多余的分割线 */
-@property(nonatomic,copy) PPTableViewMaker *(^hideExtraSeparator)(BOOL isHidden);
+@property(nonatomic,copy,readonly) PPTableViewMaker *(^hideExtraSeparator)(BOOL isHidden);
 
 @end
 

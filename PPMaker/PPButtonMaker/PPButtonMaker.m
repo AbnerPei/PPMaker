@@ -8,7 +8,7 @@
 
 #import "PPButtonMaker.h"
 #import <objc/runtime.h>
-#define PPBtMakerStrongSelf(type)  __strong typeof(type) type = weak##type;
+
 static char KBtnActionBlockKey;
 
 @interface PPButtonMaker ()
@@ -20,81 +20,102 @@ static char KBtnActionBlockKey;
 @end
 
 @implementation PPButtonMaker
--(instancetype)init
+#pragma mark --- 父视图
+-(PPButtonMaker *(^)(UIView *))intoView
 {
-    self = [super init];
-    if (self) {
-        
-        __weak typeof(self) weakself = self;
-        //父视图
-        _intoView = ^PPButtonMaker *(UIView *superV){
-            PPBtMakerStrongSelf(self)
-            //此处判断父视图，主要是为了严谨；不判断也OK
-            if (superV && !self.creatingBT.superview) {
-                [superV addSubview:self.creatingBT];
-            }
-            return self;
-        };
-        
-        //frame
-        _frame = ^PPButtonMaker *(CGRect frame){
-            PPBtMakerStrongSelf(self)
-            self.creatingBT.frame = frame;
-            return self;
-        };
-        
-        //背景色
-        _bgColor = ^PPButtonMaker *(UIColor *color){
-            PPBtMakerStrongSelf(self)
-            self.creatingBT.backgroundColor = color;
-            return self;
-        };
-        
-        //字体颜色
-        _titleColor = ^PPButtonMaker *(UIColor *titleColor,UIControlState state){
-            PPBtMakerStrongSelf(self)
-            [self.creatingBT setTitleColor:titleColor forState:state];
-            return self;
-        };
-        _normalTitleColor = ^PPButtonMaker *(UIColor *normalTitleColor){
-            PPBtMakerStrongSelf(self)
-            [self.creatingBT setTitleColor:normalTitleColor forState:UIControlStateNormal];
-            return self;
-        };
-        _highlightedTitleColor = ^PPButtonMaker *(UIColor *highlightedTitleColor){
-            PPBtMakerStrongSelf(self)
-            [self.creatingBT setTitleColor:highlightedTitleColor forState:UIControlStateHighlighted];
-            return self;
-        };
-        
-        
-        //文字
-        _title = ^PPButtonMaker *(NSString *title,UIControlState state){
-            PPBtMakerStrongSelf(self)
-            [self.creatingBT setTitle:title forState:state];
-            return self;
-        };
-        _normalTitle = ^PPButtonMaker *(NSString *normalTitle){
-            PPBtMakerStrongSelf(self)
-            [self.creatingBT setTitle:normalTitle forState:UIControlStateNormal];
-            return self;
-        };
-        _highlightedTitle = ^PPButtonMaker *(NSString *highlightedTitle){
-            PPBtMakerStrongSelf(self)
-            [self.creatingBT setTitle:highlightedTitle forState:UIControlStateHighlighted];
-            return self;
-        };
-        
-        //点击事件
-        _actionBlock = ^PPButtonMaker *(makerBtActionBlock block){
-            PPBtMakerStrongSelf(self)
-            if (block) {
-                self.creatingBtActionBlock = block;
-            }
-            return self;
-        };
-    }
-    return self;
+    return ^PPButtonMaker *(UIView *superV){
+        if (superV) {
+            [superV addSubview:self.creatingBT];
+        }
+        return self;
+    };
+}
+#pragma mark --- frame
+-(PPButtonMaker *(^)(CGRect))frame
+{
+    return ^PPButtonMaker *(CGRect frame){
+        self.creatingBT.frame = frame;
+        return self;
+    };
+}
+#pragma mark --- 背景色
+-(PPButtonMaker *(^)(UIColor *))bgColor
+{
+    return ^PPButtonMaker *(UIColor *color){
+        self.creatingBT.backgroundColor = color;
+        return self;
+    };
+}
+#pragma mark --- 文字
+-(PPButtonMaker *(^)(NSString *, UIControlState))title
+{
+    return ^PPButtonMaker *(NSString *title,UIControlState state){
+        [self.creatingBT setTitle:title forState:state];
+        return self;
+    };
+}
+-(PPButtonMaker *(^)(NSString *))normalTitle
+{
+    return ^PPButtonMaker *(NSString *normalTitle){
+        [self.creatingBT setTitle:normalTitle forState:UIControlStateNormal];
+        return self;
+    };
+}
+-(PPButtonMaker *(^)(NSString *))highlightedTitle
+{
+    return ^PPButtonMaker *(NSString *highlightedTitle){
+        [self.creatingBT setTitle:highlightedTitle forState:UIControlStateHighlighted];
+        return self;
+    };
+}
+
+#pragma mark --- 字体颜色
+-(PPButtonMaker *(^)(UIColor *, UIControlState))titleColor
+{
+    return ^PPButtonMaker *(UIColor *titleColor,UIControlState state){
+        [self.creatingBT setTitleColor:titleColor forState:state];
+        return self;
+    };
+}
+-(PPButtonMaker *(^)(UIColor *))normalTitleColor
+{
+    return ^PPButtonMaker *(UIColor *normalTitleColor){
+        [self.creatingBT setTitleColor:normalTitleColor forState:UIControlStateNormal];
+        return self;
+    };
+}
+-(PPButtonMaker *(^)(UIColor *))highlightedTitleColor
+{
+    return ^PPButtonMaker *(UIColor *highlightedTitleColor){
+        [self.creatingBT setTitleColor:highlightedTitleColor forState:UIControlStateHighlighted];
+        return self;
+    };
+}
+#pragma mark --- 原始的target-action点击事件
+-(PPButtonMaker *(^)(id, SEL, UIControlEvents))addTarget
+{
+    return ^PPButtonMaker *(id target,SEL action,UIControlEvents controlEvents){
+        [self.creatingBT addTarget:target action:action forControlEvents:controlEvents];
+        return self;
+    };
+}
+#pragma mark --- UIControlEventTouchUpInside
+-(PPButtonMaker *(^)(id, SEL))addTargetTouchUpInside
+{
+    return ^PPButtonMaker *(id target,SEL action){
+        [self.creatingBT addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
+        return self;
+    };
+}
+#pragma mark --- block形式的点击事件
+-(PPButtonMaker *(^)(makerBtActionBlock))actionBlock
+{
+    return ^PPButtonMaker *(makerBtActionBlock block){
+        if (block) {
+            self.creatingBtActionBlock = block;
+        }
+        return self;
+    };
 }
 
 -(UIButton *)creatingBT
@@ -108,6 +129,10 @@ static char KBtnActionBlockKey;
         }];
     }
     return _creatingBT;
+}
+-(void)dealloc
+{
+    NSLog(@"PPButtonMaker释放了");
 }
 @end
 

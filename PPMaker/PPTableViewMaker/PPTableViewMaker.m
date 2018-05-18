@@ -7,7 +7,6 @@
 //
 
 #import "PPTableViewMaker.h"
-#define PPTableVMakerStrongSelf(type)  __strong typeof(type) type = weak##type;
 
 @interface PPTableViewMaker ()
 /** 要创建的UITableView对象 */
@@ -15,55 +14,52 @@
 @end
 
 @implementation PPTableViewMaker
-
--(instancetype)init
+#pragma mark --- 父视图
+-(PPTableViewMaker *(^)(UIView *))intoView
 {
-    self = [super init];
-    if (self) {
-        
-        __weak typeof(self) weakself = self;
-        //父视图
-        _intoView = ^PPTableViewMaker *(UIView *superV){
-            PPTableVMakerStrongSelf(self)
-            if (superV) {
-                [superV addSubview:self.creatingTableV];
-            }
-            return self;
-        };
-        
-        //背景色
-        _bgColor = ^PPTableViewMaker *(UIColor *color){
-            PPTableVMakerStrongSelf(self)
-            self.creatingTableV.backgroundColor = color;
-            return self;
-        };
-        
-        //代理
-        _delegate = ^PPTableViewMaker *(id delegate){
-            PPTableVMakerStrongSelf(self)
-            self.creatingTableV.delegate = delegate;
-            self.creatingTableV.dataSource = delegate;
-            return self;
-        };
-        
-        //分割线
-        _hideAllSeparator = ^PPTableViewMaker *(BOOL isHidden){
-            PPTableVMakerStrongSelf(self)
-            if (isHidden) {
-                self.creatingTableV.separatorStyle = UITableViewCellSeparatorStyleNone;
-            }
-            return self;
-        };
-        _hideExtraSeparator = ^PPTableViewMaker *(BOOL isHidden){
-            PPTableVMakerStrongSelf(self)
-            if (isHidden) {
-                [self.creatingTableV setTableFooterView:[[UIView alloc] initWithFrame:CGRectZero]];
-            }
-            return self;
-        };
-
-    }
-    return self;
+    return ^PPTableViewMaker *(UIView *superV){
+        if (superV) {
+            [superV addSubview:self.creatingTableV];
+        }
+        return self;
+    };
+}
+#pragma mark --- 背景色
+-(PPTableViewMaker *(^)(UIColor *))bgColor
+{
+    return ^PPTableViewMaker *(UIColor *color){
+        self.creatingTableV.backgroundColor = color;
+        return self;
+    };
+}
+#pragma mark --- 代理
+-(PPTableViewMaker *(^)(id))delegate
+{
+    return ^PPTableViewMaker *(id delegate){
+        self.creatingTableV.delegate = delegate;
+        self.creatingTableV.dataSource = delegate;
+        return self;
+    };
+}
+#pragma mark --- 分割线(all)
+-(PPTableViewMaker *(^)(BOOL))hideAllSeparator
+{
+    return ^PPTableViewMaker *(BOOL isHidden){
+        if (isHidden) {
+            self.creatingTableV.separatorStyle = UITableViewCellSeparatorStyleNone;
+        }
+        return self;
+    };
+}
+#pragma mark --- 分割线(extra)
+-(PPTableViewMaker *(^)(BOOL))hideExtraSeparator
+{
+    return ^PPTableViewMaker *(BOOL isHidden){
+        if (isHidden) {
+            [self.creatingTableV setTableFooterView:[[UIView alloc] initWithFrame:CGRectZero]];
+        }
+        return self;
+    };
 }
 
 @end

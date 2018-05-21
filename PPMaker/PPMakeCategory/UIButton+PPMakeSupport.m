@@ -9,13 +9,11 @@
 #import "UIButton+PPMakeSupport.h"
 #import <objc/runtime.h>
 
-static char KPPMakeBtnActionBlockKey;
-
 @implementation UIButton (PPMakeSupport)
 
 -(void)ppmake_actionWithControlEvent:(UIControlEvents)event withBlock:(makeBtActionBlock)actionBlock
 {
-    objc_setAssociatedObject(self, &KPPMakeBtnActionBlockKey, actionBlock, OBJC_ASSOCIATION_COPY_NONATOMIC);
+    objc_setAssociatedObject(self, @selector(clickAction:), actionBlock, OBJC_ASSOCIATION_COPY_NONATOMIC);
     [self addTarget:self action:@selector(clickAction:) forControlEvents:UIControlEventTouchUpInside];
 }
 -(void)ppmake_actionWithBlock:(makeBtActionBlock)actionBlock
@@ -24,9 +22,32 @@ static char KPPMakeBtnActionBlockKey;
 }
 
 -(void)clickAction:(UIButton *)button{
-    makeBtActionBlock actionBlock =objc_getAssociatedObject(self, &KPPMakeBtnActionBlockKey);
+    makeBtActionBlock actionBlock =objc_getAssociatedObject(self, _cmd);
     if (actionBlock) {
         actionBlock();
+    }
+}
+@end
+
+@implementation UIButton (PPMakerSupport)
+
+
+-(void)maker_actionBlock:(makerBtActionBlock)block controlEvent:(UIControlEvents)event
+{
+    if (block) {
+        objc_setAssociatedObject(self, @selector(clickAction:), block, OBJC_ASSOCIATION_COPY_NONATOMIC);
+    }
+    [self addTarget:self action:@selector(clickAction:) forControlEvents:UIControlEventTouchUpInside];
+}
+-(void)maker_actionBlock:(makerBtActionBlock)block
+{
+    [self maker_actionBlock:block controlEvent:UIControlEventTouchUpInside];
+}
+
+-(void)clickAction:(UIButton *)button{
+    makerBtActionBlock block =objc_getAssociatedObject(self, _cmd);
+    if (block) {
+        block();
     }
 }
 @end

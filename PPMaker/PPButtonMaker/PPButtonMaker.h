@@ -42,9 +42,8 @@ typedef void(^makerBtActionBlock)(void);
 
 +(UIButton *)pp_btMake:(void(^)(PPButtonMaker *maker))make;
 
--(void)maker_actionWithControlEvent:(UIControlEvents )event
-                          withBlock:(makerBtActionBlock)block;
--(void)maker_actionWithBlock:(makerBtActionBlock)block;
+-(void)maker_actionBlock:(makerBtActionBlock)block controlEvent:(UIControlEvents )event;
+-(void)maker_actionBlock:(makerBtActionBlock)block;
 
 @end
 

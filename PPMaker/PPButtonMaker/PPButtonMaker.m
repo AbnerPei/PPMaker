@@ -9,8 +9,6 @@
 #import "PPButtonMaker.h"
 #import <objc/runtime.h>
 
-static char KBtnActionBlockKey;
-
 @interface PPButtonMaker ()
 /** 要创建的bt */
 @property(nonatomic,strong) UIButton *creatingBT;
@@ -122,7 +120,7 @@ static char KBtnActionBlockKey;
 {
     if (!_creatingBT) {
         _creatingBT = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_creatingBT maker_actionWithBlock:^{
+        [_creatingBT maker_actionBlock:^{
             if (self.creatingBtActionBlock) {
                 self.creatingBtActionBlock();
             }
@@ -137,6 +135,7 @@ static char KBtnActionBlockKey;
 @end
 
 @implementation UIButton (PPMaker)
+
 +(UIButton *)pp_btMake:(void (^)(PPButtonMaker *))make
 {
     PPButtonMaker *btMaker = [[PPButtonMaker alloc]init];
@@ -146,19 +145,20 @@ static char KBtnActionBlockKey;
     return btMaker.creatingBT;
 }
 
--(void)maker_actionWithControlEvent:(UIControlEvents )event
-                          withBlock:(makerBtActionBlock)block
+-(void)maker_actionBlock:(makerBtActionBlock)block controlEvent:(UIControlEvents)event
 {
-    objc_setAssociatedObject(self, &KBtnActionBlockKey, block, OBJC_ASSOCIATION_COPY_NONATOMIC);
+    if (block) {
+        objc_setAssociatedObject(self, @selector(clickAction:), block, OBJC_ASSOCIATION_COPY_NONATOMIC);
+    }
     [self addTarget:self action:@selector(clickAction:) forControlEvents:UIControlEventTouchUpInside];
 }
--(void)maker_actionWithBlock:(makerBtActionBlock)block
+-(void)maker_actionBlock:(makerBtActionBlock)block
 {
-    [self maker_actionWithControlEvent:UIControlEventTouchUpInside withBlock:block];
+    [self maker_actionBlock:block controlEvent:UIControlEventTouchUpInside];
 }
 
 -(void)clickAction:(UIButton *)button{
-    makerBtActionBlock block =objc_getAssociatedObject(self, &KBtnActionBlockKey);
+    makerBtActionBlock block =objc_getAssociatedObject(self, _cmd);
     if (block) {
         block();
     }

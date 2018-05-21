@@ -7,7 +7,9 @@
 //
 
 #import "ViewController.h"
+
 #import "PPMaker.h"
+
 #import "PPMake.h"
 
 @interface ViewController ()
@@ -22,18 +24,18 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-//    [self ppmake];
+    [self ppmaker];
 
 //    UIButton *lb = [PPMAKE(PPMakeTypeBT) pp_make:^(PPMake *make) {
 //        make.intoView(self.view).bgColor([UIColor redColor]);
 //        make.frame(CGRectMake(40, 100, 100, 50));
 //    }];
     
-    UIButton *lb = [UIButton buttonWithType:UIButtonTypeCustom];
-    [self.view addSubview:lb];
-    lb.frame = CGRectMake(40, 100, 100, 50);
-    lb.backgroundColor = [UIColor yellowColor];
-//    [lb make_actionWithBlock:^{
+//    UIButton *lb = [UIButton buttonWithType:UIButtonTypeCustom];
+//    [self.view addSubview:lb];
+//    lb.frame = CGRectMake(40, 100, 100, 50);
+//    lb.backgroundColor = [UIColor yellowColor];
+//    [lb maker_actionBlock:^{
 //        NSLog(@"点击lb bt");
 //    }];
     
@@ -48,23 +50,23 @@
 //    lb.backgroundColor = [UIColor cyanColor];
     
     
-//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [lb pp_make:^(PPMake *make) {
-            make.bgColor([UIColor purpleColor]);
-//            make.title(@"8888", UIControlStateNormal);
-//            make.titleColor([UIColor whiteColor], UIControlStateNormal);
-//            make.addTargetTouchUpInside(self, @selector(btnClick));
-            make.actionBlock(^{
-                NSLog(@"btn点击了");
-            });
-//            make.delegate(self);
-//            make.imageName(@"1024");
-//            make.textAlignment(NSTextAlignmentCenter);
-            [UIView animateWithDuration:3 animations:^{
-                make.frame(CGRectMake(20, 210, 100, 40));
-            }];
-        }];
-//    });
+////    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//        [lb pp_make:^(PPMake *make) {
+//            make.bgColor([UIColor purpleColor]);
+////            make.title(@"8888", UIControlStateNormal);
+////            make.titleColor([UIColor whiteColor], UIControlStateNormal);
+////            make.addTargetTouchUpInside(self, @selector(btnClick));
+//            make.actionBlock(^{
+//                NSLog(@"btn点击了");
+//            });
+////            make.delegate(self);
+////            make.imageName(@"1024");
+////            make.textAlignment(NSTextAlignmentCenter);
+//            [UIView animateWithDuration:3 animations:^{
+//                make.frame(CGRectMake(20, 210, 100, 40));
+//            }];
+//        }];
+////    });
 
 
     
@@ -131,10 +133,7 @@
         maker.intoView(self.view);
     }];
     
-    __block typeof(btn) ppb = btn;
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(6 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        ppb = nil;
-    });
+
 //
 //
 //    //imageView的创建

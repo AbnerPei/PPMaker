@@ -10,6 +10,7 @@
 #define PPMakeCategory_h
 
 #import "UIButton+PPMakeSupport.h"
+#import "UIView+PPMakeSupport.h"
 
 
 #endif /* PPMakeCategory_h */

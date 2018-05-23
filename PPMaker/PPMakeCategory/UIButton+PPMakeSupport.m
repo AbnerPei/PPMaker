@@ -29,25 +29,3 @@
 }
 @end
 
-@implementation UIButton (PPMakerSupport)
-
-
--(void)maker_actionBlock:(makerBtActionBlock)block controlEvent:(UIControlEvents)event
-{
-    if (block) {
-        objc_setAssociatedObject(self, @selector(clickAction:), block, OBJC_ASSOCIATION_COPY_NONATOMIC);
-    }
-    [self addTarget:self action:@selector(clickAction:) forControlEvents:UIControlEventTouchUpInside];
-}
--(void)maker_actionBlock:(makerBtActionBlock)block
-{
-    [self maker_actionBlock:block controlEvent:UIControlEventTouchUpInside];
-}
-
--(void)clickAction:(UIButton *)button{
-    makerBtActionBlock block =objc_getAssociatedObject(self, _cmd);
-    if (block) {
-        block();
-    }
-}
-@end

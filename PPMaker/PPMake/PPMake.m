@@ -83,6 +83,31 @@ NSAssert((self.makeType == PPMakeTypeTableVPlain || self.makeType == PPMakeTypeT
         return self;
     };
 }
+-(PPMake *(^)(CGFloat, CGFloat, CGFloat))cornerShadow
+{
+    return ^PPMake *(CGFloat cr,CGFloat sr,CGFloat so){
+        [self.creatingV ppmake_cornerRadius:cr shadowRadius:sr shadowOpacity:so];
+        return self;
+    };
+}
+-(PPMake *(^)(makeViewGestureBlock))tapBlock
+{
+    return ^PPMake *(makeViewGestureBlock mb){
+        if (mb) {
+            [self.creatingV ppmake_tapBlock:mb];
+        }
+        return self;
+    };
+}
+-(PPMake *(^)(makeViewGestureBlock))longPressBlock
+{
+    return ^PPMake *(makeViewGestureBlock mb){
+        if (mb) {
+            [self.creatingV ppmake_longPressBlock:mb];
+        }
+        return self;
+    };
+}
 
 
 +(instancetype)makeWithType:(PPMakeType)makeType
@@ -341,6 +366,113 @@ static inline PPMake *makeBtTA(id target,SEL action,UIControlEvents ce,PPMake *m
             [bt ppmake_actionWithBlock:ab];
         }
         return self;
+    };
+}
+#pragma mark --- 设置button的图片
+-(PPMake *(^)(UIImage *, UIControlState))image
+{
+    PPMake_SpecialAssert(PPMakeTypeBT);
+    return ^PPMake *(UIImage *img,UIControlState state){
+      UIButton *bt = (UIButton *)self.creatingV;
+        [bt setImage:img forState:state];
+        return self;
+    };
+}
+-(PPMake *(^)(NSString *, UIControlState))imageName
+{
+    PPMake_SpecialAssert(PPMakeTypeBT);
+    return ^PPMake *(NSString *imgN,UIControlState s){
+        UIButton *bt = (UIButton *)self.creatingV;
+        [bt setImage:[UIImage imageNamed:imgN] forState:s];
+        return self;
+    };
+}
+-(PPMake *(^)(NSString *))normalImageName
+{
+    PPMake_SpecialAssert(PPMakeTypeBT);
+    return ^PPMake *(NSString *nImgN){
+        UIButton *bt = (UIButton *)self.creatingV;
+        [bt setImage:[UIImage imageNamed:nImgN] forState:UIControlStateNormal];
+        return self;
+    };
+}
+-(PPMake *(^)(NSString *))highlightedImageName
+{
+    PPMake_SpecialAssert(PPMakeTypeBT);
+    return ^PPMake *(NSString *hImgN){
+        UIButton *bt = (UIButton *)self.creatingV;
+        [bt setImage:[UIImage imageNamed:hImgN] forState:UIControlStateHighlighted];
+        return self;
+    };
+}
+#pragma mark --- attributedString
+-(PPMake *(^)(NSAttributedString *, UIControlState))attributedString
+{
+    PPMake_SpecialAssert(PPMakeTypeBT);
+    return ^PPMake *(NSAttributedString *as,UIControlState s){
+        UIButton *bt = (UIButton *)self.creatingV;
+        [bt setAttributedTitle:as forState:s];
+        return self;
+    };
+}
+-(PPMake *(^)(NSAttributedString *))normalAttributedString
+{
+    return [self _asWithState:UIControlStateNormal];
+}
+-(PPMake *(^)(NSAttributedString *))highlightAttributedString
+{
+    return [self _asWithState:UIControlStateHighlighted];
+}
+-(PPMake *(^)(NSAttributedString *))_asWithState:(UIControlState)state
+{
+    PPMake_SpecialAssert(PPMakeTypeBT);
+    return ^PPMake *(NSAttributedString *as){
+        UIButton *bt = (UIButton *)self.creatingV;
+        [bt setAttributedTitle:as forState:state];
+        return self;
+    };
+}
+-(PPMake *(^)(UIFont *, UIColor *, UIControlState))attributedFontColor
+{
+    PPMake_SpecialAssert(PPMakeTypeBT);
+    return ^PPMake *(UIFont *f,UIColor *c,UIControlState cs){
+        return [self _configureBtAttributedFont:f color:c state:cs];
+    };
+}
+-(PPMake *)_configureBtAttributedFont:(UIFont *)f color:(UIColor *)c state:(UIControlState)state
+{
+    UIButton *bt = (UIButton *)self.creatingV;
+    NSString *title = [bt titleForState:state];
+    NSString *stateStr = @"UIControlStateNormal";
+    if (state == UIControlStateHighlighted) {
+        stateStr = @"UIControlStateHighlighted";
+    }
+    NSString *recommendStr = [NSString stringWithFormat:@"PPMaker提示：%@状态下的title为空时，无法设置对应的attributedStr",stateStr];
+    NSAssert(title.length>0, recommendStr);
+    NSMutableDictionary<NSAttributedStringKey, id> *attributes = [NSMutableDictionary dictionary];
+    if (f) {
+        [attributes setValue:f forKey:NSFontAttributeName];
+    }
+    if (c) {
+        [attributes setValue:c forKey:NSForegroundColorAttributeName];
+    }
+    NSMutableAttributedString *titleAttributedStr = [[NSMutableAttributedString alloc]initWithString:title attributes:attributes];
+    [bt setAttributedTitle:titleAttributedStr forState:state];
+    return self;
+}
+-(PPMake *(^)(UIFont *, UIColor *))normalAttributedFontColor
+{
+    return [self _asFontColorWithState:UIControlStateNormal];
+}
+-(PPMake *(^)(UIFont *, UIColor *))highlightAttributedFontColor
+{
+    return [self _asFontColorWithState:UIControlStateHighlighted];
+}
+-(PPMake *(^)(UIFont *, UIColor *))_asFontColorWithState:(UIControlState)state
+{
+    PPMake_SpecialAssert(PPMakeTypeBT);
+    return ^PPMake *(UIFont *f,UIColor *c){
+        return [self _configureBtAttributedFont:f color:c state:state];
     };
 }
 @end

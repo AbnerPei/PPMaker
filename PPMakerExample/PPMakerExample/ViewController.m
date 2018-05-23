@@ -24,7 +24,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    [self ppmaker];
+    [self ppmake];
 
 //    UIButton *lb = [PPMAKE(PPMakeTypeBT) pp_make:^(PPMake *make) {
 //        make.intoView(self.view).bgColor([UIColor redColor]);
@@ -79,25 +79,30 @@
 //        __strong typeof(weakM22) strongM22 = weakM22;
 //        strongM22 = make;
         make.intoView(self.view).bgColor([UIColor redColor]);
-        make.frame(CGRectMake(40, 100, 100, 50));
+        make.frame(CGRectMake(40, 100, 200, 50));
         make.actionBlock(^{
             NSLog(@"btn点击了");
         });
-//        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(6 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//            [UIView animateWithDuration:3 animations:^{
-//                make.frame(CGRectMake(20, 210, 100, 40));
-//            }];
-//        });
-//        make.addTargetTouchUpInside(self, @selector(btnClick));
+
+        make.normalTitle(@"normal状态");
+        make.normalAttributedFontColor([UIFont systemFontOfSize:35], [UIColor purpleColor]);
+        make.cornerShadow(8, 8, 0.5);
     }];
     
-//    [bt ppmake_actionWithBlock:^{
-//        NSLog(@"ppmake_actionWithBlock btn点击了");
+    UILabel *lb = [PPMAKE(PPMakeTypeLB) pp_make:^(PPMake *make) {
+        make.intoView(self.view).frame(CGRectMake(40, 160, 200, 50));
+        make.text(@"lb点击一下").textColor([UIColor redColor]);
+        make.bgColor([UIColor cyanColor]);
+        make.tapBlock(^{
+            NSLog(@"lb被点击了");
+        });
+        make.longPressBlock(^{
+            NSLog(@"lb被长恩了");
+        });
+    }];
+//    [lb ppmake_tapBlock:^{
+//        NSLog(@"lb被点击了");
 //    }];
-    
-//    [bt addTarget:self action:@selector(btnClick) forControlEvents:UIControlEventTouchUpInside];
-    
-    [bt setTitle:@"3333" forState:UIControlStateNormal];
     
 }
 -(void)btnClick
@@ -121,7 +126,7 @@
 //    }];
 //
 //
-//    //button的创建
+    //button的创建
    UIButton *btn = [UIButton pp_btMake:^(PPButtonMaker *maker) {
         NSLog(@"button的创建");
         maker.intoView(self.view).bgColor([UIColor orangeColor]).frame(CGRectMake(10, 200, 260, 40));
@@ -133,7 +138,30 @@
         maker.intoView(self.view);
     }];
     
+    CGFloat f = [@"0.6666" floatValue];
+    NSLog(@"%.2f",f);
+    NSMutableAttributedString *mut = [[NSMutableAttributedString alloc]initWithString:@"9999999" attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:18],NSForegroundColorAttributeName:[UIColor purpleColor],NSKernAttributeName:@3}];
+    [btn setAttributedTitle:mut forState:UIControlStateNormal];
+    NSAttributedString *st = btn.currentAttributedTitle;
+    NSLog(@"currentAttributedTitle %@",st);
+    
 
+    [mut enumerateAttribute:NSFontAttributeName inRange:NSMakeRange(0, mut.length) options:(NSAttributedStringEnumerationLongestEffectiveRangeNotRequired) usingBlock:^(UIFont *value, NSRange range, BOOL * _Nonnull stop) {
+        NSLog(@"value %@ range %@ stop %d",value,NSStringFromRange(range),stop);
+    }];
+    
+    [mut enumerateAttributesInRange:NSMakeRange(0, mut.length) options:(NSAttributedStringEnumerationLongestEffectiveRangeNotRequired) usingBlock:^(NSDictionary<NSAttributedStringKey,id> * _Nonnull attrs, NSRange range, BOOL * _Nonnull stop) {
+        id iiiiid = [attrs valueForKey:NSFontAttributeName];
+
+        NSLog(@"attrs %@ range %@ stop %d",attrs,NSStringFromRange(range),stop);
+    }];
+    
+//    NSRange allRange = NSMakeRange(0, mut.length);
+//   id fontID = [mut attribute:NSFontAttributeName atIndex:0 effectiveRange:&allRange];
+//    NSLog(@"%@",fontID);
+//
+//    UIFont *font1 = [UIFont alloc]
+    
 //
 //
 //    //imageView的创建

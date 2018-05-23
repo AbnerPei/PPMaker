@@ -54,6 +54,17 @@ typedef NS_ENUM(NSInteger,PPMakeType) {
 @property(nonatomic,copy,readonly) PPMake *(^contentMode)(UIViewContentMode contentMode);
 
 /**
+ * 同时设置圆角和阴影。
+ */
+@property(nonatomic,copy,readonly) PPMake *(^cornerShadow)(CGFloat cornerRadius,CGFloat shadowRadius,CGFloat shadowOpacity);
+
+/* view添加点击事件 */
+@property(nonatomic,copy,readonly) PPMake *(^tapBlock)(makeViewGestureBlock tapGestureBlcok);
+/* view添加长摁事件 */
+@property(nonatomic,copy,readonly) PPMake *(^longPressBlock)(makeViewGestureBlock longPressGestureBlock);
+
+
+/**
  * 🔒 🔒 🔒 🔒
  * 创建make模型，但是不建议直接调用该方法。调用PPMAKE(makeType)这个宏即可；
  * * * * * *
@@ -116,8 +127,28 @@ typedef NS_ENUM(NSInteger,PPMakeType) {
 
 @property(nonatomic,copy,readonly) PPMake *(^addTarget)(id target,SEL action,UIControlEvents controlEvents);
 @property(nonatomic,copy,readonly) PPMake *(^addTargetTouchUpInside)(id target,SEL action);
-
 @property(nonatomic,copy,readonly) PPMake *(^actionBlock)(makeBtActionBlock actionBlock);
+
+//设置图片
+@property(nonatomic,copy,readonly) PPMake *(^image)(UIImage *image,UIControlState state);
+@property(nonatomic,copy,readonly) PPMake *(^imageName)(NSString *imageName,UIControlState state);
+@property(nonatomic,copy,readonly) PPMake *(^normalImageName)(NSString *normalImageName);
+@property(nonatomic,copy,readonly) PPMake *(^highlightedImageName)(NSString *highlightedImageName);
+
+//attributedString
+/**
+ * 注意：1> 设置了attributedString。setTitle/setTitleColor等会失效，attributedString优先级高。
+ *      2> 设置对应的状态的时候，title必须有值；
+ */
+@property(nonatomic,copy,readonly) PPMake *(^attributedString)(NSAttributedString *attributedString,UIControlState state);
+@property(nonatomic,copy,readonly) PPMake *(^normalAttributedString)(NSAttributedString *normalAttributedString);
+@property(nonatomic,copy,readonly) PPMake *(^highlightAttributedString)(NSAttributedString *highlightAttributedString);
+@property(nonatomic,copy,readonly) PPMake *(^attributedFontColor)(UIFont *titleFont,UIColor *titleColor,UIControlState state);
+@property(nonatomic,copy,readonly) PPMake *(^normalAttributedFontColor)(UIFont *normalTitleFont,UIColor *normalTitleColor);
+@property(nonatomic,copy,readonly) PPMake *(^highlightAttributedFontColor)(UIFont *highlightTitleFont,UIColor *highlightTitleColor);
+
+
+
 @end
 
 

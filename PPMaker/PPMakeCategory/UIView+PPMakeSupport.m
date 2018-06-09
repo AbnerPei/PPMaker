@@ -111,46 +111,54 @@
               shadowRadius:(CGFloat)shadowRadius
              shadowOpacity:(float)shadowOpacity
 {
+    BOOL justHandleCornerRadius = (shadowRadius==0 && shadowOpacity==0);
+    
+    if (justHandleCornerRadius && cornerRadius == 0) {
+        return;
+    }
     /*
      在给view加阴影并且同时加圆角的时候，会遇到经典的masksToBounds问题，masksToBounds为YES或NO时，仅阴影或圆角生效，不能同时生效。为解决此问题，解决办法是加一层layer来实现。
      要点：
      1. shadow加到单独的layer上面，layer和view.layer同frame，并且是路经阴影额？，然后加到view的底层；
      2. 在view的layer上面加cornerRadius。
      */
-    CALayer *shadowLayer = [CALayer layer];
-    shadowLayer.frame = self.layer.frame;
-    
-    shadowLayer.shadowColor = [UIColor blackColor].CGColor;//shadowColor阴影颜色
-    shadowLayer.shadowOffset = CGSizeMake(0, 0);//shadowOffset阴影偏移，默认(0, -3),这个跟shadowRadius配合使用
-    shadowLayer.shadowOpacity = shadowOpacity;//阴影透明度，默认0
-    shadowLayer.shadowRadius = shadowRadius;//阴影半径，默认3
-    
-    //路径阴影
-    UIBezierPath *path = [UIBezierPath bezierPath];
-    
-    float width = shadowLayer.bounds.size.width;
-    float height = shadowLayer.bounds.size.height;
-    float x = shadowLayer.bounds.origin.x;
-    float y = shadowLayer.bounds.origin.y;
-    
-    CGPoint topLeft      = shadowLayer.bounds.origin;
-    CGPoint topRight     = CGPointMake(x + width, y);
-    CGPoint bottomRight  = CGPointMake(x + width, y + height);
-    CGPoint bottomLeft   = CGPointMake(x, y + height);
-    
-    CGFloat offset = -1.f;
-    [path moveToPoint:CGPointMake(topLeft.x - offset, topLeft.y + cornerRadius)];
-    [path addArcWithCenter:CGPointMake(topLeft.x + cornerRadius, topLeft.y + cornerRadius) radius:(cornerRadius + offset) startAngle:M_PI endAngle:M_PI_2 * 3 clockwise:YES];
-    [path addLineToPoint:CGPointMake(topRight.x - cornerRadius, topRight.y - offset)];
-    [path addArcWithCenter:CGPointMake(topRight.x - cornerRadius, topRight.y + cornerRadius) radius:(cornerRadius + offset) startAngle:M_PI_2 * 3 endAngle:M_PI * 2 clockwise:YES];
-    [path addLineToPoint:CGPointMake(bottomRight.x + offset, bottomRight.y - cornerRadius)];
-    [path addArcWithCenter:CGPointMake(bottomRight.x - cornerRadius, bottomRight.y - cornerRadius) radius:(cornerRadius + offset) startAngle:0 endAngle:M_PI_2 clockwise:YES];
-    [path addLineToPoint:CGPointMake(bottomLeft.x + cornerRadius, bottomLeft.y + offset)];
-    [path addArcWithCenter:CGPointMake(bottomLeft.x + cornerRadius, bottomLeft.y - cornerRadius) radius:(cornerRadius + offset) startAngle:M_PI_2 endAngle:M_PI clockwise:YES];
-    [path addLineToPoint:CGPointMake(topLeft.x - offset, topLeft.y + cornerRadius)];
-    
-    //设置阴影路径
-    shadowLayer.shadowPath = path.CGPath;
+    CALayer *shadowLayer = nil;
+    if (!justHandleCornerRadius) {
+        CALayer *shadowLayer = [CALayer layer];
+        shadowLayer.frame = self.layer.frame;
+        
+        shadowLayer.shadowColor = [UIColor blackColor].CGColor;//shadowColor阴影颜色
+        shadowLayer.shadowOffset = CGSizeMake(0, 0);//shadowOffset阴影偏移，默认(0, -3),这个跟shadowRadius配合使用
+        shadowLayer.shadowOpacity = shadowOpacity;//阴影透明度，默认0
+        shadowLayer.shadowRadius = shadowRadius;//阴影半径，默认3
+        
+        //路径阴影
+        UIBezierPath *path = [UIBezierPath bezierPath];
+        
+        float width = shadowLayer.bounds.size.width;
+        float height = shadowLayer.bounds.size.height;
+        float x = shadowLayer.bounds.origin.x;
+        float y = shadowLayer.bounds.origin.y;
+        
+        CGPoint topLeft      = shadowLayer.bounds.origin;
+        CGPoint topRight     = CGPointMake(x + width, y);
+        CGPoint bottomRight  = CGPointMake(x + width, y + height);
+        CGPoint bottomLeft   = CGPointMake(x, y + height);
+        
+        CGFloat offset = -1.f;
+        [path moveToPoint:CGPointMake(topLeft.x - offset, topLeft.y + cornerRadius)];
+        [path addArcWithCenter:CGPointMake(topLeft.x + cornerRadius, topLeft.y + cornerRadius) radius:(cornerRadius + offset) startAngle:M_PI endAngle:M_PI_2 * 3 clockwise:YES];
+        [path addLineToPoint:CGPointMake(topRight.x - cornerRadius, topRight.y - offset)];
+        [path addArcWithCenter:CGPointMake(topRight.x - cornerRadius, topRight.y + cornerRadius) radius:(cornerRadius + offset) startAngle:M_PI_2 * 3 endAngle:M_PI * 2 clockwise:YES];
+        [path addLineToPoint:CGPointMake(bottomRight.x + offset, bottomRight.y - cornerRadius)];
+        [path addArcWithCenter:CGPointMake(bottomRight.x - cornerRadius, bottomRight.y - cornerRadius) radius:(cornerRadius + offset) startAngle:0 endAngle:M_PI_2 clockwise:YES];
+        [path addLineToPoint:CGPointMake(bottomLeft.x + cornerRadius, bottomLeft.y + offset)];
+        [path addArcWithCenter:CGPointMake(bottomLeft.x + cornerRadius, bottomLeft.y - cornerRadius) radius:(cornerRadius + offset) startAngle:M_PI_2 endAngle:M_PI clockwise:YES];
+        [path addLineToPoint:CGPointMake(topLeft.x - offset, topLeft.y + cornerRadius)];
+        
+        //设置阴影路径
+        shadowLayer.shadowPath = path.CGPath;
+    }
     
     //////// cornerRadius /////////
     self.layer.cornerRadius = cornerRadius;
@@ -158,7 +166,9 @@
     self.layer.shouldRasterize = YES;
     self.layer.rasterizationScale = [UIScreen mainScreen].scale;
     
-    [self.superview.layer insertSublayer:shadowLayer below:self.layer];
+    if (!justHandleCornerRadius) {
+        [self.superview.layer insertSublayer:shadowLayer below:self.layer];
+    }
 }
 @end
 

@@ -10,7 +10,6 @@
 
 #import "PPMaker.h"
 
-#import "PPMake.h"
 
 @interface ViewController ()
 {
@@ -78,16 +77,34 @@
     UIButton *bt = [PPMAKE(PPMakeTypeBT) pp_make:^(PPMake *make) {
 //        __strong typeof(weakM22) strongM22 = weakM22;
 //        strongM22 = make;
-        make.intoView(self.view).bgColor([UIColor redColor]);
+        make.intoView(self.view).bgColor([UIColor cyanColor]);
         make.frame(CGRectMake(40, 100, 200, 50));
         make.actionBlock(^{
             NSLog(@"btn点击了");
         });
 
-        make.normalTitle(@"normal状态");
-        make.normalAttributedFontColor([UIFont systemFontOfSize:35], [UIColor purpleColor]);
-        make.cornerShadow(8, 8, 0.5);
+//        make.normalTitle(@"normal状态");
+        make.normalAttributedFontColorTitle([UIFont systemFontOfSize:35], [UIColor purpleColor],@"normal状态");
+        make.attributedString([NSMutableAttributedString pp_attributedStringMake:^(PPMutAttributedStringMaker *maker) {
+            maker.font([UIFont systemFontOfSize:18]);
+            maker.textColor([UIColor purpleColor]);
+        } str:@"attributedStr"],UIControlStateNormal);
+//
+//        make.cornerShadow(8, 8, 0.5);
+        
+        make.cornerRadius(6);
+        make.borderColor([UIColor redColor]);
+        make.borderWidth(4);
+        make.clickTimeInterval(60);
+        
     }];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(35 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [bt ppmake_reset];
+    });
+    
+    
+
+    
     
     UILabel *lb = [PPMAKE(PPMakeTypeLB) pp_make:^(PPMake *make) {
         make.intoView(self.view).frame(CGRectMake(40, 160, 200, 50));
@@ -100,9 +117,9 @@
             NSLog(@"lb被长恩了");
         });
     }];
-//    [lb ppmake_tapBlock:^{
-//        NSLog(@"lb被点击了");
-//    }];
+
+    
+    
     
 }
 -(void)btnClick

@@ -49,48 +49,48 @@
 
 ### 起初：一个属性一个属性赋值
 ```
-    UILabel *lb = [[UILabel alloc]initWithFrame:CGRectMake(10, 10, 300, 50)];
-    [self.view addSubview:lb];
-    lb.backgroundColor = [UIColor whiteColor];
-    lb.text = @"我是一个lb";
-    lb.textColor = [UIColor blueColor];
-    lb.textAlignment = NSTextAlignmentCenter;
-    lb.font = [UIFont systemFontOfSize:18];
+UILabel *lb = [[UILabel alloc]initWithFrame:CGRectMake(10, 10, 300, 50)];
+[self.view addSubview:lb];
+lb.backgroundColor = [UIColor whiteColor];
+lb.text = @"我是一个lb";
+lb.textColor = [UIColor blueColor];
+lb.textAlignment = NSTextAlignmentCenter;
+lb.font = [UIFont systemFontOfSize:18];
 ```
 ### 后来：用Category快速创建
 ```
 @interface UILabel (EasyMake)
 +(UILabel *)lbMakeWithSuperV:(UIView *)superV
-                       frame:(CGRect)frame
-                        font:(UIFont *)font
-                   alignment:(NSTextAlignment)alignment
-                        text:(NSString *)text
-                   textColor:(UIColor *)textColor;
+frame:(CGRect)frame
+font:(UIFont *)font
+alignment:(NSTextAlignment)alignment
+text:(NSString *)text
+textColor:(UIColor *)textColor;
 
 @implementation UILabel (EasyMake)
 +(UILabel *)lbMakeWithSuperV:(UIView *)superV
-                       frame:(CGRect)frame
-                        font:(UIFont *)font
-                   alignment:(NSTextAlignment)alignment
-                        text:(NSString *)text
-                   textColor:(UIColor *)textColor
+frame:(CGRect)frame
+font:(UIFont *)font
+alignment:(NSTextAlignment)alignment
+text:(NSString *)text
+textColor:(UIColor *)textColor
 {
-    UILabel *lb = [[UILabel alloc]init];
-    if (superV) {
-        [superV addSubview:lb];
-    }
-    if (font) {
-        lb.font = font;
-    }
-    if (text) {
-        lb.text = text;
-    }
-    if (textColor) {
-        lb.textColor = textColor;
-    }
-    lb.frame = frame;
-    lb.textAlignment = alignment;
-    return lb;
+UILabel *lb = [[UILabel alloc]init];
+if (superV) {
+[superV addSubview:lb];
+}
+if (font) {
+lb.font = font;
+}
+if (text) {
+lb.text = text;
+}
+if (textColor) {
+lb.textColor = textColor;
+}
+lb.frame = frame;
+lb.textAlignment = alignment;
+return lb;
 }
 @end
 ```
@@ -109,9 +109,19 @@
 
 当然了，这个库，我会持续更新的，有什么问题，欢迎提出来。或者**谁有更好的做法，热烈欢迎告知一下，深表谢意！**
 
-
-
-
+## Version Update Record
+####  2018-06-09
+> 1. 优化`UIImageView`设置`image`和`UIButton`设置`image`导致`PPMake`想调用`UIButton`时调用成`UIImageView`的`image`;
+> > 具体做法：`UIButton`中的`image` -> `imageState`。
+>
+> 2. 优化`UIButton`中快速设置`attributedStr`,不再依赖对应状态的`title`必须有值;
+> > 具体做法： `attributedFontColor` -> `attributedFontColorTitle`,
+`normalAttributedFontColor` -> `normalAttributedFontColorTitle`,
+`highlightAttributedFontColor` -> `highlightAttributedFontColorTitle`
+>
+> 3. `PPMake`对应的`Category`分离出去，虽然类文件增多，但是不至于都在`PPMake`中，显得过于复杂or臃肿;
+> 4. 处理**圆角+阴影**的情况，如果**阴影+阴影透明度**都为0，只设置圆角。
+> 5. 新增`UIButton`防止重复点击功能；
 
 
 

@@ -11,6 +11,13 @@
 
 #import "UIButton+PPMakeSupport.h"
 #import "UIView+PPMakeSupport.h"
+#import "NSObject+PPMakeSupport.h"
+
+
+#define PPMake_SpecialAssert(_makeType_) \
+NSString *recommendStr = \
+[NSString stringWithFormat:@"☠请注意☠:%@不是%@所拥有的属性！",NSStringFromSelector(_cmd),NSStringFromClass([self.createdView class])]; \
+NSAssert(self.makeType == (_makeType_), recommendStr);
 
 
 #endif /* PPMakeCategory_h */

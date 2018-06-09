@@ -8,6 +8,7 @@
 
 #import "UIButton+PPMakeSupport.h"
 #import <objc/runtime.h>
+#import "NSObject+PPMakeSupport.h"
 
 @implementation UIButton (PPMakeSupport)
 
@@ -26,6 +27,49 @@
     if (actionBlock) {
         actionBlock();
     }
+}
+@end
+
+@implementation UIControl (PPMakeSupport)
+-(NSTimeInterval)clickTimeInterval
+{
+    return [objc_getAssociatedObject(self, _cmd) doubleValue];
+}
+-(void)setClickTimeInterval:(NSTimeInterval)clickTimeInterval
+{
+    objc_setAssociatedObject(self, @selector(clickTimeInterval), @(clickTimeInterval), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+-(BOOL)isIgnoreClickEvent
+{
+    return [objc_getAssociatedObject(self, _cmd) boolValue];
+}
+-(void)setIsIgnoreClickEvent:(BOOL)isIgnoreClickEvent
+{
+    objc_setAssociatedObject(self, @selector(isIgnoreClickEvent), @(isIgnoreClickEvent), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
++(void)load
+{
+    [UIControl ppmake_swizzleWithOriginSelector:@selector(sendAction:to:forEvent:) swizzledSelector:@selector(ppmakeSendAction:to:forEvent:)];
+}
+-(void)ppmakeSendAction:(SEL)action to:(id)target forEvent:(UIEvent *)event
+{
+    if (self.isIgnoreClickEvent) {
+        return;
+    }
+    
+    if (self.clickTimeInterval > 0) {
+        self.isIgnoreClickEvent = YES;
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(self.clickTimeInterval * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            self.isIgnoreClickEvent = NO;
+        });
+    }
+    [self ppmakeSendAction:action to:target forEvent:event];
+}
+-(void)ppmake_reset
+{
+    [self setIsIgnoreClickEvent:NO];
+    self.clickTimeInterval = 0;
 }
 @end
 

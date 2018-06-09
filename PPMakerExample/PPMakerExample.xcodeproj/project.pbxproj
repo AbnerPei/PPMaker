@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		572209CE20AD7EA700611BFA /* PPMake.m in Sources */ = {isa = PBXBuildFile; fileRef = 572209CD20AD7EA700611BFA /* PPMake.m */; };
 		572209D220AEBBA500611BFA /* UIButton+PPMakeSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 572209D120AEBBA500611BFA /* UIButton+PPMakeSupport.m */; };
+		5798F86720CB856400C20029 /* PPMake+UILabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5798F86620CB856400C20029 /* PPMake+UILabel.m */; };
+		5798F86A20CB85E700C20029 /* PPMake+UIButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 5798F86920CB85E700C20029 /* PPMake+UIButton.m */; };
+		5798F86D20CB862200C20029 /* PPMake+UITableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5798F86C20CB862200C20029 /* PPMake+UITableView.m */; };
+		5798F87020CB899600C20029 /* PPMake+UIImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5798F86F20CB899600C20029 /* PPMake+UIImageView.m */; };
+		5798F87420CBA48E00C20029 /* NSObject+PPMakeSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 5798F87320CBA48E00C20029 /* NSObject+PPMakeSupport.m */; };
+		5798F87620CBBC2700C20029 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 5798F87520CBBC2700C20029 /* README.md */; };
 		57CB436E20A1BA8A00268DBE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 57CB436D20A1BA8A00268DBE /* AppDelegate.m */; };
 		57CB437120A1BA8A00268DBE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57CB437020A1BA8A00268DBE /* ViewController.m */; };
 		57CB437420A1BA8A00268DBE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57CB437220A1BA8A00268DBE /* Main.storyboard */; };
@@ -30,6 +36,17 @@
 		572209D020AEBBA500611BFA /* UIButton+PPMakeSupport.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+PPMakeSupport.h"; sourceTree = "<group>"; };
 		572209D120AEBBA500611BFA /* UIButton+PPMakeSupport.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+PPMakeSupport.m"; sourceTree = "<group>"; };
 		572209D320AEBBF700611BFA /* PPMakeCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMakeCategory.h; sourceTree = "<group>"; };
+		5798F86520CB856400C20029 /* PPMake+UILabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PPMake+UILabel.h"; sourceTree = "<group>"; };
+		5798F86620CB856400C20029 /* PPMake+UILabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "PPMake+UILabel.m"; sourceTree = "<group>"; };
+		5798F86820CB85E700C20029 /* PPMake+UIButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PPMake+UIButton.h"; sourceTree = "<group>"; };
+		5798F86920CB85E700C20029 /* PPMake+UIButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "PPMake+UIButton.m"; sourceTree = "<group>"; };
+		5798F86B20CB862200C20029 /* PPMake+UITableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PPMake+UITableView.h"; sourceTree = "<group>"; };
+		5798F86C20CB862200C20029 /* PPMake+UITableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "PPMake+UITableView.m"; sourceTree = "<group>"; };
+		5798F86E20CB899600C20029 /* PPMake+UIImageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PPMake+UIImageView.h"; sourceTree = "<group>"; };
+		5798F86F20CB899600C20029 /* PPMake+UIImageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "PPMake+UIImageView.m"; sourceTree = "<group>"; };
+		5798F87220CBA48E00C20029 /* NSObject+PPMakeSupport.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+PPMakeSupport.h"; sourceTree = "<group>"; };
+		5798F87320CBA48E00C20029 /* NSObject+PPMakeSupport.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+PPMakeSupport.m"; sourceTree = "<group>"; };
+		5798F87520CBBC2700C20029 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../../README.md; sourceTree = "<group>"; };
 		57CB436920A1BA8A00268DBE /* PPMakerExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PPMakerExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57CB436C20A1BA8A00268DBE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		57CB436D20A1BA8A00268DBE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -73,6 +90,14 @@
 			children = (
 				572209CC20AD7EA700611BFA /* PPMake.h */,
 				572209CD20AD7EA700611BFA /* PPMake.m */,
+				5798F86520CB856400C20029 /* PPMake+UILabel.h */,
+				5798F86620CB856400C20029 /* PPMake+UILabel.m */,
+				5798F86820CB85E700C20029 /* PPMake+UIButton.h */,
+				5798F86920CB85E700C20029 /* PPMake+UIButton.m */,
+				5798F86B20CB862200C20029 /* PPMake+UITableView.h */,
+				5798F86C20CB862200C20029 /* PPMake+UITableView.m */,
+				5798F86E20CB899600C20029 /* PPMake+UIImageView.h */,
+				5798F86F20CB899600C20029 /* PPMake+UIImageView.m */,
 			);
 			path = PPMake;
 			sourceTree = "<group>";
@@ -85,6 +110,8 @@
 				572209D120AEBBA500611BFA /* UIButton+PPMakeSupport.m */,
 				57CF99A920B50331005EB9E9 /* UIView+PPMakeSupport.h */,
 				57CF99AA20B50331005EB9E9 /* UIView+PPMakeSupport.m */,
+				5798F87220CBA48E00C20029 /* NSObject+PPMakeSupport.h */,
+				5798F87320CBA48E00C20029 /* NSObject+PPMakeSupport.m */,
 			);
 			path = PPMakeCategory;
 			sourceTree = "<group>";
@@ -197,6 +224,7 @@
 		57CF99A820B45771005EB9E9 /* PPTeemo */ = {
 			isa = PBXGroup;
 			children = (
+				5798F87520CBBC2700C20029 /* README.md */,
 			);
 			path = PPTeemo;
 			sourceTree = "<group>";
@@ -260,6 +288,7 @@
 			files = (
 				57CB437920A1BA8D00268DBE /* LaunchScreen.storyboard in Resources */,
 				57CB437620A1BA8D00268DBE /* Assets.xcassets in Resources */,
+				5798F87620CBBC2700C20029 /* README.md in Resources */,
 				57CB437420A1BA8A00268DBE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -272,11 +301,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				57CF99AB20B50331005EB9E9 /* UIView+PPMakeSupport.m in Sources */,
+				5798F87420CBA48E00C20029 /* NSObject+PPMakeSupport.m in Sources */,
 				57CB439520A1BAAC00268DBE /* PPTableViewMaker.m in Sources */,
 				572209CE20AD7EA700611BFA /* PPMake.m in Sources */,
 				57CB439720A1BAAC00268DBE /* PPLabelMaker.m in Sources */,
+				5798F87020CB899600C20029 /* PPMake+UIImageView.m in Sources */,
+				5798F86720CB856400C20029 /* PPMake+UILabel.m in Sources */,
+				5798F86D20CB862200C20029 /* PPMake+UITableView.m in Sources */,
 				57CB437120A1BA8A00268DBE /* ViewController.m in Sources */,
 				57CB437C20A1BA8D00268DBE /* main.m in Sources */,
+				5798F86A20CB85E700C20029 /* PPMake+UIButton.m in Sources */,
 				57CB439420A1BAAC00268DBE /* PPButtonMaker.m in Sources */,
 				57CB439620A1BAAC00268DBE /* PPImageViewMaker.m in Sources */,
 				57CB436E20A1BA8A00268DBE /* AppDelegate.m in Sources */,

@@ -8,6 +8,11 @@
 
 #import "PPMake+UIButton.h"
 
+#define PPMakeBTAssert \
+NSString *rStr = [NSString stringWithFormat:@"☠请注意☠:%@不是%@所拥有的属性！",NSStringFromSelector(_cmd),@"UIButton *"]; \
+NSAssert(self.makeType == PPMakeTypeBT, rStr);
+
+
 @implementation PPMake (UIButton)
 #pragma mark --- private method
 /**
@@ -25,21 +30,21 @@ static inline PPMake *makeBtTC(id tOrC,UIControlState cs,BOOL isT,PPMake *m){
 
 -(PPMake *(^)(NSString *, UIControlState))title
 {
-    PPMake_SpecialAssert(PPMakeTypeBT)
+    PPMakeBTAssert
     return ^PPMake *(NSString *t,UIControlState cs){
         return makeBtTC(t, cs, YES, self);
     };
 }
 -(PPMake *(^)(NSString *))normalTitle
 {
-    PPMake_SpecialAssert(PPMakeTypeBT)
+    PPMakeBTAssert
     return ^PPMake *(NSString *nt){
         return makeBtTC(nt, UIControlStateNormal, YES, self);
     };
 }
 -(PPMake *(^)(NSString *))highlightedTitle
 {
-    PPMake_SpecialAssert(PPMakeTypeBT)
+    PPMakeBTAssert
     return ^PPMake *(NSString *ht){
         return makeBtTC(ht, UIControlStateHighlighted, YES, self);
     };
@@ -47,21 +52,21 @@ static inline PPMake *makeBtTC(id tOrC,UIControlState cs,BOOL isT,PPMake *m){
 
 -(PPMake *(^)(UIColor *, UIControlState))titleColor
 {
-    PPMake_SpecialAssert(PPMakeTypeBT)
+    PPMakeBTAssert
     return ^PPMake *(UIColor *tc,UIControlState cs){
         return makeBtTC(tc, cs, NO, self);
     };
 }
 -(PPMake *(^)(UIColor *))normalTitleColor
 {
-    PPMake_SpecialAssert(PPMakeTypeBT)
+    PPMakeBTAssert
     return ^PPMake *(UIColor *ntc){
         return makeBtTC(ntc, UIControlStateNormal, NO, self);
     };
 }
 -(PPMake *(^)(UIColor *))highlightedTitleColor
 {
-    PPMake_SpecialAssert(PPMakeTypeBT)
+    PPMakeBTAssert
     return ^PPMake *(UIColor *htc){
         return makeBtTC(htc, UIControlStateHighlighted, NO, self);
     };
@@ -73,21 +78,21 @@ static inline PPMake *makeBtTA(id target,SEL action,UIControlEvents ce,PPMake *m
 }
 -(PPMake *(^)(id, SEL, UIControlEvents))addTarget
 {
-    PPMake_SpecialAssert(PPMakeTypeBT)
+    PPMakeBTAssert
     return ^PPMake *(id target,SEL action,UIControlEvents ce){
         return makeBtTA(target, action, ce, self);
     };
 }
 -(PPMake *(^)(id, SEL))addTargetTouchUpInside
 {
-    PPMake_SpecialAssert(PPMakeTypeBT)
+    PPMakeBTAssert
     return ^PPMake *(id target,SEL action){
         return makeBtTA(target, action, UIControlEventTouchUpInside, self);
     };
 }
 -(PPMake *(^)(makeBtActionBlock))actionBlock
 {
-    PPMake_SpecialAssert(PPMakeTypeBT)
+    PPMakeBTAssert
     return ^PPMake *(makeBtActionBlock ab){
         if (ab) {
             UIButton *bt = (UIButton *)self.createdView;
@@ -99,7 +104,7 @@ static inline PPMake *makeBtTA(id target,SEL action,UIControlEvents ce,PPMake *m
 #pragma mark --- 设置button的图片
 -(PPMake *(^)(UIImage *, UIControlState))imageState
 {
-    PPMake_SpecialAssert(PPMakeTypeBT);
+    PPMakeBTAssert
     return ^PPMake *(UIImage *img,UIControlState state){
         UIButton *bt = (UIButton *)self.createdView;
         [bt setImage:img forState:state];
@@ -108,7 +113,7 @@ static inline PPMake *makeBtTA(id target,SEL action,UIControlEvents ce,PPMake *m
 }
 -(PPMake *(^)(NSString *, UIControlState))imageNameState
 {
-    PPMake_SpecialAssert(PPMakeTypeBT);
+    PPMakeBTAssert
     return ^PPMake *(NSString *imgN,UIControlState s){
         UIButton *bt = (UIButton *)self.createdView;
         [bt setImage:[UIImage imageNamed:imgN] forState:s];
@@ -117,7 +122,7 @@ static inline PPMake *makeBtTA(id target,SEL action,UIControlEvents ce,PPMake *m
 }
 -(PPMake *(^)(NSString *))normalImageName
 {
-    PPMake_SpecialAssert(PPMakeTypeBT);
+    PPMakeBTAssert
     return ^PPMake *(NSString *nImgN){
         UIButton *bt = (UIButton *)self.createdView;
         [bt setImage:[UIImage imageNamed:nImgN] forState:UIControlStateNormal];
@@ -126,7 +131,7 @@ static inline PPMake *makeBtTA(id target,SEL action,UIControlEvents ce,PPMake *m
 }
 -(PPMake *(^)(NSString *))highlightedImageName
 {
-    PPMake_SpecialAssert(PPMakeTypeBT);
+    PPMakeBTAssert
     return ^PPMake *(NSString *hImgN){
         UIButton *bt = (UIButton *)self.createdView;
         [bt setImage:[UIImage imageNamed:hImgN] forState:UIControlStateHighlighted];
@@ -136,7 +141,7 @@ static inline PPMake *makeBtTA(id target,SEL action,UIControlEvents ce,PPMake *m
 #pragma mark --- attributedString
 -(PPMake *(^)(NSAttributedString *, UIControlState))attributedString
 {
-    PPMake_SpecialAssert(PPMakeTypeBT);
+    PPMakeBTAssert
     return ^PPMake *(NSAttributedString *as,UIControlState s){
         UIButton *bt = (UIButton *)self.createdView;
         [bt setAttributedTitle:as forState:s];
@@ -153,7 +158,7 @@ static inline PPMake *makeBtTA(id target,SEL action,UIControlEvents ce,PPMake *m
 }
 -(PPMake *(^)(NSAttributedString *))_asWithState:(UIControlState)state
 {
-    PPMake_SpecialAssert(PPMakeTypeBT);
+    PPMakeBTAssert
     return ^PPMake *(NSAttributedString *as){
         UIButton *bt = (UIButton *)self.createdView;
         [bt setAttributedTitle:as forState:state];
@@ -162,7 +167,7 @@ static inline PPMake *makeBtTA(id target,SEL action,UIControlEvents ce,PPMake *m
 }
 -(PPMake *(^)(UIFont *, UIColor *, UIControlState, NSString *))attributedFontColorTitle
 {
-    PPMake_SpecialAssert(PPMakeTypeBT);
+    PPMakeBTAssert
     return ^PPMake *(UIFont *f,UIColor *c,UIControlState cs,NSString *t){
         return [self _configureBtAttributedFont:f color:c state:cs title:t];
     };
@@ -189,13 +194,15 @@ static inline PPMake *makeBtTA(id target,SEL action,UIControlEvents ce,PPMake *m
 {
     return [self _asFontColorTitleWithState:UIControlStateNormal];
 }
--(PPMake *(^)(UIFont *, UIColor *,NSString *t))highlightAttributedFontColor
+-(PPMake *(^)(UIFont *, UIColor *,NSString *t))highlightAttributedFontColorTitle
 {
     return [self _asFontColorTitleWithState:UIControlStateHighlighted];
 }
 -(PPMake *(^)(UIFont *, UIColor *,NSString *))_asFontColorTitleWithState:(UIControlState)state
 {
-    PPMake_SpecialAssert(PPMakeTypeBT);
+    NSString *ppmakeRStr = [NSString stringWithFormat:@"☠请注意☠:%@不是%@所拥有的属性！",NSStringFromSelector(_cmd),NSStringFromClass([self.createdView class])];
+    NSAssert(self.makeType == PPMakeTypeBT, ppmakeRStr);
+    PPMakeBTAssert
     return ^PPMake *(UIFont *f,UIColor *c,NSString *t){
         return [self _configureBtAttributedFont:f color:c state:state title:t];
     };
@@ -204,11 +211,13 @@ static inline PPMake *makeBtTA(id target,SEL action,UIControlEvents ce,PPMake *m
 #pragma mark --- 防止重复点击
 -(PPMake *(^)(NSTimeInterval))clickTimeInterval
 {
-    PPMake_SpecialAssert(PPMakeTypeBT);
+    PPMakeBTAssert
     return ^PPMake *(NSTimeInterval ti){
         UIButton *bt = (UIButton *)self.createdView;
         bt.clickTimeInterval = ti;
         return self;
     };
 }
+
+
 @end

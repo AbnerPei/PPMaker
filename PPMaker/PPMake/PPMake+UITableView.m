@@ -8,15 +8,14 @@
 
 #import "PPMake+UITableView.h"
 
-#define PPMake_TableViewSpecialAssert \
-NSString *tableVRStr = \
-[NSString stringWithFormat:@"☠请注意☠: %@不是%@所拥有的属性!",NSStringFromSelector(_cmd),@"UITableView *"]; \
-NSAssert((self.makeType == PPMakeTypeTableVPlain || self.makeType == PPMakeTypeTableVGrouped), tableVRStr);
+#define PPMakeTableVAssert \
+NSString *rStr = [NSString stringWithFormat:@"☠请注意☠: %@不是%@所拥有的属性!",NSStringFromSelector(_cmd),@"UITableView *"]; \
+NSAssert((self.makeType == PPMakeTypeTableVPlain || self.makeType == PPMakeTypeTableVGrouped), rStr);
 
 @implementation PPMake (UITableView)
 -(PPMake *(^)(id))delegate
 {
-    PPMake_TableViewSpecialAssert
+    PPMakeTableVAssert
     return ^PPMake *(id d){
         UITableView *tableV = (UITableView *)self.createdView;
         tableV.delegate = d;
@@ -27,7 +26,7 @@ NSAssert((self.makeType == PPMakeTypeTableVPlain || self.makeType == PPMakeTypeT
 #pragma mark --- 隐藏分割线(all)
 -(PPMake *(^)(BOOL))hideAllSeparator
 {
-    PPMake_TableViewSpecialAssert
+    PPMakeTableVAssert
     return ^PPMake *(BOOL isHidden){
         if (isHidden) {
             UITableView *tableV = (UITableView *)self.createdView;
@@ -39,7 +38,7 @@ NSAssert((self.makeType == PPMakeTypeTableVPlain || self.makeType == PPMakeTypeT
 #pragma mark --- 隐藏分割线(extra)
 -(PPMake *(^)(BOOL))hideExtraSeparator
 {
-    PPMake_TableViewSpecialAssert
+    PPMakeTableVAssert
     return ^PPMake *(BOOL isHidden){
         if (isHidden) {
             UITableView *tableV = (UITableView *)self.createdView;
@@ -60,4 +59,5 @@ NSAssert((self.makeType == PPMakeTypeTableVPlain || self.makeType == PPMakeTypeT
         return self;
     };
 }
+
 @end

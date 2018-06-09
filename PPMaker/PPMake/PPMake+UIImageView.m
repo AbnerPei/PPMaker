@@ -8,10 +8,14 @@
 
 #import "PPMake+UIImageView.h"
 
+#define PPMakeImgVAssert \
+NSString *rStr = [NSString stringWithFormat:@"☠请注意☠:%@不是%@所拥有的属性！",NSStringFromSelector(_cmd),@"UIImageView *"]; \
+NSAssert(self.makeType == PPMakeTypeImgV, rStr);
+
 @implementation PPMake (UIImageView)
 -(PPMake *(^)(UIImage *))image
 {
-    PPMake_SpecialAssert(PPMakeTypeImgV)
+    PPMakeImgVAssert
     return ^PPMake *(UIImage *image){
         UIImageView *imgV = (UIImageView *)self.createdView;
         imgV.image = image;
@@ -21,7 +25,7 @@
 #pragma mark --- 图片名字
 -(PPMake *(^)(NSString *))imageName
 {
-    PPMake_SpecialAssert(PPMakeTypeImgV)
+    PPMakeImgVAssert
     return ^PPMake *(NSString *imageName){
         UIImageView *imgV = (UIImageView *)self.createdView;
         if (imageName && imageName.length > 0) {
@@ -30,4 +34,5 @@
         return self;
     };
 }
+
 @end

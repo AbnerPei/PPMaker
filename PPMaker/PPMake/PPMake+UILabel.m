@@ -8,11 +8,17 @@
 
 #import "PPMake+UILabel.h"
 
+#define PPMakeLBAssert \
+NSString *rStr = [NSString stringWithFormat:@"☠请注意☠:%@不是%@所拥有的属性！",NSStringFromSelector(_cmd),@"UILabel *"]; \
+NSAssert(self.makeType == PPMakeTypeLB, rStr);
+
 @implementation PPMake (UILabel)
+
 #pragma mark --- 文字
 -(PPMake *(^)(NSString *))text
 {
-    PPMake_SpecialAssert(PPMakeTypeLB)
+    
+    PPMakeLBAssert
     return ^PPMake *(NSString *text){
         UILabel *lb = (UILabel *)self.createdView;
         lb.text = text;
@@ -22,7 +28,7 @@
 #pragma mark --- attributedText
 -(PPMake *(^)(NSAttributedString *))attributedText
 {
-    PPMake_SpecialAssert(PPMakeTypeLB)
+    PPMakeLBAssert
     return ^PPMake *(NSAttributedString *aStr){
         UILabel *lb = (UILabel *)self.createdView;
         lb.attributedText = aStr;
@@ -32,7 +38,7 @@
 #pragma mark --- 字体颜色
 -(PPMake *(^)(UIColor *))textColor
 {
-    PPMake_SpecialAssert(PPMakeTypeLB)
+    PPMakeLBAssert
     return ^PPMake *(UIColor *color){
         UILabel *lb = (UILabel *)self.createdView;
         lb.textColor = color;
@@ -42,7 +48,7 @@
 #pragma mark --- font
 -(PPMake *(^)(UIFont *))font
 {
-    PPMake_SpecialAssert(PPMakeTypeLB)
+    PPMakeLBAssert
     return ^PPMake *(UIFont *font){
         UILabel *lb = (UILabel *)self.createdView;
         lb.font = font;
@@ -51,7 +57,7 @@
 }
 -(PPMake *(^)(CGFloat))fontSize
 {
-    PPMake_SpecialAssert(PPMakeTypeLB)
+    PPMakeLBAssert
     return ^PPMake *(CGFloat fontSize){
         UILabel *lb = (UILabel *)self.createdView;
         lb.font = [UIFont systemFontOfSize:fontSize];
@@ -60,7 +66,7 @@
 }
 -(PPMake *(^)(CGFloat))boldFontSize
 {
-    PPMake_SpecialAssert(PPMakeTypeLB)
+    PPMakeLBAssert
     return ^PPMake *(CGFloat boldFontSize){
         UILabel *lb = (UILabel *)self.createdView;
         lb.font = [UIFont boldSystemFontOfSize:boldFontSize];
@@ -69,7 +75,7 @@
 }
 -(PPMake *(^)(NSString *, CGFloat))fontNameAndSize
 {
-    PPMake_SpecialAssert(PPMakeTypeLB)
+    PPMakeLBAssert
     return ^PPMake *(NSString *fontName,CGFloat fontSize){
         UILabel *lb = (UILabel *)self.createdView;
         lb.font = [UIFont fontWithName:fontName size:fontSize];
@@ -79,7 +85,7 @@
 #pragma mark --- 文字对齐方式
 -(PPMake *(^)(NSTextAlignment))textAlignment
 {
-    PPMake_SpecialAssert(PPMakeTypeLB)
+    PPMakeLBAssert
     return ^PPMake *(NSTextAlignment textAlignment){
         UILabel *lb = (UILabel *)self.createdView;
         lb.textAlignment = textAlignment;
@@ -89,7 +95,7 @@
 #pragma mark --- numberOfLines
 -(PPMake *(^)(NSInteger))numberOfLines
 {
-    PPMake_SpecialAssert(PPMakeTypeLB)
+    PPMakeLBAssert
     return ^PPMake *(NSInteger numberOfLines){
         UILabel *lb = (UILabel *)self.createdView;
         lb.numberOfLines = numberOfLines;
@@ -99,11 +105,13 @@
 #pragma mark --- 尾巴
 -(PPMake *(^)(NSLineBreakMode))lineBreakMode
 {
-    PPMake_SpecialAssert(PPMakeTypeLB)
+    PPMakeLBAssert
     return ^PPMake *(NSLineBreakMode lineBreakMode){
         UILabel *lb = (UILabel *)self.createdView;
         lb.lineBreakMode = lineBreakMode;
         return self;
     };
 }
+
+
 @end

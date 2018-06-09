@@ -113,7 +113,7 @@ return lb;
 
 #### 2018-06-10
 1. 真正解决了`XCode`警告，同时优化提升信息更清晰，如：当用`UILabel *`调用`UIButton *`的`titleState`后运行，控制台会提示“Terminating app due to uncaught exception 'NSInternalInconsistencyException', reason: '💊请注意💊:titleState不是UILabel所拥有的属性，而是UIButton所特有的！More see -[PPMake(UIButton) titleState] 第33行'”；
-2. `UIButton`新增`setTitleEdgeInsets`;
+2. `UIButton`新增`setImageEdgeInsets`和`setTitleEdgeInsets`;
 
 ####  2018-06-09
 1. 优化`UIImageView`设置`image`和`UIButton`设置`image`导致`PPMake`想调用`UIButton`时调用成`UIImageView`的`image`;

@@ -110,18 +110,22 @@ return lb;
 当然了，这个库，我会持续更新的，有什么问题，欢迎提出来。或者**谁有更好的做法，热烈欢迎告知一下，深表谢意！**
 
 ## Version Update Record
+
+#### 2018-06-10
+1. 真正解决了`XCode`警告，同时优化提升信息更清晰，如：当用`UILabel *`调用`UIButton *`的`titleState`后运行，控制台会提示“Terminating app due to uncaught exception 'NSInternalInconsistencyException', reason: '💊请注意💊:titleState不是UILabel所拥有的属性，而是UIButton所特有的！More see -[PPMake(UIButton) titleState] 第33行'”；
+2. `UIButton`新增`setImageEdgeInsets`和`setTitleEdgeInsets`;
+
 ####  2018-06-09
-> 1. 优化`UIImageView`设置`image`和`UIButton`设置`image`导致`PPMake`想调用`UIButton`时调用成`UIImageView`的`image`;
-> > 具体做法：`UIButton`中的`image` -> `imageState`。
->
-> 2. 优化`UIButton`中快速设置`attributedStr`,不再依赖对应状态的`title`必须有值;
-> > 具体做法： `attributedFontColor` -> `attributedFontColorTitle`,
+1. 优化`UIImageView`设置`image`和`UIButton`设置`image`导致`PPMake`想调用`UIButton`时调用成`UIImageView`的`image`;
+** 具体做法**：`UIButton`中的`image` -> `imageState`。
+2. 优化`UIButton`中快速设置`attributedStr`,不再依赖对应状态的`title`必须有值;
+**具体做法**： `attributedFontColor` -> `attributedFontColorTitle`,
 `normalAttributedFontColor` -> `normalAttributedFontColorTitle`,
 `highlightAttributedFontColor` -> `highlightAttributedFontColorTitle`
->
-> 3. `PPMake`对应的`Category`分离出去，虽然类文件增多，但是不至于都在`PPMake`中，显得过于复杂or臃肿;
-> 4. 处理**圆角+阴影**的情况，如果**阴影+阴影透明度**都为0，只设置圆角。
-> 5. 新增`UIButton`防止重复点击功能；
+3. `PPMake`对应的`Category`分离出去，虽然类文件增多，但是不至于都在`PPMake`中，显得过于复杂or臃肿;
+4. 处理**圆角+阴影**的情况，如果**阴影+阴影透明度**都为0，只设置圆角。
+5. 新增`UIButton`防止重复点击功能；
+
 
 
 

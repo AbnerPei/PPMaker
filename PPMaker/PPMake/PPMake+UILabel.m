@@ -8,16 +8,16 @@
 
 #import "PPMake+UILabel.h"
 
-#define PPMakeLBAssert \
-NSString *rStr = [NSString stringWithFormat:@"☠请注意☠:%@不是%@所拥有的属性！",NSStringFromSelector(_cmd),@"UILabel *"]; \
-NSAssert(self.makeType == PPMakeTypeLB, rStr);
 
 @implementation PPMake (UILabel)
+
+#define PPMakeLBAssert \
+NSString *lbRStr = [NSString stringWithFormat:@"💊请注意💊:%@不是%@所拥有的属性，而是UILabel所特有的！More see %s 第%d行",NSStringFromSelector(_cmd),NSStringFromClass([self.createdView class]),__FUNCTION__,__LINE__]; \
+NSAssert(self.makeType == PPMakeTypeLB, lbRStr);
 
 #pragma mark --- 文字
 -(PPMake *(^)(NSString *))text
 {
-    
     PPMakeLBAssert
     return ^PPMake *(NSString *text){
         UILabel *lb = (UILabel *)self.createdView;

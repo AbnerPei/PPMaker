@@ -8,10 +8,6 @@
 
 #import "PPMake+UIButton.h"
 
-#define PPMakeBTAssert \
-NSString *rStr = [NSString stringWithFormat:@"☠请注意☠:%@不是%@所拥有的属性！",NSStringFromSelector(_cmd),@"UIButton *"]; \
-NSAssert(self.makeType == PPMakeTypeBT, rStr);
-
 
 @implementation PPMake (UIButton)
 #pragma mark --- private method
@@ -28,7 +24,11 @@ static inline PPMake *makeBtTC(id tOrC,UIControlState cs,BOOL isT,PPMake *m){
     return m;
 }
 
--(PPMake *(^)(NSString *, UIControlState))title
+#define PPMakeBTAssert \
+NSString *btRStr = [NSString stringWithFormat:@"💊请注意💊:%@不是%@所拥有的属性，而是UIButton所特有的！More see %s 第%d行",NSStringFromSelector(_cmd),NSStringFromClass([self.createdView class]),__FUNCTION__,__LINE__]; \
+NSAssert(self.makeType == PPMakeTypeBT, btRStr);
+
+-(PPMake *(^)(NSString *, UIControlState))titleState
 {
     PPMakeBTAssert
     return ^PPMake *(NSString *t,UIControlState cs){
@@ -50,7 +50,7 @@ static inline PPMake *makeBtTC(id tOrC,UIControlState cs,BOOL isT,PPMake *m){
     };
 }
 
--(PPMake *(^)(UIColor *, UIControlState))titleColor
+-(PPMake *(^)(UIColor *, UIControlState))titleColorState
 {
     PPMakeBTAssert
     return ^PPMake *(UIColor *tc,UIControlState cs){
@@ -139,7 +139,7 @@ static inline PPMake *makeBtTA(id target,SEL action,UIControlEvents ce,PPMake *m
     };
 }
 #pragma mark --- attributedString
--(PPMake *(^)(NSAttributedString *, UIControlState))attributedString
+-(PPMake *(^)(NSAttributedString *, UIControlState))attributedStringState
 {
     PPMakeBTAssert
     return ^PPMake *(NSAttributedString *as,UIControlState s){
@@ -165,10 +165,10 @@ static inline PPMake *makeBtTA(id target,SEL action,UIControlEvents ce,PPMake *m
         return self;
     };
 }
--(PPMake *(^)(UIFont *, UIColor *, UIControlState, NSString *))attributedFontColorTitle
+-(PPMake *(^)(UIFont *, UIColor *, NSString *, UIControlState))attributedFontColorTitleState
 {
     PPMakeBTAssert
-    return ^PPMake *(UIFont *f,UIColor *c,UIControlState cs,NSString *t){
+    return ^PPMake *(UIFont *f,UIColor *c,NSString *t,UIControlState cs){
         return [self _configureBtAttributedFont:f color:c state:cs title:t];
     };
 }
@@ -215,6 +215,25 @@ static inline PPMake *makeBtTA(id target,SEL action,UIControlEvents ce,PPMake *m
     return ^PPMake *(NSTimeInterval ti){
         UIButton *bt = (UIButton *)self.createdView;
         bt.clickTimeInterval = ti;
+        return self;
+    };
+}
+
+-(PPMake *(^)(CGFloat, CGFloat, CGFloat, CGFloat))setImageEdgeInsets
+{
+    PPMakeBTAssert
+    return ^PPMake *(CGFloat top, CGFloat left, CGFloat bottom, CGFloat right){
+        UIButton *bt = (UIButton *)self.createdView;
+        [bt setImageEdgeInsets:UIEdgeInsetsMake(top, left, bottom, right)];
+        return self;
+    };
+}
+-(PPMake *(^)(CGFloat, CGFloat, CGFloat, CGFloat))setTitleEdgeInsets
+{
+    PPMakeBTAssert
+    return ^PPMake *(CGFloat top, CGFloat left, CGFloat bottom, CGFloat right){
+        UIButton *bt = (UIButton *)self.createdView;
+        [bt setTitleEdgeInsets:UIEdgeInsetsMake(top, left, bottom, right)];
         return self;
     };
 }

@@ -85,10 +85,10 @@
 
 //        make.normalTitle(@"normal状态");
         make.normalAttributedFontColorTitle([UIFont systemFontOfSize:35], [UIColor purpleColor],@"normal状态");
-        make.attributedString([NSMutableAttributedString pp_attributedStringMake:^(PPMutAttributedStringMaker *maker) {
+        make.normalAttributedString([NSMutableAttributedString pp_attributedStringMake:^(PPMutAttributedStringMaker *maker) {
             maker.font([UIFont systemFontOfSize:18]);
             maker.textColor([UIColor purpleColor]);
-        } str:@"attributedStr"],UIControlStateNormal);
+        } str:@"attributedStr"]);
 //
 //        make.cornerShadow(8, 8, 0.5);
         
@@ -96,6 +96,8 @@
         make.borderColor([UIColor redColor]);
         make.borderWidth(4);
         make.clickTimeInterval(60);
+        
+//        make.text(@"88888");
         
     }];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(35 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
@@ -116,6 +118,7 @@
         make.longPressBlock(^{
             NSLog(@"lb被长恩了");
         });
+        make.titleState(@"8888", UIControlStateNormal);
     }];
 
     

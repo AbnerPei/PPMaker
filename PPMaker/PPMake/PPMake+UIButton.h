@@ -10,14 +10,14 @@
 
 @interface PPMake (UIButton)
 /**【通用】设置state对应的title */
-@property(nonatomic,copy,readonly) PPMake *(^title)(NSString *title,UIControlState state);
+@property(nonatomic,copy,readonly) PPMake *(^titleState)(NSString *title,UIControlState state);
 /** 设置normal对应的title */
 @property(nonatomic,copy,readonly) PPMake *(^normalTitle)(NSString *normalTitle);
 /** 设置Highlighted对应的title */
 @property(nonatomic,copy,readonly) PPMake *(^highlightedTitle)(NSString *highlightedTitle);
 
 /**【通用】设置state对应的titleColor */
-@property(nonatomic,copy,readonly) PPMake *(^titleColor)(UIColor *titleColor,UIControlState state);
+@property(nonatomic,copy,readonly) PPMake *(^titleColorState)(UIColor *titleColor,UIControlState state);
 /** 设置normal对应的titleColor */
 @property(nonatomic,copy,readonly) PPMake *(^normalTitleColor)(UIColor *normalTitleColor);
 /** 设置Highlighted对应的titleColor */
@@ -38,11 +38,11 @@
  * 【UIButton】注意：1> 设置了attributedString。setTitle/setTitleColor等会失效，attributedString优先级高。
  * 【♘♘♘ 注意区分button的attributedText。】
  */
-@property(nonatomic,copy,readonly) PPMake *(^attributedString)(NSAttributedString *attributedString,UIControlState state);
+@property(nonatomic,copy,readonly) PPMake *(^attributedStringState)(NSAttributedString *attributedString,UIControlState state);
 @property(nonatomic,copy,readonly) PPMake *(^normalAttributedString)(NSAttributedString *normalAttributedString);
 @property(nonatomic,copy,readonly) PPMake *(^highlightAttributedString)(NSAttributedString *highlightAttributedString);
 
-@property(nonatomic,copy,readonly) PPMake *(^attributedFontColorTitle)(UIFont *titleFont,UIColor *titleColor,UIControlState state,NSString *title);
+@property(nonatomic,copy,readonly) PPMake *(^attributedFontColorTitleState)(UIFont *titleFont,UIColor *titleColor,NSString *title,UIControlState state);
 @property(nonatomic,copy,readonly) PPMake *(^normalAttributedFontColorTitle)(UIFont *normalTitleFont,UIColor *normalTitleColor,NSString *title);
 @property(nonatomic,copy,readonly) PPMake *(^highlightAttributedFontColorTitle)(UIFont *highlightTitleFont,UIColor *highlightTitleColor,NSString *title);
 
@@ -51,5 +51,11 @@
  * 👍👍 如果在timeInterval内，想让button恢复响应，bt可调用ppmake_reset方法来实现。
  */
 @property(nonatomic,assign,readonly) PPMake *(^clickTimeInterval)(NSTimeInterval timeInterval);
+
+/**【bt】: setImageEdgeInsets*/
+@property(nonatomic,copy,readonly) PPMake *(^setImageEdgeInsets)(CGFloat top, CGFloat left, CGFloat bottom, CGFloat right);
+/**【bt】: setTitleEdgeInsets*/
+@property(nonatomic,copy,readonly) PPMake *(^setTitleEdgeInsets)(CGFloat top, CGFloat left, CGFloat bottom, CGFloat right);
+
 
 @end

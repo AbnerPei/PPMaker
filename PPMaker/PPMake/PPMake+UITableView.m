@@ -8,13 +8,7 @@
 
 #import "PPMake+UITableView.h"
 
-
 @implementation PPMake (UITableView)
-
-#define PPMakeTableVAssert \
-NSString *tableVRStr = [NSString stringWithFormat:@"💊请注意💊:%@不是%@所拥有的属性，而是UITableView所特有的！More see %s 第%d行",NSStringFromSelector(_cmd),NSStringFromClass([self.createdView class]),__FUNCTION__,__LINE__]; \
-NSAssert(self.makeType == PPMakeTypeTableVPlain || self.makeType == PPMakeTypeTableVGrouped, tableVRStr);
-
 
 -(PPMake *(^)(id))delegate
 {

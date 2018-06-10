@@ -10,9 +10,7 @@
 
 @implementation PPMake (UIImageView)
 
-#define PPMakeImgVAssert \
-NSString *imgVRStr = [NSString stringWithFormat:@"💊请注意💊:%@不是%@所拥有的属性，而是UIImageView所特有的！More see %s 第%d行",NSStringFromSelector(_cmd),NSStringFromClass([self.createdView class]),__FUNCTION__,__LINE__]; \
-NSAssert(self.makeType == PPMakeTypeImgV, imgVRStr);
+
 
 
 -(PPMake *(^)(UIImage *))image

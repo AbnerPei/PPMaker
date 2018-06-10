@@ -118,7 +118,7 @@
         make.longPressBlock(^{
             NSLog(@"lb被长恩了");
         });
-        make.titleState(@"8888", UIControlStateNormal);
+//        make.titleState(@"8888", UIControlStateNormal);
     }];
 
     

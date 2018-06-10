@@ -8,12 +8,6 @@
 
 #import "PPMake+UIButton.h"
 
-#define kCMDStr  NSStringFromSelector(_cmd)
-#define kCreatedView  NSStringFromClass([self.createdView class])
-
-#define PPMakeBTAssert \
-NSAssert(self.makeType == PPMakeTypeBT, @"💊崩溃原因💊: %@是UIButton的一个属性，不能用于%@。More see %s,第%d行。",kCMDStr,kCreatedView,__FUNCTION__,__LINE__);
-
 @implementation PPMake (UIButton)
 #pragma mark --- private method
 /**
@@ -32,8 +26,8 @@ static inline PPMake *makeBtTC(id tOrC,UIControlState cs,BOOL isT,PPMake *m){
 
 -(PPMake *(^)(NSString *, UIControlState))titleState
 {
-
-        PPMakeBTAssert
+    
+    PPMakeBTAssert
     return ^PPMake *(NSString *t,UIControlState cs){
         return makeBtTC(t, cs, YES, self);
     };
@@ -153,15 +147,16 @@ static inline PPMake *makeBtTA(id target,SEL action,UIControlEvents ce,PPMake *m
 }
 -(PPMake *(^)(NSAttributedString *))normalAttributedString
 {
+    PPMakeBTAssert
     return [self _asWithState:UIControlStateNormal];
 }
 -(PPMake *(^)(NSAttributedString *))highlightAttributedString
 {
+    PPMakeBTAssert
     return [self _asWithState:UIControlStateHighlighted];
 }
 -(PPMake *(^)(NSAttributedString *))_asWithState:(UIControlState)state
 {
-    PPMakeBTAssert
     return ^PPMake *(NSAttributedString *as){
         UIButton *bt = (UIButton *)self.createdView;
         [bt setAttributedTitle:as forState:state];
@@ -195,17 +190,16 @@ static inline PPMake *makeBtTA(id target,SEL action,UIControlEvents ce,PPMake *m
 }
 -(PPMake *(^)(UIFont *, UIColor *, NSString *))normalAttributedFontColorTitle
 {
+    PPMakeBTAssert
     return [self _asFontColorTitleWithState:UIControlStateNormal];
 }
 -(PPMake *(^)(UIFont *, UIColor *,NSString *t))highlightAttributedFontColorTitle
 {
+    PPMakeBTAssert
     return [self _asFontColorTitleWithState:UIControlStateHighlighted];
 }
 -(PPMake *(^)(UIFont *, UIColor *,NSString *))_asFontColorTitleWithState:(UIControlState)state
 {
-    NSString *ppmakeRStr = [NSString stringWithFormat:@"☠请注意☠:%@不是%@所拥有的属性！",NSStringFromSelector(_cmd),NSStringFromClass([self.createdView class])];
-    NSAssert(self.makeType == PPMakeTypeBT, ppmakeRStr);
-    PPMakeBTAssert
     return ^PPMake *(UIFont *f,UIColor *c,NSString *t){
         return [self _configureBtAttributedFont:f color:c state:state title:t];
     };

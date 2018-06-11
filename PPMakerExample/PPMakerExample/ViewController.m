@@ -118,6 +118,7 @@
         make.longPressBlock(^{
             NSLog(@"lb被长恩了");
         });
+        //打开这个会奔溃，并且有相应的提示。
 //        make.titleState(@"8888", UIControlStateNormal);
     }];
 

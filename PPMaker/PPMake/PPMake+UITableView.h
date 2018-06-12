@@ -12,7 +12,7 @@
 
 /** delegate && datasource */
 @property(nonatomic,copy,readonly) PPMake *(^delegate)(id delegate);
-/** 去掉所有的分割线 */
+/** 去掉所有的分割线 (默认已经去掉，在初始化话view的时候)*/
 @property(nonatomic,copy,readonly) PPMake *(^hideAllSeparator)(BOOL ishidden);
 /** 去掉多余的分割线 */
 @property(nonatomic,copy,readonly) PPMake *(^hideExtraSeparator)(BOOL isHidden);

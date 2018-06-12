@@ -53,11 +53,16 @@ if (!self.creatingV.layer.masksToBounds) { \
             break;
             //UITableView
         case PPMakeTypeTableVPlain:{
-            m.creatingV = [[UITableView alloc]initWithFrame:CGRectZero style:UITableViewStylePlain];
+            UITableView *tableV = [[UITableView alloc]initWithFrame:CGRectZero style:UITableViewStylePlain];
+            tableV.separatorStyle = UITableViewCellSeparatorStyleNone;
+            m.creatingV = tableV;
+            
         }
             break;
         case PPMakeTypeTableVGrouped:{
-            m.creatingV = [[UITableView alloc]initWithFrame:CGRectZero style:UITableViewStyleGrouped];
+            UITableView *tableV = [[UITableView alloc]initWithFrame:CGRectZero style:UITableViewStyleGrouped];
+            tableV.separatorStyle = UITableViewCellSeparatorStyleNone;
+            m.creatingV = tableV;
         }
             break;
             

@@ -48,7 +48,6 @@ if (!self.creatingV.layer.masksToBounds) { \
             //UIImageView
         case PPMakeTypeImgV:{
             m.creatingV = [[UIImageView alloc]init];
-            m.creatingV.contentMode = UIViewContentModeScaleAspectFit;
         }
             break;
             //UITableView
@@ -155,6 +154,15 @@ if (!self.creatingV.layer.masksToBounds) { \
     return ^PPMake *(UIColor *bc){
         kMasksToBounds
         self.creatingV.layer.borderColor = bc.CGColor;
+        return self;
+    };
+}
+
+#pragma mark --- 是否裁剪超过父视图的部分， 系统默认NO
+-(PPMake *(^)(BOOL))clipsToBounds
+{
+    return ^PPMake *(BOOL cb){
+        self.creatingV.clipsToBounds = cb;
         return self;
     };
 }

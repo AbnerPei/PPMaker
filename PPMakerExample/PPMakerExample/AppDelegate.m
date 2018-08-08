@@ -8,6 +8,9 @@
 
 #import "AppDelegate.h"
 
+#import "PPMakeSystemTabBarController.h"
+#import "PPMakeBaseNavigationController.h"
+
 @interface AppDelegate ()
 
 @end
@@ -17,6 +20,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    PPMakeSystemTabBarController *tabbarVC = [[PPMakeSystemTabBarController alloc]init];
+    PPMakeBaseNavigationController *navigationC = [[PPMakeBaseNavigationController alloc]initWithRootViewController:tabbarVC];
+    self.window.rootViewController = navigationC;
+    [self.window makeKeyAndVisible];
     return YES;
 }
 

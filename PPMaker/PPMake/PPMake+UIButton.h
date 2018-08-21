@@ -7,6 +7,7 @@
 //
 
 #import "PPMake.h"
+#import "UIButton+PPMakeSupport.h"
 
 @interface PPMake (UIButton)
 /**【通用】设置state对应的title */

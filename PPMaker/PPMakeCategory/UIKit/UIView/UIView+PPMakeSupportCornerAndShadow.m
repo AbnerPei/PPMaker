@@ -8,6 +8,7 @@
 
 #import "UIView+PPMakeSupportCornerAndShadow.h"
 #import <objc/runtime.h>
+#import "NSObject+PPMakeSupport.h"
 
 @implementation UIView (PPMakeSupportCornerAndShadow)
 +(void)load

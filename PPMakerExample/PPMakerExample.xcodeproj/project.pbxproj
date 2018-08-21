@@ -132,7 +132,6 @@
 		571519CD2128A5E600F63DFD /* PPMakeNotificationCenter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPMakeNotificationCenter.m; sourceTree = "<group>"; };
 		572209CC20AD7EA700611BFA /* PPMake.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMake.h; sourceTree = "<group>"; };
 		572209CD20AD7EA700611BFA /* PPMake.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPMake.m; sourceTree = "<group>"; };
-		572209D320AEBBF700611BFA /* PPMakeCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMakeCategory.h; sourceTree = "<group>"; };
 		572D03E220EF1C3D000FFC23 /* PPMakeKitExampleListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMakeKitExampleListCell.h; sourceTree = "<group>"; };
 		572D03E320EF1C3D000FFC23 /* PPMakeKitExampleListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPMakeKitExampleListCell.m; sourceTree = "<group>"; };
 		572D03E620EF2F90000FFC23 /* UITableViewCell+PPMakeSupport.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+PPMakeSupport.h"; sourceTree = "<group>"; };
@@ -423,7 +422,6 @@
 		572209CF20AEBB6C00611BFA /* PPMakeCategory */ = {
 			isa = PBXGroup;
 			children = (
-				572209D320AEBBF700611BFA /* PPMakeCategory.h */,
 				5798F8B220D2419600C20029 /* Foundation */,
 				5798F8B720D2419600C20029 /* UIKit */,
 			);

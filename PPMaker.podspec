@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "PPMaker"
-  s.version      = "0.0.238"
+  s.version      = "0.0.239"
   s.summary      = "终极版、链式创建UIView/UIlabel/UIImageView/UIButton/UItableView等，像使用Masonry一样 to use !"
 
   # This description is used to generate tags and improve search results.
@@ -61,8 +61,54 @@ Pod::Spec.new do |s|
   s.source_files  = 'PPMaker/PPMaker.h'
 
   s.subspec 'PPMakeCategory' do |ss|
-    ss.source_files = 'PPMaker/PPMakeCategory/*.{h,m}'
-    end
+  	ss.subspec 'Foundation' do |ssFoundation|
+  		ssFoundation.subspec 'NSString' do |ssStr|
+  			ssStr.source_files = 'PPMaker/PPMakeCategory/Foundation/NSString/*.{h,m}'
+  		end
+
+  		ssFoundation.subspec 'NSMutableAttributedString' do |ssMutStr|
+  		    ssMutStr.source_files = 'PPMaker/PPMakeCategory/Foundation/NSMutableAttributedString/*.{h,m}'
+  		end 
+
+  		ssFoundation.subspec 'NSObject' do |ssObj|
+  		    ssObj.source_files = 'PPMaker/PPMakeCategory/Foundation/NSObject/*.{h,m}'
+  		end 
+  	end
+
+  	ss.subspec 'UIKit' do |ssUIKit|
+  		ssUIKit.subspec 'UITableViewCell' do |ssCell|
+  			ssCell.source_files = 'PPMaker/PPMakeCategory/UIKit/UITableViewCell/*.{h,m}'
+  		end
+
+  		ssUIKit.subspec 'UIScrollView' do |ssScrollView|
+  			ssScrollView.source_files = 'PPMaker/PPMakeCategory/UIKit/UIScrollView/*.{h,m}'
+  		end
+
+  		ssUIKit.subspec 'UIImage' do |ssImage|
+  			ssImage.source_files = 'PPMaker/PPMakeCategory/UIKit/UIImage/*.{h,m}'
+  		end
+
+  		ssUIKit.subspec 'UIColor' do |ssColor|
+  			ssColor.source_files = 'PPMaker/PPMakeCategory/UIKit/UIColor/*.{h,m}'
+  		end
+
+  		ssUIKit.subspec 'UIDevice' do |ssDevice|
+  			ssDevice.source_files = 'PPMaker/PPMakeCategory/UIKit/UIDevice/*.{h,m}'
+  		end
+
+  		ssUIKit.subspec 'UIFont' do |ssFont|
+  			ssFont.source_files = 'PPMaker/PPMakeCategory/UIKit/UIFont/*.{h,m}'
+  		end
+
+  		ssUIKit.subspec 'UIButton' do |ssButton|
+  			ssButton.source_files = 'PPMaker/PPMakeCategory/UIKit/UIButton/*.{h,m}'
+  		end
+
+  		ssUIKit.subspec 'UIView' do |ssView|
+  			ssView.source_files = 'PPMaker/PPMakeCategory/UIKit/UIView/*.{h,m}'
+  		end
+  	end
+  end
 
   s.subspec 'PPMake' do |ss|
     ss.source_files = 'PPMaker/PPMake/*.{h,m}'

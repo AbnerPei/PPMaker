@@ -16,9 +16,6 @@
 
 
 #pragma mark --- UIKit
-#import "UIView+PPMakeSupport.h"
-#import "UIView+PPMakeSupportCornerAndShadow.h"
-
 #import "UIButton+PPMakeSupport.h"
 #import "UIDevice+PPMakeSupport.h"
 #import "UIColor+PPMakeSupport.h"
@@ -27,6 +24,8 @@
 #import "UIImage+PPMakeSupport.h"
 #import "UITableViewCell+PPMakeSupport.h"
 #import "UIScrollView+ScrollBlock.h"
+#import "UIView+PPMakeSupport.h"
+#import "UIView+PPMakeSupportCornerAndShadow.h"
 
 #pragma mark --- Foundation
 #import "NSObject+PPMakeSupport.h"

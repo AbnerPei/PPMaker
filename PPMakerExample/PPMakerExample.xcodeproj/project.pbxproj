@@ -119,7 +119,6 @@
 		57FFFEF2210A6D9300ADD5DA /* PPMakeKGSubcategoryListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 57FFFEF1210A6D9300ADD5DA /* PPMakeKGSubcategoryListCell.m */; };
 		57FFFEF5210AC02F00ADD5DA /* PPMakeExplainSourceCodePracticeMJRefreshBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57FFFEF4210AC02F00ADD5DA /* PPMakeExplainSourceCodePracticeMJRefreshBaseTableViewController.m */; };
 		57FFFEF8210AC17F00ADD5DA /* PPMakeExplainSourceCodemMJRefreshDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57FFFEF7210AC17F00ADD5DA /* PPMakeExplainSourceCodemMJRefreshDemoViewController.m */; };
-		57FFFEFC210AC5F100ADD5DA /* NSError+PPMakeSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 57FFFEFB210AC5F100ADD5DA /* NSError+PPMakeSupport.m */; };
 		57FFFF07210ACB7D00ADD5DA /* XMEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 57FFFF00210ACB7D00ADD5DA /* XMEngine.m */; };
 		57FFFF08210ACB7D00ADD5DA /* XMCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 57FFFF01210ACB7D00ADD5DA /* XMCenter.m */; };
 		57FFFF09210ACB7D00ADD5DA /* XMRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 57FFFF02210ACB7D00ADD5DA /* XMRequest.m */; };
@@ -360,8 +359,6 @@
 		57FFFEF4210AC02F00ADD5DA /* PPMakeExplainSourceCodePracticeMJRefreshBaseTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPMakeExplainSourceCodePracticeMJRefreshBaseTableViewController.m; sourceTree = "<group>"; };
 		57FFFEF6210AC17F00ADD5DA /* PPMakeExplainSourceCodemMJRefreshDemoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMakeExplainSourceCodemMJRefreshDemoViewController.h; sourceTree = "<group>"; };
 		57FFFEF7210AC17F00ADD5DA /* PPMakeExplainSourceCodemMJRefreshDemoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPMakeExplainSourceCodemMJRefreshDemoViewController.m; sourceTree = "<group>"; };
-		57FFFEFA210AC5F100ADD5DA /* NSError+PPMakeSupport.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSError+PPMakeSupport.h"; sourceTree = "<group>"; };
-		57FFFEFB210AC5F100ADD5DA /* NSError+PPMakeSupport.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSError+PPMakeSupport.m"; sourceTree = "<group>"; };
 		57FFFEFF210ACB7D00ADD5DA /* XMConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMConst.h; sourceTree = "<group>"; };
 		57FFFF00210ACB7D00ADD5DA /* XMEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMEngine.m; sourceTree = "<group>"; };
 		57FFFF01210ACB7D00ADD5DA /* XMCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMCenter.m; sourceTree = "<group>"; };
@@ -618,7 +615,6 @@
 		5798F8B220D2419600C20029 /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
-				57FFFEF9210AC5AB00ADD5DA /* NSError */,
 				57FFFDEE2108514600ADD5DA /* NSString */,
 				5798F8B320D2419600C20029 /* NSMutableAttributedString */,
 				5798F8B420D2419600C20029 /* NSObject */,
@@ -1234,15 +1230,6 @@
 			path = Practice;
 			sourceTree = "<group>";
 		};
-		57FFFEF9210AC5AB00ADD5DA /* NSError */ = {
-			isa = PBXGroup;
-			children = (
-				57FFFEFA210AC5F100ADD5DA /* NSError+PPMakeSupport.h */,
-				57FFFEFB210AC5F100ADD5DA /* NSError+PPMakeSupport.m */,
-			);
-			path = NSError;
-			sourceTree = "<group>";
-		};
 		57FFFEFD210AC7C700ADD5DA /* PPMakeNetWork */ = {
 			isa = PBXGroup;
 			children = (
@@ -1423,7 +1410,6 @@
 				57FFFEB8210A5C9B00ADD5DA /* MJRefreshBackNormalFooter.m in Sources */,
 				57FFFEBD210A5C9B00ADD5DA /* MJRefreshStateHeader.m in Sources */,
 				57FFFE362109D55100ADD5DA /* AFAutoPurgingImageCache.m in Sources */,
-				57FFFEFC210AC5F100ADD5DA /* NSError+PPMakeSupport.m in Sources */,
 				57FFFEBE210A5C9B00ADD5DA /* MJRefreshGifHeader.m in Sources */,
 				57FFFE082109CCED00ADD5DA /* PPMakeNSURLSessionViewController.m in Sources */,
 				57754C8420F86D89005B3AE7 /* PPMakeBaseTableViewController.m in Sources */,

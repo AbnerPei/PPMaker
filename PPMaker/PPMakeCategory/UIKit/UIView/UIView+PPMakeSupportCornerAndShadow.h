@@ -52,11 +52,11 @@
  * @param shadowOpacity 阴影不透明度
  * * *
  */
--(void)ppmake_cornerRadius:(CGFloat)cornerRadius
-              shadowRadius:(CGFloat)shadowRadius
-               shadowColor:(UIColor *)shadowColor
-              shadowOffset:(CGSize)shadowOffset
-             shadowOpacity:(CGFloat)shadowOpacity;
+//-(void)ppmake_cornerRadius:(CGFloat)cornerRadius
+//              shadowRadius:(CGFloat)shadowRadius
+//               shadowColor:(UIColor *)shadowColor
+//              shadowOffset:(CGSize)shadowOffset
+//             shadowOpacity:(CGFloat)shadowOpacity;
 /** 002
  * view同时添加圆角和阴影 （【注意：视图必须设置了frame以及父视图】 在001的基础上，
  *                      要加圆角和阴影的view必须加在对应的superV上了，并且设置了frame

@@ -23,9 +23,9 @@
     // Do any additional setup after loading the view.
     self.person = [[PPKVOPerson alloc]init];
 //    [self.person addObserver:self forKeyPath:@"name" options:(NSKeyValueObservingOptionNew) context:@"测试一下"];
-    [self.person PG_addObserver:self forKey:@"name" withBlock:^(id observedObject, NSString *observedKey, id oldValue, id newValue) {
-        NSLog(@"%@--%@--%@--%@",observedObject,observedKey,oldValue,newValue);
-    }];
+//    [self.person PG_addObserver:self forKey:@"name" withBlock:^(id observedObject, NSString *observedKey, id oldValue, id newValue) {
+//        NSLog(@"%@--%@--%@--%@",observedObject,observedKey,oldValue,newValue);
+//    }];
 }
 //-(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context
 //{

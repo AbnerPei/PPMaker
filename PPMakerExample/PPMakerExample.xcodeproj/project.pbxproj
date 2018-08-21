@@ -57,7 +57,6 @@
 		57CB437920A1BA8D00268DBE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57CB437720A1BA8D00268DBE /* LaunchScreen.storyboard */; };
 		57CB437C20A1BA8D00268DBE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 57CB437B20A1BA8D00268DBE /* main.m */; };
 		57CB43A120A286C800268DBE /* PPMutAttributedStringMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 57CB43A020A286C800268DBE /* PPMutAttributedStringMaker.m */; };
-		57CDE707210448BB00C5DC31 /* NSObject+PPMakeSupport_KVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 57CDE706210448BB00C5DC31 /* NSObject+PPMakeSupport_KVO.m */; };
 		57FFFDAD2106B9E700ADD5DA /* PPMakeAlgorithmBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57FFFDAC2106B9E700ADD5DA /* PPMakeAlgorithmBaseViewController.m */; };
 		57FFFDE621080A8600ADD5DA /* PPMakeCustomDoneTextFieldViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57FFFDE521080A8600ADD5DA /* PPMakeCustomDoneTextFieldViewController.m */; };
 		57FFFDEA21080AF100ADD5DA /* PPMakeCustomDoneTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 57FFFDE921080AF100ADD5DA /* PPMakeCustomDoneTextField.m */; };
@@ -229,8 +228,6 @@
 		57CB438320A1BAAC00268DBE /* PPMaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPMaker.h; sourceTree = "<group>"; };
 		57CB439F20A286C800268DBE /* PPMutAttributedStringMaker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMutAttributedStringMaker.h; sourceTree = "<group>"; };
 		57CB43A020A286C800268DBE /* PPMutAttributedStringMaker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPMutAttributedStringMaker.m; sourceTree = "<group>"; };
-		57CDE705210448BB00C5DC31 /* NSObject+PPMakeSupport_KVO.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+PPMakeSupport_KVO.h"; sourceTree = "<group>"; };
-		57CDE706210448BB00C5DC31 /* NSObject+PPMakeSupport_KVO.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+PPMakeSupport_KVO.m"; sourceTree = "<group>"; };
 		57FFFDAB2106B9E700ADD5DA /* PPMakeAlgorithmBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMakeAlgorithmBaseViewController.h; sourceTree = "<group>"; };
 		57FFFDAC2106B9E700ADD5DA /* PPMakeAlgorithmBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPMakeAlgorithmBaseViewController.m; sourceTree = "<group>"; };
 		57FFFDE421080A8600ADD5DA /* PPMakeCustomDoneTextFieldViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMakeCustomDoneTextFieldViewController.h; sourceTree = "<group>"; };
@@ -634,8 +631,6 @@
 			children = (
 				5798F8B620D2419600C20029 /* NSObject+PPMakeSupport.h */,
 				5798F8B520D2419600C20029 /* NSObject+PPMakeSupport.m */,
-				57CDE705210448BB00C5DC31 /* NSObject+PPMakeSupport_KVO.h */,
-				57CDE706210448BB00C5DC31 /* NSObject+PPMakeSupport_KVO.m */,
 			);
 			path = NSObject;
 			sourceTree = "<group>";
@@ -1419,7 +1414,6 @@
 				5798F87020CB899600C20029 /* PPMake+UIImageView.m in Sources */,
 				5798F8C720D242BC00C20029 /* UIFont+PPMakeSupport.m in Sources */,
 				57A1F01D20E941D0007B1B41 /* UIFontCacheViewController.m in Sources */,
-				57CDE707210448BB00C5DC31 /* NSObject+PPMakeSupport_KVO.m in Sources */,
 				5798F8CB20D245E000C20029 /* UIDevice+PPMakeSupport.m in Sources */,
 				5798F86720CB856400C20029 /* PPMake+UILabel.m in Sources */,
 				57FFFEDE210A5D4000ADD5DA /* MJExtensionConst.m in Sources */,

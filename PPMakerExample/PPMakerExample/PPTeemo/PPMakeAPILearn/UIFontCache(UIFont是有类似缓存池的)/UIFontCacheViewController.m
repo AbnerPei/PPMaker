@@ -59,16 +59,13 @@ static NSString *key = @"pppp8888";
     
     self.fontTestLB = [PPMAKELB pp_make:^(PPMake *make) {
         make.intoView(self.view);
-        make.font(kFontSemibold(14));
+        make.font([UIFont fontWithName:@"PingFangSC-Semibold" size:14]);
         make.text(@"lb UIFont是有缓存的");
         make.textColor([UIColor ppmake_deepRed]);
         make.textAlignment(NSTextAlignmentCenter);
         make.frame(CGRectMake(0, kHeight(400), kScreenW, kHeight(50)));
         make.bgColor(kColorHex(0x27f2f2));
-        make.tapBlock(^{
-            UIFontCacheNextViewController *nextVC = [[UIFontCacheNextViewController alloc]init];
-            [self.navigationController pushViewController:nextVC animated:YES];
-        });
+        
     }];
     
     //应用执行后打印结果（未切到后台）

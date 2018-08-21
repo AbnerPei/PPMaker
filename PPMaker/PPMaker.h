@@ -16,10 +16,6 @@
 #import "PPMake+UIButton.h"
 #import "PPMake+UIImageView.h"
 
-#import "PPLabelMaker.h"
-#import "PPImageViewMaker.h"
-#import "PPButtonMaker.h"
-#import "PPViewMaker.h"
 #import "PPMutAttributedStringMaker.h"
 
 

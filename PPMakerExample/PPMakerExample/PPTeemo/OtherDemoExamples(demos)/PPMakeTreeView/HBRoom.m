@@ -39,7 +39,7 @@
         make.intoView(self.contentView);
         make.font(kFontRegular(16));
         make.textColor(kColorBlack);
-        make.frame(CGRectMake(30, 0, kOneHalf(kScreenW, 30*2), kHeight(50)));
+        make.frame(CGRectMake(30, 0, kScreenW/2-30, kHeight(50)));
     }];
     
     self.roomPriceLB = [PPMAKELB pp_make:^(PPMake *make) {

@@ -48,7 +48,7 @@
     }
     
     ///如果item已经是展开的，点击就要关闭（包括所有subItems也关闭）
-    if (self.isExpand) {
+    if (self.expand) {
         //移除数据源中所有的subItems
         [vcDataSources removeObjectsInArray:self.allSubItems];
         

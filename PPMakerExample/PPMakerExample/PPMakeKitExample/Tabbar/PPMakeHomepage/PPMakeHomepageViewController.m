@@ -23,7 +23,7 @@
     self.backBT.hidden = YES;
     self.titleStr = @"首页";
     
-    UIFont *firstCreatedFont = kFontSemibold(14);
+    UIFont *firstCreatedFont = [UIFont fontWithName:@"PingFangSC-Semibold" size:14];
     NSLog(@"\n系统启动就创建一个font对象 \n%@",firstCreatedFont);
     
 }

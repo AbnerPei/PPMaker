@@ -70,7 +70,7 @@
     
     //耳机🎧
     CGFloat earphoneW = 12;
-    CGFloat earphoneY = self.specialNameLB.bottom+kHeight(3)+kOneHalf(lbH, earphoneW);
+    CGFloat earphoneY = self.specialNameLB.bottom+kHeight(3)+(lbH-earphoneW)/2;
     self.earPhoneImgV = [PPMAKEImgV pp_make:^(PPMake *make) {
         make.intoView(self.contentView);
         make.frame(CGRectMake(lbX, earphoneY, earphoneW, earphoneW));

@@ -11,7 +11,7 @@
 @interface PPMakeTreeItem : NSObject
 
 /** item是否展开 */
-@property(nonatomic,assign,getter=isExpand) BOOL expand;
+@property(nonatomic,assign) BOOL expand;
 /** 当前item所处等级 */
 @property(nonatomic,assign) NSUInteger itemLevel;
 /**

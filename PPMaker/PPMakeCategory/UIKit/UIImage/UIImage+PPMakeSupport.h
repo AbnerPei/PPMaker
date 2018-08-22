@@ -10,5 +10,7 @@
 
 @interface UIImage (PPMakeSupport)
 +(UIImage *)ppmake_imageWithColor:(UIColor *)color;
-+(UIImage *)ppmake_imageWithColor:(UIColor *)color size:(CGSize)size;
+
++(UIImage *)ppmake_imageWithColor:(UIColor *)color
+                             size:(CGSize)size;
 @end

@@ -13,7 +13,8 @@
 {
     return [UIImage ppmake_imageWithColor:color size:CGSizeMake(1, 1)];
 }
-+(UIImage *)ppmake_imageWithColor:(UIColor *)color size:(CGSize)size
++(UIImage *)ppmake_imageWithColor:(UIColor *)color
+                             size:(CGSize)size
 {
     CGRect rect = CGRectMake(0, 0, size.width, size.height);
     UIGraphicsBeginImageContext(rect.size);

@@ -16,5 +16,6 @@
  * @param originS 该类原有的方法
  * @param swizzledS 要替换的方法
  */
-+(void)ppmake_swizzleWithOriginSelector:(SEL)originS swizzledSelector:(SEL)swizzledS;
++(void)ppmake_swizzleWithOriginSelector:(SEL)originS
+                       swizzledSelector:(SEL)swizzledS;
 @end

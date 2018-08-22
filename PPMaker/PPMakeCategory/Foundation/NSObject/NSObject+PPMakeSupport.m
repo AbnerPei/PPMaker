@@ -11,7 +11,8 @@
 
 @implementation NSObject (PPMakeSupport)
 
-+(void)ppmake_swizzleWithOriginSelector:(SEL)originS swizzledSelector:(SEL)swizzledS
++(void)ppmake_swizzleWithOriginSelector:(SEL)originS
+                       swizzledSelector:(SEL)swizzledS
 {
     Method originalMethod = class_getInstanceMethod([self class], originS);
     Method swizzledMethod = class_getInstanceMethod([self class], swizzledS);

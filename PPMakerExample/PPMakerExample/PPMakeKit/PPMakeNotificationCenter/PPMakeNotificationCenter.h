@@ -4,7 +4,7 @@
 //
 //  Created by ╰莪呮想好好宠Nǐつ on 2018/8/19.
 //  Copyright © 2018年 PPAbner. All rights reserved.
-//  [手动实现NSNotificationCenter功能](https://blog.csdn.net/qq_25276029/article/details/44427433)
+//  [](https://www.jianshu.com/p/e3a38b21420c)
 
 #import <Foundation/Foundation.h>
 

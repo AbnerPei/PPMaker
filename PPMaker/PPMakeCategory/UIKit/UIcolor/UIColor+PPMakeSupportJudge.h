@@ -18,15 +18,15 @@ NS_ASSUME_NONNULL_BEGIN
  * NSLog(@"%f",CGColorGetAlpha(kColorRGBA(220, 220, 220, 0.6).CGColor));
  * 2018-07-06 15:10:56.770399+0800 PPMakerExample[12460:464005] 0.600000
  */
--(CGFloat)ppmake_alpha;
-+(CGFloat)ppmake_alphaWithColor:(UIColor *)color;
+- (CGFloat)ppmake_alpha;
++ (CGFloat)ppmake_alphaWithColor:(UIColor *)color;
 
 /**
  * 比较两个颜色是否相同
  */
--(BOOL)ppmake_isEqualToColor:(UIColor *)color;
-+(BOOL)ppmake_isSameColor:(UIColor *)oneColor
-               otherColor:(UIColor *)otherColor;
+- (BOOL)ppmake_isEqualToColor:(UIColor *)color;
++ (BOOL)ppmake_isSameColor:(UIColor *)oneColor
+                otherColor:(UIColor *)otherColor;
 @end
 
 NS_ASSUME_NONNULL_END

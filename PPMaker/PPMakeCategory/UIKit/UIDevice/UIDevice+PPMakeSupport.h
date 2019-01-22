@@ -7,7 +7,7 @@
 //
 
 /*
- 截止2018-04-09，苹果手机📱尺寸与大小
+ 截止2019-01-21，苹果手机📱尺寸与大小
  -------------------------------------------
  iPhone3G/3GS     320*480     @1X     3.5
  -------------------------------------------
@@ -19,17 +19,23 @@
  -------------------------------------------
  iPhone6p/7p/8p   414*736     @3x     5.5
  -------------------------------------------
- iPhoneX          375*812     @3x     5.8
+ iPhoneX/Xs       375*812     @3x     5.8
  -------------------------------------------
+ iPhoneXR         414*896     @2x     6.1
+ -------------------------------------------
+ iPhoneXs Max     414*896     @3x     6.5
+ -------------------------------------------
+ 
+ *> 更详细的可以参考：[iPhone XR/XS/XS Max 适配，最全iPhone尺寸](https://blog.csdn.net/sinat_15735647/article/details/82762238)
  */
 
 #import <UIKit/UIKit.h>
 
-
 #define kScreenW          [UIScreen mainScreen].bounds.size.width
 #define kScreenH          [UIScreen mainScreen].bounds.size.height
-#define kRatioW           kScreenW/375
-#define kRatioH           kScreenH/667
+#define kRatioW           kScreenW / 375
+#define kRatioH           kScreenH / 667
+
 //适配 start
 #define kWidth(w)         [UIDevice ppmake_width:w]
 #define kHeight(h)        [UIDevice ppmake_height:h]
@@ -39,14 +45,15 @@
 #define kStatusBarH       [UIDevice ppmake_statusBarHeight]
 #define kNavBarH          [UIDevice ppmake_navBarHeight]
 //适配 end
-#define kIsiPhone         [UIDevice ppmake_isiPhone]
-#define kIsiPhone6        [UIDevice ppmake_isiPhone6]
-#define kIsiPhone6p       [UIDevice ppmake_isiPhone6p]
-#define kIsiPhoneX        [UIDevice ppmake_isiPhoneX]
-#define kiOS(version)     [UIDevice ppmake_isiOS:version]
 
+#define k_isiPhone         [UIDevice ppmake_isiPhone]
+#define k_isiPhone6        [UIDevice ppmake_isiPhone6]
+#define k_isiPhone6p       [UIDevice ppmake_isiPhone6p]
+//iPhone X系列
+#define k_isiPhoneXSeries  [UIDevice ppmake_isiPhoneXSeries]
+#define k_iOS(version)     [UIDevice ppmake_isiOS:version]
 
-//iPhone X底部多出来的高 34
+//iPhone X系列底部多出来的高 34
 UIKIT_EXTERN const CGFloat kiPhoneXBottomExtraH;
 
 
@@ -60,12 +67,12 @@ UIKIT_EXTERN const CGFloat kiPhoneXBottomExtraH;
 /**
  * 【以iPhone6为准做的UI图】宽适配
  */
-+(CGFloat)ppmake_width:(CGFloat)width;
++ (CGFloat)ppmake_width:(CGFloat)width;
 /**
  * 【以iPhone6为准做的UI图】高适配
  * 【注意】iPhone X 实际上是高度增加了的iPhone 6/6s/7/8
  */
-+(CGFloat)ppmake_height:(CGFloat)height;
++ (CGFloat)ppmake_height:(CGFloat)height;
 @end
 
 
@@ -81,12 +88,12 @@ UIKIT_EXTERN const CGFloat kiPhoneXBottomExtraH;
  *  CGFloat bottomH = [UIDevice ppmake_bottomViewRealHWithUIH:kHeight(50)];
  *  frame = CGRectMake(0,bottomY,kScreenW,bottomH);
  */
-+(CGFloat)ppmake_bottomViewRealYWithUIH:(CGFloat)UIH;
++ (CGFloat)ppmake_bottomViewRealYWithUIH:(CGFloat)UIH;
 /**
  * 计算VC底部view的高度（处理iPhone X底部多出来的34不能用于响应事件的情况，需注意）
  * more see `ppmake_bottomViewRealYWithUIH:`
  */
-+(CGFloat)ppmake_bottomViewRealHWithUIH:(CGFloat)UIH;
++ (CGFloat)ppmake_bottomViewRealHWithUIH:(CGFloat)UIH;
 @end
 
 
@@ -94,15 +101,15 @@ UIKIT_EXTERN const CGFloat kiPhoneXBottomExtraH;
 #pragma mark --- 设备判断
 @interface UIDevice (PPMakeJudge)
 /** 判断设备是否是手机 */
-+(BOOL)ppmake_isiPhone;
++ (BOOL)ppmake_isiPhone;
 /** 是否是6_6s_7_8等手机 */
-+(BOOL)ppmake_isiphone6;
++ (BOOL)ppmake_isiphone6;
 /** 是否是6p_6sp_7p_8p等手机 */
-+(BOOL)ppmake_isiphone6p;
-/** 设备是否是iPhoneX手机*/
-+(BOOL)ppmake_isiPhoneX;
++ (BOOL)ppmake_isiphone6p;
+/** 设备是否是iPhoneX系列手机*/
++ (BOOL)ppmake_isiPhoneXSeries;
 /** 判断iOS版本 */
-+(BOOL)ppmake_isiOS:(CGFloat)iOSVersion;
++ (BOOL)ppmake_isiOS:(CGFloat)iOSVersion;
 @end
 
 
@@ -110,7 +117,7 @@ UIKIT_EXTERN const CGFloat kiPhoneXBottomExtraH;
 #pragma mark --- 获取设备信息
 @interface UIDevice (PPMakeGetDeviceInfo)
 /** 状态栏高度 */
-+(CGFloat)ppmake_statusBarHeight;
++ (CGFloat)ppmake_statusBarHeight;
 /** 导航栏高度 */
-+(CGFloat)ppmake_navBarHeight;
++ (CGFloat)ppmake_navBarHeight;
 @end

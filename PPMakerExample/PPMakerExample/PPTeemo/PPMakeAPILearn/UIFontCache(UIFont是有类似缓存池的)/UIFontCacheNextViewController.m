@@ -35,6 +35,9 @@
     }];
     
     NSLog(@"\n next UIFont新建的font     \n%@ \n next lbFont %@",creatingFont,self.fontTestLB.font);
+    
+    UIImage *img = [UIImage imageNamed:@"1024"];
+    NSLog(@"vc-img %@",img);
 
 }
 

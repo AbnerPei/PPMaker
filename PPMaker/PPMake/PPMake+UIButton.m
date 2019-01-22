@@ -24,7 +24,7 @@ static inline PPMake *makeBtTC(id tOrC,UIControlState cs,BOOL isT,PPMake *m){
 }
 
 
--(PPMake *(^)(NSString *, UIControlState))titleState
+- (PPMake *(^)(NSString *, UIControlState))titleState
 {
     
     PPMakeBTAssert
@@ -32,14 +32,14 @@ static inline PPMake *makeBtTC(id tOrC,UIControlState cs,BOOL isT,PPMake *m){
         return makeBtTC(t, cs, YES, self);
     };
 }
--(PPMake *(^)(NSString *))normalTitle
+- (PPMake *(^)(NSString *))normalTitle
 {
     PPMakeBTAssert
     return ^PPMake *(NSString *nt){
         return makeBtTC(nt, UIControlStateNormal, YES, self);
     };
 }
--(PPMake *(^)(NSString *))highlightedTitle
+- (PPMake *(^)(NSString *))highlightedTitle
 {
     PPMakeBTAssert
     return ^PPMake *(NSString *ht){
@@ -47,21 +47,21 @@ static inline PPMake *makeBtTC(id tOrC,UIControlState cs,BOOL isT,PPMake *m){
     };
 }
 
--(PPMake *(^)(UIColor *, UIControlState))titleColorState
+- (PPMake *(^)(UIColor *, UIControlState))titleColorState
 {
     PPMakeBTAssert
     return ^PPMake *(UIColor *tc,UIControlState cs){
         return makeBtTC(tc, cs, NO, self);
     };
 }
--(PPMake *(^)(UIColor *))normalTitleColor
+- (PPMake *(^)(UIColor *))normalTitleColor
 {
     PPMakeBTAssert
     return ^PPMake *(UIColor *ntc){
         return makeBtTC(ntc, UIControlStateNormal, NO, self);
     };
 }
--(PPMake *(^)(UIColor *))highlightedTitleColor
+- (PPMake *(^)(UIColor *))highlightedTitleColor
 {
     PPMakeBTAssert
     return ^PPMake *(UIColor *htc){
@@ -73,21 +73,21 @@ static inline PPMake *makeBtTA(id target,SEL action,UIControlEvents ce,PPMake *m
     [bt addTarget:target action:action forControlEvents:ce];
     return m;
 }
--(PPMake *(^)(id, SEL, UIControlEvents))addTarget
+- (PPMake *(^)(id, SEL, UIControlEvents))addTarget
 {
     PPMakeBTAssert
     return ^PPMake *(id target,SEL action,UIControlEvents ce){
         return makeBtTA(target, action, ce, self);
     };
 }
--(PPMake *(^)(id, SEL))addTargetTouchUpInside
+- (PPMake *(^)(id, SEL))addTargetTouchUpInside
 {
     PPMakeBTAssert
     return ^PPMake *(id target,SEL action){
         return makeBtTA(target, action, UIControlEventTouchUpInside, self);
     };
 }
--(PPMake *(^)(makeBtActionBlock))actionBlock
+- (PPMake *(^)(makeBtActionBlock))actionBlock
 {
     PPMakeBTAssert
     return ^PPMake *(makeBtActionBlock ab){
@@ -99,44 +99,118 @@ static inline PPMake *makeBtTA(id target,SEL action,UIControlEvents ce,PPMake *m
     };
 }
 #pragma mark --- 设置button的图片
--(PPMake *(^)(UIImage *, UIControlState))imageState
+- (PPMake *(^)(UIImage *, UIControlState))imageState
+{
+    return [self _imageWithIsBg:NO];
+}
+- (PPMake *(^)(UIImage *, UIControlState))bgImageState
+{
+    return [self _imageWithIsBg:YES];
+}
+#pragma mark --- private 根据image和controlState设置image
+- (PPMake *(^)(UIImage *, UIControlState))_imageWithIsBg:(BOOL)isBg
 {
     PPMakeBTAssert
     return ^PPMake *(UIImage *img,UIControlState state){
         UIButton *bt = (UIButton *)self.createdView;
-        [bt setImage:img forState:state];
+        if (isBg) {
+            [bt setBackgroundImage:img forState:state];
+        }else{
+            [bt setImage:img forState:state];
+        }
         return self;
     };
 }
--(PPMake *(^)(NSString *, UIControlState))imageNameState
+
+- (PPMake *(^)(NSString *, UIControlState))imageNameState
+{
+    return [self _imageNameWithIsBg:NO];
+}
+
+- (PPMake *(^)(NSString *, UIControlState))bgImageNameState
+{
+    return [self _imageNameWithIsBg:YES];
+}
+#pragma mark --- private 根据imageName和controlState设置image
+- (PPMake *(^)(NSString *, UIControlState))_imageNameWithIsBg:(BOOL)isBg
 {
     PPMakeBTAssert
-    return ^PPMake *(NSString *imgN,UIControlState s){
+    return ^PPMake *(NSString *imgName,UIControlState state){
         UIButton *bt = (UIButton *)self.createdView;
-        [bt setImage:[UIImage imageNamed:imgN] forState:s];
+        if (isBg) {
+            [bt setBackgroundImage:[UIImage imageNamed:imgName] forState:state];
+        }else{
+            [bt setImage:[UIImage imageNamed:imgName] forState:state];
+        }
         return self;
     };
 }
--(PPMake *(^)(NSString *))normalImageName
+
+- (PPMake *(^)(UIImage *))normalImage
+{
+    return [self _imageWithState:(UIControlStateNormal) isBg:NO];
+}
+- (PPMake *(^)(UIImage *))highlightedImage
+{
+    return [self _imageWithState:(UIControlStateHighlighted) isBg:NO];
+}
+- (PPMake *(^)(UIImage *))normalBgImage
+{
+    return [self _imageWithState:(UIControlStateNormal) isBg:YES];
+}
+- (PPMake *(^)(UIImage *))highlightedBgImage
+{
+    return [self _imageWithState:(UIControlStateHighlighted) isBg:YES];
+}
+#pragma mark --- private 根据image设置image
+- (PPMake *(^)(UIImage *))_imageWithState:(UIControlState)state isBg:(BOOL)isBg
 {
     PPMakeBTAssert
-    return ^PPMake *(NSString *nImgN){
+    return ^PPMake *(UIImage *img){
         UIButton *bt = (UIButton *)self.createdView;
-        [bt setImage:[UIImage imageNamed:nImgN] forState:UIControlStateNormal];
+        if (isBg) {
+            [bt setBackgroundImage:img forState:state];
+        }else{
+            [bt setImage:img forState:state];
+        }
         return self;
     };
 }
--(PPMake *(^)(NSString *))highlightedImageName
+
+- (PPMake *(^)(NSString *))normalImageName
+{
+    return [self _imageNameWithState:(UIControlStateNormal) isBg:NO];
+}
+- (PPMake *(^)(NSString *))highlightedImageName
+{
+    return [self _imageNameWithState:(UIControlStateHighlighted) isBg:NO];
+}
+- (PPMake *(^)(NSString *))normalBgImageName
+{
+    return [self _imageNameWithState:(UIControlStateNormal) isBg:YES];
+}
+- (PPMake *(^)(NSString *))highlightedBgImageName
+{
+    return [self _imageNameWithState:(UIControlStateHighlighted) isBg:YES];
+}
+#pragma mark --- private 根据imageName设置image
+- (PPMake *(^)(NSString *))_imageNameWithState:(UIControlState)state isBg:(BOOL)isBg
 {
     PPMakeBTAssert
-    return ^PPMake *(NSString *hImgN){
+    return ^PPMake *(NSString *imgName){
         UIButton *bt = (UIButton *)self.createdView;
-        [bt setImage:[UIImage imageNamed:hImgN] forState:UIControlStateHighlighted];
+        if (isBg) {
+            [bt setBackgroundImage:[UIImage imageNamed:imgName] forState:state];
+        }else{
+            [bt setImage:[UIImage imageNamed:imgName] forState:state];
+        }
         return self;
     };
 }
+
+
 #pragma mark --- attributedString
--(PPMake *(^)(NSAttributedString *, UIControlState))attributedStringState
+- (PPMake *(^)(NSAttributedString *, UIControlState))attributedStringState
 {
     PPMakeBTAssert
     return ^PPMake *(NSAttributedString *as,UIControlState s){
@@ -145,32 +219,31 @@ static inline PPMake *makeBtTA(id target,SEL action,UIControlEvents ce,PPMake *m
         return self;
     };
 }
--(PPMake *(^)(NSAttributedString *))normalAttributedString
+- (PPMake *(^)(NSAttributedString *))normalAttributedString
 {
-    PPMakeBTAssert
     return [self _asWithState:UIControlStateNormal];
 }
--(PPMake *(^)(NSAttributedString *))highlightAttributedString
+- (PPMake *(^)(NSAttributedString *))highlightAttributedString
 {
-    PPMakeBTAssert
     return [self _asWithState:UIControlStateHighlighted];
 }
--(PPMake *(^)(NSAttributedString *))_asWithState:(UIControlState)state
+- (PPMake *(^)(NSAttributedString *))_asWithState:(UIControlState)state
 {
+    PPMakeBTAssert
     return ^PPMake *(NSAttributedString *as){
         UIButton *bt = (UIButton *)self.createdView;
         [bt setAttributedTitle:as forState:state];
         return self;
     };
 }
--(PPMake *(^)(UIFont *, UIColor *, NSString *, UIControlState))attributedFontColorTitleState
+- (PPMake *(^)(UIFont *, UIColor *, NSString *, UIControlState))attributedFontColorTitleState
 {
     PPMakeBTAssert
     return ^PPMake *(UIFont *f,UIColor *c,NSString *t,UIControlState cs){
         return [self _configureBtAttributedFont:f color:c state:cs title:t];
     };
 }
--(PPMake *)_configureBtAttributedFont:(UIFont *)f
+- (PPMake *)_configureBtAttributedFont:(UIFont *)f
                                 color:(UIColor *)c
                                 state:(UIControlState)state
                                 title:(NSString *)title
@@ -188,17 +261,17 @@ static inline PPMake *makeBtTA(id target,SEL action,UIControlEvents ce,PPMake *m
     [bt setAttributedTitle:titleAttributedStr forState:state];
     return self;
 }
--(PPMake *(^)(UIFont *, UIColor *, NSString *))normalAttributedFontColorTitle
+- (PPMake *(^)(UIFont *, UIColor *, NSString *))normalAttributedFontColorTitle
 {
     PPMakeBTAssert
     return [self _asFontColorTitleWithState:UIControlStateNormal];
 }
--(PPMake *(^)(UIFont *, UIColor *,NSString *t))highlightAttributedFontColorTitle
+- (PPMake *(^)(UIFont *, UIColor *,NSString *t))highlightAttributedFontColorTitle
 {
     PPMakeBTAssert
     return [self _asFontColorTitleWithState:UIControlStateHighlighted];
 }
--(PPMake *(^)(UIFont *, UIColor *,NSString *))_asFontColorTitleWithState:(UIControlState)state
+- (PPMake *(^)(UIFont *, UIColor *,NSString *))_asFontColorTitleWithState:(UIControlState)state
 {
     return ^PPMake *(UIFont *f,UIColor *c,NSString *t){
         return [self _configureBtAttributedFont:f color:c state:state title:t];
@@ -206,7 +279,7 @@ static inline PPMake *makeBtTA(id target,SEL action,UIControlEvents ce,PPMake *m
 }
 
 #pragma mark --- 防止重复点击
--(PPMake *(^)(NSTimeInterval))clickTimeInterval
+- (PPMake *(^)(NSTimeInterval))clickTimeInterval
 {
     PPMakeBTAssert
     return ^PPMake *(NSTimeInterval ti){
@@ -216,7 +289,7 @@ static inline PPMake *makeBtTA(id target,SEL action,UIControlEvents ce,PPMake *m
     };
 }
 
--(PPMake *(^)(CGFloat, CGFloat, CGFloat, CGFloat))setImageEdgeInsets
+- (PPMake *(^)(CGFloat, CGFloat, CGFloat, CGFloat))setImageEdgeInsets
 {
     PPMakeBTAssert
     return ^PPMake *(CGFloat top, CGFloat left, CGFloat bottom, CGFloat right){
@@ -225,7 +298,7 @@ static inline PPMake *makeBtTA(id target,SEL action,UIControlEvents ce,PPMake *m
         return self;
     };
 }
--(PPMake *(^)(CGFloat, CGFloat, CGFloat, CGFloat))setTitleEdgeInsets
+- (PPMake *(^)(CGFloat, CGFloat, CGFloat, CGFloat))setTitleEdgeInsets
 {
     PPMakeBTAssert
     return ^PPMake *(CGFloat top, CGFloat left, CGFloat bottom, CGFloat right){

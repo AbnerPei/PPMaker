@@ -11,7 +11,8 @@
 @interface PPMake (UIImageView)
 
 /**【UIImageView】设置image,传(UIImage *)对象。*/
-@property(nonatomic,copy,readonly) PPMake *(^image)(UIImage *image);
+@property (nonatomic, copy, readonly) PPMake *(^image)(UIImage *image);
 /**【UIImageView】设置image,传图片名(NSString *)对象。*/
-@property(nonatomic,copy,readonly) PPMake *(^imageName)(NSString *imageName);
+@property (nonatomic, copy, readonly) PPMake *(^imageName)(NSString *imageName);
+
 @end

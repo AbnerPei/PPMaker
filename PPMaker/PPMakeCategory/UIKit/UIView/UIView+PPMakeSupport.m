@@ -110,7 +110,7 @@
 
 @implementation UIView (PPMakeSupportGestureRecognizer)
 /** 添加tap手势 */
--(void)ppmake_tapBlock:(makeViewGestureBlock)gestureBlock
+- (void)ppmake_tapBlock:(makeViewGestureBlock)gestureBlock
 {
     self.userInteractionEnabled = YES;
     SEL sel = @selector(_handleActionForTapGesture:);
@@ -122,7 +122,7 @@
     }
     objc_setAssociatedObject(self, sel, gestureBlock, OBJC_ASSOCIATION_COPY);
 }
--(void)_handleActionForTapGesture:(UITapGestureRecognizer*)gesture
+- (void)_handleActionForTapGesture:(UITapGestureRecognizer*)gesture
 {
     if (gesture.state == UIGestureRecognizerStateRecognized){
         makeViewGestureBlock gestureBlock = objc_getAssociatedObject(self, _cmd);
@@ -132,7 +132,7 @@
     }
 }
 /** 添加长按手势 */
--(void)ppmake_longPressBlock:(makeViewGestureBlock)gestureBlock
+- (void)ppmake_longPressBlock:(makeViewGestureBlock)gestureBlock
 {
     self.userInteractionEnabled = YES;
     SEL sel = @selector(_handleActionForLongPressGesture:);

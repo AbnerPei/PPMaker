@@ -11,12 +11,14 @@
 
 @implementation NSObject (PPMakeSupport)
 
-+(void)ppmake_swizzleWithOriginSelector:(SEL)originS
++ (void)ppmake_swizzleWithOriginSelector:(SEL)originS
                        swizzledSelector:(SEL)swizzledS
 {
     Method originalMethod = class_getInstanceMethod([self class], originS);
     Method swizzledMethod = class_getInstanceMethod([self class], swizzledS);
     
+//    class_getMethodImplementation(<#Class  _Nullable __unsafe_unretained cls#>, <#SEL  _Nonnull name#>)
+//    method_getImplementation(<#Method  _Nonnull m#>)
     BOOL hasAddMethod = class_addMethod([self class], originS, method_getImplementation(swizzledMethod), method_getTypeEncoding(swizzledMethod));
     
     if (hasAddMethod){

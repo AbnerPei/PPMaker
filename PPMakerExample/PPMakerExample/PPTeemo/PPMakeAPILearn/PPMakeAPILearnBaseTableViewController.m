@@ -23,10 +23,14 @@
 -(void)configureDatas
 {
     self.titles = @[
-                    @"NSURLSession"
+                    @"NSURLSession",
+                    @"UITableView",
+                    @"震动"
                     ];
     self.vcs = @[
-                 @"PPMakeNSURLSessionViewController"
+                 @"PPMakeNSURLSessionViewController",
+                 @"PPMakeAPILearn_UITableView_BaseTableViewController",
+                 @"PPMakeAPILearn_Shake_ViewController"
                  ];
 }
 

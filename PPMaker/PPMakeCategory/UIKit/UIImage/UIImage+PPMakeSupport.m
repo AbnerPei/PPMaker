@@ -9,11 +9,11 @@
 #import "UIImage+PPMakeSupport.h"
 
 @implementation UIImage (PPMakeSupport)
-+(UIImage *)ppmake_imageWithColor:(UIColor *)color
++ (UIImage *)ppmake_imageWithColor:(UIColor *)color
 {
     return [UIImage ppmake_imageWithColor:color size:CGSizeMake(1, 1)];
 }
-+(UIImage *)ppmake_imageWithColor:(UIColor *)color
++ (UIImage *)ppmake_imageWithColor:(UIColor *)color
                              size:(CGSize)size
 {
     CGRect rect = CGRectMake(0, 0, size.width, size.height);
@@ -24,5 +24,22 @@
     UIImage *img = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     return img;
+}
+@end
+
+@implementation UIImage (PPMakeStretchImage)
++ (UIImage *)ppmake_imageByStretchWithOriginalImageName:(NSString *)originalImageName capInsets:(UIEdgeInsets)capInsets
+{
+    if (!originalImageName || originalImageName.length == 0) {
+        return nil;
+    }
+    UIImage *image = [UIImage imageNamed:originalImageName];
+    // 指定为拉伸模式，伸缩后重新赋值
+    image = [image resizableImageWithCapInsets:capInsets resizingMode:UIImageResizingModeStretch];
+    return image;
+}
++ (UIImage *)ppmake_imageByStretchWithOriginalImageName:(NSString *)originalImageName
+{
+    return [UIImage ppmake_imageByStretchWithOriginalImageName:originalImageName capInsets:UIEdgeInsetsMake(5, 5, 5, 5)];
 }
 @end

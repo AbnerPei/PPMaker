@@ -8,6 +8,7 @@
 
 #import "PPMakeCustomDoneTextFieldViewController.h"
 #import "PPMakeCustomDoneTextField.h"
+#import "PPMutAttributedStringMaker.h"
 
 @interface PPMakeCustomDoneTextFieldViewController ()
 

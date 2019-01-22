@@ -10,7 +10,7 @@
 
 @implementation PPMake (UITableView)
 
--(PPMake *(^)(id))delegate
+- (PPMake *(^)(id))delegate
 {
     PPMakeTableVAssert
     return ^PPMake *(id d){
@@ -21,7 +21,7 @@
     };
 }
 #pragma mark --- 隐藏分割线(all)
--(PPMake *(^)(BOOL))hideAllSeparator
+- (PPMake *(^)(BOOL))hideAllSeparator
 {
     PPMakeTableVAssert
     return ^PPMake *(BOOL isHidden){
@@ -33,7 +33,7 @@
     };
 }
 #pragma mark --- 隐藏分割线(extra)
--(PPMake *(^)(BOOL))hideExtraSeparator
+- (PPMake *(^)(BOOL))hideExtraSeparator
 {
     PPMakeTableVAssert
     return ^PPMake *(BOOL isHidden){
@@ -44,7 +44,7 @@
         return self;
     };
 }
--(PPMake *(^)(BOOL))hasEstimatedHeight
+- (PPMake *(^)(BOOL))hasEstimatedHeight
 {
     PPMakeTableVAssert
     return ^PPMake *(BOOL hasEH){

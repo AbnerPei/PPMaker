@@ -11,7 +11,7 @@
 @implementation PPMake (UILabel)
 
 #pragma mark --- 文字
--(PPMake *(^)(NSString *))text
+- (PPMake *(^)(NSString *))text
 {
     PPMakeLBAssert
     return ^PPMake *(NSString *text){
@@ -21,7 +21,7 @@
     };
 }
 #pragma mark --- attributedText
--(PPMake *(^)(NSAttributedString *))attributedText
+- (PPMake *(^)(NSAttributedString *))attributedText
 {
     PPMakeLBAssert
     return ^PPMake *(NSAttributedString *aStr){
@@ -31,7 +31,7 @@
     };
 }
 #pragma mark --- 字体颜色
--(PPMake *(^)(UIColor *))textColor
+- (PPMake *(^)(UIColor *))textColor
 {
     PPMakeLBAssert
     return ^PPMake *(UIColor *color){
@@ -41,7 +41,7 @@
     };
 }
 #pragma mark --- font
--(PPMake *(^)(UIFont *))font
+- (PPMake *(^)(UIFont *))font
 {
     PPMakeLBAssert
     return ^PPMake *(UIFont *font){
@@ -50,7 +50,7 @@
         return self;
     };
 }
--(PPMake *(^)(CGFloat))fontSize
+- (PPMake *(^)(CGFloat))fontSize
 {
     PPMakeLBAssert
     return ^PPMake *(CGFloat fontSize){
@@ -59,7 +59,7 @@
         return self;
     };
 }
--(PPMake *(^)(CGFloat))boldFontSize
+- (PPMake *(^)(CGFloat))boldFontSize
 {
     PPMakeLBAssert
     return ^PPMake *(CGFloat boldFontSize){
@@ -68,7 +68,7 @@
         return self;
     };
 }
--(PPMake *(^)(NSString *, CGFloat))fontNameAndSize
+- (PPMake *(^)(NSString *, CGFloat))fontNameAndSize
 {
     PPMakeLBAssert
     return ^PPMake *(NSString *fontName,CGFloat fontSize){
@@ -78,7 +78,7 @@
     };
 }
 #pragma mark --- 文字对齐方式
--(PPMake *(^)(NSTextAlignment))textAlignment
+- (PPMake *(^)(NSTextAlignment))textAlignment
 {
     PPMakeLBAssert
     return ^PPMake *(NSTextAlignment textAlignment){
@@ -88,7 +88,7 @@
     };
 }
 #pragma mark --- numberOfLines
--(PPMake *(^)(NSInteger))numberOfLines
+- (PPMake *(^)(NSInteger))numberOfLines
 {
     PPMakeLBAssert
     return ^PPMake *(NSInteger numberOfLines){
@@ -98,7 +98,7 @@
     };
 }
 #pragma mark --- 尾巴
--(PPMake *(^)(NSLineBreakMode))lineBreakMode
+- (PPMake *(^)(NSLineBreakMode))lineBreakMode
 {
     PPMakeLBAssert
     return ^PPMake *(NSLineBreakMode lineBreakMode){

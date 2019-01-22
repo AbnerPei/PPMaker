@@ -14,7 +14,7 @@
 
 @implementation PPMutAttributedStringMaker
 #pragma mark --- 字体
--(PPMutAttributedStringMaker *(^)(UIFont *))font
+- (PPMutAttributedStringMaker *(^)(UIFont *))font
 {
     return ^PPMutAttributedStringMaker *(UIFont *f){
         if (f) {
@@ -23,7 +23,7 @@
         return self;
     };
 }
--(PPMutAttributedStringMaker *(^)(UIFont *, NSRange))fontRange
+- (PPMutAttributedStringMaker *(^)(UIFont *, NSRange))fontRange
 {
     return ^PPMutAttributedStringMaker *(UIFont *f,NSRange r){
         if (f) {
@@ -33,7 +33,7 @@
     };
 }
 #pragma mark --- 颜色
--(PPMutAttributedStringMaker *(^)(UIColor *))textColor
+- (PPMutAttributedStringMaker *(^)(UIColor *))textColor
 {
     return ^PPMutAttributedStringMaker *(UIColor *tc){
         if (tc) {
@@ -42,7 +42,7 @@
         return self;
     };
 }
--(PPMutAttributedStringMaker *(^)(UIColor *, NSRange))textColorRange
+- (PPMutAttributedStringMaker *(^)(UIColor *, NSRange))textColorRange
 {
     return ^PPMutAttributedStringMaker *(UIColor *tc,NSRange r){
         if (tc) {
@@ -52,7 +52,7 @@
     };
 }
 #pragma mark --- 段落
--(PPMutAttributedStringMaker *(^)(NSParagraphStyle *))paragraphStyle
+- (PPMutAttributedStringMaker *(^)(NSParagraphStyle *))paragraphStyle
 {
     return ^PPMutAttributedStringMaker *(NSParagraphStyle *ps){
         if (ps) {
@@ -61,7 +61,7 @@
         return self;
     };
 }
--(PPMutAttributedStringMaker *(^)(NSParagraphStyle *, NSRange))paragraphStyleRange
+- (PPMutAttributedStringMaker *(^)(NSParagraphStyle *, NSRange))paragraphStyleRange
 {
     return ^PPMutAttributedStringMaker *(NSParagraphStyle *ps,NSRange r){
         if (ps) {
@@ -71,14 +71,14 @@
     };
 }
 #pragma mark --- 行间距
--(PPMutAttributedStringMaker *(^)(CGFloat))lineSpacing
+- (PPMutAttributedStringMaker *(^)(CGFloat))lineSpacing
 {
     return ^PPMutAttributedStringMaker *(CGFloat ls){
         self.mutAttrbutedStr.maker_lineSpacing = ls;
         return self;
     };
 }
--(PPMutAttributedStringMaker *(^)(CGFloat, NSRange))lineSpacingRange
+- (PPMutAttributedStringMaker *(^)(CGFloat, NSRange))lineSpacingRange
 {
     return ^PPMutAttributedStringMaker *(CGFloat ls,NSRange r){
         [self.mutAttrbutedStr maker_setLineSpacing:ls range:r];
@@ -86,14 +86,14 @@
     };;
 }
 #pragma mark --- 字间距
--(PPMutAttributedStringMaker *(^)(NSNumber *))kern
+- (PPMutAttributedStringMaker *(^)(NSNumber *))kern
 {
     return ^PPMutAttributedStringMaker *(NSNumber *k){
         self.mutAttrbutedStr.maker_kern = k;
         return self;
     };
 }
--(PPMutAttributedStringMaker *(^)(NSNumber *, NSRange))kernRange
+- (PPMutAttributedStringMaker *(^)(NSNumber *, NSRange))kernRange
 {
     return ^PPMutAttributedStringMaker *(NSNumber *k,NSRange r){
         [self.mutAttrbutedStr maker_setKern:k range:r];
@@ -101,7 +101,7 @@
     };
 }
 #pragma mark --- 某个特别文字处理
--(PPMutAttributedStringMaker *(^)(NSString *, UIFont *, UIColor *))specialText
+- (PPMutAttributedStringMaker *(^)(NSString *, UIFont *, UIColor *))specialText
 {
     return ^PPMutAttributedStringMaker *(NSString *specialText,UIFont *specialFont,UIColor *specialColor){
         [self.mutAttrbutedStr maker_specialText:specialText specialFont:specialFont specialColor:specialColor];
@@ -109,7 +109,7 @@
     };
 }
 #pragma mark --- 特别文字统一处理
--(PPMutAttributedStringMaker *(^)(NSArray<NSString *> *, NSArray<UIFont *> *, NSArray<UIColor *> *))specialTextSet
+- (PPMutAttributedStringMaker *(^)(NSArray<NSString *> *, NSArray<UIFont *> *, NSArray<UIColor *> *))specialTextSet
 {
     return ^PPMutAttributedStringMaker *(NSArray<NSString *> *specialTextArray,NSArray<UIFont *> *specialTextFontArray,NSArray<UIColor *> *specialTextColorArray){
         [self.mutAttrbutedStr maker_specialTextArray:specialTextArray specialTextFontArray:specialTextFontArray specialTextColorArray:specialTextColorArray];
@@ -132,7 +132,7 @@
     return asMaker.mutAttrbutedStr;
 }
 
--(NSRange)maker_allRange
+- (NSRange)maker_allRange
 {
     return NSMakeRange(0, self.length);
 }
@@ -141,7 +141,7 @@
  * 配置指定范围（range）内单个属性（NSAttributedStringKey）的值（value）
  * 参考"NSAttributedString+YYText.h"
  */
--(void)maker_setAttribute:(NSAttributedStringKey)name value:(id)value range:(NSRange)range
+- (void)maker_setAttribute:(NSAttributedStringKey)name value:(id)value range:(NSRange)range
 {
     if (!name || [name isKindOfClass:[NSNull class]]) {
         return;
@@ -153,7 +153,7 @@
         [self removeAttribute:name range:range];
     }
 }
--(void)maker_setAttribute:(NSAttributedStringKey)name value:(id)value
+- (void)maker_setAttribute:(NSAttributedStringKey)name value:(id)value
 {
     [self maker_setAttribute:name value:value range:self.maker_allRange];
 }
@@ -162,15 +162,15 @@
  * 默认值：UIFont, Helvetica(Neue) 12
  */
 //@property(nonatomic,strong,readwrite) UIFont *maker_font;
--(UIFont *)maker_font
+- (UIFont *)maker_font
 {
     return (UIFont *)[self attributeFromKey:NSFontAttributeName];
 }
--(void)setMaker_font:(UIFont *)maker_font
+- (void)setMaker_font:(UIFont *)maker_font
 {
     [self maker_setFont:maker_font range:self.maker_allRange];
 }
--(void)maker_setFont:(UIFont *)font range:(NSRange)range
+- (void)maker_setFont:(UIFont *)font range:(NSRange)range
 {
     [self maker_setAttribute:NSFontAttributeName value:font range:range];
 }
@@ -181,21 +181,21 @@
  * 默认值：UIColor, default blackColor
  */
 //@property(nonatomic,strong,readwrite) UIColor *maker_color;
--(UIColor *)maker_color
+- (UIColor *)maker_color
 {
     return (UIColor *)[self attributeFromKey:NSForegroundColorAttributeName];
 }
--(void)setMaker_color:(UIColor *)maker_color
+- (void)setMaker_color:(UIColor *)maker_color
 {
     [self maker_setColor:maker_color range:self.maker_allRange];
 }
--(void)maker_setColor:(UIColor *)color range:(NSRange)range
+- (void)maker_setColor:(UIColor *)color range:(NSRange)range
 {
     [self maker_setAttribute:NSForegroundColorAttributeName value:color range:range];
 }
 
 #pragma mark --- 内部的方法
--(id)attributeFromKey:(NSAttributedStringKey)attrName
+- (id)attributeFromKey:(NSAttributedStringKey)attrName
 {
     if (self.length == 0 || !attrName) {
         return nil;
@@ -210,15 +210,15 @@
  * 段落属性（是个模型，里面又嵌套很多具体的属性：行间距（lineSpacing）、段落间距、首行缩进个等）
  * 默认值：NSParagraphStyle, default defaultParagraphStyle
  */
--(NSParagraphStyle *)maker_paragraphStyle
+- (NSParagraphStyle *)maker_paragraphStyle
 {
     return [self attributeFromKey:NSParagraphStyleAttributeName];
 }
--(void)setMaker_paragraphStyle:(NSParagraphStyle *)maker_paragraphStyle
+- (void)setMaker_paragraphStyle:(NSParagraphStyle *)maker_paragraphStyle
 {
     [self maker_setParagraphStyle:maker_paragraphStyle range:self.maker_allRange];
 }
--(void)maker_setParagraphStyle:(NSParagraphStyle *)paragraphStyle range:(NSRange)range
+- (void)maker_setParagraphStyle:(NSParagraphStyle *)paragraphStyle range:(NSRange)range
 {
     [self maker_setAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:range];
 }
@@ -256,36 +256,36 @@ return ps._attr_;
 
 
 /** 文字行间距 */
--(CGFloat)maker_lineSpacing
+- (CGFloat)maker_lineSpacing
 {
     KMakerParagraphStyleGet(lineSpacing);
 }
--(void)setMaker_lineSpacing:(CGFloat)maker_lineSpacing
+- (void)setMaker_lineSpacing:(CGFloat)maker_lineSpacing
 {
     [self maker_setLineSpacing:maker_lineSpacing range:self.maker_allRange];
 }
--(void)maker_setLineSpacing:(CGFloat)lineSpacing range:(NSRange)range
+- (void)maker_setLineSpacing:(CGFloat)lineSpacing range:(NSRange)range
 {
     KMakerParagraphStyleSet(lineSpacing);
 }
 
 /** 文字间距（水平）*/
--(NSNumber *)maker_kern
+- (NSNumber *)maker_kern
 {
     return [self attributeFromKey:NSKernAttributeName];
 }
--(void)setMaker_kern:(NSNumber *)maker_kern
+- (void)setMaker_kern:(NSNumber *)maker_kern
 {
     [self maker_setKern:maker_kern range:self.maker_allRange];
 }
 
--(void)maker_setKern:(NSNumber *)kern range:(NSRange)range
+- (void)maker_setKern:(NSNumber *)kern range:(NSRange)range
 {
     [self maker_setAttribute:NSKernAttributeName value:kern range:range];
 }
 
 //特殊文字处理
--(void)maker_specialText:(NSString *)specialText specialFont:(UIFont *)specialFont specialColor:(UIColor *)specialColor
+- (void)maker_specialText:(NSString *)specialText specialFont:(UIFont *)specialFont specialColor:(UIColor *)specialColor
 {
     if (specialText && specialText.length > 0 && [self.string containsString:specialText]) {
         NSRange specialRange = [self.string rangeOfString:specialText];
@@ -298,7 +298,7 @@ return ps._attr_;
     }
 }
 
--(void)maker_specialTextArray:(NSArray<NSString *> *)specialTextArray specialTextFontArray:(NSArray<UIFont *> *)specialTextFontArray specialTextColorArray:(NSArray<UIColor *> *)specialTextColorArray
+- (void)maker_specialTextArray:(NSArray<NSString *> *)specialTextArray specialTextFontArray:(NSArray<UIFont *> *)specialTextFontArray specialTextColorArray:(NSArray<UIColor *> *)specialTextColorArray
 {
     if (specialTextArray.count > 0) {
         for (int i = 0; i<specialTextArray.count; i++) {
@@ -322,7 +322,7 @@ return ps._attr_;
         }
     }
 }
--(NSMutableArray <NSTextCheckingResult *>*)getOneSpecialTextRangeArrWithSpecialText:(NSString *)specialText allText:(NSString *)allText
+- (NSMutableArray <NSTextCheckingResult *>*)getOneSpecialTextRangeArrWithSpecialText:(NSString *)specialText allText:(NSString *)allText
 {
     if (specialText.length == 0 || allText.length == 0) {
         return nil;

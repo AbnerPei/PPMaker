@@ -8,6 +8,7 @@
 
 #import "PPMakeBaseTableViewController.h"
 #import "PPMakeKitExampleListCell.h"
+#import "UITableView+PPMakeDidSelectedBlock.h"
 
 @interface PPMakeBaseTableViewController ()
 
@@ -33,6 +34,7 @@
         make.bgColor(kColorWhite);
     }];
 }
+
 #pragma mark --- iOS 11的bug，必须同时设置headerView和fotterView
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
@@ -72,8 +74,8 @@
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if ([self respondsToSelector:@selector(ppmake_tableView:didSelectRowAtIndexPath:)]) {
-        [self ppmake_tableView:tableView didSelectRowAtIndexPath:indexPath];
+    if ([self respondsToSelector:@selector(ppmakeTableView:didSelectRowAtIndexPath:)]) {
+        [self ppmakeTableView:tableView didSelectRowAtIndexPath:indexPath];
     }else{
         Class vcClass = NSClassFromString(self.vcs[indexPath.section]);
         PPMakeBaseViewController *vc = [vcClass new];

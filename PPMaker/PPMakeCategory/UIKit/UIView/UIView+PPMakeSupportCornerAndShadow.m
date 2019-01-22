@@ -11,15 +11,23 @@
 #import "NSObject+PPMakeSupport.h"
 
 @implementation UIView (PPMakeSupportCornerAndShadow)
-+(void)load
++ (void)load
 {
     [UIView ppmake_swizzleWithOriginSelector:@selector(setFrame:) swizzledSelector:@selector(ppmake_setFrame:)];
 }
--(void)ppmake_setFrame:(CGRect)frame
+- (void)ppmake_setFrame:(CGRect)frame
 {
     if (self.shadowView) {
         [self.shadowView ppmake_setFrame:frame];
         [self ppmake_setFrame:self.shadowView.bounds];
+        if (self.layer.mask) {
+            self.layer.mask = nil;
+            UIBezierPath *maskPath = [UIBezierPath bezierPathWithRoundedRect:self.frame byRoundingCorners:UIRectCornerTopLeft | UIRectCornerTopRight cornerRadii:CGSizeMake(18, 18)];
+            CAShapeLayer *maskLayer = [[CAShapeLayer alloc] init];
+            maskLayer.frame = self.bounds;
+            maskLayer.path = maskPath.CGPath;
+            self.layer.mask = maskLayer;
+        }
     }else{
         [self ppmake_setFrame:frame];
     }
@@ -37,7 +45,7 @@
  * @param shadowOpacity 阴影不透明度
  * * *
  */
--(void)ppmake_cornerShadowWithSuperV:(UIView *)superV
+- (void)ppmake_cornerShadowWithSuperV:(UIView *)superV
                            viewFrame:(CGRect)viewFrame
                         cornerRadius:(CGFloat)cornerRadius
                         shadowRadius:(CGFloat)shadowRadius
@@ -47,9 +55,8 @@
 {
     //给视图设置圆角
     //cornerRadius默认值是0，当为正数时，才有效
-    CALayer *viewLayer = self.layer;
-    viewLayer.masksToBounds = YES;
-    viewLayer.cornerRadius = cornerRadius;
+    self.layer.masksToBounds = YES;
+    self.layer.cornerRadius = cornerRadius;
     
     //给视图设置阴影，
     [self _setupShadowViewShadowRadius:shadowRadius
@@ -67,7 +74,7 @@
  * @param shadowRadius  阴影半径
  * @param shadowOpacity 阴影不透明度
  */
--(void)ppmake_cornerRadius:(CGFloat)cornerRadius
+- (void)ppmake_cornerRadius:(CGFloat)cornerRadius
               shadowRadius:(CGFloat)shadowRadius
              shadowOpacity:(float)shadowOpacity
 {
@@ -83,7 +90,7 @@
 static inline void setShadowView(UIView *shadowView,UIView *currentView){
     objc_setAssociatedObject(currentView, @selector(shadowView), shadowView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
--(UIView *)shadowView
+- (UIView *)shadowView
 {
     return objc_getAssociatedObject(self, _cmd);
 }
@@ -99,13 +106,19 @@ static inline void setShadowView(UIView *shadowView,UIView *currentView){
  * @param shadowOpacity 阴影不透明度
  * *
  */
--(void)ppmake_cornerShadowByRoundingCorners:(UIRectCorner)corners
+- (void)ppmake_cornerShadowByRoundingCorners:(UIRectCorner)corners
                                 cornerRadii:(CGSize)cornerRadii
                                shadowRadius:(CGFloat)shadowRadius
                                 shadowColor:(UIColor *)shadowColor
                                shadowOffset:(CGSize)shadowOffset
                               shadowOpacity:(CGFloat)shadowOpacity
-{
+{    
+    //阴影
+    [self _setupShadowViewShadowRadius:shadowRadius
+                           shadowColor:shadowColor
+                          shadowOffset:shadowOffset
+                         shadowOpacity:shadowOpacity];
+    
     //圆角
     UIBezierPath *maskPath = [UIBezierPath bezierPathWithRoundedRect:self.frame byRoundingCorners:corners cornerRadii:cornerRadii];
     CAShapeLayer *maskLayer = [[CAShapeLayer alloc] init];
@@ -113,11 +126,7 @@ static inline void setShadowView(UIView *shadowView,UIView *currentView){
     maskLayer.path = maskPath.CGPath;
     self.layer.mask = maskLayer;
     
-    //阴影
-    [self _setupShadowViewShadowRadius:shadowRadius
-                           shadowColor:shadowColor
-                          shadowOffset:shadowOffset
-                         shadowOpacity:shadowOpacity];
+
 }
 
 
@@ -132,7 +141,7 @@ static inline void setShadowView(UIView *shadowView,UIView *currentView){
  * @param shadowRadius  阴影半径
  * @param shadowOpacity 阴影不透明度
  */
--(void)ppmake_cornerShadowByRoundingCorners:(UIRectCorner)corners
+- (void)ppmake_cornerShadowByRoundingCorners:(UIRectCorner)corners
                                 cornerRadii:(CGSize)cornerRadii
                                shadowRadius:(CGFloat)shadowRadius
                               shadowOpacity:(CGFloat)shadowOpacity
@@ -140,13 +149,13 @@ static inline void setShadowView(UIView *shadowView,UIView *currentView){
     [self ppmake_cornerShadowByRoundingCorners:corners
                                    cornerRadii:cornerRadii
                                   shadowRadius:shadowRadius
-                                   shadowColor:[UIColor blueColor]
+                                   shadowColor:[UIColor blackColor]
                                   shadowOffset:CGSizeZero
                                  shadowOpacity:shadowOpacity];
 }
 
 #pragma mark --- 内部方法抽离
--(void)_setupShadowViewShadowRadius:(CGFloat)shadowRadius
+- (void)_setupShadowViewShadowRadius:(CGFloat)shadowRadius
                         shadowColor:(UIColor *)shadowColor
                        shadowOffset:(CGSize)shadowOffset
                       shadowOpacity:(CGFloat)shadowOpacity
@@ -160,12 +169,9 @@ static inline void setShadowView(UIView *shadowView,UIView *currentView){
         [shadowView addSubview:self];
         //此处注意：第一次创建shadowView的时候，先设置frame，然后再添加观察者。减少不必要的调用（如该方法最后一行的self.frame = shadowView.bounds;）
         shadowView.frame = self.frame;
-        //        [shadowView addObserver:self forKeyPath:@"frame" options:NSKeyValueObservingOptionNew context:nil];
     }
-    //    else{
-    //        shadowView.frame = viewFrame;
-    //    }
     shadowView.layer.shadowColor   = shadowColor.CGColor;
+    //Defaults to (0, -3).x向右为正，y向下为正
     shadowView.layer.shadowOffset  = shadowOffset;
     shadowView.layer.shadowOpacity = shadowOpacity;
     shadowView.layer.shadowRadius  = shadowRadius;
@@ -173,16 +179,6 @@ static inline void setShadowView(UIView *shadowView,UIView *currentView){
     //2. 把视图添加到shadowView上,并设置frame.[放外面，就算shadowView的frame变化了，保证视图的frame也变化，始终是shadowView的bounds]
     [self ppmake_setFrame:self.shadowView.bounds];
 }
-//-(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context
-//{
-//    NSLog(@"%@ %@ %@",keyPath,object,change);
-//    self.frame = self.shadowView.bounds;
-//}
-//-(void)dealloc
-//{
-//    if (self.shadowView) {
-//        [self.shadowView removeObserver:self forKeyPath:@"height" context:nil];
-//    }
-//}
+
 
 @end

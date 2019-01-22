@@ -8,7 +8,6 @@
 
 #import "ViewController.h"
 
-
 @interface ViewController ()
 
 @end
@@ -17,7 +16,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+//    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+//        //
+//        dispatch_async(dispatch_get_main_queue(), ^{
+//            <#code#>
+//        })
+//    })
 }
 
 

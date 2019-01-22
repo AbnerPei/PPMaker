@@ -30,7 +30,7 @@
                  @"PPMakeExplainSourceCodemMJRefreshDemoViewController"
                  ];
 }
--(void)ppmake_tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+-(void)ppmakeTableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     PPMakeExplainSourceCodemMJRefreshDemoViewController *demoVC = [[PPMakeExplainSourceCodemMJRefreshDemoViewController alloc]init];
     demoVC.titleStr = self.titles[indexPath.row];

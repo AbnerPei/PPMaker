@@ -17,5 +17,5 @@
  */
 -(void)configureDatas;
 
--(void)ppmake_tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath;
+-(void)ppmakeTableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath;
 @end

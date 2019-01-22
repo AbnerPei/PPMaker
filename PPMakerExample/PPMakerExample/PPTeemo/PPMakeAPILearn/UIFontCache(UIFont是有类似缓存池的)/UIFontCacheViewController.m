@@ -44,6 +44,7 @@
 
 #import "UIFontCacheViewController.h"
 #import "UIFontCacheNextViewController.h"
+#import "PPMutAttributedStringMaker.h"
 
 static NSString *key = @"pppp8888";
 
@@ -84,7 +85,10 @@ static NSString *key = @"pppp8888";
 {
     //进入测试界面用同样的创建方式再次创建一个UIFont对象
     UIFont *creatingFont = kFontSemibold(14);
-    NSLog(@"\n是否有进入后台过：%d\nUIFont新建的font     \n%@ \nfontTestLB设置的font \n%@",hasBackground,creatingFont,self.fontTestLB.font);
+    UIImage *img = [UIImage imageNamed:@"1024"];
+    NSLog(@"\n是否有进入后台过：%d\nUIFont新建的font     \n%@ \nfontTestLB设置的font \n%@---%@",hasBackground,creatingFont,self.fontTestLB.font,img);
+    
+    //UIImage没有缓存池机制
     
 }
 -(void)createBT

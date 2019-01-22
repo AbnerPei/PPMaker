@@ -23,14 +23,14 @@ typedef void(^pptoolGridViewItemPropertyBlock)(CGFloat itemX,CGFloat itemY,CGFlo
  * @param itemCount              九宫格item数量
  * @param itemPropertyBlock      回调block
  */
-+(void)ppmake_gridViewWithViewWidth:(CGFloat)viewWidth
-                     viewLeftMargin:(CGFloat)viewLeftMargin
-                      viewTopMargin:(CGFloat)viewTopMargin
-                 itemVerticalMargin:(CGFloat)itemVerticalMargin
-               itemHorizontalMargin:(CGFloat)itemHorizontalMargin
-                         itemHeight:(CGFloat)itemHeight
-                          itemCount:(NSInteger)itemCount
-                       rowItemCount:(NSInteger)rowItemCount
-                  itemPropertyBlock:(pptoolGridViewItemPropertyBlock)itemPropertyBlock;
++ (void)ppmake_gridViewWithViewWidth:(CGFloat)viewWidth
+                      viewLeftMargin:(CGFloat)viewLeftMargin
+                       viewTopMargin:(CGFloat)viewTopMargin
+                  itemVerticalMargin:(CGFloat)itemVerticalMargin
+                itemHorizontalMargin:(CGFloat)itemHorizontalMargin
+                          itemHeight:(CGFloat)itemHeight
+                           itemCount:(NSInteger)itemCount
+                        rowItemCount:(NSInteger)rowItemCount
+                   itemPropertyBlock:(pptoolGridViewItemPropertyBlock)itemPropertyBlock;
 
 @end

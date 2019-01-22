@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface PPMakeCustomView : UIView
-
+@property(nonatomic,strong) UIWindow *w;
 @end

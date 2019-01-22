@@ -22,8 +22,12 @@ if (!self.creatingV.layer.masksToBounds) { \
 @end
 
 @implementation PPMake
+- (void)dealloc
+{
+    NSLog(@"dealloc %@ \n释放了 ",self);
+}
 
--(UIView *)pp_make:(void (^)(PPMake *))make
+- (UIView *)pp_make:(void (^)(PPMake *))make
 {
     PPMake *m = self;
     if (!m) { return nil; }
@@ -31,7 +35,7 @@ if (!self.creatingV.layer.masksToBounds) { \
     return self.creatingV;
 }
 
-+(instancetype)makeWithType:(PPMakeType)makeType
++ (instancetype)makeWithType:(PPMakeType)makeType
 {
     PPMake *m = [[PPMake alloc]init];
     m.mType = makeType;
@@ -71,16 +75,16 @@ if (!self.creatingV.layer.masksToBounds) { \
     }
     return m;
 }
--(UIView *)createdView
+- (UIView *)createdView
 {
     return self.creatingV;
 }
--(PPMakeType)makeType
+- (PPMakeType)makeType
 {
     return self.mType;
 }
 #pragma mark --- 父视图
--(PPMake *(^)(UIView *))intoView
+- (PPMake *(^)(UIView *))intoView
 {
     return ^PPMake *(UIView *superV){
         if (superV) {
@@ -90,7 +94,7 @@ if (!self.creatingV.layer.masksToBounds) { \
     };
 }
 #pragma mark --- frame
--(PPMake *(^)(CGRect))frame
+- (PPMake *(^)(CGRect))frame
 {
     return ^PPMake *(CGRect frame){
         self.creatingV.frame = frame;
@@ -98,7 +102,7 @@ if (!self.creatingV.layer.masksToBounds) { \
     };
 }
 #pragma mark --- 背景色
--(PPMake *(^)(UIColor *))bgColor
+- (PPMake *(^)(UIColor *))bgColor
 {
     return ^PPMake *(UIColor *color){
         self.creatingV.backgroundColor = color;
@@ -106,35 +110,35 @@ if (!self.creatingV.layer.masksToBounds) { \
     };
 }
 #pragma mark --- 是否隐藏
--(PPMake *(^)(BOOL))hidden
+- (PPMake *(^)(BOOL))hidden
 {
     return ^PPMake *(BOOL isHidden){
         self.creatingV.hidden = isHidden;
         return self;
     };
 }
--(PPMake *(^)(NSInteger))tag
+- (PPMake *(^)(NSInteger))tag
 {
     return ^PPMake *(NSInteger t){
         self.creatingV.tag = t;
         return self;
     };
 }
--(PPMake *(^)(BOOL))userInteractionEnabled
+- (PPMake *(^)(BOOL))userInteractionEnabled
 {
     return ^PPMake *(BOOL userIE){
         self.creatingV.userInteractionEnabled = userIE;
         return self;
     };
 }
--(PPMake *(^)(UIViewContentMode))contentMode
+- (PPMake *(^)(UIViewContentMode))contentMode
 {
     return ^PPMake *(UIViewContentMode cm){
-        self.creatingV.contentMode = condense;
+        self.creatingV.contentMode = cm;
         return self;
     };
 }
--(PPMake *(^)(CGFloat))cornerRadius
+- (PPMake *(^)(CGFloat))cornerRadius
 {
     return ^PPMake *(CGFloat cr){
         kMasksToBounds
@@ -142,7 +146,7 @@ if (!self.creatingV.layer.masksToBounds) { \
         return self;
     };
 }
--(PPMake *(^)(CGFloat))borderWidth
+- (PPMake *(^)(CGFloat))borderWidth
 {
     return ^PPMake *(CGFloat bw){
         kMasksToBounds
@@ -150,7 +154,7 @@ if (!self.creatingV.layer.masksToBounds) { \
         return self;
     };
 }
--(PPMake *(^)(UIColor *))borderColor
+- (PPMake *(^)(UIColor *))borderColor
 {
     return ^PPMake *(UIColor *bc){
         kMasksToBounds
@@ -160,7 +164,7 @@ if (!self.creatingV.layer.masksToBounds) { \
 }
 
 #pragma mark --- 是否裁剪超过父视图的部分， 系统默认NO
--(PPMake *(^)(BOOL))clipsToBounds
+- (PPMake *(^)(BOOL))clipsToBounds
 {
     return ^PPMake *(BOOL cb){
         self.creatingV.clipsToBounds = cb;
@@ -168,14 +172,14 @@ if (!self.creatingV.layer.masksToBounds) { \
     };
 }
 
--(PPMake *(^)(CGFloat, CGFloat, CGFloat))cornerShadow
+- (PPMake *(^)(CGFloat, CGFloat, CGFloat))cornerShadow
 {
     return ^PPMake *(CGFloat cr,CGFloat sr,CGFloat so){
         [self.creatingV ppmake_cornerRadius:cr shadowRadius:sr shadowOpacity:so];
         return self;
     };
 }
--(PPMake *(^)(makeViewGestureBlock))tapBlock
+- (PPMake *(^)(makeViewGestureBlock))tapBlock
 {
     return ^PPMake *(makeViewGestureBlock mb){
         if (mb) {
@@ -184,7 +188,7 @@ if (!self.creatingV.layer.masksToBounds) { \
         return self;
     };
 }
--(PPMake *(^)(makeViewGestureBlock))longPressBlock
+- (PPMake *(^)(makeViewGestureBlock))longPressBlock
 {
     return ^PPMake *(makeViewGestureBlock mb){
         if (mb) {
@@ -197,7 +201,7 @@ if (!self.creatingV.layer.masksToBounds) { \
 @end
 
 @implementation UIView (PPMake)
--(void)pp_make:(void (^)(PPMake *))make
+- (void)pp_make:(void (^)(PPMake *))make
 {
     PPMakeType makeType = PPMakeTypeView;
     if ([self isKindOfClass:[UILabel class]]) {

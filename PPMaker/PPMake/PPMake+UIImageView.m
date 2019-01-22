@@ -13,7 +13,7 @@
 
 
 
--(PPMake *(^)(UIImage *))image
+- (PPMake *(^)(UIImage *))image
 {
     PPMakeImgVAssert
     return ^PPMake *(UIImage *image){
@@ -23,7 +23,7 @@
     };
 }
 #pragma mark --- 图片名字
--(PPMake *(^)(NSString *))imageName
+- (PPMake *(^)(NSString *))imageName
 {
     PPMakeImgVAssert
     return ^PPMake *(NSString *imageName){

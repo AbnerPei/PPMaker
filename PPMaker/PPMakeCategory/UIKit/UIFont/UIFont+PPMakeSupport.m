@@ -14,17 +14,17 @@ NSString * const kFontNamePingFangSCRegular  = @"PingFangSC-Regular";
 
 @implementation UIFont (PPMakeSupport)
 /** PingFangSC-Semibold格式字体 */
-+(instancetype)ppmake_fontPingFangSCSemiboldSize:(CGFloat)size
++ (instancetype)ppmake_fontPingFangSCSemiboldSize:(CGFloat)size
 {
    return _makeFont(kFontNamePingFangSCSemibold, size);
 }
 /** PingFangSC-Medium格式字体 */
-+(instancetype)ppmake_fontPingFangSCMediumSize:(CGFloat)size
++ (instancetype)ppmake_fontPingFangSCMediumSize:(CGFloat)size
 {
     return _makeFont(kFontNamePingFangSCMedium, size);
 }
 /** PingFangSC-Regular格式字体 */
-+(instancetype)ppmake_fontPingFangSCRegularSize:(CGFloat)size
++ (instancetype)ppmake_fontPingFangSCRegularSize:(CGFloat)size
 {
    return _makeFont(kFontNamePingFangSCRegular, size);
 }

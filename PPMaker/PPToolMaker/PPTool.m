@@ -20,15 +20,15 @@
  * @param itemHeight             九宫格item高度
  * @param itemPropertyBlock      回调block
  */
-+(void)ppmake_gridViewWithViewWidth:(CGFloat)viewWidth
-                     viewLeftMargin:(CGFloat)viewLeftMargin
-                      viewTopMargin:(CGFloat)viewTopMargin
-                 itemVerticalMargin:(CGFloat)itemVerticalMargin
-               itemHorizontalMargin:(CGFloat)itemHorizontalMargin
-                         itemHeight:(CGFloat)itemHeight
-                          itemCount:(NSInteger)itemCount
-                       rowItemCount:(NSInteger)rowItemCount
-                  itemPropertyBlock:(pptoolGridViewItemPropertyBlock)itemPropertyBlock
++ (void)ppmake_gridViewWithViewWidth:(CGFloat)viewWidth
+                      viewLeftMargin:(CGFloat)viewLeftMargin
+                       viewTopMargin:(CGFloat)viewTopMargin
+                  itemVerticalMargin:(CGFloat)itemVerticalMargin
+                itemHorizontalMargin:(CGFloat)itemHorizontalMargin
+                          itemHeight:(CGFloat)itemHeight
+                           itemCount:(NSInteger)itemCount
+                        rowItemCount:(NSInteger)rowItemCount
+                   itemPropertyBlock:(pptoolGridViewItemPropertyBlock)itemPropertyBlock
 {
     for (int i = 0; i < itemCount; i++) {
         CGFloat itemW = (viewWidth-viewLeftMargin*2-itemHorizontalMargin*(rowItemCount-1))/rowItemCount;

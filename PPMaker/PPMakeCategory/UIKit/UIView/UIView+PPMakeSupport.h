@@ -28,7 +28,7 @@ typedef void(^makeViewGestureBlock)(void);
 
 @interface UIView (PPMakeSupportGestureRecognizer)
 /** 添加tap手势 */
--(void)ppmake_tapBlock:(makeViewGestureBlock)gestureBlock;
+- (void)ppmake_tapBlock:(makeViewGestureBlock)gestureBlock;
 /** 添加长按手势 */
--(void)ppmake_longPressBlock:(makeViewGestureBlock)gestureBlock;
+- (void)ppmake_longPressBlock:(makeViewGestureBlock)gestureBlock;
 @end

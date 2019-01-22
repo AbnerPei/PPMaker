@@ -21,7 +21,7 @@ UIKIT_EXTERN NSString * const kFontNamePingFangSCRegular;
 #define kFontRegular(fontSize)    [UIFont ppmake_fontPingFangSCRegularSize:(fontSize)]
 
 @interface UIFont (PPMakeSupport)
-+(instancetype)ppmake_fontPingFangSCSemiboldSize:(CGFloat)size;
-+(instancetype)ppmake_fontPingFangSCMediumSize:(CGFloat)size;
-+(instancetype)ppmake_fontPingFangSCRegularSize:(CGFloat)size;
++ (instancetype)ppmake_fontPingFangSCSemiboldSize:(CGFloat)size;
++ (instancetype)ppmake_fontPingFangSCMediumSize:(CGFloat)size;
++ (instancetype)ppmake_fontPingFangSCRegularSize:(CGFloat)size;
 @end

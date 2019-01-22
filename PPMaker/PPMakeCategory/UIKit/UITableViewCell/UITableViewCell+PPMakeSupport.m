@@ -9,13 +9,13 @@
 #import "UITableViewCell+PPMakeSupport.h"
 
 @implementation UITableViewCell (PPMakeSupport)
-+(instancetype)ppmake_cellWithTableView:(UITableView *)tableView
++ (instancetype)ppmake_cellWithTableView:(UITableView *)tableView
 {
     NSString *identifier = [NSString stringWithFormat:@"%@Identifier",NSStringFromClass([self class])];
     return [self ppmake_cellWithTableView:tableView identifier:identifier];
 }
 
-+(instancetype)ppmake_cellWithTableView:(UITableView *)tableView
++ (instancetype)ppmake_cellWithTableView:(UITableView *)tableView
                              identifier:(NSString *)identifier
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];

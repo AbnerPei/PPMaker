@@ -35,6 +35,8 @@
 
 /**
  `AFHTTPSessionManager` is a subclass of `AFURLSessionManager` with convenience methods for making HTTP requests. When a `baseURL` is provided, requests made with the `GET` / `POST` / et al. convenience methods can be made with relative paths.
+ 
+ `AFHTTPSessionManager`是`AFURLSessionManager`的一个子类，提供了一些便捷的HTTP请求方法。
 
  ## Subclassing Notes
 

@@ -7,7 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		571392E52179A6E700C0C15C /* NSDate+Timestamp.m in Sources */ = {isa = PBXBuildFile; fileRef = 571392E42179A6E700C0C15C /* NSDate+Timestamp.m */; };
 		571519CE2128A5E600F63DFD /* PPMakeNotificationCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 571519CD2128A5E600F63DFD /* PPMakeNotificationCenter.m */; };
+		571519E1212CFFD000F63DFD /* NSObject+PPMakeSupport_KVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 571519DF212CFFD000F63DFD /* NSObject+PPMakeSupport_KVO.m */; };
+		571519E5212D136200F63DFD /* PPMakePracticeMakesPerfectBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 571519E4212D136200F63DFD /* PPMakePracticeMakesPerfectBaseTableViewController.m */; };
+		571519E8212D13CA00F63DFD /* PPMakeDeepCopyAndShallowCopyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 571519E7212D13CA00F63DFD /* PPMakeDeepCopyAndShallowCopyViewController.m */; };
 		572209CE20AD7EA700611BFA /* PPMake.m in Sources */ = {isa = PBXBuildFile; fileRef = 572209CD20AD7EA700611BFA /* PPMake.m */; };
 		572D03E420EF1C3D000FFC23 /* PPMakeKitExampleListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 572D03E320EF1C3D000FFC23 /* PPMakeKitExampleListCell.m */; };
 		572D03E820EF2F90000FFC23 /* UITableViewCell+PPMakeSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 572D03E720EF2F90000FFC23 /* UITableViewCell+PPMakeSupport.m */; };
@@ -23,8 +27,13 @@
 		573702122118300D0060B4B5 /* PPMakeTreeDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 573702112118300D0060B4B5 /* PPMakeTreeDemoViewController.m */; };
 		57370215211830D90060B4B5 /* PPMakeTreeItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 57370214211830D90060B4B5 /* PPMakeTreeItem.m */; };
 		5737021B211960A00060B4B5 /* HBRoom.m in Sources */ = {isa = PBXBuildFile; fileRef = 5737021A211960A00060B4B5 /* HBRoom.m */; };
+		573FA5CB213FDB670098CD17 /* UITableViewHeaderFooterView+PPMakeSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 573FA5CA213FDB670098CD17 /* UITableViewHeaderFooterView+PPMakeSupport.m */; };
 		5748A33320FEEB0C00F51098 /* PPTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 5748A33220FEEB0C00F51098 /* PPTool.m */; };
 		5748A33820FEF27200F51098 /* PPMakeGridViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5748A33720FEF27200F51098 /* PPMakeGridViewViewController.m */; };
+		57545698212F9DEC00D68145 /* PPMakeRuntimeBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57545697212F9DEC00D68145 /* PPMakeRuntimeBaseTableViewController.m */; };
+		5754569C212F9EDF00D68145 /* PPMakeRuntimeButtonTimeIntervalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5754569B212F9EDF00D68145 /* PPMakeRuntimeButtonTimeIntervalViewController.m */; };
+		575456A0212FD92D00D68145 /* NSObject+PPMakeRuntimeSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 5754569F212FD92D00D68145 /* NSObject+PPMakeRuntimeSupport.m */; };
+		575456A32130032B00D68145 /* PPMakeRuntimeCommonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 575456A22130032B00D68145 /* PPMakeRuntimeCommonViewController.m */; };
 		57754C8120F852A6005B3AE7 /* UIScrollView+ScrollBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 57754C7F20F852A6005B3AE7 /* UIScrollView+ScrollBlock.m */; };
 		57754C8420F86D89005B3AE7 /* PPMakeBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57754C8320F86D89005B3AE7 /* PPMakeBaseTableViewController.m */; };
 		57754CB920FD81D7005B3AE7 /* PPKVOPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 57754CB820FD81D7005B3AE7 /* PPKVOPerson.m */; };
@@ -50,6 +59,29 @@
 		57A1F01420E8CB02007B1B41 /* PPMakeMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A1F01320E8CB02007B1B41 /* PPMakeMineViewController.m */; };
 		57A1F01820E93E20007B1B41 /* UIImage+PPMakeSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A1F01720E93E1F007B1B41 /* UIImage+PPMakeSupport.m */; };
 		57A1F01D20E941D0007B1B41 /* UIFontCacheViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A1F01C20E941D0007B1B41 /* UIFontCacheViewController.m */; };
+		57B4CCE8214656E300E21EAF /* PPMakeAPILearn_Shake_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57B4CCE7214656E300E21EAF /* PPMakeAPILearn_Shake_ViewController.m */; };
+		57B8A17E213402FB00D324D6 /* PPMakeMultithreadingBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57B8A17D213402FB00D324D6 /* PPMakeMultithreadingBaseTableViewController.m */; };
+		57B8A1842134F3F000D324D6 /* PPMakeInfrastructureExploreBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57B8A1832134F3F000D324D6 /* PPMakeInfrastructureExploreBaseTableViewController.m */; };
+		57B8A1872134F88E00D324D6 /* PPMakeIE_BlockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57B8A1862134F88E00D324D6 /* PPMakeIE_BlockViewController.m */; };
+		57B8A18A2134FF0800D324D6 /* BlockModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 57B8A1892134FF0800D324D6 /* BlockModel.m */; };
+		57B8A19021363B0700D324D6 /* NSMutableArray+PPMakeSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 57B8A18F21363B0700D324D6 /* NSMutableArray+PPMakeSupport.m */; };
+		57B8A1932136478100D324D6 /* UIFont+PPMakeUIFontCreation.m in Sources */ = {isa = PBXBuildFile; fileRef = 57B8A1922136478100D324D6 /* UIFont+PPMakeUIFontCreation.m */; };
+		57B8A1982136522C00D324D6 /* NBA.json in Resources */ = {isa = PBXBuildFile; fileRef = 57B8A1972136522C00D324D6 /* NBA.json */; };
+		57B8A19B2136533E00D324D6 /* ZMMatch.m in Sources */ = {isa = PBXBuildFile; fileRef = 57B8A19A2136533E00D324D6 /* ZMMatch.m */; };
+		57B8A19E21377E2300D324D6 /* UIButton+PPMakeEasilyConfigure.m in Sources */ = {isa = PBXBuildFile; fileRef = 57B8A19D21377E2300D324D6 /* UIButton+PPMakeEasilyConfigure.m */; };
+		57B8A1A221379B7F00D324D6 /* UITableView+PPMakeSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 57B8A1A121379B7F00D324D6 /* UITableView+PPMakeSupport.m */; };
+		57B8A1A521379C5900D324D6 /* UITableView+PPMakeDidSelectedBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 57B8A1A421379C5900D324D6 /* UITableView+PPMakeDidSelectedBlock.m */; };
+		57B8A1B0213CCE4B00D324D6 /* PPMakeAlgorithm_StringInvert_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57B8A1AF213CCE4B00D324D6 /* PPMakeAlgorithm_StringInvert_ViewController.m */; };
+		57B8A1B4213D1EA000D324D6 /* PPMakeRunloopBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57B8A1B3213D1EA000D324D6 /* PPMakeRunloopBaseTableViewController.m */; };
+		57B8A1B8213D1FD500D324D6 /* PPMake_RunloopUnused_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57B8A1B7213D1FD500D324D6 /* PPMake_RunloopUnused_ViewController.m */; };
+		57B8A1BB213D200800D324D6 /* PPMakeDemoThread.m in Sources */ = {isa = PBXBuildFile; fileRef = 57B8A1BA213D200800D324D6 /* PPMakeDemoThread.m */; };
+		57B8A1BF213D234B00D324D6 /* PPMake_RunloopUsed_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57B8A1BE213D234B00D324D6 /* PPMake_RunloopUsed_ViewController.m */; };
+		57B8A1DC213E4EFA00D324D6 /* PPMakeAPILearn_UITableView_BaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57B8A1DB213E4EFA00D324D6 /* PPMakeAPILearn_UITableView_BaseTableViewController.m */; };
+		57B8A1E2213E513A00D324D6 /* PPMake_UITableView_UpdatesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57B8A1E1213E513A00D324D6 /* PPMake_UITableView_UpdatesViewController.m */; };
+		57B8A1E6213E651E00D324D6 /* NSIndexPath+PPMakeEasilyDebug.m in Sources */ = {isa = PBXBuildFile; fileRef = 57B8A1E5213E651E00D324D6 /* NSIndexPath+PPMakeEasilyDebug.m */; };
+		57BF77682151210D004E6F41 /* PPMake_InterView_ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 57BF77672151210D004E6F41 /* PPMake_InterView_ViewController.mm */; };
+		57BF776A215124C8004E6F41 /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 57BF7769215124C8004E6F41 /* libstdc++.tbd */; };
+		57BF7780215280B2004E6F41 /* InterView_001 in Resources */ = {isa = PBXBuildFile; fileRef = 57BF777F215280B2004E6F41 /* InterView_001 */; };
 		57CB436E20A1BA8A00268DBE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 57CB436D20A1BA8A00268DBE /* AppDelegate.m */; };
 		57CB437120A1BA8A00268DBE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57CB437020A1BA8A00268DBE /* ViewController.m */; };
 		57CB437420A1BA8A00268DBE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57CB437220A1BA8A00268DBE /* Main.storyboard */; };
@@ -57,6 +89,15 @@
 		57CB437920A1BA8D00268DBE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57CB437720A1BA8D00268DBE /* LaunchScreen.storyboard */; };
 		57CB437C20A1BA8D00268DBE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 57CB437B20A1BA8D00268DBE /* main.m */; };
 		57CB43A120A286C800268DBE /* PPMutAttributedStringMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 57CB43A020A286C800268DBE /* PPMutAttributedStringMaker.m */; };
+		57D3788F219071C4001E5B2E /* NSUserDefaults+PPMakeSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 57D3788E219071C4001E5B2E /* NSUserDefaults+PPMakeSupport.m */; };
+		57FBF15B2142091A00311650 /* PPMake_MVC_View.m in Sources */ = {isa = PBXBuildFile; fileRef = 57FBF15A2142091A00311650 /* PPMake_MVC_View.m */; };
+		57FBF15E2142098C00311650 /* PPMake_MVC_Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 57FBF15D2142098C00311650 /* PPMake_MVC_Model.m */; };
+		57FBF1622142153700311650 /* UILabel+PPMakeSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 57FBF1612142153700311650 /* UILabel+PPMakeSupport.m */; };
+		57FBF16521421BEC00311650 /* PPMakeMVCMVVMBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57FBF16421421BEC00311650 /* PPMakeMVCMVVMBaseTableViewController.m */; };
+		57FBF16821421C0C00311650 /* PPMake_MVC_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57FBF16721421C0C00311650 /* PPMake_MVC_ViewController.m */; };
+		57FE0081214B7BA700437F0F /* PPMake_QiNiu_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57FE0080214B7BA700437F0F /* PPMake_QiNiu_ViewController.m */; };
+		57FE008A214F4E3300437F0F /* Product.m in Sources */ = {isa = PBXBuildFile; fileRef = 57FE0089214F4E3300437F0F /* Product.m */; };
+		57FF3973215C85D90040A48D /* PPMake_GetImageMainColorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57FF3972215C85D90040A48D /* PPMake_GetImageMainColorViewController.m */; };
 		57FFFDAD2106B9E700ADD5DA /* PPMakeAlgorithmBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57FFFDAC2106B9E700ADD5DA /* PPMakeAlgorithmBaseViewController.m */; };
 		57FFFDE621080A8600ADD5DA /* PPMakeCustomDoneTextFieldViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57FFFDE521080A8600ADD5DA /* PPMakeCustomDoneTextFieldViewController.m */; };
 		57FFFDEA21080AF100ADD5DA /* PPMakeCustomDoneTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 57FFFDE921080AF100ADD5DA /* PPMakeCustomDoneTextField.m */; };
@@ -127,8 +168,17 @@
 
 /* Begin PBXFileReference section */
 		168B85E18337228F215004C3 /* Pods-PPMakerExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PPMakerExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PPMakerExample/Pods-PPMakerExample.debug.xcconfig"; sourceTree = "<group>"; };
+		571392E32179A6E700C0C15C /* NSDate+Timestamp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDate+Timestamp.h"; sourceTree = "<group>"; };
+		571392E42179A6E700C0C15C /* NSDate+Timestamp.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Timestamp.m"; sourceTree = "<group>"; };
+		571392E72179A9F700C0C15C /* 亲宝宝.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "亲宝宝.md"; sourceTree = "<group>"; };
 		571519CC2128A5E600F63DFD /* PPMakeNotificationCenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMakeNotificationCenter.h; sourceTree = "<group>"; };
 		571519CD2128A5E600F63DFD /* PPMakeNotificationCenter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPMakeNotificationCenter.m; sourceTree = "<group>"; };
+		571519DF212CFFD000F63DFD /* NSObject+PPMakeSupport_KVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+PPMakeSupport_KVO.m"; sourceTree = "<group>"; };
+		571519E0212CFFD000F63DFD /* NSObject+PPMakeSupport_KVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+PPMakeSupport_KVO.h"; sourceTree = "<group>"; };
+		571519E3212D136200F63DFD /* PPMakePracticeMakesPerfectBaseTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMakePracticeMakesPerfectBaseTableViewController.h; sourceTree = "<group>"; };
+		571519E4212D136200F63DFD /* PPMakePracticeMakesPerfectBaseTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPMakePracticeMakesPerfectBaseTableViewController.m; sourceTree = "<group>"; };
+		571519E6212D13CA00F63DFD /* PPMakeDeepCopyAndShallowCopyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMakeDeepCopyAndShallowCopyViewController.h; sourceTree = "<group>"; };
+		571519E7212D13CA00F63DFD /* PPMakeDeepCopyAndShallowCopyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPMakeDeepCopyAndShallowCopyViewController.m; sourceTree = "<group>"; };
 		572209CC20AD7EA700611BFA /* PPMake.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMake.h; sourceTree = "<group>"; };
 		572209CD20AD7EA700611BFA /* PPMake.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPMake.m; sourceTree = "<group>"; };
 		572D03E220EF1C3D000FFC23 /* PPMakeKitExampleListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMakeKitExampleListCell.h; sourceTree = "<group>"; };
@@ -159,10 +209,21 @@
 		57370214211830D90060B4B5 /* PPMakeTreeItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPMakeTreeItem.m; sourceTree = "<group>"; };
 		57370219211960A00060B4B5 /* HBRoom.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HBRoom.h; sourceTree = "<group>"; };
 		5737021A211960A00060B4B5 /* HBRoom.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HBRoom.m; sourceTree = "<group>"; };
+		573FA5C9213FDB670098CD17 /* UITableViewHeaderFooterView+PPMakeSupport.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITableViewHeaderFooterView+PPMakeSupport.h"; sourceTree = "<group>"; };
+		573FA5CA213FDB670098CD17 /* UITableViewHeaderFooterView+PPMakeSupport.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITableViewHeaderFooterView+PPMakeSupport.m"; sourceTree = "<group>"; };
 		5748A33120FEEB0C00F51098 /* PPTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPTool.h; sourceTree = "<group>"; };
 		5748A33220FEEB0C00F51098 /* PPTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPTool.m; sourceTree = "<group>"; };
 		5748A33620FEF27200F51098 /* PPMakeGridViewViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMakeGridViewViewController.h; sourceTree = "<group>"; };
 		5748A33720FEF27200F51098 /* PPMakeGridViewViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPMakeGridViewViewController.m; sourceTree = "<group>"; };
+		57545696212F9DEC00D68145 /* PPMakeRuntimeBaseTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMakeRuntimeBaseTableViewController.h; sourceTree = "<group>"; };
+		57545697212F9DEC00D68145 /* PPMakeRuntimeBaseTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPMakeRuntimeBaseTableViewController.m; sourceTree = "<group>"; };
+		5754569A212F9EDF00D68145 /* PPMakeRuntimeButtonTimeIntervalViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMakeRuntimeButtonTimeIntervalViewController.h; sourceTree = "<group>"; };
+		5754569B212F9EDF00D68145 /* PPMakeRuntimeButtonTimeIntervalViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPMakeRuntimeButtonTimeIntervalViewController.m; sourceTree = "<group>"; };
+		5754569D212FD8A000D68145 /* PPMakeRuntimeNotes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMakeRuntimeNotes.h; sourceTree = "<group>"; };
+		5754569E212FD92D00D68145 /* NSObject+PPMakeRuntimeSupport.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+PPMakeRuntimeSupport.h"; sourceTree = "<group>"; };
+		5754569F212FD92D00D68145 /* NSObject+PPMakeRuntimeSupport.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+PPMakeRuntimeSupport.m"; sourceTree = "<group>"; };
+		575456A12130032B00D68145 /* PPMakeRuntimeCommonViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMakeRuntimeCommonViewController.h; sourceTree = "<group>"; };
+		575456A22130032B00D68145 /* PPMakeRuntimeCommonViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPMakeRuntimeCommonViewController.m; sourceTree = "<group>"; };
 		57754C7E20F72966005B3AE7 /* Block,这一次你不懂来找我.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "Block,这一次你不懂来找我.md"; sourceTree = "<group>"; };
 		57754C7F20F852A6005B3AE7 /* UIScrollView+ScrollBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+ScrollBlock.m"; sourceTree = "<group>"; };
 		57754C8020F852A6005B3AE7 /* UIScrollView+ScrollBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+ScrollBlock.h"; sourceTree = "<group>"; };
@@ -215,6 +276,51 @@
 		57A1F01720E93E1F007B1B41 /* UIImage+PPMakeSupport.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+PPMakeSupport.m"; sourceTree = "<group>"; };
 		57A1F01B20E941D0007B1B41 /* UIFontCacheViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIFontCacheViewController.h; sourceTree = "<group>"; };
 		57A1F01C20E941D0007B1B41 /* UIFontCacheViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIFontCacheViewController.m; sourceTree = "<group>"; };
+		57B4CCE6214656E300E21EAF /* PPMakeAPILearn_Shake_ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMakeAPILearn_Shake_ViewController.h; sourceTree = "<group>"; };
+		57B4CCE7214656E300E21EAF /* PPMakeAPILearn_Shake_ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPMakeAPILearn_Shake_ViewController.m; sourceTree = "<group>"; };
+		57B4CCE92146584400E21EAF /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		57B8A17C213402FB00D324D6 /* PPMakeMultithreadingBaseTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMakeMultithreadingBaseTableViewController.h; sourceTree = "<group>"; };
+		57B8A17D213402FB00D324D6 /* PPMakeMultithreadingBaseTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPMakeMultithreadingBaseTableViewController.m; sourceTree = "<group>"; };
+		57B8A1822134F3F000D324D6 /* PPMakeInfrastructureExploreBaseTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMakeInfrastructureExploreBaseTableViewController.h; sourceTree = "<group>"; };
+		57B8A1832134F3F000D324D6 /* PPMakeInfrastructureExploreBaseTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPMakeInfrastructureExploreBaseTableViewController.m; sourceTree = "<group>"; };
+		57B8A1852134F88E00D324D6 /* PPMakeIE_BlockViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMakeIE_BlockViewController.h; sourceTree = "<group>"; };
+		57B8A1862134F88E00D324D6 /* PPMakeIE_BlockViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPMakeIE_BlockViewController.m; sourceTree = "<group>"; };
+		57B8A1882134FF0800D324D6 /* BlockModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BlockModel.h; sourceTree = "<group>"; };
+		57B8A1892134FF0800D324D6 /* BlockModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BlockModel.m; sourceTree = "<group>"; };
+		57B8A18E21363B0700D324D6 /* NSMutableArray+PPMakeSupport.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+PPMakeSupport.h"; sourceTree = "<group>"; };
+		57B8A18F21363B0700D324D6 /* NSMutableArray+PPMakeSupport.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+PPMakeSupport.m"; sourceTree = "<group>"; };
+		57B8A1912136478100D324D6 /* UIFont+PPMakeUIFontCreation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIFont+PPMakeUIFontCreation.h"; sourceTree = "<group>"; };
+		57B8A1922136478100D324D6 /* UIFont+PPMakeUIFontCreation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIFont+PPMakeUIFontCreation.m"; sourceTree = "<group>"; };
+		57B8A1972136522C00D324D6 /* NBA.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = NBA.json; sourceTree = "<group>"; };
+		57B8A1992136533E00D324D6 /* ZMMatch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZMMatch.h; sourceTree = "<group>"; };
+		57B8A19A2136533E00D324D6 /* ZMMatch.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZMMatch.m; sourceTree = "<group>"; };
+		57B8A19C21377E2300D324D6 /* UIButton+PPMakeEasilyConfigure.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+PPMakeEasilyConfigure.h"; sourceTree = "<group>"; };
+		57B8A19D21377E2300D324D6 /* UIButton+PPMakeEasilyConfigure.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+PPMakeEasilyConfigure.m"; sourceTree = "<group>"; };
+		57B8A1A021379B7F00D324D6 /* UITableView+PPMakeSupport.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITableView+PPMakeSupport.h"; sourceTree = "<group>"; };
+		57B8A1A121379B7F00D324D6 /* UITableView+PPMakeSupport.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITableView+PPMakeSupport.m"; sourceTree = "<group>"; };
+		57B8A1A321379C5900D324D6 /* UITableView+PPMakeDidSelectedBlock.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITableView+PPMakeDidSelectedBlock.h"; sourceTree = "<group>"; };
+		57B8A1A421379C5900D324D6 /* UITableView+PPMakeDidSelectedBlock.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITableView+PPMakeDidSelectedBlock.m"; sourceTree = "<group>"; };
+		57B8A1A62137BA1F00D324D6 /* 开发记录.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "开发记录.md"; sourceTree = "<group>"; };
+		57B8A1AE213CCE4B00D324D6 /* PPMakeAlgorithm_StringInvert_ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMakeAlgorithm_StringInvert_ViewController.h; sourceTree = "<group>"; };
+		57B8A1AF213CCE4B00D324D6 /* PPMakeAlgorithm_StringInvert_ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPMakeAlgorithm_StringInvert_ViewController.m; sourceTree = "<group>"; };
+		57B8A1B2213D1EA000D324D6 /* PPMakeRunloopBaseTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMakeRunloopBaseTableViewController.h; sourceTree = "<group>"; };
+		57B8A1B3213D1EA000D324D6 /* PPMakeRunloopBaseTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPMakeRunloopBaseTableViewController.m; sourceTree = "<group>"; };
+		57B8A1B6213D1FD500D324D6 /* PPMake_RunloopUnused_ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMake_RunloopUnused_ViewController.h; sourceTree = "<group>"; };
+		57B8A1B7213D1FD500D324D6 /* PPMake_RunloopUnused_ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPMake_RunloopUnused_ViewController.m; sourceTree = "<group>"; };
+		57B8A1B9213D200800D324D6 /* PPMakeDemoThread.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMakeDemoThread.h; sourceTree = "<group>"; };
+		57B8A1BA213D200800D324D6 /* PPMakeDemoThread.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPMakeDemoThread.m; sourceTree = "<group>"; };
+		57B8A1BD213D234B00D324D6 /* PPMake_RunloopUsed_ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMake_RunloopUsed_ViewController.h; sourceTree = "<group>"; };
+		57B8A1BE213D234B00D324D6 /* PPMake_RunloopUsed_ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPMake_RunloopUsed_ViewController.m; sourceTree = "<group>"; };
+		57B8A1DA213E4EFA00D324D6 /* PPMakeAPILearn_UITableView_BaseTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMakeAPILearn_UITableView_BaseTableViewController.h; sourceTree = "<group>"; };
+		57B8A1DB213E4EFA00D324D6 /* PPMakeAPILearn_UITableView_BaseTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPMakeAPILearn_UITableView_BaseTableViewController.m; sourceTree = "<group>"; };
+		57B8A1E0213E513A00D324D6 /* PPMake_UITableView_UpdatesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMake_UITableView_UpdatesViewController.h; sourceTree = "<group>"; };
+		57B8A1E1213E513A00D324D6 /* PPMake_UITableView_UpdatesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPMake_UITableView_UpdatesViewController.m; sourceTree = "<group>"; };
+		57B8A1E4213E651D00D324D6 /* NSIndexPath+PPMakeEasilyDebug.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSIndexPath+PPMakeEasilyDebug.h"; sourceTree = "<group>"; };
+		57B8A1E5213E651E00D324D6 /* NSIndexPath+PPMakeEasilyDebug.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSIndexPath+PPMakeEasilyDebug.m"; sourceTree = "<group>"; };
+		57BF77662151210D004E6F41 /* PPMake_InterView_ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMake_InterView_ViewController.h; sourceTree = "<group>"; };
+		57BF77672151210D004E6F41 /* PPMake_InterView_ViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = PPMake_InterView_ViewController.mm; sourceTree = "<group>"; };
+		57BF7769215124C8004E6F41 /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
+		57BF777F215280B2004E6F41 /* InterView_001 */ = {isa = PBXFileReference; lastKnownFileType = text; path = InterView_001; sourceTree = "<group>"; };
 		57CB436920A1BA8A00268DBE /* PPMakerExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PPMakerExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57CB436C20A1BA8A00268DBE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		57CB436D20A1BA8A00268DBE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -228,6 +334,25 @@
 		57CB438320A1BAAC00268DBE /* PPMaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPMaker.h; sourceTree = "<group>"; };
 		57CB439F20A286C800268DBE /* PPMutAttributedStringMaker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMutAttributedStringMaker.h; sourceTree = "<group>"; };
 		57CB43A020A286C800268DBE /* PPMutAttributedStringMaker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPMutAttributedStringMaker.m; sourceTree = "<group>"; };
+		57D3788D219071C4001E5B2E /* NSUserDefaults+PPMakeSupport.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSUserDefaults+PPMakeSupport.h"; sourceTree = "<group>"; };
+		57D3788E219071C4001E5B2E /* NSUserDefaults+PPMakeSupport.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSUserDefaults+PPMakeSupport.m"; sourceTree = "<group>"; };
+		57FBF1592142091A00311650 /* PPMake_MVC_View.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMake_MVC_View.h; sourceTree = "<group>"; };
+		57FBF15A2142091A00311650 /* PPMake_MVC_View.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPMake_MVC_View.m; sourceTree = "<group>"; };
+		57FBF15C2142098C00311650 /* PPMake_MVC_Model.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMake_MVC_Model.h; sourceTree = "<group>"; };
+		57FBF15D2142098C00311650 /* PPMake_MVC_Model.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPMake_MVC_Model.m; sourceTree = "<group>"; };
+		57FBF1602142153700311650 /* UILabel+PPMakeSupport.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UILabel+PPMakeSupport.h"; sourceTree = "<group>"; };
+		57FBF1612142153700311650 /* UILabel+PPMakeSupport.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UILabel+PPMakeSupport.m"; sourceTree = "<group>"; };
+		57FBF16321421BEC00311650 /* PPMakeMVCMVVMBaseTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMakeMVCMVVMBaseTableViewController.h; sourceTree = "<group>"; };
+		57FBF16421421BEC00311650 /* PPMakeMVCMVVMBaseTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPMakeMVCMVVMBaseTableViewController.m; sourceTree = "<group>"; };
+		57FBF16621421C0C00311650 /* PPMake_MVC_ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMake_MVC_ViewController.h; sourceTree = "<group>"; };
+		57FBF16721421C0C00311650 /* PPMake_MVC_ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPMake_MVC_ViewController.m; sourceTree = "<group>"; };
+		57FE007F214B7BA700437F0F /* PPMake_QiNiu_ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMake_QiNiu_ViewController.h; sourceTree = "<group>"; };
+		57FE0080214B7BA700437F0F /* PPMake_QiNiu_ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPMake_QiNiu_ViewController.m; sourceTree = "<group>"; };
+		57FE0084214BB9AF00437F0F /* PPMakeProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMakeProtocol.h; sourceTree = "<group>"; };
+		57FE0088214F4E3300437F0F /* Product.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Product.h; sourceTree = "<group>"; };
+		57FE0089214F4E3300437F0F /* Product.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Product.m; sourceTree = "<group>"; };
+		57FF3971215C85D90040A48D /* PPMake_GetImageMainColorViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMake_GetImageMainColorViewController.h; sourceTree = "<group>"; };
+		57FF3972215C85D90040A48D /* PPMake_GetImageMainColorViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPMake_GetImageMainColorViewController.m; sourceTree = "<group>"; };
 		57FFFDAB2106B9E700ADD5DA /* PPMakeAlgorithmBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMakeAlgorithmBaseViewController.h; sourceTree = "<group>"; };
 		57FFFDAC2106B9E700ADD5DA /* PPMakeAlgorithmBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPMakeAlgorithmBaseViewController.m; sourceTree = "<group>"; };
 		57FFFDE421080A8600ADD5DA /* PPMakeCustomDoneTextFieldViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMakeCustomDoneTextFieldViewController.h; sourceTree = "<group>"; };
@@ -375,6 +500,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57BF776A215124C8004E6F41 /* libstdc++.tbd in Frameworks */,
 				9A5D6A1F3DEC8CE3F078BC96 /* libPods-PPMakerExample.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -385,9 +511,28 @@
 		0586ABA9A93824720BB78154 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				57BF7769215124C8004E6F41 /* libstdc++.tbd */,
+				57B4CCE92146584400E21EAF /* AudioToolbox.framework */,
 				B4612079F4DE2B250B981DE9 /* libPods-PPMakerExample.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		571392E22179A6AB00C0C15C /* NSDate */ = {
+			isa = PBXGroup;
+			children = (
+				571392E32179A6E700C0C15C /* NSDate+Timestamp.h */,
+				571392E42179A6E700C0C15C /* NSDate+Timestamp.m */,
+			);
+			path = NSDate;
+			sourceTree = "<group>";
+		};
+		571392E62179A9D500C0C15C /* qbb(亲宝宝) */ = {
+			isa = PBXGroup;
+			children = (
+				571392E72179A9F700C0C15C /* 亲宝宝.md */,
+			);
+			path = "qbb(亲宝宝)";
 			sourceTree = "<group>";
 		};
 		571519CB2128A5BC00F63DFD /* PPMakeNotificationCenter */ = {
@@ -397,6 +542,15 @@
 				571519CD2128A5E600F63DFD /* PPMakeNotificationCenter.m */,
 			);
 			path = PPMakeNotificationCenter;
+			sourceTree = "<group>";
+		};
+		571519E2212D12AF00F63DFD /* DeepCopy&&ShallowCopy(深拷贝和浅拷贝) */ = {
+			isa = PBXGroup;
+			children = (
+				571519E6212D13CA00F63DFD /* PPMakeDeepCopyAndShallowCopyViewController.h */,
+				571519E7212D13CA00F63DFD /* PPMakeDeepCopyAndShallowCopyViewController.m */,
+			);
+			path = "DeepCopy&&ShallowCopy(深拷贝和浅拷贝)";
 			sourceTree = "<group>";
 		};
 		572209CB20AD7E9600611BFA /* PPMake */ = {
@@ -428,6 +582,15 @@
 		572D03DF20EF1279000FFC23 /* PracticeMakesPerfect(实践出真知) */ = {
 			isa = PBXGroup;
 			children = (
+				571519E3212D136200F63DFD /* PPMakePracticeMakesPerfectBaseTableViewController.h */,
+				571519E4212D136200F63DFD /* PPMakePracticeMakesPerfectBaseTableViewController.m */,
+				57FF3970215C85AA0040A48D /* GetImageMainColor(获取图片主色调) */,
+				57FE0087214F4DF600437F0F /* Optimization(优化) */,
+				57FBF1532142075300311650 /* MVC&&MVVM */,
+				57B8A1B1213D1E6600D324D6 /* PPMake_Runloop(Runloop和线程) */,
+				57B8A1802134F3B000D324D6 /* InfrastructureExplore(底层探究) */,
+				57545695212F9D9300D68145 /* PPMake_Runtime */,
+				571519E2212D12AF00F63DFD /* DeepCopy&&ShallowCopy(深拷贝和浅拷贝) */,
 				57FFFDE02108097800ADD5DA /* CustomTextField(探究self.delegate = self) */,
 				57FFFDAA2106B99C00ADD5DA /* Algorithm(算法) */,
 				572D040720F49C80000FFC23 /* CornerAndShadow(圆角和阴影) */,
@@ -532,6 +695,15 @@
 			path = PPMakeTreeView;
 			sourceTree = "<group>";
 		};
+		573FA5C8213FDB4A0098CD17 /* UITableViewHeaderFooterView */ = {
+			isa = PBXGroup;
+			children = (
+				573FA5C9213FDB670098CD17 /* UITableViewHeaderFooterView+PPMakeSupport.h */,
+				573FA5CA213FDB670098CD17 /* UITableViewHeaderFooterView+PPMakeSupport.m */,
+			);
+			path = UITableViewHeaderFooterView;
+			sourceTree = "<group>";
+		};
 		5748A33020FEEAC100F51098 /* PPToolMaker */ = {
 			isa = PBXGroup;
 			children = (
@@ -559,6 +731,28 @@
 			path = "GirdView(封装九宫格快速创建)";
 			sourceTree = "<group>";
 		};
+		57545695212F9D9300D68145 /* PPMake_Runtime */ = {
+			isa = PBXGroup;
+			children = (
+				5754569D212FD8A000D68145 /* PPMakeRuntimeNotes.h */,
+				57545699212F9E6A00D68145 /* PPMakeRuntimeDemos */,
+				57545696212F9DEC00D68145 /* PPMakeRuntimeBaseTableViewController.h */,
+				57545697212F9DEC00D68145 /* PPMakeRuntimeBaseTableViewController.m */,
+			);
+			path = PPMake_Runtime;
+			sourceTree = "<group>";
+		};
+		57545699212F9E6A00D68145 /* PPMakeRuntimeDemos */ = {
+			isa = PBXGroup;
+			children = (
+				5754569A212F9EDF00D68145 /* PPMakeRuntimeButtonTimeIntervalViewController.h */,
+				5754569B212F9EDF00D68145 /* PPMakeRuntimeButtonTimeIntervalViewController.m */,
+				575456A12130032B00D68145 /* PPMakeRuntimeCommonViewController.h */,
+				575456A22130032B00D68145 /* PPMakeRuntimeCommonViewController.m */,
+			);
+			path = PPMakeRuntimeDemos;
+			sourceTree = "<group>";
+		};
 		575C8C7220EE1C780078109C /* UIScrollView */ = {
 			isa = PBXGroup;
 			children = (
@@ -572,6 +766,7 @@
 			isa = PBXGroup;
 			children = (
 				57754C7E20F72966005B3AE7 /* Block,这一次你不懂来找我.md */,
+				57B8A1A62137BA1F00D324D6 /* 开发记录.md */,
 			);
 			path = PPNotes;
 			sourceTree = "<group>";
@@ -610,6 +805,10 @@
 		5798F8B220D2419600C20029 /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
+				57D3788C21907199001E5B2E /* NSUserDefaults */,
+				571392E22179A6AB00C0C15C /* NSDate */,
+				57B8A1E3213E64DE00D324D6 /* NSIndexPath */,
+				57B8A18D21363AB200D324D6 /* NSMutableArray */,
 				57FFFDEE2108514600ADD5DA /* NSString */,
 				5798F8B320D2419600C20029 /* NSMutableAttributedString */,
 				5798F8B420D2419600C20029 /* NSObject */,
@@ -629,8 +828,12 @@
 		5798F8B420D2419600C20029 /* NSObject */ = {
 			isa = PBXGroup;
 			children = (
+				571519E0212CFFD000F63DFD /* NSObject+PPMakeSupport_KVO.h */,
+				571519DF212CFFD000F63DFD /* NSObject+PPMakeSupport_KVO.m */,
 				5798F8B620D2419600C20029 /* NSObject+PPMakeSupport.h */,
 				5798F8B520D2419600C20029 /* NSObject+PPMakeSupport.m */,
+				5754569E212FD92D00D68145 /* NSObject+PPMakeRuntimeSupport.h */,
+				5754569F212FD92D00D68145 /* NSObject+PPMakeRuntimeSupport.m */,
 			);
 			path = NSObject;
 			sourceTree = "<group>";
@@ -638,6 +841,9 @@
 		5798F8B720D2419600C20029 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				57FBF15F2142151C00311650 /* UILabel */,
+				573FA5C8213FDB4A0098CD17 /* UITableViewHeaderFooterView */,
+				57B8A19F21379B4900D324D6 /* UITableView */,
 				572D03E520EF2131000FFC23 /* UITableViewCell */,
 				575C8C7220EE1C780078109C /* UIScrollView */,
 				57A1F01520E93DD7007B1B41 /* UIImage */,
@@ -655,6 +861,8 @@
 			children = (
 				5798F8BA20D2419600C20029 /* UIButton+PPMakeSupport.h */,
 				5798F8B920D2419600C20029 /* UIButton+PPMakeSupport.m */,
+				57B8A19C21377E2300D324D6 /* UIButton+PPMakeEasilyConfigure.h */,
+				57B8A19D21377E2300D324D6 /* UIButton+PPMakeEasilyConfigure.m */,
 			);
 			path = UIButton;
 			sourceTree = "<group>";
@@ -675,6 +883,8 @@
 			children = (
 				5798F8C520D242BC00C20029 /* UIFont+PPMakeSupport.h */,
 				5798F8C620D242BC00C20029 /* UIFont+PPMakeSupport.m */,
+				57B8A1912136478100D324D6 /* UIFont+PPMakeUIFontCreation.h */,
+				57B8A1922136478100D324D6 /* UIFont+PPMakeUIFontCreation.m */,
 			);
 			path = UIFont;
 			sourceTree = "<group>";
@@ -814,6 +1024,9 @@
 		57A1F01920E941A4007B1B41 /* PPMakeAPILearn */ = {
 			isa = PBXGroup;
 			children = (
+				57B4CCE52146569C00E21EAF /* 震动 */,
+				57B8A1D9213E4EB900D324D6 /* PPMake_UITableView(UITableView研究) */,
+				57B8A17B213402BD00D324D6 /* Multithreading(多线程) */,
 				573701D321142FA00060B4B5 /* CustomTranstion */,
 				57FFFE022109CC3200ADD5DA /* NSURLSession */,
 				57754CB420FD818A005B3AE7 /* KVO(KVO原理探究及自定义KVO) */,
@@ -834,6 +1047,154 @@
 				573701DB2114F7240060B4B5 /* UIFontCacheNextViewController.m */,
 			);
 			path = "UIFontCache(UIFont是有类似缓存池的)";
+			sourceTree = "<group>";
+		};
+		57B4CCE52146569C00E21EAF /* 震动 */ = {
+			isa = PBXGroup;
+			children = (
+				57B4CCE6214656E300E21EAF /* PPMakeAPILearn_Shake_ViewController.h */,
+				57B4CCE7214656E300E21EAF /* PPMakeAPILearn_Shake_ViewController.m */,
+			);
+			path = "震动";
+			sourceTree = "<group>";
+		};
+		57B8A17B213402BD00D324D6 /* Multithreading(多线程) */ = {
+			isa = PBXGroup;
+			children = (
+				57FE007E214B7B6700437F0F /* QiNiu(七牛) */,
+				57B8A17C213402FB00D324D6 /* PPMakeMultithreadingBaseTableViewController.h */,
+				57B8A17D213402FB00D324D6 /* PPMakeMultithreadingBaseTableViewController.m */,
+			);
+			path = "Multithreading(多线程)";
+			sourceTree = "<group>";
+		};
+		57B8A1802134F3B000D324D6 /* InfrastructureExplore(底层探究) */ = {
+			isa = PBXGroup;
+			children = (
+				57B8A1822134F3F000D324D6 /* PPMakeInfrastructureExploreBaseTableViewController.h */,
+				57B8A1832134F3F000D324D6 /* PPMakeInfrastructureExploreBaseTableViewController.m */,
+				57B8A1812134F3C700D324D6 /* Block探究 */,
+			);
+			path = "InfrastructureExplore(底层探究)";
+			sourceTree = "<group>";
+		};
+		57B8A1812134F3C700D324D6 /* Block探究 */ = {
+			isa = PBXGroup;
+			children = (
+				57B8A1882134FF0800D324D6 /* BlockModel.h */,
+				57B8A1892134FF0800D324D6 /* BlockModel.m */,
+				57B8A1852134F88E00D324D6 /* PPMakeIE_BlockViewController.h */,
+				57B8A1862134F88E00D324D6 /* PPMakeIE_BlockViewController.m */,
+			);
+			path = "Block探究";
+			sourceTree = "<group>";
+		};
+		57B8A18D21363AB200D324D6 /* NSMutableArray */ = {
+			isa = PBXGroup;
+			children = (
+				57B8A18E21363B0700D324D6 /* NSMutableArray+PPMakeSupport.h */,
+				57B8A18F21363B0700D324D6 /* NSMutableArray+PPMakeSupport.m */,
+			);
+			path = NSMutableArray;
+			sourceTree = "<group>";
+		};
+		57B8A1942136510F00D324D6 /* MJExtension */ = {
+			isa = PBXGroup;
+			children = (
+				57B8A1972136522C00D324D6 /* NBA.json */,
+				57B8A1992136533E00D324D6 /* ZMMatch.h */,
+				57B8A19A2136533E00D324D6 /* ZMMatch.m */,
+			);
+			path = MJExtension;
+			sourceTree = "<group>";
+		};
+		57B8A19F21379B4900D324D6 /* UITableView */ = {
+			isa = PBXGroup;
+			children = (
+				57B8A1A021379B7F00D324D6 /* UITableView+PPMakeSupport.h */,
+				57B8A1A121379B7F00D324D6 /* UITableView+PPMakeSupport.m */,
+				57B8A1A321379C5900D324D6 /* UITableView+PPMakeDidSelectedBlock.h */,
+				57B8A1A421379C5900D324D6 /* UITableView+PPMakeDidSelectedBlock.m */,
+			);
+			path = UITableView;
+			sourceTree = "<group>";
+		};
+		57B8A1AD213CCDC700D324D6 /* 字符串逆序输出 */ = {
+			isa = PBXGroup;
+			children = (
+				57B8A1AE213CCE4B00D324D6 /* PPMakeAlgorithm_StringInvert_ViewController.h */,
+				57B8A1AF213CCE4B00D324D6 /* PPMakeAlgorithm_StringInvert_ViewController.m */,
+			);
+			path = "字符串逆序输出";
+			sourceTree = "<group>";
+		};
+		57B8A1B1213D1E6600D324D6 /* PPMake_Runloop(Runloop和线程) */ = {
+			isa = PBXGroup;
+			children = (
+				57B8A1B5213D1F8E00D324D6 /* 不开启runloop的线程 */,
+				57B8A1BC213D231700D324D6 /* 开启runloop的线程 */,
+				57B8A1B2213D1EA000D324D6 /* PPMakeRunloopBaseTableViewController.h */,
+				57B8A1B3213D1EA000D324D6 /* PPMakeRunloopBaseTableViewController.m */,
+			);
+			path = "PPMake_Runloop(Runloop和线程)";
+			sourceTree = "<group>";
+		};
+		57B8A1B5213D1F8E00D324D6 /* 不开启runloop的线程 */ = {
+			isa = PBXGroup;
+			children = (
+				57B8A1B6213D1FD500D324D6 /* PPMake_RunloopUnused_ViewController.h */,
+				57B8A1B7213D1FD500D324D6 /* PPMake_RunloopUnused_ViewController.m */,
+				57B8A1B9213D200800D324D6 /* PPMakeDemoThread.h */,
+				57B8A1BA213D200800D324D6 /* PPMakeDemoThread.m */,
+			);
+			path = "不开启runloop的线程";
+			sourceTree = "<group>";
+		};
+		57B8A1BC213D231700D324D6 /* 开启runloop的线程 */ = {
+			isa = PBXGroup;
+			children = (
+				57B8A1BD213D234B00D324D6 /* PPMake_RunloopUsed_ViewController.h */,
+				57B8A1BE213D234B00D324D6 /* PPMake_RunloopUsed_ViewController.m */,
+			);
+			path = "开启runloop的线程";
+			sourceTree = "<group>";
+		};
+		57B8A1D9213E4EB900D324D6 /* PPMake_UITableView(UITableView研究) */ = {
+			isa = PBXGroup;
+			children = (
+				57B8A1DA213E4EFA00D324D6 /* PPMakeAPILearn_UITableView_BaseTableViewController.h */,
+				57B8A1DB213E4EFA00D324D6 /* PPMakeAPILearn_UITableView_BaseTableViewController.m */,
+				57B8A1E0213E513A00D324D6 /* PPMake_UITableView_UpdatesViewController.h */,
+				57B8A1E1213E513A00D324D6 /* PPMake_UITableView_UpdatesViewController.m */,
+			);
+			path = "PPMake_UITableView(UITableView研究)";
+			sourceTree = "<group>";
+		};
+		57B8A1E3213E64DE00D324D6 /* NSIndexPath */ = {
+			isa = PBXGroup;
+			children = (
+				57B8A1E4213E651D00D324D6 /* NSIndexPath+PPMakeEasilyDebug.h */,
+				57B8A1E5213E651E00D324D6 /* NSIndexPath+PPMakeEasilyDebug.m */,
+			);
+			path = NSIndexPath;
+			sourceTree = "<group>";
+		};
+		57BF7765215120C3004E6F41 /* InterView(面试) */ = {
+			isa = PBXGroup;
+			children = (
+				57BF777E21527F4C004E6F41 /* 面试题 */,
+				57BF77662151210D004E6F41 /* PPMake_InterView_ViewController.h */,
+				57BF77672151210D004E6F41 /* PPMake_InterView_ViewController.mm */,
+			);
+			path = "InterView(面试)";
+			sourceTree = "<group>";
+		};
+		57BF777E21527F4C004E6F41 /* 面试题 */ = {
+			isa = PBXGroup;
+			children = (
+				57BF777F215280B2004E6F41 /* InterView_001 */,
+			);
+			path = "面试题";
 			sourceTree = "<group>";
 		};
 		57CB436020A1BA8A00268DBE = {
@@ -900,8 +1261,9 @@
 		57CF99A820B45771005EB9E9 /* PPTeemo */ = {
 			isa = PBXGroup;
 			children = (
+				57BF7765215120C3004E6F41 /* InterView(面试) */,
 				5748A33420FEF24C00F51098 /* OtherDemoExamples(demos) */,
-				57FFFF0E210CB2C800ADD5DA /* PPMakeCharles */,
+				57FFFF0E210CB2C800ADD5DA /* PPMakeCharles(抓包) */,
 				57FFFEE4210A5F6500ADD5DA /* PPMakeModels */,
 				57A1F01920E941A4007B1B41 /* PPMakeAPILearn */,
 				572D03DF20EF1279000FFC23 /* PracticeMakesPerfect(实践出真知) */,
@@ -912,9 +1274,111 @@
 			path = PPTeemo;
 			sourceTree = "<group>";
 		};
+		57D3788C21907199001E5B2E /* NSUserDefaults */ = {
+			isa = PBXGroup;
+			children = (
+				57D3788D219071C4001E5B2E /* NSUserDefaults+PPMakeSupport.h */,
+				57D3788E219071C4001E5B2E /* NSUserDefaults+PPMakeSupport.m */,
+			);
+			path = NSUserDefaults;
+			sourceTree = "<group>";
+		};
+		57FBF1532142075300311650 /* MVC&&MVVM */ = {
+			isa = PBXGroup;
+			children = (
+				57FBF1542142075300311650 /* MVC(真正的MVC) */,
+				57FBF1552142075300311650 /* MVVM */,
+				57FBF16321421BEC00311650 /* PPMakeMVCMVVMBaseTableViewController.h */,
+				57FBF16421421BEC00311650 /* PPMakeMVCMVVMBaseTableViewController.m */,
+			);
+			path = "MVC&&MVVM";
+			sourceTree = "<group>";
+		};
+		57FBF1542142075300311650 /* MVC(真正的MVC) */ = {
+			isa = PBXGroup;
+			children = (
+				57FBF1562142081300311650 /* M */,
+				57FBF1572142081400311650 /* V */,
+				57FBF1582142081400311650 /* C */,
+			);
+			path = "MVC(真正的MVC)";
+			sourceTree = "<group>";
+		};
+		57FBF1552142075300311650 /* MVVM */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MVVM;
+			sourceTree = "<group>";
+		};
+		57FBF1562142081300311650 /* M */ = {
+			isa = PBXGroup;
+			children = (
+				57FBF15C2142098C00311650 /* PPMake_MVC_Model.h */,
+				57FBF15D2142098C00311650 /* PPMake_MVC_Model.m */,
+			);
+			path = M;
+			sourceTree = "<group>";
+		};
+		57FBF1572142081400311650 /* V */ = {
+			isa = PBXGroup;
+			children = (
+				57FBF1592142091A00311650 /* PPMake_MVC_View.h */,
+				57FBF15A2142091A00311650 /* PPMake_MVC_View.m */,
+			);
+			path = V;
+			sourceTree = "<group>";
+		};
+		57FBF1582142081400311650 /* C */ = {
+			isa = PBXGroup;
+			children = (
+				57FBF16621421C0C00311650 /* PPMake_MVC_ViewController.h */,
+				57FBF16721421C0C00311650 /* PPMake_MVC_ViewController.m */,
+			);
+			path = C;
+			sourceTree = "<group>";
+		};
+		57FBF15F2142151C00311650 /* UILabel */ = {
+			isa = PBXGroup;
+			children = (
+				57FBF1602142153700311650 /* UILabel+PPMakeSupport.h */,
+				57FBF1612142153700311650 /* UILabel+PPMakeSupport.m */,
+			);
+			path = UILabel;
+			sourceTree = "<group>";
+		};
+		57FE007E214B7B6700437F0F /* QiNiu(七牛) */ = {
+			isa = PBXGroup;
+			children = (
+				57FE007F214B7BA700437F0F /* PPMake_QiNiu_ViewController.h */,
+				57FE0080214B7BA700437F0F /* PPMake_QiNiu_ViewController.m */,
+				57FE0084214BB9AF00437F0F /* PPMakeProtocol.h */,
+			);
+			path = "QiNiu(七牛)";
+			sourceTree = "<group>";
+		};
+		57FE0087214F4DF600437F0F /* Optimization(优化) */ = {
+			isa = PBXGroup;
+			children = (
+				57FE0088214F4E3300437F0F /* Product.h */,
+				57FE0089214F4E3300437F0F /* Product.m */,
+			);
+			path = "Optimization(优化)";
+			sourceTree = "<group>";
+		};
+		57FF3970215C85AA0040A48D /* GetImageMainColor(获取图片主色调) */ = {
+			isa = PBXGroup;
+			children = (
+				57FF3971215C85D90040A48D /* PPMake_GetImageMainColorViewController.h */,
+				57FF3972215C85D90040A48D /* PPMake_GetImageMainColorViewController.m */,
+			);
+			path = "GetImageMainColor(获取图片主色调)";
+			sourceTree = "<group>";
+		};
 		57FFFDAA2106B99C00ADD5DA /* Algorithm(算法) */ = {
 			isa = PBXGroup;
 			children = (
+				57B8A1AD213CCDC700D324D6 /* 字符串逆序输出 */,
 				57FFFDAB2106B9E700ADD5DA /* PPMakeAlgorithmBaseViewController.h */,
 				57FFFDAC2106B9E700ADD5DA /* PPMakeAlgorithmBaseViewController.m */,
 			);
@@ -956,6 +1420,7 @@
 		57FFFDF5210959DD00ADD5DA /* ExplainSourceCode(讲解源码+实战) */ = {
 			isa = PBXGroup;
 			children = (
+				57B8A1942136510F00D324D6 /* MJExtension */,
 				57FFFE092109D55100ADD5DA /* SourceCodeLibs */,
 				57FFFDF6210959DD00ADD5DA /* MJRefresh */,
 				57FFFDFC21095A0900ADD5DA /* PPMakeExplainSourceCodeBaseTableViewController.h */,
@@ -1021,10 +1486,12 @@
 		57FFFE0B2109D55100ADD5DA /* UIKit+AFNetworking */ = {
 			isa = PBXGroup;
 			children = (
-				57FFFE0C2109D55100ADD5DA /* UIProgressView+AFNetworking.m */,
 				57FFFE0D2109D55100ADD5DA /* UIButton+AFNetworking.h */,
-				57FFFE0E2109D55100ADD5DA /* UIRefreshControl+AFNetworking.m */,
+				57FFFE1A2109D55100ADD5DA /* UIButton+AFNetworking.m */,
 				57FFFE0F2109D55100ADD5DA /* UIImageView+AFNetworking.h */,
+				57FFFE172109D55100ADD5DA /* UIImageView+AFNetworking.m */,
+				57FFFE0C2109D55100ADD5DA /* UIProgressView+AFNetworking.m */,
+				57FFFE0E2109D55100ADD5DA /* UIRefreshControl+AFNetworking.m */,
 				57FFFE102109D55100ADD5DA /* AFImageDownloader.h */,
 				57FFFE112109D55100ADD5DA /* AFNetworkActivityIndicatorManager.m */,
 				57FFFE122109D55100ADD5DA /* AFAutoPurgingImageCache.h */,
@@ -1032,10 +1499,8 @@
 				57FFFE142109D55100ADD5DA /* UIActivityIndicatorView+AFNetworking.h */,
 				57FFFE152109D55100ADD5DA /* UIImage+AFNetworking.h */,
 				57FFFE162109D55100ADD5DA /* UIProgressView+AFNetworking.h */,
-				57FFFE172109D55100ADD5DA /* UIImageView+AFNetworking.m */,
 				57FFFE182109D55100ADD5DA /* UIKit+AFNetworking.h */,
 				57FFFE192109D55100ADD5DA /* UIRefreshControl+AFNetworking.h */,
-				57FFFE1A2109D55100ADD5DA /* UIButton+AFNetworking.m */,
 				57FFFE1B2109D55100ADD5DA /* UIActivityIndicatorView+AFNetworking.m */,
 				57FFFE1C2109D55100ADD5DA /* UIWebView+AFNetworking.m */,
 				57FFFE1D2109D55100ADD5DA /* AFAutoPurgingImageCache.m */,
@@ -1048,20 +1513,20 @@
 		57FFFE202109D55100ADD5DA /* AFNetworking */ = {
 			isa = PBXGroup;
 			children = (
-				57FFFE212109D55100ADD5DA /* AFSecurityPolicy.h */,
-				57FFFE222109D55100ADD5DA /* AFNetworkReachabilityManager.h */,
-				57FFFE232109D55100ADD5DA /* AFURLSessionManager.h */,
-				57FFFE242109D55100ADD5DA /* AFURLRequestSerialization.h */,
-				57FFFE252109D55100ADD5DA /* AFURLResponseSerialization.m */,
-				57FFFE262109D55100ADD5DA /* AFHTTPSessionManager.m */,
-				57FFFE272109D55100ADD5DA /* AFURLResponseSerialization.h */,
-				57FFFE282109D55100ADD5DA /* AFURLSessionManager.m */,
-				57FFFE292109D55100ADD5DA /* AFURLRequestSerialization.m */,
 				57FFFE2A2109D55100ADD5DA /* AFNetworking.h */,
-				57FFFE2B2109D55100ADD5DA /* AFNetworkReachabilityManager.m */,
-				57FFFE2C2109D55100ADD5DA /* AFSecurityPolicy.m */,
 				57FFFE2D2109D55100ADD5DA /* AFCompatibilityMacros.h */,
+				57FFFE242109D55100ADD5DA /* AFURLRequestSerialization.h */,
+				57FFFE292109D55100ADD5DA /* AFURLRequestSerialization.m */,
+				57FFFE272109D55100ADD5DA /* AFURLResponseSerialization.h */,
+				57FFFE252109D55100ADD5DA /* AFURLResponseSerialization.m */,
+				57FFFE212109D55100ADD5DA /* AFSecurityPolicy.h */,
+				57FFFE2C2109D55100ADD5DA /* AFSecurityPolicy.m */,
+				57FFFE222109D55100ADD5DA /* AFNetworkReachabilityManager.h */,
+				57FFFE2B2109D55100ADD5DA /* AFNetworkReachabilityManager.m */,
+				57FFFE232109D55100ADD5DA /* AFURLSessionManager.h */,
+				57FFFE282109D55100ADD5DA /* AFURLSessionManager.m */,
 				57FFFE2E2109D55100ADD5DA /* AFHTTPSessionManager.h */,
+				57FFFE262109D55100ADD5DA /* AFHTTPSessionManager.m */,
 			);
 			path = AFNetworking;
 			sourceTree = "<group>";
@@ -1168,23 +1633,23 @@
 				57FFFECD210A5D4000ADD5DA /* MJFoundation.h */,
 				57FFFED9210A5D4000ADD5DA /* MJFoundation.m */,
 				57FFFEC5210A5D4000ADD5DA /* MJPropertyKey.h */,
+				57FFFED5210A5D4000ADD5DA /* MJPropertyKey.m */,
 				57FFFEC6210A5D4000ADD5DA /* NSObject+MJClass.h */,
+				57FFFED3210A5D4000ADD5DA /* NSObject+MJClass.m */,
 				57FFFEC7210A5D4000ADD5DA /* NSString+MJExtension.h */,
+				57FFFED4210A5D4000ADD5DA /* NSString+MJExtension.m */,
+				57FFFED2210A5D4000ADD5DA /* MJPropertyType.h */,
 				57FFFEC8210A5D4000ADD5DA /* MJPropertyType.m */,
 				57FFFEC9210A5D4000ADD5DA /* NSObject+MJProperty.h */,
-				57FFFECA210A5D4000ADD5DA /* MJExtensionConst.h */,
-				57FFFECB210A5D4000ADD5DA /* NSObject+MJKeyValue.m */,
-				57FFFECC210A5D4000ADD5DA /* MJProperty.m */,
-				57FFFECE210A5D4000ADD5DA /* NSObject+MJCoding.m */,
-				57FFFED0210A5D4000ADD5DA /* MJExtensionConst.m */,
 				57FFFED1210A5D4000ADD5DA /* NSObject+MJProperty.m */,
-				57FFFED2210A5D4000ADD5DA /* MJPropertyType.h */,
-				57FFFED3210A5D4000ADD5DA /* NSObject+MJClass.m */,
-				57FFFED4210A5D4000ADD5DA /* NSString+MJExtension.m */,
-				57FFFED5210A5D4000ADD5DA /* MJPropertyKey.m */,
+				57FFFECA210A5D4000ADD5DA /* MJExtensionConst.h */,
+				57FFFED0210A5D4000ADD5DA /* MJExtensionConst.m */,
 				57FFFED6210A5D4000ADD5DA /* MJProperty.h */,
-				57FFFED7210A5D4000ADD5DA /* NSObject+MJKeyValue.h */,
+				57FFFECC210A5D4000ADD5DA /* MJProperty.m */,
 				57FFFED8210A5D4000ADD5DA /* NSObject+MJCoding.h */,
+				57FFFECE210A5D4000ADD5DA /* NSObject+MJCoding.m */,
+				57FFFED7210A5D4000ADD5DA /* NSObject+MJKeyValue.h */,
+				57FFFECB210A5D4000ADD5DA /* NSObject+MJKeyValue.m */,
 			);
 			path = "MJExtension(3.0.15.1)";
 			sourceTree = "<group>";
@@ -1254,12 +1719,13 @@
 			path = PPMakeRefresh;
 			sourceTree = "<group>";
 		};
-		57FFFF0E210CB2C800ADD5DA /* PPMakeCharles */ = {
+		57FFFF0E210CB2C800ADD5DA /* PPMakeCharles(抓包) */ = {
 			isa = PBXGroup;
 			children = (
+				571392E62179A9D500C0C15C /* qbb(亲宝宝) */,
 				57FFFF0F210CB2C800ADD5DA /* SoHuNews */,
 			);
-			path = PPMakeCharles;
+			path = "PPMakeCharles(抓包)";
 			sourceTree = "<group>";
 		};
 		57FFFF0F210CB2C800ADD5DA /* SoHuNews */ = {
@@ -1337,8 +1803,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57BF7780215280B2004E6F41 /* InterView_001 in Resources */,
 				57CB437920A1BA8D00268DBE /* LaunchScreen.storyboard in Resources */,
 				57CB437620A1BA8D00268DBE /* Assets.xcassets in Resources */,
+				57B8A1982136522C00D324D6 /* NBA.json in Resources */,
 				57FFFEB2210A5C9B00ADD5DA /* MJRefresh.bundle in Resources */,
 				57CB437420A1BA8A00268DBE /* Main.storyboard in Resources */,
 			);
@@ -1374,17 +1842,26 @@
 			files = (
 				57FFFE312109D55100ADD5DA /* AFNetworkActivityIndicatorManager.m in Sources */,
 				57FFFEE0210A5D4000ADD5DA /* NSObject+MJClass.m in Sources */,
+				571519E5212D136200F63DFD /* PPMakePracticeMakesPerfectBaseTableViewController.m in Sources */,
 				57FFFEEE210A698F00ADD5DA /* KGHandler.m in Sources */,
 				572D03EE20EF4BCA000FFC23 /* UIColor+PPMakeSupportJudge.m in Sources */,
+				571519E1212CFFD000F63DFD /* NSObject+PPMakeSupport_KVO.m in Sources */,
+				57BF77682151210D004E6F41 /* PPMake_InterView_ViewController.mm in Sources */,
+				57FE008A214F4E3300437F0F /* Product.m in Sources */,
 				57FFFE332109D55100ADD5DA /* UIButton+AFNetworking.m in Sources */,
 				573701DC2114F7240060B4B5 /* UIFontCacheNextViewController.m in Sources */,
 				57754CB920FD81D7005B3AE7 /* PPKVOPerson.m in Sources */,
 				57FFFE302109D55100ADD5DA /* UIRefreshControl+AFNetworking.m in Sources */,
 				572D040D20F4AE1E000FFC23 /* UIView+PPMakeSupportCornerAndShadow.m in Sources */,
+				571519E8212D13CA00F63DFD /* PPMakeDeepCopyAndShallowCopyViewController.m in Sources */,
+				57B8A19E21377E2300D324D6 /* UIButton+PPMakeEasilyConfigure.m in Sources */,
 				572209CE20AD7EA700611BFA /* PPMake.m in Sources */,
 				57FFFEDD210A5D4000ADD5DA /* NSObject+MJCoding.m in Sources */,
 				57FFFDAD2106B9E700ADD5DA /* PPMakeAlgorithmBaseViewController.m in Sources */,
+				57B8A18A2134FF0800D324D6 /* BlockModel.m in Sources */,
+				57B8A1932136478100D324D6 /* UIFont+PPMakeUIFontCreation.m in Sources */,
 				57FFFDFE21095A0900ADD5DA /* PPMakeExplainSourceCodeBaseTableViewController.m in Sources */,
+				57B8A1BF213D234B00D324D6 /* PPMake_RunloopUsed_ViewController.m in Sources */,
 				57FFFEF8210AC17F00ADD5DA /* PPMakeExplainSourceCodemMJRefreshDemoViewController.m in Sources */,
 				57754CBC20FD855B005B3AE7 /* PPMakeKVOBaseTableViewController.m in Sources */,
 				57754CBF20FD857C005B3AE7 /* PPMakeCustomKVOViewController.m in Sources */,
@@ -1396,24 +1873,33 @@
 				57754C8120F852A6005B3AE7 /* UIScrollView+ScrollBlock.m in Sources */,
 				57FFFEF5210AC02F00ADD5DA /* PPMakeExplainSourceCodePracticeMJRefreshBaseTableViewController.m in Sources */,
 				57A1F01120E8CAEF007B1B41 /* PPMakeOrderViewController.m in Sources */,
+				5754569C212F9EDF00D68145 /* PPMakeRuntimeButtonTimeIntervalViewController.m in Sources */,
 				57FFFDE621080A8600ADD5DA /* PPMakeCustomDoneTextFieldViewController.m in Sources */,
 				57A1F00120E85A58007B1B41 /* PPMakeSystemTabBarController.m in Sources */,
 				57A1EFFB20E85642007B1B41 /* PPMakeBaseNavigationController.m in Sources */,
+				57B8A1842134F3F000D324D6 /* PPMakeInfrastructureExploreBaseTableViewController.m in Sources */,
 				57FFFEB4210A5C9B00ADD5DA /* NSBundle+MJRefresh.m in Sources */,
 				57FFFEB8210A5C9B00ADD5DA /* MJRefreshBackNormalFooter.m in Sources */,
 				57FFFEBD210A5C9B00ADD5DA /* MJRefreshStateHeader.m in Sources */,
+				57FBF15E2142098C00311650 /* PPMake_MVC_Model.m in Sources */,
+				57B8A1BB213D200800D324D6 /* PPMakeDemoThread.m in Sources */,
 				57FFFE362109D55100ADD5DA /* AFAutoPurgingImageCache.m in Sources */,
 				57FFFEBE210A5C9B00ADD5DA /* MJRefreshGifHeader.m in Sources */,
 				57FFFE082109CCED00ADD5DA /* PPMakeNSURLSessionViewController.m in Sources */,
 				57754C8420F86D89005B3AE7 /* PPMakeBaseTableViewController.m in Sources */,
 				5798F8BF20D2419700C20029 /* UIButton+PPMakeSupport.m in Sources */,
+				57545698212F9DEC00D68145 /* PPMakeRuntimeBaseTableViewController.m in Sources */,
 				57FFFEBC210A5C9B00ADD5DA /* MJRefreshNormalHeader.m in Sources */,
 				572D03E820EF2F90000FFC23 /* UITableViewCell+PPMakeSupport.m in Sources */,
+				57B8A1A521379C5900D324D6 /* UITableView+PPMakeDidSelectedBlock.m in Sources */,
 				57FFFEB1210A5C9B00ADD5DA /* MJRefreshConst.m in Sources */,
 				57FFFEC0210A5C9B00ADD5DA /* MJRefreshHeader.m in Sources */,
 				5798F87020CB899600C20029 /* PPMake+UIImageView.m in Sources */,
 				5798F8C720D242BC00C20029 /* UIFont+PPMakeSupport.m in Sources */,
 				57A1F01D20E941D0007B1B41 /* UIFontCacheViewController.m in Sources */,
+				57B8A19021363B0700D324D6 /* NSMutableArray+PPMakeSupport.m in Sources */,
+				573FA5CB213FDB670098CD17 /* UITableViewHeaderFooterView+PPMakeSupport.m in Sources */,
+				57FF3973215C85D90040A48D /* PPMake_GetImageMainColorViewController.m in Sources */,
 				5798F8CB20D245E000C20029 /* UIDevice+PPMakeSupport.m in Sources */,
 				5798F86720CB856400C20029 /* PPMake+UILabel.m in Sources */,
 				57FFFEDE210A5D4000ADD5DA /* MJExtensionConst.m in Sources */,
@@ -1425,49 +1911,67 @@
 				57FFFEE3210A5D4000ADD5DA /* MJFoundation.m in Sources */,
 				5798F86D20CB862200C20029 /* PPMake+UITableView.m in Sources */,
 				57FFFDFB210959DD00ADD5DA /* NSObject+YYModel.m in Sources */,
+				57D3788F219071C4001E5B2E /* NSUserDefaults+PPMakeSupport.m in Sources */,
 				57FFFE392109D55100ADD5DA /* AFHTTPSessionManager.m in Sources */,
 				57FFFEE8210A5FA500ADD5DA /* KGBaseRequestResult.m in Sources */,
 				573702122118300D0060B4B5 /* PPMakeTreeDemoViewController.m in Sources */,
 				57FFFEB5210A5C9B00ADD5DA /* UIView+MJExtension.m in Sources */,
+				57B8A1E2213E513A00D324D6 /* PPMake_UITableView_UpdatesViewController.m in Sources */,
 				5737021B211960A00060B4B5 /* HBRoom.m in Sources */,
 				57FFFEBB210A5C9B00ADD5DA /* MJRefreshAutoNormalFooter.m in Sources */,
 				57CB437120A1BA8A00268DBE /* ViewController.m in Sources */,
 				57CB437C20A1BA8D00268DBE /* main.m in Sources */,
 				5798F86A20CB85E700C20029 /* PPMake+UIButton.m in Sources */,
 				57FFFEC2210A5C9B00ADD5DA /* MJRefreshAutoFooter.m in Sources */,
+				575456A32130032B00D68145 /* PPMakeRuntimeCommonViewController.m in Sources */,
 				57FFFEDA210A5D4000ADD5DA /* MJPropertyType.m in Sources */,
 				57FFFF0D210B16DE00ADD5DA /* UIScrollView+PPMakeRefresh.m in Sources */,
 				57FFFEEB210A626100ADD5DA /* KGSubcategoryListModel.m in Sources */,
 				573701E0211821D60060B4B5 /* PPMakeTreeBaseTableViewController.m in Sources */,
 				57FFFEBA210A5C9B00ADD5DA /* MJRefreshAutoGifFooter.m in Sources */,
+				57B8A1DC213E4EFA00D324D6 /* PPMakeAPILearn_UITableView_BaseTableViewController.m in Sources */,
+				57FBF1622142153700311650 /* UILabel+PPMakeSupport.m in Sources */,
 				572D03EB20EF3568000FFC23 /* UnusualMethodsOfUIViewViewController.m in Sources */,
 				572D040620F4429D000FFC23 /* PPMakeBannerView.m in Sources */,
 				57FFFDEA21080AF100ADD5DA /* PPMakeCustomDoneTextField.m in Sources */,
+				57B8A1E6213E651E00D324D6 /* NSIndexPath+PPMakeEasilyDebug.m in Sources */,
 				57FFFEB0210A5C9B00ADD5DA /* UIScrollView+MJRefresh.m in Sources */,
+				57B8A17E213402FB00D324D6 /* PPMakeMultithreadingBaseTableViewController.m in Sources */,
 				57FFFE3A2109D55100ADD5DA /* AFURLSessionManager.m in Sources */,
 				57FFFE3C2109D55100ADD5DA /* AFNetworkReachabilityManager.m in Sources */,
+				575456A0212FD92D00D68145 /* NSObject+PPMakeRuntimeSupport.m in Sources */,
 				5748A33320FEEB0C00F51098 /* PPTool.m in Sources */,
+				57FBF15B2142091A00311650 /* PPMake_MVC_View.m in Sources */,
 				5798F8CF20D288D600C20029 /* UIColor+PPMakeSupport.m in Sources */,
+				57B8A1B4213D1EA000D324D6 /* PPMakeRunloopBaseTableViewController.m in Sources */,
 				57FFFEB9210A5C9B00ADD5DA /* MJRefreshAutoStateFooter.m in Sources */,
 				57FFFE382109D55100ADD5DA /* AFURLResponseSerialization.m in Sources */,
+				57B8A1A221379B7F00D324D6 /* UITableView+PPMakeSupport.m in Sources */,
+				57B4CCE8214656E300E21EAF /* PPMakeAPILearn_Shake_ViewController.m in Sources */,
 				572D03F220EF741F000FFC23 /* PPMakeCustomView.m in Sources */,
 				5798F8C020D2419700C20029 /* UIView+PPMakeSupport.m in Sources */,
 				57FFFE352109D55100ADD5DA /* UIWebView+AFNetworking.m in Sources */,
 				57FFFEF2210A6D9300ADD5DA /* PPMakeKGSubcategoryListCell.m in Sources */,
+				571392E52179A6E700C0C15C /* NSDate+Timestamp.m in Sources */,
 				572D03FD20F327A2000FFC23 /* LearnTransformViewController.m in Sources */,
 				57FFFEC1210A5C9B00ADD5DA /* MJRefreshBackFooter.m in Sources */,
 				57FFFEC3210A5C9B00ADD5DA /* MJRefreshComponent.m in Sources */,
 				57A1F00E20E8CAD6007B1B41 /* PPMakeHomepageViewController.m in Sources */,
+				57B8A1B8213D1FD500D324D6 /* PPMake_RunloopUnused_ViewController.m in Sources */,
 				5748A33820FEF27200F51098 /* PPMakeGridViewViewController.m in Sources */,
 				57A1F01820E93E20007B1B41 /* UIImage+PPMakeSupport.m in Sources */,
+				57B8A1B0213CCE4B00D324D6 /* PPMakeAlgorithm_StringInvert_ViewController.m in Sources */,
 				57FFFE2F2109D55100ADD5DA /* UIProgressView+AFNetworking.m in Sources */,
 				57FFFE052109CC6C00ADD5DA /* PPMakeAPILearnBaseTableViewController.m in Sources */,
 				57FFFE3B2109D55100ADD5DA /* AFURLRequestSerialization.m in Sources */,
 				57FFFEDF210A5D4000ADD5DA /* NSObject+MJProperty.m in Sources */,
 				57FFFEE2210A5D4000ADD5DA /* MJPropertyKey.m in Sources */,
+				57FE0081214B7BA700437F0F /* PPMake_QiNiu_ViewController.m in Sources */,
 				57CB436E20A1BA8A00268DBE /* AppDelegate.m in Sources */,
+				57FBF16521421BEC00311650 /* PPMakeMVCMVVMBaseTableViewController.m in Sources */,
 				57FFFDED21080CCA00ADD5DA /* PPMakeCustomTextFieldBaseTableViewController.m in Sources */,
 				57A1F01420E8CB02007B1B41 /* PPMakeMineViewController.m in Sources */,
+				57B8A19B2136533E00D324D6 /* ZMMatch.m in Sources */,
 				57FFFEDB210A5D4000ADD5DA /* NSObject+MJKeyValue.m in Sources */,
 				57FFFDF1210851AB00ADD5DA /* NSString+PPMakeSupport.m in Sources */,
 				572D040A20F49E1C000FFC23 /* PPMakeCornerAndShadowViewController.m in Sources */,
@@ -1478,9 +1982,11 @@
 				57FFFE3D2109D55100ADD5DA /* AFSecurityPolicy.m in Sources */,
 				57FFFE372109D55100ADD5DA /* AFImageDownloader.m in Sources */,
 				57A1F00720E85DE5007B1B41 /* PPMakeBaseViewController.m in Sources */,
+				57FBF16821421C0C00311650 /* PPMake_MVC_ViewController.m in Sources */,
 				57FFFEB3210A5C9B00ADD5DA /* UIScrollView+MJExtension.m in Sources */,
 				5798F8BE20D2419700C20029 /* NSObject+PPMakeSupport.m in Sources */,
 				57FFFDF421087BD200ADD5DA /* NSString+PPMakeSupport_Unicode.m in Sources */,
+				57B8A1872134F88E00D324D6 /* PPMakeIE_BlockViewController.m in Sources */,
 				57FFFF09210ACB7D00ADD5DA /* XMRequest.m in Sources */,
 				57FFFE342109D55100ADD5DA /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 			);
@@ -1623,6 +2129,7 @@
 			baseConfigurationReference = 168B85E18337228F215004C3 /* Pods-PPMakerExample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GP8N54644M;
@@ -1638,6 +2145,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "$(PODS_ROOT)/**";
 			};
 			name = Debug;
 		};
@@ -1646,6 +2154,7 @@
 			baseConfigurationReference = ABF32A261256CF4200C96682 /* Pods-PPMakerExample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GP8N54644M;
@@ -1661,6 +2170,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "$(PODS_ROOT)/**";
 			};
 			name = Release;
 		};

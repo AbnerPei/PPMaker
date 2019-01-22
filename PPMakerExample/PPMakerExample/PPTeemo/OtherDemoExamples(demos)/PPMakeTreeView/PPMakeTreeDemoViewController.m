@@ -12,6 +12,7 @@
 @interface PPMakeTreeDemoViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property(nonatomic,strong) NSMutableArray<PPMakeTreeItem *> *datas;
 @property(nonatomic,strong) UITableView *tableView;
+@property(nonatomic,strong) PPMakeTreeItem *item;
 @end
 
 @implementation PPMakeTreeDemoViewController
@@ -20,6 +21,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self configureDefaultDatas];
+    BOOL hasSubItme = _item.hasSubItem;
     
     self.tableView = [PPMAKETableVP pp_make:^(PPMake *make) {
         make.intoView(self.view);

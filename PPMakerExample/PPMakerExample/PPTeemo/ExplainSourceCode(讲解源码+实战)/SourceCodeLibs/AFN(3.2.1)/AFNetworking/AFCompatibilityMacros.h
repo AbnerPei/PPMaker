@@ -19,6 +19,8 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
+//Compatibility  [kəm,pætɪ'bɪlɪtɪ] 兼容性
+
 #ifndef AFCompatibilityMacros_h
 #define AFCompatibilityMacros_h
 

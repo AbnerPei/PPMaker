@@ -62,50 +62,24 @@
 
 -(void)demo1
 {
-//    UIView *tempView = [PPMAKEV pp_make:^(PPMake *make) {
-//        make.intoView(self.view);
-//        make.frame(CGRectMake(40, 300, 200, 200));
-//        make.bgColor([UIColor ppmake_random]);
-//    }];
-    
-    CGFloat paintingWidth = 300;
-    CGFloat paintingHeight = 160;
-    UIImageView *imgView = [PPMAKEImgV pp_make:^(PPMake *make) {
+
+    _imgView = [PPMAKEImgV pp_make:^(PPMake *make) {
         make.intoView(self.view);
         make.imageName(@"lol003");
-    }];
-    _imgView = imgView;
-    imgView.frame = CGRectMake(37.5, 100, paintingWidth, paintingHeight);
-
-    [_imgView ppmake_cornerRadius:10 shadowRadius:12 shadowOpacity:0.7];
-
-    
-    
-    UIView *v = [[UIView alloc]initWithFrame:CGRectMake(20, 300, 300, 300)];
-    [self.view addSubview:v];
-    v.backgroundColor = [UIColor cyanColor];
-    v.layer.shadowColor = [UIColor blackColor].CGColor;
-    v.layer.shadowOffset = CGSizeZero;
-    v.layer.shadowOpacity = 0.8;
-    v.layer.shadowRadius = 8;
-    v.layer.cornerRadius = 8;
-    v.clipsToBounds = NO;
-    v.layer.masksToBounds = YES;
-    
-    UIImageView *imgView2 = [PPMAKEImgV pp_make:^(PPMake *make) {
-        make.intoView(v);
-        make.imageName(@"lol001");
-        make.frame(CGRectMake(0, 00, 300, 255));
+        make.frame(CGRectMake(37.5, 150, 300, 160));
     }];
 
+//    [_imgView ppmake_cornerRadius:20 shadowRadius:18 shadowOpacity:0.9];
 
+//    [_imgView ppmake_cornerShadowByRoundingCorners:(UIRectCornerTopLeft | UIRectCornerTopRight) cornerRadii:CGSizeMake(18, 18) shadowRadius:20 shadowOpacity:0.9];
+
+    [_imgView ppmake_cornerShadowByRoundingCorners:(UIRectCornerTopLeft | UIRectCornerTopRight) cornerRadii:CGSizeMake(18, 18) shadowRadius:8 shadowColor:[UIColor blueColor] shadowOffset:CGSizeMake(0, -5) shadowOpacity:0.9];
 }
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
     CGFloat paintingWidth = 300;
     CGFloat paintingHeight = 160;
     [UIView animateWithDuration:2 animations:^{
-//        [_imgView ppmake_cornerRadius:30 shadowRadius:12 shadowOpacity:0.9];
         _imgView.frame = CGRectMake(37.5, 100, paintingWidth+10, paintingHeight+100);
     }];
 

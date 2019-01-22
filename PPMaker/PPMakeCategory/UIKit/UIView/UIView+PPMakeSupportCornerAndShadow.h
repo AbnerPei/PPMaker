@@ -10,6 +10,7 @@
  参考链接：
  1. [【iOS】实现UIView任意圆角+绘制阴影](https://www.jianshu.com/p/796b2aed6b3f)
  2. [ios解决阴影和圆角冲突](https://www.jianshu.com/p/57ab1295f878)
+ 3. https://blog.csdn.net/rhljiayou/article/details/10178723
  */
 
 /*
@@ -52,11 +53,13 @@
  * @param shadowOpacity 阴影不透明度
  * * *
  */
-//-(void)ppmake_cornerRadius:(CGFloat)cornerRadius
-//              shadowRadius:(CGFloat)shadowRadius
-//               shadowColor:(UIColor *)shadowColor
-//              shadowOffset:(CGSize)shadowOffset
-//             shadowOpacity:(CGFloat)shadowOpacity;
+- (void)ppmake_cornerShadowWithSuperV:(UIView *)superV
+                           viewFrame:(CGRect)viewFrame
+                        cornerRadius:(CGFloat)cornerRadius
+                        shadowRadius:(CGFloat)shadowRadius
+                         shadowColor:(UIColor *)shadowColor
+                        shadowOffset:(CGSize)shadowOffset
+                       shadowOpacity:(CGFloat)shadowOpacity;
 /** 002
  * view同时添加圆角和阴影 （【注意：视图必须设置了frame以及父视图】 在001的基础上，
  *                      要加圆角和阴影的view必须加在对应的superV上了，并且设置了frame
@@ -65,7 +68,7 @@
  * @param shadowRadius  阴影半径
  * @param shadowOpacity 阴影不透明度
  */
--(void)ppmake_cornerRadius:(CGFloat)cornerRadius
+- (void)ppmake_cornerRadius:(CGFloat)cornerRadius
               shadowRadius:(CGFloat)shadowRadius
              shadowOpacity:(float)shadowOpacity;
 
@@ -82,7 +85,7 @@
  * @param shadowOpacity 阴影不透明度
  * *
  */
--(void)ppmake_cornerShadowByRoundingCorners:(UIRectCorner)corners
+- (void)ppmake_cornerShadowByRoundingCorners:(UIRectCorner)corners
                                 cornerRadii:(CGSize)cornerRadii
                                shadowRadius:(CGFloat)shadowRadius
                                 shadowColor:(UIColor *)shadowColor
@@ -101,7 +104,7 @@
  * @param shadowRadius  阴影半径
  * @param shadowOpacity 阴影不透明度
  */
--(void)ppmake_cornerShadowByRoundingCorners:(UIRectCorner)corners
+- (void)ppmake_cornerShadowByRoundingCorners:(UIRectCorner)corners
                                 cornerRadii:(CGSize)cornerRadii
                                shadowRadius:(CGFloat)shadowRadius
                               shadowOpacity:(CGFloat)shadowOpacity;

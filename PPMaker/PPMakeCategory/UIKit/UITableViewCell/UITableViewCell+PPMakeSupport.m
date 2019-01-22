@@ -9,18 +9,19 @@
 #import "UITableViewCell+PPMakeSupport.h"
 
 @implementation UITableViewCell (PPMakeSupport)
+
 + (instancetype)ppmake_cellWithTableView:(UITableView *)tableView
 {
     NSString *identifier = [NSString stringWithFormat:@"%@Identifier",NSStringFromClass([self class])];
-    return [self ppmake_cellWithTableView:tableView identifier:identifier];
+    return [[self class] ppmake_cellWithTableView:tableView identifier:identifier];
 }
 
 + (instancetype)ppmake_cellWithTableView:(UITableView *)tableView
-                             identifier:(NSString *)identifier
+                              identifier:(NSString *)identifier
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     if (!cell) {
-        cell = [[self alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+        cell = [[self alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     }
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;

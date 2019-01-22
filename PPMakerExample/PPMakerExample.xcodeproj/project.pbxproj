@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		571392E52179A6E700C0C15C /* NSDate+Timestamp.m in Sources */ = {isa = PBXBuildFile; fileRef = 571392E42179A6E700C0C15C /* NSDate+Timestamp.m */; };
 		571519CE2128A5E600F63DFD /* PPMakeNotificationCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 571519CD2128A5E600F63DFD /* PPMakeNotificationCenter.m */; };
-		571519E1212CFFD000F63DFD /* NSObject+PPMakeSupport_KVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 571519DF212CFFD000F63DFD /* NSObject+PPMakeSupport_KVO.m */; };
 		571519E5212D136200F63DFD /* PPMakePracticeMakesPerfectBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 571519E4212D136200F63DFD /* PPMakePracticeMakesPerfectBaseTableViewController.m */; };
 		571519E8212D13CA00F63DFD /* PPMakeDeepCopyAndShallowCopyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 571519E7212D13CA00F63DFD /* PPMakeDeepCopyAndShallowCopyViewController.m */; };
 		572209CE20AD7EA700611BFA /* PPMake.m in Sources */ = {isa = PBXBuildFile; fileRef = 572209CD20AD7EA700611BFA /* PPMake.m */; };
@@ -32,7 +31,6 @@
 		5748A33820FEF27200F51098 /* PPMakeGridViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5748A33720FEF27200F51098 /* PPMakeGridViewViewController.m */; };
 		57545698212F9DEC00D68145 /* PPMakeRuntimeBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57545697212F9DEC00D68145 /* PPMakeRuntimeBaseTableViewController.m */; };
 		5754569C212F9EDF00D68145 /* PPMakeRuntimeButtonTimeIntervalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5754569B212F9EDF00D68145 /* PPMakeRuntimeButtonTimeIntervalViewController.m */; };
-		575456A0212FD92D00D68145 /* NSObject+PPMakeRuntimeSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 5754569F212FD92D00D68145 /* NSObject+PPMakeRuntimeSupport.m */; };
 		575456A32130032B00D68145 /* PPMakeRuntimeCommonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 575456A22130032B00D68145 /* PPMakeRuntimeCommonViewController.m */; };
 		57754C8120F852A6005B3AE7 /* UIScrollView+ScrollBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 57754C7F20F852A6005B3AE7 /* UIScrollView+ScrollBlock.m */; };
 		57754C8420F86D89005B3AE7 /* PPMakeBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57754C8320F86D89005B3AE7 /* PPMakeBaseTableViewController.m */; };
@@ -173,8 +171,6 @@
 		571392E72179A9F700C0C15C /* 亲宝宝.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "亲宝宝.md"; sourceTree = "<group>"; };
 		571519CC2128A5E600F63DFD /* PPMakeNotificationCenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMakeNotificationCenter.h; sourceTree = "<group>"; };
 		571519CD2128A5E600F63DFD /* PPMakeNotificationCenter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPMakeNotificationCenter.m; sourceTree = "<group>"; };
-		571519DF212CFFD000F63DFD /* NSObject+PPMakeSupport_KVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+PPMakeSupport_KVO.m"; sourceTree = "<group>"; };
-		571519E0212CFFD000F63DFD /* NSObject+PPMakeSupport_KVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+PPMakeSupport_KVO.h"; sourceTree = "<group>"; };
 		571519E3212D136200F63DFD /* PPMakePracticeMakesPerfectBaseTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMakePracticeMakesPerfectBaseTableViewController.h; sourceTree = "<group>"; };
 		571519E4212D136200F63DFD /* PPMakePracticeMakesPerfectBaseTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPMakePracticeMakesPerfectBaseTableViewController.m; sourceTree = "<group>"; };
 		571519E6212D13CA00F63DFD /* PPMakeDeepCopyAndShallowCopyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMakeDeepCopyAndShallowCopyViewController.h; sourceTree = "<group>"; };
@@ -220,8 +216,6 @@
 		5754569A212F9EDF00D68145 /* PPMakeRuntimeButtonTimeIntervalViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMakeRuntimeButtonTimeIntervalViewController.h; sourceTree = "<group>"; };
 		5754569B212F9EDF00D68145 /* PPMakeRuntimeButtonTimeIntervalViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPMakeRuntimeButtonTimeIntervalViewController.m; sourceTree = "<group>"; };
 		5754569D212FD8A000D68145 /* PPMakeRuntimeNotes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMakeRuntimeNotes.h; sourceTree = "<group>"; };
-		5754569E212FD92D00D68145 /* NSObject+PPMakeRuntimeSupport.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+PPMakeRuntimeSupport.h"; sourceTree = "<group>"; };
-		5754569F212FD92D00D68145 /* NSObject+PPMakeRuntimeSupport.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+PPMakeRuntimeSupport.m"; sourceTree = "<group>"; };
 		575456A12130032B00D68145 /* PPMakeRuntimeCommonViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMakeRuntimeCommonViewController.h; sourceTree = "<group>"; };
 		575456A22130032B00D68145 /* PPMakeRuntimeCommonViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPMakeRuntimeCommonViewController.m; sourceTree = "<group>"; };
 		57754C7E20F72966005B3AE7 /* Block,这一次你不懂来找我.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "Block,这一次你不懂来找我.md"; sourceTree = "<group>"; };
@@ -828,12 +822,8 @@
 		5798F8B420D2419600C20029 /* NSObject */ = {
 			isa = PBXGroup;
 			children = (
-				571519E0212CFFD000F63DFD /* NSObject+PPMakeSupport_KVO.h */,
-				571519DF212CFFD000F63DFD /* NSObject+PPMakeSupport_KVO.m */,
 				5798F8B620D2419600C20029 /* NSObject+PPMakeSupport.h */,
 				5798F8B520D2419600C20029 /* NSObject+PPMakeSupport.m */,
-				5754569E212FD92D00D68145 /* NSObject+PPMakeRuntimeSupport.h */,
-				5754569F212FD92D00D68145 /* NSObject+PPMakeRuntimeSupport.m */,
 			);
 			path = NSObject;
 			sourceTree = "<group>";
@@ -1845,7 +1835,6 @@
 				571519E5212D136200F63DFD /* PPMakePracticeMakesPerfectBaseTableViewController.m in Sources */,
 				57FFFEEE210A698F00ADD5DA /* KGHandler.m in Sources */,
 				572D03EE20EF4BCA000FFC23 /* UIColor+PPMakeSupportJudge.m in Sources */,
-				571519E1212CFFD000F63DFD /* NSObject+PPMakeSupport_KVO.m in Sources */,
 				57BF77682151210D004E6F41 /* PPMake_InterView_ViewController.mm in Sources */,
 				57FE008A214F4E3300437F0F /* Product.m in Sources */,
 				57FFFE332109D55100ADD5DA /* UIButton+AFNetworking.m in Sources */,
@@ -1939,7 +1928,6 @@
 				57B8A17E213402FB00D324D6 /* PPMakeMultithreadingBaseTableViewController.m in Sources */,
 				57FFFE3A2109D55100ADD5DA /* AFURLSessionManager.m in Sources */,
 				57FFFE3C2109D55100ADD5DA /* AFNetworkReachabilityManager.m in Sources */,
-				575456A0212FD92D00D68145 /* NSObject+PPMakeRuntimeSupport.m in Sources */,
 				5748A33320FEEB0C00F51098 /* PPTool.m in Sources */,
 				57FBF15B2142091A00311650 /* PPMake_MVC_View.m in Sources */,
 				5798F8CF20D288D600C20029 /* UIColor+PPMakeSupport.m in Sources */,

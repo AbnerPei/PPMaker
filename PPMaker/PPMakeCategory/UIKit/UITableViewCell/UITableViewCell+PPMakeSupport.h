@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface UITableViewCell (PPMakeSupport)
+
 + (instancetype)ppmake_cellWithTableView:(UITableView *)tableView;
 
 + (instancetype)ppmake_cellWithTableView:(UITableView *)tableView

@@ -22,10 +22,6 @@ if (!self.creatingV.layer.masksToBounds) { \
 @end
 
 @implementation PPMake
-- (void)dealloc
-{
-    NSLog(@"dealloc %@ \n释放了 ",self);
-}
 
 - (UIView *)pp_make:(void (^)(PPMake *))make
 {

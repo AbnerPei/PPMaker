@@ -270,6 +270,8 @@
 		57A1F01720E93E1F007B1B41 /* UIImage+PPMakeSupport.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+PPMakeSupport.m"; sourceTree = "<group>"; };
 		57A1F01B20E941D0007B1B41 /* UIFontCacheViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIFontCacheViewController.h; sourceTree = "<group>"; };
 		57A1F01C20E941D0007B1B41 /* UIFontCacheViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIFontCacheViewController.m; sourceTree = "<group>"; };
+		57AB4D6C2252711200D4D9AA /* PPMakeFoundationCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMakeFoundationCategory.h; sourceTree = "<group>"; };
+		57AB4D6D2252713300D4D9AA /* PPMakeUIKitCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMakeUIKitCategory.h; sourceTree = "<group>"; };
 		57B4CCE6214656E300E21EAF /* PPMakeAPILearn_Shake_ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMakeAPILearn_Shake_ViewController.h; sourceTree = "<group>"; };
 		57B4CCE7214656E300E21EAF /* PPMakeAPILearn_Shake_ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPMakeAPILearn_Shake_ViewController.m; sourceTree = "<group>"; };
 		57B4CCE92146584400E21EAF /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -799,6 +801,7 @@
 		5798F8B220D2419600C20029 /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
+				57AB4D6C2252711200D4D9AA /* PPMakeFoundationCategory.h */,
 				57D3788C21907199001E5B2E /* NSUserDefaults */,
 				571392E22179A6AB00C0C15C /* NSDate */,
 				57B8A1E3213E64DE00D324D6 /* NSIndexPath */,
@@ -831,6 +834,7 @@
 		5798F8B720D2419600C20029 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				57AB4D6D2252713300D4D9AA /* PPMakeUIKitCategory.h */,
 				57FBF15F2142151C00311650 /* UILabel */,
 				573FA5C8213FDB4A0098CD17 /* UITableViewHeaderFooterView */,
 				57B8A19F21379B4900D324D6 /* UITableView */,
@@ -1229,9 +1233,9 @@
 		57CB438220A1BAAC00268DBE /* PPMaker */ = {
 			isa = PBXGroup;
 			children = (
+				57CB438320A1BAAC00268DBE /* PPMaker.h */,
 				572209CF20AEBB6C00611BFA /* PPMakeCategory */,
 				572209CB20AD7E9600611BFA /* PPMake */,
-				57CB438320A1BAAC00268DBE /* PPMaker.h */,
 				57CB439B20A2864800268DBE /* PPMutAttributedStringMaker */,
 				5748A33020FEEAC100F51098 /* PPToolMaker */,
 			);

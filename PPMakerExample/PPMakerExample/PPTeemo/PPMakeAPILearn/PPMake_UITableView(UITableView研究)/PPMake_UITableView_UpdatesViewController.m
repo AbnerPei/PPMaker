@@ -7,7 +7,6 @@
 //
 
 #import "PPMake_UITableView_UpdatesViewController.h"
-#import "NSIndexPath+PPMakeEasilyDebug.h"
 
 @interface PPMakeTableViewUpdateRowModel : NSObject
 @property(nonatomic,copy) NSString *title;
@@ -145,9 +144,7 @@
             [cell setupCellWithRowModel:rowM indexPath:indexPath];
             
             cell.deleteRowBlock = ^(PPMakeTableViewUpdateRowModel *rowModel, NSIndexPath *indexP) {
-                [indexPath ppmake_debugLog];
                 NSLog(@"8888");
-                [indexP ppmake_debugLog];
                 [self deleteRowWithRowModel:rowModel indexPath:indexP];
             };
         }

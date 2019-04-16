@@ -76,7 +76,6 @@
 		57B8A1BF213D234B00D324D6 /* PPMake_RunloopUsed_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57B8A1BE213D234B00D324D6 /* PPMake_RunloopUsed_ViewController.m */; };
 		57B8A1DC213E4EFA00D324D6 /* PPMakeAPILearn_UITableView_BaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57B8A1DB213E4EFA00D324D6 /* PPMakeAPILearn_UITableView_BaseTableViewController.m */; };
 		57B8A1E2213E513A00D324D6 /* PPMake_UITableView_UpdatesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57B8A1E1213E513A00D324D6 /* PPMake_UITableView_UpdatesViewController.m */; };
-		57B8A1E6213E651E00D324D6 /* NSIndexPath+PPMakeEasilyDebug.m in Sources */ = {isa = PBXBuildFile; fileRef = 57B8A1E5213E651E00D324D6 /* NSIndexPath+PPMakeEasilyDebug.m */; };
 		57BF77682151210D004E6F41 /* PPMake_InterView_ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 57BF77672151210D004E6F41 /* PPMake_InterView_ViewController.mm */; };
 		57BF776A215124C8004E6F41 /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 57BF7769215124C8004E6F41 /* libstdc++.tbd */; };
 		57BF7780215280B2004E6F41 /* InterView_001 in Resources */ = {isa = PBXBuildFile; fileRef = 57BF777F215280B2004E6F41 /* InterView_001 */; };
@@ -231,6 +230,8 @@
 		57754CBE20FD857C005B3AE7 /* PPMakeCustomKVOViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPMakeCustomKVOViewController.m; sourceTree = "<group>"; };
 		57754CC020FD8592005B3AE7 /* PPMakeHowKVOWorksViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMakeHowKVOWorksViewController.h; sourceTree = "<group>"; };
 		57754CC120FD8592005B3AE7 /* PPMakeHowKVOWorksViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPMakeHowKVOWorksViewController.m; sourceTree = "<group>"; };
+		5779E8832264F172004177BB /* PPMakeCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMakeCategory.h; sourceTree = "<group>"; };
+		5779E8852264F58A004177BB /* PPMakerFontDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMakerFontDefine.h; sourceTree = "<group>"; };
 		5798F86520CB856400C20029 /* PPMake+UILabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PPMake+UILabel.h"; sourceTree = "<group>"; };
 		5798F86620CB856400C20029 /* PPMake+UILabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "PPMake+UILabel.m"; sourceTree = "<group>"; };
 		5798F86820CB85E700C20029 /* PPMake+UIButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PPMake+UIButton.h"; sourceTree = "<group>"; };
@@ -311,8 +312,6 @@
 		57B8A1DB213E4EFA00D324D6 /* PPMakeAPILearn_UITableView_BaseTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPMakeAPILearn_UITableView_BaseTableViewController.m; sourceTree = "<group>"; };
 		57B8A1E0213E513A00D324D6 /* PPMake_UITableView_UpdatesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMake_UITableView_UpdatesViewController.h; sourceTree = "<group>"; };
 		57B8A1E1213E513A00D324D6 /* PPMake_UITableView_UpdatesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPMake_UITableView_UpdatesViewController.m; sourceTree = "<group>"; };
-		57B8A1E4213E651D00D324D6 /* NSIndexPath+PPMakeEasilyDebug.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSIndexPath+PPMakeEasilyDebug.h"; sourceTree = "<group>"; };
-		57B8A1E5213E651E00D324D6 /* NSIndexPath+PPMakeEasilyDebug.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSIndexPath+PPMakeEasilyDebug.m"; sourceTree = "<group>"; };
 		57BF77662151210D004E6F41 /* PPMake_InterView_ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMake_InterView_ViewController.h; sourceTree = "<group>"; };
 		57BF77672151210D004E6F41 /* PPMake_InterView_ViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = PPMake_InterView_ViewController.mm; sourceTree = "<group>"; };
 		57BF7769215124C8004E6F41 /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
@@ -330,6 +329,7 @@
 		57CB438320A1BAAC00268DBE /* PPMaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPMaker.h; sourceTree = "<group>"; };
 		57CB439F20A286C800268DBE /* PPMutAttributedStringMaker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMutAttributedStringMaker.h; sourceTree = "<group>"; };
 		57CB43A020A286C800268DBE /* PPMutAttributedStringMaker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPMutAttributedStringMaker.m; sourceTree = "<group>"; };
+		57D2FFA72264F7C400B5EBBD /* PPMakerColorDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMakerColorDefine.h; sourceTree = "<group>"; };
 		57D3788D219071C4001E5B2E /* NSUserDefaults+PPMakeSupport.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSUserDefaults+PPMakeSupport.h"; sourceTree = "<group>"; };
 		57D3788E219071C4001E5B2E /* NSUserDefaults+PPMakeSupport.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSUserDefaults+PPMakeSupport.m"; sourceTree = "<group>"; };
 		57FBF1592142091A00311650 /* PPMake_MVC_View.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMake_MVC_View.h; sourceTree = "<group>"; };
@@ -349,6 +349,7 @@
 		57FE0089214F4E3300437F0F /* Product.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Product.m; sourceTree = "<group>"; };
 		57FF3971215C85D90040A48D /* PPMake_GetImageMainColorViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMake_GetImageMainColorViewController.h; sourceTree = "<group>"; };
 		57FF3972215C85D90040A48D /* PPMake_GetImageMainColorViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPMake_GetImageMainColorViewController.m; sourceTree = "<group>"; };
+		57FFF3D12264E6F400A85F71 /* PPMakerDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMakerDefines.h; sourceTree = "<group>"; };
 		57FFFDAB2106B9E700ADD5DA /* PPMakeAlgorithmBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMakeAlgorithmBaseViewController.h; sourceTree = "<group>"; };
 		57FFFDAC2106B9E700ADD5DA /* PPMakeAlgorithmBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPMakeAlgorithmBaseViewController.m; sourceTree = "<group>"; };
 		57FFFDE421080A8600ADD5DA /* PPMakeCustomDoneTextFieldViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMakeCustomDoneTextFieldViewController.h; sourceTree = "<group>"; };
@@ -569,6 +570,7 @@
 		572209CF20AEBB6C00611BFA /* PPMakeCategory */ = {
 			isa = PBXGroup;
 			children = (
+				5779E8832264F172004177BB /* PPMakeCategory.h */,
 				5798F8B220D2419600C20029 /* Foundation */,
 				5798F8B720D2419600C20029 /* UIKit */,
 			);
@@ -804,7 +806,6 @@
 				57AB4D6C2252711200D4D9AA /* PPMakeFoundationCategory.h */,
 				57D3788C21907199001E5B2E /* NSUserDefaults */,
 				571392E22179A6AB00C0C15C /* NSDate */,
-				57B8A1E3213E64DE00D324D6 /* NSIndexPath */,
 				57B8A18D21363AB200D324D6 /* NSMutableArray */,
 				57FFFDEE2108514600ADD5DA /* NSString */,
 				5798F8B320D2419600C20029 /* NSMutableAttributedString */,
@@ -1164,15 +1165,6 @@
 			path = "PPMake_UITableView(UITableView研究)";
 			sourceTree = "<group>";
 		};
-		57B8A1E3213E64DE00D324D6 /* NSIndexPath */ = {
-			isa = PBXGroup;
-			children = (
-				57B8A1E4213E651D00D324D6 /* NSIndexPath+PPMakeEasilyDebug.h */,
-				57B8A1E5213E651E00D324D6 /* NSIndexPath+PPMakeEasilyDebug.m */,
-			);
-			path = NSIndexPath;
-			sourceTree = "<group>";
-		};
 		57BF7765215120C3004E6F41 /* InterView(面试) */ = {
 			isa = PBXGroup;
 			children = (
@@ -1233,6 +1225,7 @@
 		57CB438220A1BAAC00268DBE /* PPMaker */ = {
 			isa = PBXGroup;
 			children = (
+				57FFF3D22264E7CB00A85F71 /* PPMakerDefines */,
 				57CB438320A1BAAC00268DBE /* PPMaker.h */,
 				572209CF20AEBB6C00611BFA /* PPMakeCategory */,
 				572209CB20AD7E9600611BFA /* PPMake */,
@@ -1367,6 +1360,16 @@
 				57FF3972215C85D90040A48D /* PPMake_GetImageMainColorViewController.m */,
 			);
 			path = "GetImageMainColor(获取图片主色调)";
+			sourceTree = "<group>";
+		};
+		57FFF3D22264E7CB00A85F71 /* PPMakerDefines */ = {
+			isa = PBXGroup;
+			children = (
+				57FFF3D12264E6F400A85F71 /* PPMakerDefines.h */,
+				5779E8852264F58A004177BB /* PPMakerFontDefine.h */,
+				57D2FFA72264F7C400B5EBBD /* PPMakerColorDefine.h */,
+			);
+			path = PPMakerDefines;
 			sourceTree = "<group>";
 		};
 		57FFFDAA2106B99C00ADD5DA /* Algorithm(算法) */ = {
@@ -1927,7 +1930,6 @@
 				572D03EB20EF3568000FFC23 /* UnusualMethodsOfUIViewViewController.m in Sources */,
 				572D040620F4429D000FFC23 /* PPMakeBannerView.m in Sources */,
 				57FFFDEA21080AF100ADD5DA /* PPMakeCustomDoneTextField.m in Sources */,
-				57B8A1E6213E651E00D324D6 /* NSIndexPath+PPMakeEasilyDebug.m in Sources */,
 				57FFFEB0210A5C9B00ADD5DA /* UIScrollView+MJRefresh.m in Sources */,
 				57B8A17E213402FB00D324D6 /* PPMakeMultithreadingBaseTableViewController.m in Sources */,
 				57FFFE3A2109D55100ADD5DA /* AFURLSessionManager.m in Sources */,

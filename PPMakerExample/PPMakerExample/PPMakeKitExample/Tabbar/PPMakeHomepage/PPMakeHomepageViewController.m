@@ -8,6 +8,7 @@
 
 #import "PPMakeHomepageViewController.h"
 #import <objc/runtime.h>
+#import "PPMakerColorDefine.h"
 
 @interface PPMakeHomepageViewController ()
 
@@ -28,6 +29,7 @@
     // Do any additional setup after loading the view.
     self.backBT.hidden = YES;
     self.titleStr = @"首页";
+    self.view.backgroundColor = rgb(220, 20, 60);
     
     UIFont *firstCreatedFont = [UIFont fontWithName:@"PingFangSC-Semibold" size:14];
     NSLog(@"\n系统启动就创建一个font对象 \n%@",firstCreatedFont);

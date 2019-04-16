@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface PPMutAttributedStringMaker : NSObject
 
 /** 字体 */
@@ -51,7 +53,7 @@
  * 返回一个NSMutableAttributedString对象，同时要注意初始化时是需要一个非空str的。
  * 参考`NSAttributedString`的` - (instancetype)initWithString:(NSString *)str`方法;
  */
-+(NSMutableAttributedString *)pp_attributedStringMake:(void(^)(PPMutAttributedStringMaker *maker))make str:(NSString * _Nonnull)str;
++(NSMutableAttributedString *)pp_attributedStringMake:(void(^)(PPMutAttributedStringMaker *maker))make str:(NSString *)str;
 
 /** 整个字符串range */
 @property (nonatomic, assign, readonly) NSRange maker_allRange;
@@ -112,3 +114,5 @@
         specialTextColorArray:(NSArray<UIColor *> *)specialTextColorArray;
 
 @end
+
+NS_ASSUME_NONNULL_END

@@ -31,11 +31,16 @@
     self.titleStr = @"首页";
     self.view.backgroundColor = rgb(220, 20, 60);
     
-    UIFont *firstCreatedFont = [UIFont fontWithName:@"PingFangSC-Semibold" size:14];
-    NSLog(@"\n系统启动就创建一个font对象 \n%@",firstCreatedFont);
+//    UIFont *firstCreatedFont = [UIFont fontWithName:@"PingFangSC-Semibold" size:14];
+//    NSLog(@"\n系统启动就创建一个font对象 \n%@",firstCreatedFont);
+//
+//    UIImage *img = [UIImage imageNamed:@"1024"];
+//    NSLog(@"home-img %@",img);
     
-    UIImage *img = [UIImage imageNamed:@"1024"];
-    NSLog(@"home-img %@",img);
+    NSString *str1 = @"1234 ";
+    NSString *str2 = @"5";
+    NSString *str3 = @"a123";
+    NSLog(@"isNumber \n %d \n %d \n %d \n",isNumber(str1),isNumber(str2),isNumber(str3));
     
 }
 -(void)log

@@ -84,7 +84,6 @@
 		57CB437920A1BA8D00268DBE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57CB437720A1BA8D00268DBE /* LaunchScreen.storyboard */; };
 		57CB437C20A1BA8D00268DBE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 57CB437B20A1BA8D00268DBE /* main.m */; };
 		57CB43A120A286C800268DBE /* PPMutAttributedStringMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 57CB43A020A286C800268DBE /* PPMutAttributedStringMaker.m */; };
-		57D3788F219071C4001E5B2E /* NSUserDefaults+PPMakeSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 57D3788E219071C4001E5B2E /* NSUserDefaults+PPMakeSupport.m */; };
 		57FBF15B2142091A00311650 /* PPMake_MVC_View.m in Sources */ = {isa = PBXBuildFile; fileRef = 57FBF15A2142091A00311650 /* PPMake_MVC_View.m */; };
 		57FBF15E2142098C00311650 /* PPMake_MVC_Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 57FBF15D2142098C00311650 /* PPMake_MVC_Model.m */; };
 		57FBF1622142153700311650 /* UILabel+PPMakeSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 57FBF1612142153700311650 /* UILabel+PPMakeSupport.m */; };
@@ -325,8 +324,7 @@
 		57CB439F20A286C800268DBE /* PPMutAttributedStringMaker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMutAttributedStringMaker.h; sourceTree = "<group>"; };
 		57CB43A020A286C800268DBE /* PPMutAttributedStringMaker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPMutAttributedStringMaker.m; sourceTree = "<group>"; };
 		57D2FFA72264F7C400B5EBBD /* PPMakerColorDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMakerColorDefine.h; sourceTree = "<group>"; };
-		57D3788D219071C4001E5B2E /* NSUserDefaults+PPMakeSupport.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSUserDefaults+PPMakeSupport.h"; sourceTree = "<group>"; };
-		57D3788E219071C4001E5B2E /* NSUserDefaults+PPMakeSupport.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSUserDefaults+PPMakeSupport.m"; sourceTree = "<group>"; };
+		57D2FFA8226641D300B5EBBD /* PPMakerNSStringDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMakerNSStringDefine.h; sourceTree = "<group>"; };
 		57FBF1592142091A00311650 /* PPMake_MVC_View.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMake_MVC_View.h; sourceTree = "<group>"; };
 		57FBF15A2142091A00311650 /* PPMake_MVC_View.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPMake_MVC_View.m; sourceTree = "<group>"; };
 		57FBF15C2142098C00311650 /* PPMake_MVC_Model.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMake_MVC_Model.h; sourceTree = "<group>"; };
@@ -802,7 +800,6 @@
 			isa = PBXGroup;
 			children = (
 				57AB4D6C2252711200D4D9AA /* PPMakeFoundationCategory.h */,
-				57D3788C21907199001E5B2E /* NSUserDefaults */,
 				571392E22179A6AB00C0C15C /* NSDate */,
 				57B8A18D21363AB200D324D6 /* NSMutableArray */,
 				57FFFDEE2108514600ADD5DA /* NSString */,
@@ -1247,15 +1244,6 @@
 			path = PPTeemo;
 			sourceTree = "<group>";
 		};
-		57D3788C21907199001E5B2E /* NSUserDefaults */ = {
-			isa = PBXGroup;
-			children = (
-				57D3788D219071C4001E5B2E /* NSUserDefaults+PPMakeSupport.h */,
-				57D3788E219071C4001E5B2E /* NSUserDefaults+PPMakeSupport.m */,
-			);
-			path = NSUserDefaults;
-			sourceTree = "<group>";
-		};
 		57FBF1532142075300311650 /* MVC&&MVVM */ = {
 			isa = PBXGroup;
 			children = (
@@ -1356,6 +1344,7 @@
 				5779E8852264F58A004177BB /* PPMakerFontDefine.h */,
 				57D2FFA72264F7C400B5EBBD /* PPMakerColorDefine.h */,
 				6887CC082265C85D005DCEBD /* PPMakerNSUserDefaultsDefine.h */,
+				57D2FFA8226641D300B5EBBD /* PPMakerNSStringDefine.h */,
 			);
 			path = PPMakerDefines;
 			sourceTree = "<group>";
@@ -1903,7 +1892,6 @@
 				57FFFEE3210A5D4000ADD5DA /* MJFoundation.m in Sources */,
 				5798F86D20CB862200C20029 /* PPMake+UITableView.m in Sources */,
 				57FFFDFB210959DD00ADD5DA /* NSObject+YYModel.m in Sources */,
-				57D3788F219071C4001E5B2E /* NSUserDefaults+PPMakeSupport.m in Sources */,
 				57FFFE392109D55100ADD5DA /* AFHTTPSessionManager.m in Sources */,
 				57FFFEE8210A5FA500ADD5DA /* KGBaseRequestResult.m in Sources */,
 				573702122118300D0060B4B5 /* PPMakeTreeDemoViewController.m in Sources */,

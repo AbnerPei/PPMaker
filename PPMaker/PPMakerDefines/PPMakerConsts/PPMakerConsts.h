@@ -9,12 +9,21 @@
 #import <Foundation/Foundation.h>
 
 #pragma mark --- 字体
-//苹方-简 中粗体
-UIKIT_EXTERN NSString *const kFontNamePingFangSCSemibold;
-//苹方-简 中黑体
-UIKIT_EXTERN NSString *const kFontNamePingFangSCMedium;
-//苹方-简 常规体
-UIKIT_EXTERN NSString *const kFontNamePingFangSCRegular;
+/* 苹方-简 中粗体 */
+extern NSString *const kFontNamePingFangSCSemibold;
+/* 苹方-简 中黑体 */
+extern NSString *const kFontNamePingFangSCMedium;
+/* 苹方-简 常规体 */
+extern NSString *const kFontNamePingFangSCRegular;
+
+#pragma mark --- 正则表达式
+/* 正则表达式用到的限制条件 */
+typedef NSString *PPMakerRegularExpressionLimitTypeKey;
+extern PPMakerRegularExpressionLimitTypeKey const PPMakerRegularExpressionLimitTypeKeyNumber; //数字
+extern PPMakerRegularExpressionLimitTypeKey const PPMakerRegularExpressionLimitTypeKeyLetter; //字母
+extern PPMakerRegularExpressionLimitTypeKey const PPMakerRegularExpressionLimitTypeKeyChnese; //汉字
+extern PPMakerRegularExpressionLimitTypeKey const PPMakerRegularExpressionLimitTypeKeyEmail;  //邮箱
+
 
 NS_ASSUME_NONNULL_BEGIN
 

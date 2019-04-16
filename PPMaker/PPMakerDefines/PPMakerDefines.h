@@ -9,5 +9,6 @@
 #ifndef PPMakerDefines_h
 #define PPMakerDefines_h
 
+#import "PPMakerColorDefine.h"
 
 #endif /* PPMakerDefines_h */

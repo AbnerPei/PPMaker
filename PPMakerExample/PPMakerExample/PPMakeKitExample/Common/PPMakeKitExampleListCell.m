@@ -7,6 +7,8 @@
 //
 
 #import "PPMakeKitExampleListCell.h"
+#import "PPMakerFontDefine.h"
+
 @interface PPMakeKitExampleListCell ()
 @property(nonatomic,strong) UILabel *titleLB;
 @end
@@ -48,7 +50,7 @@
     self.titleLB = [PPMAKELB pp_make:^(PPMake *make) {
         make.intoView(contentV);
         make.frame(CGRectMake(titleX, titleY, titleW, titleH));
-        make.font(kFontSemibold(16));
+        make.font(fontPingFangSCSemibold(16));
         make.textColor(kColorBlack);
     }];
     

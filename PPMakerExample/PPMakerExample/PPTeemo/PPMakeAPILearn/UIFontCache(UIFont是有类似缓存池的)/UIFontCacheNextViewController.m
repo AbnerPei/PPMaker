@@ -7,6 +7,7 @@
 //
 
 #import "UIFontCacheNextViewController.h"
+#import "PPMakerFontDefine.h"
 
 @interface UIFontCacheNextViewController ()
 /** 用来持有font的LB */
@@ -18,11 +19,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    UIFont *creatingFont = kFontSemibold(14);
+    UIFont *creatingFont = fontPingFangSCSemibold(14);
     
     self.fontTestLB = [PPMAKELB pp_make:^(PPMake *make) {
         make.intoView(self.view);
-        make.font(kFontSemibold(14));
+        make.font(fontPingFangSCSemibold(14));
         make.text(@"next lb UIFont是有缓存的");
         make.textColor([UIColor ppmake_deepRed]);
         make.textAlignment(NSTextAlignmentCenter);

@@ -7,6 +7,7 @@
 //
 
 #import "HBRoom.h"
+#import "PPMakerFontDefine.h"
 
 @implementation HBRoom
 
@@ -37,14 +38,14 @@
 {
     self.roomNameLB = [PPMAKELB pp_make:^(PPMake *make) {
         make.intoView(self.contentView);
-        make.font(kFontRegular(16));
+        make.font(fontPingFangSCRegular(16));
         make.textColor(kColorBlack);
         make.frame(CGRectMake(30, 0, kScreenW/2-30, kHeight(50)));
     }];
     
     self.roomPriceLB = [PPMAKELB pp_make:^(PPMake *make) {
         make.intoView(self.contentView);
-        make.font(kFontSemibold(18));
+        make.font(fontPingFangSCSemibold(18));
         make.textColor([UIColor ppmake_red]);
         make.frame(CGRectMake(kScreenW/2, 0, kScreenW/2-10, kHeight(50)));
         make.textAlignment(NSTextAlignmentRight);
@@ -82,7 +83,7 @@
 {
     self.hotelNameLB = [PPMAKELB pp_make:^(PPMake *make) {
         make.intoView(self.contentView);
-        make.font(kFontRegular(16));
+        make.font(fontPingFangSCRegular(16));
         make.textColor(kColorBlack);
         make.frame(CGRectMake(10, 0, kScreenW-20, kHeight(80)));
     }];

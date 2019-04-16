@@ -7,6 +7,7 @@
 //
 
 #import "PPMake_UITableView_UpdatesViewController.h"
+#import "PPMakerFontDefine.h"
 
 @interface PPMakeTableViewUpdateRowModel : NSObject
 @property(nonatomic,copy) NSString *title;
@@ -55,20 +56,20 @@
         make.intoView(self.contentView);
         make.frame(CGRectMake(10, 10, kScreenW-20, 30));
         make.textColor([UIColor ppmake_violet]);
-        make.font(kFontSemibold(18));
+        make.font(fontPingFangSCSemibold(18));
     }];
     
     self.numberLB = [PPMAKELB pp_make:^(PPMake *make) {
         make.intoView(self.contentView);
         make.frame(CGRectMake(10, 50, kScreenW-20, 30));
         make.textColor([UIColor ppmake_black]);
-        make.font(kFontRegular(14));
+        make.font(fontPingFangSCRegular(14));
     }];
     
     self.deleteBT = [PPMAKEBT pp_make:^(PPMake *make) {
         make.intoView(self.contentView);
         make.frame(CGRectMake(kScreenW-110, 90, 100, 40));
-        make.normalAttributedFontColorTitle(kFontSemibold(16), kColorHex(0xff4d4d), @"删除此行");
+        make.normalAttributedFontColorTitle(fontPingFangSCSemibold(16), kColorHex(0xff4d4d), @"删除此行");
         make.borderColor(kColorHex(0xf2f2f2));
         make.borderWidth(2);
     }];
@@ -198,7 +199,7 @@
             make.frame(CGRectMake(10, 5, 120, 40));
             make.cornerRadius(20);
             make.textAlignment(NSTextAlignmentCenter);
-            make.font(kFontMedium(16));
+            make.font(fontPingFangSCMedium(16));
             make.textColor([UIColor ppmake_orange]);
         }];
         

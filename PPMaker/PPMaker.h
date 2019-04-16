@@ -25,5 +25,21 @@
 #import <PPMaker/PPMutAttributedStringMaker.h>
 #endif
 
+NS_ASSUME_NONNULL_BEGIN
+
+CG_INLINE NSUserDefaults *userDefaults(){
+    return [NSUserDefaults standardUserDefaults];
+}
+
+CG_INLINE void ud_Sync(){
+    [userDefaults() synchronize];
+}
+
+CG_INLINE void ud_setObject(__nullable id value,NSString *key){
+    [userDefaults() setObject:value forKey:key];
+    ud_Sync();
+}
+
+NS_ASSUME_NONNULL_END
 
 #endif /* PPMaker_h */

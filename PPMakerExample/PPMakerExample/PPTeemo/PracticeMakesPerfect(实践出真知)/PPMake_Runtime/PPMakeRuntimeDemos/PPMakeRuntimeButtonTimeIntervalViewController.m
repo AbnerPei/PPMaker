@@ -7,6 +7,7 @@
 //
 
 #import "PPMakeRuntimeButtonTimeIntervalViewController.h"
+#import "PPMakerFontDefine.h"
 
 @interface PPMakeRuntimeButtonTimeIntervalViewController ()
 
@@ -24,7 +25,7 @@
        make.bgColor(kColorHexA(0xff4d4d, 0.3));
        make.borderWidth(1);
        make.borderColor([UIColor ppmake_tawny]);
-       make.normalAttributedFontColorTitle(kFontSemibold(14), kColorHex(0xff4d4d), @"我是一个button");
+       make.normalAttributedFontColorTitle(fontPingFangSCSemibold(14), kColorHex(0xff4d4d), @"我是一个button");
        //button的block点击事件
        make.actionBlock(^{
            NSLog(@"点击了一下button");

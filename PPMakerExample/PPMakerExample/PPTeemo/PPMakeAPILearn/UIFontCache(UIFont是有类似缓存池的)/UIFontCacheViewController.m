@@ -45,6 +45,7 @@
 #import "UIFontCacheViewController.h"
 #import "UIFontCacheNextViewController.h"
 #import "PPMutAttributedStringMaker.h"
+#import "PPMakerFontDefine.h"
 
 static NSString *key = @"pppp8888";
 
@@ -72,7 +73,7 @@ static NSString *key = @"pppp8888";
     //应用执行后打印结果（未切到后台）
     [self logFontWithHasFromBackground:NO];
     
-    //创建一个触发从后台进入前台打印fontTestLB.font和UIFont *creatingFont = kFontSemibold(14);的button
+    //创建一个触发从后台进入前台打印fontTestLB.font和UIFont *creatingFont = fontPingFangSCSemibold(14);的button
     [self createBT];
 
     //显示一些信息
@@ -84,7 +85,7 @@ static NSString *key = @"pppp8888";
 -(void)logFontWithHasFromBackground:(BOOL)hasBackground
 {
     //进入测试界面用同样的创建方式再次创建一个UIFont对象
-    UIFont *creatingFont = kFontSemibold(14);
+    UIFont *creatingFont = fontPingFangSCSemibold(14);
     UIImage *img = [UIImage imageNamed:@"1024"];
     NSLog(@"\n是否有进入后台过：%d\nUIFont新建的font     \n%@ \nfontTestLB设置的font \n%@---%@",hasBackground,creatingFont,self.fontTestLB.font,img);
     
@@ -96,7 +97,7 @@ static NSString *key = @"pppp8888";
     [PPMAKEBT pp_make:^(PPMake *make) {
         make.intoView(self.view);
         make.frame(CGRectMake(kWidth(60), self.fontTestLB.bottom+kHeight(20), kScreenW-kWidth(120), kHeight(50)));
-        make.normalAttributedFontColorTitle(kFontSemibold(16), [UIColor ppmake_chocolate], @"bt 请进去后台再切回来再点击打印");
+        make.normalAttributedFontColorTitle(fontPingFangSCSemibold(16), [UIColor ppmake_chocolate], @"bt 请进去后台再切回来再点击打印");
         make.actionBlock(^{
             [self logFontWithHasFromBackground:YES];
         });
@@ -110,13 +111,13 @@ static NSString *key = @"pppp8888";
         make.intoView(self.view);
         make.frame(CGRectMake(kWidth(10), kNavBarH, kScreenW-kWidth(20), kHeight(300)));
         NSMutableAttributedString *attributedStr = [NSMutableAttributedString pp_attributedStringMake:^(PPMutAttributedStringMaker *maker) {
-            maker.font(kFontRegular(16));
+            maker.font(fontPingFangSCRegular(16));
             maker.textColor(kColorHex(0x222222));
             maker.lineSpacing(4);
             maker.kern(@2);
             maker.specialTextSet(
                                  @[@"秘密",@"UIFont是有缓存的",@"测试方法如下"],
-                                 @[kFontMedium(18),kFontSemibold(22),kFontMedium(18)],
+                                 @[fontPingFangSCMedium(18),fontPingFangSCSemibold(22),fontPingFangSCMedium(18)],
                                  @[[UIColor ppmake_violet],kColorHex(0xff4d4d),kColorBlack]
                                  );
         } str:@"有一天，我发现了一个秘密:\nUIFont是有缓存的，类似我们常说的缓存池。\n测试方法如下：停留在该界面，摁手机home键，然后再切回来，看控制台打印"];

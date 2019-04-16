@@ -10,6 +10,7 @@
 #import "KGSubcategoryListModel.h"
 #import "UIImageView+WebCache.h"
 #import "KGHandler.h"
+#import "PPMakerFontDefine.h"
 
 @interface PPMakeKGSubcategoryListCell ()
 @property(nonatomic,strong) UIImageView *specialImgV;
@@ -65,7 +66,7 @@
         make.intoView(self.contentView);
         make.frame(CGRectMake(lbX, lbY, lbW, lbH));
         make.textColor(kColorBlack);
-        make.font(kFontMedium(14));
+        make.font(fontPingFangSCMedium(14));
     }];
     
     //耳机🎧
@@ -85,7 +86,7 @@
     self.playCountLB = [PPMAKELB pp_make:^(PPMake *make) {
         make.intoView(self.contentView);
         make.frame(CGRectMake(playCountX, playCountY, playCountW, lbH));
-        make.font(kFontRegular(12));
+        make.font(fontPingFangSCRegular(12));
         make.textColor(kColorHex(0x999999));
     }];
     

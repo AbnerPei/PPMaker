@@ -9,6 +9,8 @@
 #ifndef PPMakerColorDefine_h
 #define PPMakerColorDefine_h
 
+NS_ASSUME_NONNULL_BEGIN
+
 CG_INLINE UIColor *rgba(CGFloat r,CGFloat g,CGFloat b,CGFloat a){
     return [UIColor colorWithRed:r / 255.0 green:g / 255.0 blue:b / 255.0 alpha:a];
 }
@@ -25,7 +27,7 @@ CG_INLINE UIColor *r(CGFloat r){
     return ra(r, 1.0);
 }
 
-CG_INLINE UIColor *hexa(NSString *hexStr,CGFloat a){
+CG_INLINE UIColor *hexa(NSString * _Nonnull hexStr,CGFloat a){
     //删除字符串中的空格
     NSString *cString = [[hexStr stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] uppercaseString];
     // String should be 6 or 8 characters
@@ -66,7 +68,7 @@ CG_INLINE UIColor *hexa(NSString *hexStr,CGFloat a){
     return [UIColor colorWithRed:((float)r / 255.0f) green:((float)g / 255.0f) blue:((float)b / 255.0f) alpha:a];
 }
 
-CG_INLINE UIColor *hex(NSString *hexStr){
+CG_INLINE UIColor *hex(NSString * _Nonnull hexStr){
     return hexa(hexStr, 1.0);
 }
 
@@ -126,5 +128,6 @@ CG_INLINE UIColor *c_jasmine()           {return rgb(245, 222, 179);}
 /** 蛋壳色 */
 CG_INLINE UIColor *c_eggShell()          {return rgb(252, 230, 201);}
 
+NS_ASSUME_NONNULL_END
 
 #endif /* PPMakerColorDefine_h */

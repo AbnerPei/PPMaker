@@ -15,7 +15,6 @@
 		572D03E420EF1C3D000FFC23 /* PPMakeKitExampleListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 572D03E320EF1C3D000FFC23 /* PPMakeKitExampleListCell.m */; };
 		572D03E820EF2F90000FFC23 /* UITableViewCell+PPMakeSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 572D03E720EF2F90000FFC23 /* UITableViewCell+PPMakeSupport.m */; };
 		572D03EB20EF3568000FFC23 /* UnusualMethodsOfUIViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 572D03EA20EF3568000FFC23 /* UnusualMethodsOfUIViewViewController.m */; };
-		572D03EE20EF4BCA000FFC23 /* UIColor+PPMakeSupportJudge.m in Sources */ = {isa = PBXBuildFile; fileRef = 572D03ED20EF4BCA000FFC23 /* UIColor+PPMakeSupportJudge.m */; };
 		572D03F220EF741F000FFC23 /* PPMakeCustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 572D03F120EF741F000FFC23 /* PPMakeCustomView.m */; };
 		572D03FD20F327A2000FFC23 /* LearnTransformViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 572D03FC20F327A2000FFC23 /* LearnTransformViewController.m */; };
 		572D040620F4429D000FFC23 /* PPMakeBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 572D040520F4429D000FFC23 /* PPMakeBannerView.m */; };
@@ -47,7 +46,6 @@
 		5798F8C020D2419700C20029 /* UIView+PPMakeSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 5798F8BC20D2419600C20029 /* UIView+PPMakeSupport.m */; };
 		5798F8C320D241E300C20029 /* NSMutableAttributedString+PPMakeSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 5798F8C220D241E300C20029 /* NSMutableAttributedString+PPMakeSupport.m */; };
 		5798F8CB20D245E000C20029 /* UIDevice+PPMakeSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 5798F8CA20D245E000C20029 /* UIDevice+PPMakeSupport.m */; };
-		5798F8CF20D288D600C20029 /* UIColor+PPMakeSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 5798F8CE20D288D600C20029 /* UIColor+PPMakeSupport.m */; };
 		57A1EFFB20E85642007B1B41 /* PPMakeBaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A1EFFA20E85642007B1B41 /* PPMakeBaseNavigationController.m */; };
 		57A1F00120E85A58007B1B41 /* PPMakeSystemTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A1F00020E85A58007B1B41 /* PPMakeSystemTabBarController.m */; };
 		57A1F00720E85DE5007B1B41 /* PPMakeBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A1F00620E85DE5007B1B41 /* PPMakeBaseViewController.m */; };
@@ -180,8 +178,6 @@
 		572D03E720EF2F90000FFC23 /* UITableViewCell+PPMakeSupport.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+PPMakeSupport.m"; sourceTree = "<group>"; };
 		572D03E920EF3568000FFC23 /* UnusualMethodsOfUIViewViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UnusualMethodsOfUIViewViewController.h; sourceTree = "<group>"; };
 		572D03EA20EF3568000FFC23 /* UnusualMethodsOfUIViewViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UnusualMethodsOfUIViewViewController.m; sourceTree = "<group>"; };
-		572D03EC20EF4BCA000FFC23 /* UIColor+PPMakeSupportJudge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "UIColor+PPMakeSupportJudge.h"; path = "../UIColor/UIColor+PPMakeSupportJudge.h"; sourceTree = "<group>"; };
-		572D03ED20EF4BCA000FFC23 /* UIColor+PPMakeSupportJudge.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "UIColor+PPMakeSupportJudge.m"; path = "../UIColor/UIColor+PPMakeSupportJudge.m"; sourceTree = "<group>"; };
 		572D03F020EF741F000FFC23 /* PPMakeCustomView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMakeCustomView.h; sourceTree = "<group>"; };
 		572D03F120EF741F000FFC23 /* PPMakeCustomView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPMakeCustomView.m; sourceTree = "<group>"; };
 		572D03FB20F327A2000FFC23 /* LearnTransformViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LearnTransformViewController.h; sourceTree = "<group>"; };
@@ -229,7 +225,7 @@
 		57754CC020FD8592005B3AE7 /* PPMakeHowKVOWorksViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMakeHowKVOWorksViewController.h; sourceTree = "<group>"; };
 		57754CC120FD8592005B3AE7 /* PPMakeHowKVOWorksViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPMakeHowKVOWorksViewController.m; sourceTree = "<group>"; };
 		5779E8832264F172004177BB /* PPMakeCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMakeCategory.h; sourceTree = "<group>"; };
-		5779E8852264F58A004177BB /* PPMakerFontDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMakerFontDefine.h; sourceTree = "<group>"; };
+		5779E8852264F58A004177BB /* PPMakerUIFontDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMakerUIFontDefine.h; sourceTree = "<group>"; };
 		5798F86520CB856400C20029 /* PPMake+UILabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PPMake+UILabel.h"; sourceTree = "<group>"; };
 		5798F86620CB856400C20029 /* PPMake+UILabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "PPMake+UILabel.m"; sourceTree = "<group>"; };
 		5798F86820CB85E700C20029 /* PPMake+UIButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PPMake+UIButton.h"; sourceTree = "<group>"; };
@@ -248,8 +244,6 @@
 		5798F8C220D241E300C20029 /* NSMutableAttributedString+PPMakeSupport.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSMutableAttributedString+PPMakeSupport.m"; sourceTree = "<group>"; };
 		5798F8C920D245E000C20029 /* UIDevice+PPMakeSupport.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIDevice+PPMakeSupport.h"; sourceTree = "<group>"; };
 		5798F8CA20D245E000C20029 /* UIDevice+PPMakeSupport.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+PPMakeSupport.m"; sourceTree = "<group>"; };
-		5798F8CD20D288D600C20029 /* UIColor+PPMakeSupport.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+PPMakeSupport.h"; sourceTree = "<group>"; };
-		5798F8CE20D288D600C20029 /* UIColor+PPMakeSupport.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+PPMakeSupport.m"; sourceTree = "<group>"; };
 		57A1EFF920E85642007B1B41 /* PPMakeBaseNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMakeBaseNavigationController.h; sourceTree = "<group>"; };
 		57A1EFFA20E85642007B1B41 /* PPMakeBaseNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPMakeBaseNavigationController.m; sourceTree = "<group>"; };
 		57A1EFFF20E85A58007B1B41 /* PPMakeSystemTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMakeSystemTabBarController.h; sourceTree = "<group>"; };
@@ -323,7 +317,7 @@
 		57CB438320A1BAAC00268DBE /* PPMaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPMaker.h; sourceTree = "<group>"; };
 		57CB439F20A286C800268DBE /* PPMutAttributedStringMaker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMutAttributedStringMaker.h; sourceTree = "<group>"; };
 		57CB43A020A286C800268DBE /* PPMutAttributedStringMaker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPMutAttributedStringMaker.m; sourceTree = "<group>"; };
-		57D2FFA72264F7C400B5EBBD /* PPMakerColorDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMakerColorDefine.h; sourceTree = "<group>"; };
+		57D2FFA72264F7C400B5EBBD /* PPMakerUIColorDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMakerUIColorDefine.h; sourceTree = "<group>"; };
 		57D2FFA8226641D300B5EBBD /* PPMakerNSStringDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMakerNSStringDefine.h; sourceTree = "<group>"; };
 		57FBF1592142091A00311650 /* PPMake_MVC_View.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMake_MVC_View.h; sourceTree = "<group>"; };
 		57FBF15A2142091A00311650 /* PPMake_MVC_View.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPMake_MVC_View.m; sourceTree = "<group>"; };
@@ -484,6 +478,9 @@
 		6887CC052265AF3B005DCEBD /* PPMakerConsts.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMakerConsts.h; sourceTree = "<group>"; };
 		6887CC062265AF3B005DCEBD /* PPMakerConsts.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPMakerConsts.m; sourceTree = "<group>"; };
 		6887CC082265C85D005DCEBD /* PPMakerNSUserDefaultsDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMakerNSUserDefaultsDefine.h; sourceTree = "<group>"; };
+		6887CC0C2266C5DB005DCEBD /* PPMakerCoreGraphicsDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMakerCoreGraphicsDefine.h; sourceTree = "<group>"; };
+		6887CC0D2267102E005DCEBD /* PPMakerUIImageDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMakerUIImageDefine.h; sourceTree = "<group>"; };
+		6887CC0F2267111D005DCEBD /* PPMakerUIButtonDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMakerUIButtonDefine.h; sourceTree = "<group>"; };
 		ABF32A261256CF4200C96682 /* Pods-PPMakerExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PPMakerExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-PPMakerExample/Pods-PPMakerExample.release.xcconfig"; sourceTree = "<group>"; };
 		B4612079F4DE2B250B981DE9 /* libPods-PPMakerExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PPMakerExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -837,7 +834,6 @@
 				572D03E520EF2131000FFC23 /* UITableViewCell */,
 				575C8C7220EE1C780078109C /* UIScrollView */,
 				57A1F01520E93DD7007B1B41 /* UIImage */,
-				5798F8CC20D288AE00C20029 /* UIcolor */,
 				5798F8C820D245CD00C20029 /* UIDevice */,
 				5798F8B820D2419600C20029 /* UIButton */,
 				5798F8BB20D2419600C20029 /* UIView */,
@@ -874,17 +870,6 @@
 				5798F8CA20D245E000C20029 /* UIDevice+PPMakeSupport.m */,
 			);
 			path = UIDevice;
-			sourceTree = "<group>";
-		};
-		5798F8CC20D288AE00C20029 /* UIcolor */ = {
-			isa = PBXGroup;
-			children = (
-				5798F8CD20D288D600C20029 /* UIColor+PPMakeSupport.h */,
-				5798F8CE20D288D600C20029 /* UIColor+PPMakeSupport.m */,
-				572D03EC20EF4BCA000FFC23 /* UIColor+PPMakeSupportJudge.h */,
-				572D03ED20EF4BCA000FFC23 /* UIColor+PPMakeSupportJudge.m */,
-			);
-			path = UIcolor;
 			sourceTree = "<group>";
 		};
 		57A1EFF720E855CD007B1B41 /* PPMakeKit */ = {
@@ -1341,10 +1326,13 @@
 			children = (
 				6887CC042265AF1B005DCEBD /* PPMakerConsts */,
 				57FFF3D12264E6F400A85F71 /* PPMakerDefines.h */,
-				5779E8852264F58A004177BB /* PPMakerFontDefine.h */,
-				57D2FFA72264F7C400B5EBBD /* PPMakerColorDefine.h */,
+				5779E8852264F58A004177BB /* PPMakerUIFontDefine.h */,
+				57D2FFA72264F7C400B5EBBD /* PPMakerUIColorDefine.h */,
 				6887CC082265C85D005DCEBD /* PPMakerNSUserDefaultsDefine.h */,
 				57D2FFA8226641D300B5EBBD /* PPMakerNSStringDefine.h */,
+				6887CC0C2266C5DB005DCEBD /* PPMakerCoreGraphicsDefine.h */,
+				6887CC0D2267102E005DCEBD /* PPMakerUIImageDefine.h */,
+				6887CC0F2267111D005DCEBD /* PPMakerUIButtonDefine.h */,
 			);
 			path = PPMakerDefines;
 			sourceTree = "<group>";
@@ -1827,7 +1815,6 @@
 				57FFFEE0210A5D4000ADD5DA /* NSObject+MJClass.m in Sources */,
 				571519E5212D136200F63DFD /* PPMakePracticeMakesPerfectBaseTableViewController.m in Sources */,
 				57FFFEEE210A698F00ADD5DA /* KGHandler.m in Sources */,
-				572D03EE20EF4BCA000FFC23 /* UIColor+PPMakeSupportJudge.m in Sources */,
 				57BF77682151210D004E6F41 /* PPMake_InterView_ViewController.mm in Sources */,
 				57FE008A214F4E3300437F0F /* Product.m in Sources */,
 				57FFFE332109D55100ADD5DA /* UIButton+AFNetworking.m in Sources */,
@@ -1920,7 +1907,6 @@
 				57FFFE3C2109D55100ADD5DA /* AFNetworkReachabilityManager.m in Sources */,
 				5748A33320FEEB0C00F51098 /* PPTool.m in Sources */,
 				57FBF15B2142091A00311650 /* PPMake_MVC_View.m in Sources */,
-				5798F8CF20D288D600C20029 /* UIColor+PPMakeSupport.m in Sources */,
 				57B8A1B4213D1EA000D324D6 /* PPMakeRunloopBaseTableViewController.m in Sources */,
 				57FFFEB9210A5C9B00ADD5DA /* MJRefreshAutoStateFooter.m in Sources */,
 				57FFFE382109D55100ADD5DA /* AFURLResponseSerialization.m in Sources */,

@@ -1,13 +1,13 @@
 //
-//  PPMakerFontDefine.h
+//  PPMakerUIFontDefine.h
 //  PPMakerExample
 //
 //  Created by PPAbner on 2019/4/16.
 //  Copyright © 2019 PPAbner. All rights reserved.
 //
 
-#ifndef PPMakerFontDefine_h
-#define PPMakerFontDefine_h
+#ifndef PPMakerUIFontDefine_h
+#define PPMakerUIFontDefine_h
 #import "PPMakerConsts.h"
 
 NS_ASSUME_NONNULL_BEGIN
@@ -44,4 +44,4 @@ CG_INLINE UIFont *fontPingFangSCSemibold(CGFloat fontSize){
 
 NS_ASSUME_NONNULL_END
 
-#endif /* PPMakerFontDefine_h */
+#endif /* PPMakerUIFontDefine_h */

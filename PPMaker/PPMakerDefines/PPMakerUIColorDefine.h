@@ -1,13 +1,13 @@
 //
-//  PPMakerColorDefine.h
+//  PPMakerUIColorDefine.h
 //  PPMakerExample
 //
 //  Created by PPAbner on 2019/4/16.
 //  Copyright © 2019 PPAbner. All rights reserved.
 //
 
-#ifndef PPMakerColorDefine_h
-#define PPMakerColorDefine_h
+#ifndef PPMakerUIColorDefine_h
+#define PPMakerUIColorDefine_h
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -79,6 +79,17 @@ CG_INLINE UIColor *randomColor(){
     return rgb(r, g, b);
 }
 
+//  以下2个参考：https://www.xuebuyuan.com/298520.html
+/** 获取给定color的alpha */
+CG_INLINE CGFloat colorGetAlpha(UIColor * _Nullable color){
+    return CGColorGetAlpha(color.CGColor);
+}
+
+/* 比较两个color是否相同 */
+CG_INLINE BOOL isColorEqualToColor(UIColor *color1,UIColor *color2){
+    return CGColorEqualToColor(color1.CGColor, color2.CGColor);
+}
+
 #pragma mark --- 系统提供的颜色
 CG_INLINE UIColor *white()      {return [UIColor whiteColor];}
 CG_INLINE UIColor *black()      {return [UIColor blackColor];}
@@ -130,4 +141,4 @@ CG_INLINE UIColor *c_eggShell()          {return rgb(252, 230, 201);}
 
 NS_ASSUME_NONNULL_END
 
-#endif /* PPMakerColorDefine_h */
+#endif /* PPMakerUIColorDefine_h */

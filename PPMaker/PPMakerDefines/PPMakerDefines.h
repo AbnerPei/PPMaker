@@ -9,6 +9,11 @@
 #ifndef PPMakerDefines_h
 #define PPMakerDefines_h
 
-#import "PPMakerColorDefine.h"
+#import "PPMakerConsts.h"
+#import "PPMakerUIColorDefine.h"
+#import "PPMakerUIFontDefine.h"
+#import "PPMakerNSUserDefaultsDefine.h"
+#import "PPMakerNSStringDefine.h"
+#import "PPMakerCoreGraphicsDefine.h"
 
 #endif /* PPMakerDefines_h */

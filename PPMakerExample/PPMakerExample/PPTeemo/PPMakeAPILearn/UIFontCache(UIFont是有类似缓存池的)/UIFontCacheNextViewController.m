@@ -7,7 +7,7 @@
 //
 
 #import "UIFontCacheNextViewController.h"
-#import "PPMakerFontDefine.h"
+#import "PPMakerDefines.h"
 
 @interface UIFontCacheNextViewController ()
 /** 用来持有font的LB */
@@ -25,10 +25,10 @@
         make.intoView(self.view);
         make.font(fontPingFangSCSemibold(14));
         make.text(@"next lb UIFont是有缓存的");
-        make.textColor([UIColor ppmake_deepRed]);
+        make.textColor(colorDeepRed());
         make.textAlignment(NSTextAlignmentCenter);
         make.frame(CGRectMake(0, kHeight(400), kScreenW, kHeight(50)));
-        make.bgColor(kColorHex(0x27f2f2));
+        make.bgColor(colorHex(@"0x27f2f2"));
         make.tapBlock(^{
             UIFontCacheNextViewController *nextVC = [[UIFontCacheNextViewController alloc]init];
             [self.navigationController pushViewController:nextVC animated:YES];

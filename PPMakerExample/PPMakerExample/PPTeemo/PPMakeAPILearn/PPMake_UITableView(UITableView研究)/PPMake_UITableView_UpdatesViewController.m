@@ -7,7 +7,7 @@
 //
 
 #import "PPMake_UITableView_UpdatesViewController.h"
-#import "PPMakerFontDefine.h"
+#import "PPMakerDefines.h"
 
 @interface PPMakeTableViewUpdateRowModel : NSObject
 @property(nonatomic,copy) NSString *title;
@@ -55,29 +55,29 @@
     self.titleLB = [PPMAKELB pp_make:^(PPMake *make) {
         make.intoView(self.contentView);
         make.frame(CGRectMake(10, 10, kScreenW-20, 30));
-        make.textColor([UIColor ppmake_violet]);
+        make.textColor(coloRviolet());
         make.font(fontPingFangSCSemibold(18));
     }];
     
     self.numberLB = [PPMAKELB pp_make:^(PPMake *make) {
         make.intoView(self.contentView);
         make.frame(CGRectMake(10, 50, kScreenW-20, 30));
-        make.textColor([UIColor ppmake_black]);
+        make.textColor(colorBlack());
         make.font(fontPingFangSCRegular(14));
     }];
     
     self.deleteBT = [PPMAKEBT pp_make:^(PPMake *make) {
         make.intoView(self.contentView);
         make.frame(CGRectMake(kScreenW-110, 90, 100, 40));
-        make.normalAttributedFontColorTitle(fontPingFangSCSemibold(16), kColorHex(0xff4d4d), @"删除此行");
-        make.borderColor(kColorHex(0xf2f2f2));
+        make.normalAttributedFontColorTitle(fontPingFangSCSemibold(16), colorHex(@"0xff4d4d"), @"删除此行");
+        make.borderColor(colorHex(@"0xf2f2f2"));
         make.borderWidth(2);
     }];
     
     [PPMAKEV pp_make:^(PPMake *make) {
         make.intoView(self.contentView);
         make.frame(CGRectMake(0, 133, kScreenW, 2));
-        make.bgColor(kColorHex(0xf2f2f2));
+        make.bgColor(colorHex(@"0xf2f2f2"));
     }];
     
 }
@@ -192,7 +192,7 @@
     if (self.sectionModels.count > section) {
         UIView *view = [PPMAKEV pp_make:^(PPMake *make) {
             make.frame(CGRectMake(0, 0, kScreenW, 50));
-            make.bgColor([UIColor ppmake_strawberry]);
+            make.bgColor(colorStrawberry());
         }];
         UILabel *dateLB = [PPMAKELB pp_make:^(PPMake *make) {
             make.intoView(view);
@@ -200,7 +200,7 @@
             make.cornerRadius(20);
             make.textAlignment(NSTextAlignmentCenter);
             make.font(fontPingFangSCMedium(16));
-            make.textColor([UIColor ppmake_orange]);
+            make.textColor(colorOrange());
         }];
         
         PPMakeTableViewUpdateSectionModel *sectionM = self.sectionModels[section];

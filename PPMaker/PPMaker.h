@@ -27,17 +27,16 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-UIKIT_STATIC_INLINE void setTitle(UIButton *bt,NSString * _Nullable title){
-    [bt setTitle:title forState:(UIControlStateNormal)];
-    [bt setTitle:title forState:(UIControlStateHighlighted)];
+CG_INLINE CGFloat UIScreenWidth(){
+    return [UIScreen mainScreen].bounds.size.width;
 }
 
-UIKIT_STATIC_INLINE void setTitleColor(UIButton *bt,UIColor * _Nullable color){
-    [bt setTitleColor:color forState:(UIControlStateNormal)];
-    [bt setTitleColor:color forState:(UIControlStateHighlighted)];
+CG_INLINE CGFloat UIScreenHeight(){
+    return [UIScreen mainScreen].bounds.size.height;
 }
 
 NS_ASSUME_NONNULL_END
+
 
 
 #endif /* PPMaker_h */

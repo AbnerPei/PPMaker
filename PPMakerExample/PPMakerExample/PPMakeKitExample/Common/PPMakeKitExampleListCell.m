@@ -7,7 +7,7 @@
 //
 
 #import "PPMakeKitExampleListCell.h"
-#import "PPMakerFontDefine.h"
+#import "PPMakerDefines.h"
 
 @interface PPMakeKitExampleListCell ()
 @property(nonatomic,strong) UILabel *titleLB;
@@ -43,7 +43,7 @@
     UIView *contentV = [PPMAKEV pp_make:^(PPMake *make) {
         make.intoView(self.contentView);
         make.frame(CGRectMake(contentVX, 0, totalW, contentVH));
-        make.bgColor(kColorWhite);
+        make.bgColor(colorWhite());
         make.cornerShadow(8, 8, 0.12);
     }];
     
@@ -51,7 +51,7 @@
         make.intoView(contentV);
         make.frame(CGRectMake(titleX, titleY, titleW, titleH));
         make.font(fontPingFangSCSemibold(16));
-        make.textColor(kColorBlack);
+        make.textColor(colorBlack());
     }];
     
     [PPMAKEImgV pp_make:^(PPMake *make) {

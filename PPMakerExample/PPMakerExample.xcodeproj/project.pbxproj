@@ -62,7 +62,6 @@
 		57B8A19021363B0700D324D6 /* NSMutableArray+PPMakeSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 57B8A18F21363B0700D324D6 /* NSMutableArray+PPMakeSupport.m */; };
 		57B8A1982136522C00D324D6 /* NBA.json in Resources */ = {isa = PBXBuildFile; fileRef = 57B8A1972136522C00D324D6 /* NBA.json */; };
 		57B8A19B2136533E00D324D6 /* ZMMatch.m in Sources */ = {isa = PBXBuildFile; fileRef = 57B8A19A2136533E00D324D6 /* ZMMatch.m */; };
-		57B8A19E21377E2300D324D6 /* UIButton+PPMakeEasilyConfigure.m in Sources */ = {isa = PBXBuildFile; fileRef = 57B8A19D21377E2300D324D6 /* UIButton+PPMakeEasilyConfigure.m */; };
 		57B8A1A221379B7F00D324D6 /* UITableView+PPMakeSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 57B8A1A121379B7F00D324D6 /* UITableView+PPMakeSupport.m */; };
 		57B8A1A521379C5900D324D6 /* UITableView+PPMakeDidSelectedBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 57B8A1A421379C5900D324D6 /* UITableView+PPMakeDidSelectedBlock.m */; };
 		57B8A1B0213CCE4B00D324D6 /* PPMakeAlgorithm_StringInvert_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57B8A1AF213CCE4B00D324D6 /* PPMakeAlgorithm_StringInvert_ViewController.m */; };
@@ -279,8 +278,6 @@
 		57B8A1972136522C00D324D6 /* NBA.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = NBA.json; sourceTree = "<group>"; };
 		57B8A1992136533E00D324D6 /* ZMMatch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZMMatch.h; sourceTree = "<group>"; };
 		57B8A19A2136533E00D324D6 /* ZMMatch.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZMMatch.m; sourceTree = "<group>"; };
-		57B8A19C21377E2300D324D6 /* UIButton+PPMakeEasilyConfigure.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+PPMakeEasilyConfigure.h"; sourceTree = "<group>"; };
-		57B8A19D21377E2300D324D6 /* UIButton+PPMakeEasilyConfigure.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+PPMakeEasilyConfigure.m"; sourceTree = "<group>"; };
 		57B8A1A021379B7F00D324D6 /* UITableView+PPMakeSupport.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITableView+PPMakeSupport.h"; sourceTree = "<group>"; };
 		57B8A1A121379B7F00D324D6 /* UITableView+PPMakeSupport.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITableView+PPMakeSupport.m"; sourceTree = "<group>"; };
 		57B8A1A321379C5900D324D6 /* UITableView+PPMakeDidSelectedBlock.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITableView+PPMakeDidSelectedBlock.h"; sourceTree = "<group>"; };
@@ -319,6 +316,7 @@
 		57CB43A020A286C800268DBE /* PPMutAttributedStringMaker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPMutAttributedStringMaker.m; sourceTree = "<group>"; };
 		57D2FFA72264F7C400B5EBBD /* PPMakerUIColorDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMakerUIColorDefine.h; sourceTree = "<group>"; };
 		57D2FFA8226641D300B5EBBD /* PPMakerNSStringDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMakerNSStringDefine.h; sourceTree = "<group>"; };
+		57D2FFA9226773B100B5EBBD /* PPMakerUIDeviceDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMakerUIDeviceDefine.h; sourceTree = "<group>"; };
 		57FBF1592142091A00311650 /* PPMake_MVC_View.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMake_MVC_View.h; sourceTree = "<group>"; };
 		57FBF15A2142091A00311650 /* PPMake_MVC_View.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPMake_MVC_View.m; sourceTree = "<group>"; };
 		57FBF15C2142098C00311650 /* PPMake_MVC_Model.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMake_MVC_Model.h; sourceTree = "<group>"; };
@@ -846,8 +844,6 @@
 			children = (
 				5798F8BA20D2419600C20029 /* UIButton+PPMakeSupport.h */,
 				5798F8B920D2419600C20029 /* UIButton+PPMakeSupport.m */,
-				57B8A19C21377E2300D324D6 /* UIButton+PPMakeEasilyConfigure.h */,
-				57B8A19D21377E2300D324D6 /* UIButton+PPMakeEasilyConfigure.m */,
 			);
 			path = UIButton;
 			sourceTree = "<group>";
@@ -1333,6 +1329,7 @@
 				6887CC0C2266C5DB005DCEBD /* PPMakerCoreGraphicsDefine.h */,
 				6887CC0D2267102E005DCEBD /* PPMakerUIImageDefine.h */,
 				6887CC0F2267111D005DCEBD /* PPMakerUIButtonDefine.h */,
+				57D2FFA9226773B100B5EBBD /* PPMakerUIDeviceDefine.h */,
 			);
 			path = PPMakerDefines;
 			sourceTree = "<group>";
@@ -1824,7 +1821,6 @@
 				57FFFE302109D55100ADD5DA /* UIRefreshControl+AFNetworking.m in Sources */,
 				572D040D20F4AE1E000FFC23 /* UIView+PPMakeSupportCornerAndShadow.m in Sources */,
 				571519E8212D13CA00F63DFD /* PPMakeDeepCopyAndShallowCopyViewController.m in Sources */,
-				57B8A19E21377E2300D324D6 /* UIButton+PPMakeEasilyConfigure.m in Sources */,
 				572209CE20AD7EA700611BFA /* PPMake.m in Sources */,
 				57FFFEDD210A5D4000ADD5DA /* NSObject+MJCoding.m in Sources */,
 				57FFFDAD2106B9E700ADD5DA /* PPMakeAlgorithmBaseViewController.m in Sources */,

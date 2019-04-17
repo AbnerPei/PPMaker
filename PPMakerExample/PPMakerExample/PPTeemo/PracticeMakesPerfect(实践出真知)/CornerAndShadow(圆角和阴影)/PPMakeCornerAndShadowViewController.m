@@ -7,6 +7,7 @@
 //
 
 #import "PPMakeCornerAndShadowViewController.h"
+#import "PPMakerDefines.h"
 
 @interface PPMakeCornerAndShadowViewController ()
 {
@@ -20,7 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.view.backgroundColor = kColorWhite;
+    self.view.backgroundColor = colorWhite();
     
     [self demo1];
     

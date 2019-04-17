@@ -8,7 +8,7 @@
 
 #import "PPMake_MVC_View.h"
 #import "PPMutAttributedStringMaker.h"
-#import "PPMakerFontDefine.h"
+#import "PPMakerDefines.h"
 
 @interface PPMake_MVC_View ()
 @property(nonatomic,strong) UILabel *orderStatusLB;
@@ -21,7 +21,7 @@
                        rightTitles:(NSArray<NSString *> *)rightTitles
 {
     PPMake_MVC_View *view = [[PPMake_MVC_View alloc]init];
-    view.backgroundColor = kColorWhite;
+    view.backgroundColor = colorWhite();
     if (leftTitles.count == rightTitles.count && leftTitles.count > 0) {
         [view createUIWithOrderStatus:orderStatus leftTitles:leftTitles rightTitles:rightTitles];
     }
@@ -51,14 +51,14 @@
         CGFloat leftX = kWidth(116);
         make.frame(CGRectMake(leftX, 0, kScreenW-leftX-leftMargin, topH));
         make.font(fontPingFangSCSemibold(14));
-        make.textColor(kColorHex(0xff4d4d)).textAlignment(NSTextAlignmentRight);
+        make.textColor(colorHex(@"0xff4d4d")).textAlignment(NSTextAlignmentRight);
         make.text(orderStatus);
     }];
     
     CALayer *line = [CALayer layer];
     [self.layer addSublayer:line];
     line.frame = CGRectMake(0, topH-1, kScreenW, 1);
-    line.backgroundColor = kColorHex(0xf2f2f2).CGColor;
+    line.backgroundColor = colorHex(@"0xf2f2f2").CGColor;
     
     CGFloat marginV = kHeight(8);
     CGFloat lbH = kHeight(20);
@@ -73,7 +73,7 @@
         //左边
         [PPMAKE(PPMakeTypeLB) pp_make:^(PPMake *make) {
             make.intoView(self);
-            make.text(leftTitle).textColor(kColorHex(0x666666));
+            make.text(leftTitle).textColor(color666666());
             make.frame(CGRectMake(leftMargin, lbY, leftTextW, lbH));
             make.font(fontPingFangSCMedium(14));
         }];
@@ -86,9 +86,9 @@
                 NSString *str = [NSString stringWithFormat:@"%@  %@",rightTitle,showMoneyDetailStr];
                 make.attributedText([NSMutableAttributedString pp_attributedStringMake:^(PPMutAttributedStringMaker *maker) {
                     maker.font(fontPingFangSCSemibold(16));
-                    maker.textColor(kColorHex(0xff4d4d));
+                    maker.textColor(colorHex(@"0xff4d4d"));
                     NSRange range = [str rangeOfString:showMoneyDetailStr];
-                    maker.textColorRange(kColorHex(0x4D88FF), range);
+                    maker.textColorRange(colorHex(@"0x4D88FF"), range);
                     maker.fontRange(fontPingFangSCMedium(12), range);
                 } str:str]);
             }];
@@ -109,7 +109,7 @@
                 make.intoView(self);
                 make.frame(CGRectMake(rightLBX, lbY, rightLBW, lbH));
                 make.font(fontPingFangSCSemibold(14));
-                make.textColor(kColorBlack);
+                make.textColor(colorBlack());
                 make.text(rightTitle);
             }];
         }
@@ -123,7 +123,7 @@ void _createOrderStatusTextLB(CGFloat textX,CGFloat textH,UIView *view){
     [PPMAKE(PPMakeTypeLB) pp_make:^(PPMake *make) {
         make.intoView(view);
         make.font(fontPingFangSCSemibold(16));
-        make.textColor(kColorBlack).text(@"订单状态");
+        make.textColor(colorBlack()).text(@"订单状态");
         make.frame(CGRectMake(textX, 0, kWidth(100), textH));
     }];
 }

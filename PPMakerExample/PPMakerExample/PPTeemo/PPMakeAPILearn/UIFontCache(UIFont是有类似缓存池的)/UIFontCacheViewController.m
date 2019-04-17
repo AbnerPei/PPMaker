@@ -45,7 +45,7 @@
 #import "UIFontCacheViewController.h"
 #import "UIFontCacheNextViewController.h"
 #import "PPMutAttributedStringMaker.h"
-#import "PPMakerFontDefine.h"
+#import "PPMakerDefines.h"
 
 static NSString *key = @"pppp8888";
 
@@ -63,10 +63,10 @@ static NSString *key = @"pppp8888";
         make.intoView(self.view);
         make.font([UIFont fontWithName:@"PingFangSC-Semibold" size:14]);
         make.text(@"lb UIFont是有缓存的");
-        make.textColor([UIColor ppmake_deepRed]);
+        make.textColor(colorDeepRed());
         make.textAlignment(NSTextAlignmentCenter);
         make.frame(CGRectMake(0, kHeight(400), kScreenW, kHeight(50)));
-        make.bgColor(kColorHex(0x27f2f2));
+        make.bgColor(colorHex(@"0x27f2f2"));
         
     }];
     
@@ -97,7 +97,7 @@ static NSString *key = @"pppp8888";
     [PPMAKEBT pp_make:^(PPMake *make) {
         make.intoView(self.view);
         make.frame(CGRectMake(kWidth(60), self.fontTestLB.bottom+kHeight(20), kScreenW-kWidth(120), kHeight(50)));
-        make.normalAttributedFontColorTitle(fontPingFangSCSemibold(16), [UIColor ppmake_chocolate], @"bt 请进去后台再切回来再点击打印");
+        make.normalAttributedFontColorTitle(fontPingFangSCSemibold(16), colorChocolate(), @"bt 请进去后台再切回来再点击打印");
         make.actionBlock(^{
             [self logFontWithHasFromBackground:YES];
         });
@@ -112,13 +112,13 @@ static NSString *key = @"pppp8888";
         make.frame(CGRectMake(kWidth(10), kNavBarH, kScreenW-kWidth(20), kHeight(300)));
         NSMutableAttributedString *attributedStr = [NSMutableAttributedString pp_attributedStringMake:^(PPMutAttributedStringMaker *maker) {
             maker.font(fontPingFangSCRegular(16));
-            maker.textColor(kColorHex(0x222222));
+            maker.textColor(colorHex(@"0x222222"));
             maker.lineSpacing(4);
             maker.kern(@2);
             maker.specialTextSet(
                                  @[@"秘密",@"UIFont是有缓存的",@"测试方法如下"],
                                  @[fontPingFangSCMedium(18),fontPingFangSCSemibold(22),fontPingFangSCMedium(18)],
-                                 @[[UIColor ppmake_violet],kColorHex(0xff4d4d),kColorBlack]
+                                 @[coloRviolet(),colorHex(@"0xff4d4d"),color000000()]
                                  );
         } str:@"有一天，我发现了一个秘密:\nUIFont是有缓存的，类似我们常说的缓存池。\n测试方法如下：停留在该界面，摁手机home键，然后再切回来，看控制台打印"];
         make.attributedText(attributedStr);

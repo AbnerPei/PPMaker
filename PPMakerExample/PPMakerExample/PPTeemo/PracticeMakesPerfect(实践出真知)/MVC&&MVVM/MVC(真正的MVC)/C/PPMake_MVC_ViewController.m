@@ -9,6 +9,7 @@
 #import "PPMake_MVC_ViewController.h"
 #import "PPMake_MVC_View.h"
 #import "PPMake_MVC_Model.h"
+#import "PPMakerDefines.h"
 
 @interface PPMake_MVC_ViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property(nonatomic,strong) UITableView *tableView;
@@ -81,7 +82,7 @@
 -(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
 {
     return [PPMAKE(PPMakeTypeView) pp_make:^(PPMake *make) {
-        make.bgColor(kColorHex(0xf2f2f2));
+        make.bgColor(colorHex(@"0xf2f2f2"));
     }];
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section

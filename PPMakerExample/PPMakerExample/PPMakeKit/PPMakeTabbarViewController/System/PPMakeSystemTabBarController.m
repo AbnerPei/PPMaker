@@ -10,7 +10,7 @@
 #import "PPMakeHomepageViewController.h"
 #import "PPMakeOrderViewController.h"
 #import "PPMakeMineViewController.h"
-#import "PPMakerFontDefine.h"
+#import "PPMakerDefines.h"
 
 @interface PPMakeSystemTabBarController ()
 
@@ -61,8 +61,8 @@
     vc.tabBarItem.image = [[UIImage imageNamed:normalImgs[index]] imageWithRenderingMode:(UIImageRenderingModeAlwaysOriginal)];
     vc.tabBarItem.selectedImage = [[UIImage imageNamed:selectedImgs[index]] imageWithRenderingMode:(UIImageRenderingModeAlwaysOriginal)];
     vc.tabBarItem.title = titles[index];
-    [vc.tabBarItem setTitleTextAttributes:@{NSForegroundColorAttributeName:kColorBlack,NSFontAttributeName:fontPingFangSCMedium(10)} forState:UIControlStateNormal];
-    [vc.tabBarItem setTitleTextAttributes:@{NSForegroundColorAttributeName:kColorBlack,NSFontAttributeName:fontPingFangSCSemibold(10)} forState:UIControlStateSelected];
+    [vc.tabBarItem setTitleTextAttributes:@{NSForegroundColorAttributeName:colorBlack(),NSFontAttributeName:fontPingFangSCMedium(10)} forState:UIControlStateNormal];
+    [vc.tabBarItem setTitleTextAttributes:@{NSForegroundColorAttributeName:colorBlack(),NSFontAttributeName:fontPingFangSCSemibold(10)} forState:UIControlStateSelected];
     
     return vc;
 }

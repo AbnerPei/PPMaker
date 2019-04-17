@@ -10,7 +10,7 @@
 #import "KGSubcategoryListModel.h"
 #import "UIImageView+WebCache.h"
 #import "KGHandler.h"
-#import "PPMakerFontDefine.h"
+#import "PPMakerDefines.h"
 
 @interface PPMakeKGSubcategoryListCell ()
 @property(nonatomic,strong) UIImageView *specialImgV;
@@ -65,7 +65,7 @@
     self.specialNameLB = [PPMAKELB pp_make:^(PPMake *make) {
         make.intoView(self.contentView);
         make.frame(CGRectMake(lbX, lbY, lbW, lbH));
-        make.textColor(kColorBlack);
+        make.textColor(colorBlack());
         make.font(fontPingFangSCMedium(14));
     }];
     
@@ -87,13 +87,13 @@
         make.intoView(self.contentView);
         make.frame(CGRectMake(playCountX, playCountY, playCountW, lbH));
         make.font(fontPingFangSCRegular(12));
-        make.textColor(kColorHex(0x999999));
+        make.textColor(color999999());
     }];
     
     [PPMAKEV pp_make:^(PPMake *make) {
         make.intoView(self.contentView);
         make.frame(CGRectMake(lbX, totalH-1, lbW, 1));
-        make.bgColor(kColorHex(0xf2f2f2));
+        make.bgColor(colorHex(@"0xf2f2f2"));
     }];
     
 }

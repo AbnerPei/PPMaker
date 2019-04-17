@@ -9,6 +9,7 @@
 #import "PPMakeBaseTableViewController.h"
 #import "PPMakeKitExampleListCell.h"
 #import "UITableView+PPMakeDidSelectedBlock.h"
+#import "PPMakerDefines.h"
 
 @interface PPMakeBaseTableViewController ()
 
@@ -31,7 +32,7 @@
         make.intoView(self.view);
         make.frame(CGRectMake(0, kNavBarH, kScreenW, kScreenH-kNavBarH-kReallBottomH(49)));
         make.delegate(self);
-        make.bgColor(kColorWhite);
+        make.bgColor(colorffffff());
     }];
 }
 

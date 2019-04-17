@@ -8,6 +8,7 @@
 
 #import "PPMakeGridViewViewController.h"
 #import "PPTool.h"
+#import "PPMakerDefines.h"
 
 @interface PPMakeGridViewViewController ()
 
@@ -51,11 +52,11 @@
             make.intoView(self.view);
             make.frame(CGRectMake(itemX, itemY, itemW, kHeight(40)));
             make.text(titles[currentIndex]);
-            make.textColor(kColorHex(0xff4d4d));
+            make.textColor(colorHex(@"0xff4d4d"));
             make.textAlignment(NSTextAlignmentCenter);
-            make.bgColor(kColorHexA(0xff4d4d, 0.1));
+            make.bgColor(colorHexA(@"0xff4d4d", 0.1));
             if (currentIndex == 4) {
-                make.borderColor(kColorHex(0xff4d4d));
+                make.borderColor(colorHex(@"0xff4d4d"));
                 make.borderWidth(1);
                 make.cornerRadius(4);
             }

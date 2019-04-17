@@ -7,7 +7,7 @@
 //
 
 #import "PPMakeBaseViewController.h"
-#import "PPMakerFontDefine.h"
+#import "PPMakerDefines.h"
 
 @interface PPMakeBaseViewController ()
 /** 用UIView对象创建的导航栏,如果觉得不合适，可以隐藏掉，设置自己需要的 */
@@ -27,14 +27,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.view.backgroundColor = kColorWhite;
+    self.view.backgroundColor = colorWhite();
     
     CGFloat backBT_W = kWidth(50);
     CGFloat backBT_H = 44;
     
     self.p_navigationView = [PPMAKEV pp_make:^(PPMake *make) {
         make.intoView(self.view);
-        make.bgColor(kColorWhite);
+        make.bgColor(colorWhite());
         make.frame(CGRectMake(0, 0, kScreenW, kNavBarH));
     }];
     
@@ -49,7 +49,7 @@
         make.intoView(self.p_navigationView);
         make.frame(CGRectMake(self.p_backBT.right, self.p_backBT.top, kScreenW-backBT_W*2, backBT_H));
         make.font(fontPingFangSCSemibold(18));
-        make.textColor(kColorBlack);
+        make.textColor(colorBlack());
         make.textAlignment(NSTextAlignmentCenter);
         if (self.p_titleStr && self.p_titleStr.length > 0) {
             make.text(self.p_titleStr);
@@ -59,7 +59,7 @@
     self.p_navigationLine = [PPMAKEV pp_make:^(PPMake *make) {
         make.intoView(self.p_navigationView);
         make.frame(CGRectMake(0, self.p_navigationView.height-1, self.p_navigationView.width, 1));
-        make.bgColor(kColorHex(0xf2f2f2));
+        make.bgColor(colorHex(@"0xf2f2f2"));
     }];
 }
 -(void)backAction

@@ -7,7 +7,7 @@
 //
 
 #import "HBRoom.h"
-#import "PPMakerFontDefine.h"
+#import "PPMakerDefines.h"
 
 @implementation HBRoom
 
@@ -29,7 +29,7 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         self.selectionStyle = UITableViewCellSelectionStyleNone;
-        self.contentView.backgroundColor = kColorR(248);
+        self.contentView.backgroundColor = colorR(248);
         [self creatCellUI];
     }
     return self;
@@ -39,14 +39,14 @@
     self.roomNameLB = [PPMAKELB pp_make:^(PPMake *make) {
         make.intoView(self.contentView);
         make.font(fontPingFangSCRegular(16));
-        make.textColor(kColorBlack);
+        make.textColor(colorBlack());
         make.frame(CGRectMake(30, 0, kScreenW/2-30, kHeight(50)));
     }];
     
     self.roomPriceLB = [PPMAKELB pp_make:^(PPMake *make) {
         make.intoView(self.contentView);
         make.font(fontPingFangSCSemibold(18));
-        make.textColor([UIColor ppmake_red]);
+        make.textColor(colorRed());
         make.frame(CGRectMake(kScreenW/2, 0, kScreenW/2-10, kHeight(50)));
         make.textAlignment(NSTextAlignmentRight);
     }];
@@ -54,7 +54,7 @@
     [PPMAKEV pp_make:^(PPMake *make) {
         make.intoView(self.contentView);
         make.frame(CGRectMake(30, kHeight(50)-1, kScreenW-30, 1));
-        make.bgColor(kColorHex(0xf2f2f2));
+        make.bgColor(colorHex(@"0xf2f2f2"));
     }];
 }
 -(void)setupWithRoom:(HBRoom *)room
@@ -84,14 +84,14 @@
     self.hotelNameLB = [PPMAKELB pp_make:^(PPMake *make) {
         make.intoView(self.contentView);
         make.font(fontPingFangSCRegular(16));
-        make.textColor(kColorBlack);
+        make.textColor(colorBlack());
         make.frame(CGRectMake(10, 0, kScreenW-20, kHeight(80)));
     }];
     
     [PPMAKEV pp_make:^(PPMake *make) {
         make.intoView(self.contentView);
         make.frame(CGRectMake(0, kHeight(80)-1, kScreenW, 1));
-        make.bgColor(kColorHex(0xf2f2f2));
+        make.bgColor(colorHex(@"0xf2f2f2"));
     }];
 }
 -(void)setupWithHotel:(HBHotel *)hotel

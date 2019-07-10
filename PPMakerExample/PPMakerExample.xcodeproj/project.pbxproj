@@ -479,6 +479,7 @@
 		6887CC0C2266C5DB005DCEBD /* PPMakerCoreGraphicsDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMakerCoreGraphicsDefine.h; sourceTree = "<group>"; };
 		6887CC0D2267102E005DCEBD /* PPMakerUIImageDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMakerUIImageDefine.h; sourceTree = "<group>"; };
 		6887CC0F2267111D005DCEBD /* PPMakerUIButtonDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMakerUIButtonDefine.h; sourceTree = "<group>"; };
+		6887CC1022681283005DCEBD /* 工具之Chrome.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "工具之Chrome.md"; sourceTree = "<group>"; };
 		ABF32A261256CF4200C96682 /* Pods-PPMakerExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PPMakerExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-PPMakerExample/Pods-PPMakerExample.release.xcconfig"; sourceTree = "<group>"; };
 		B4612079F4DE2B250B981DE9 /* libPods-PPMakerExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PPMakerExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -1330,6 +1331,7 @@
 				6887CC0D2267102E005DCEBD /* PPMakerUIImageDefine.h */,
 				6887CC0F2267111D005DCEBD /* PPMakerUIButtonDefine.h */,
 				57D2FFA9226773B100B5EBBD /* PPMakerUIDeviceDefine.h */,
+				6887CC1022681283005DCEBD /* 工具之Chrome.md */,
 			);
 			path = PPMakerDefines;
 			sourceTree = "<group>";

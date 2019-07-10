@@ -82,10 +82,10 @@ UIKIT_EXTERN const CGFloat kiPhoneXBottomExtraH;
 /**
  * 计算VC底部view的Y值（处理iPhone X底部多出来的34不能用于响应事件的情况，需注意）
  * 【说明】：例如，UI图的VC底部是一个height = 50的自定义view，在没有iPhone X时，
- *  frame = CGRectMake(0,kScreenH-kHeight(50),kScreenW,kHeight(50));
+ *  frame = CGRectMake(0,kScreenH - 50,kScreenW,50);
  * 可是自从有了iPhone X，苹果固定底部有34不能用来响应事件，而是用来处理"Home键"的事件(当然了tableView列表型的可以除外)，so,现在需要这样用：
- *  CGFloat bottomY = [UIDevice ppmake_bottomViewRealYWithUIH:kHeight(50)];
- *  CGFloat bottomH = [UIDevice ppmake_bottomViewRealHWithUIH:kHeight(50)];
+ *  CGFloat bottomY = [UIDevice ppmake_bottomViewRealYWithUIH:50];
+ *  CGFloat bottomH = [UIDevice ppmake_bottomViewRealHWithUIH:50];
  *  frame = CGRectMake(0,bottomY,kScreenW,bottomH);
  */
 + (CGFloat)ppmake_bottomViewRealYWithUIH:(CGFloat)UIH;

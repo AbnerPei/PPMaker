@@ -54,6 +54,7 @@
 		57A1F01420E8CB02007B1B41 /* PPMakeMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A1F01320E8CB02007B1B41 /* PPMakeMineViewController.m */; };
 		57A1F01820E93E20007B1B41 /* UIImage+PPMakeSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A1F01720E93E1F007B1B41 /* UIImage+PPMakeSupport.m */; };
 		57A1F01D20E941D0007B1B41 /* UIFontCacheViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A1F01C20E941D0007B1B41 /* UIFontCacheViewController.m */; };
+		57A83EEC22D5178B00AEF5AB /* NSString+PPMakeSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A83EEB22D5178B00AEF5AB /* NSString+PPMakeSupport.m */; };
 		57B4CCE8214656E300E21EAF /* PPMakeAPILearn_Shake_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57B4CCE7214656E300E21EAF /* PPMakeAPILearn_Shake_ViewController.m */; };
 		57B8A17E213402FB00D324D6 /* PPMakeMultithreadingBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57B8A17D213402FB00D324D6 /* PPMakeMultithreadingBaseTableViewController.m */; };
 		57B8A1842134F3F000D324D6 /* PPMakeInfrastructureExploreBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57B8A1832134F3F000D324D6 /* PPMakeInfrastructureExploreBaseTableViewController.m */; };
@@ -93,7 +94,6 @@
 		57FFFDE621080A8600ADD5DA /* PPMakeCustomDoneTextFieldViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57FFFDE521080A8600ADD5DA /* PPMakeCustomDoneTextFieldViewController.m */; };
 		57FFFDEA21080AF100ADD5DA /* PPMakeCustomDoneTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 57FFFDE921080AF100ADD5DA /* PPMakeCustomDoneTextField.m */; };
 		57FFFDED21080CCA00ADD5DA /* PPMakeCustomTextFieldBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57FFFDEC21080CCA00ADD5DA /* PPMakeCustomTextFieldBaseTableViewController.m */; };
-		57FFFDF1210851AB00ADD5DA /* NSString+PPMakeSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 57FFFDF0210851AB00ADD5DA /* NSString+PPMakeSupport.m */; };
 		57FFFDF421087BD200ADD5DA /* NSString+PPMakeSupport_Unicode.m in Sources */ = {isa = PBXBuildFile; fileRef = 57FFFDF321087BD200ADD5DA /* NSString+PPMakeSupport_Unicode.m */; };
 		57FFFDFB210959DD00ADD5DA /* NSObject+YYModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 57FFFDF9210959DD00ADD5DA /* NSObject+YYModel.m */; };
 		57FFFDFE21095A0900ADD5DA /* PPMakeExplainSourceCodeBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57FFFDFD21095A0900ADD5DA /* PPMakeExplainSourceCodeBaseTableViewController.m */; };
@@ -260,6 +260,8 @@
 		57A1F01720E93E1F007B1B41 /* UIImage+PPMakeSupport.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+PPMakeSupport.m"; sourceTree = "<group>"; };
 		57A1F01B20E941D0007B1B41 /* UIFontCacheViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIFontCacheViewController.h; sourceTree = "<group>"; };
 		57A1F01C20E941D0007B1B41 /* UIFontCacheViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIFontCacheViewController.m; sourceTree = "<group>"; };
+		57A83EEA22D5178B00AEF5AB /* NSString+PPMakeSupport.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+PPMakeSupport.h"; sourceTree = "<group>"; };
+		57A83EEB22D5178B00AEF5AB /* NSString+PPMakeSupport.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+PPMakeSupport.m"; sourceTree = "<group>"; };
 		57AB4D6C2252711200D4D9AA /* PPMakeFoundationCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMakeFoundationCategory.h; sourceTree = "<group>"; };
 		57AB4D6D2252713300D4D9AA /* PPMakeUIKitCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMakeUIKitCategory.h; sourceTree = "<group>"; };
 		57B4CCE6214656E300E21EAF /* PPMakeAPILearn_Shake_ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMakeAPILearn_Shake_ViewController.h; sourceTree = "<group>"; };
@@ -343,8 +345,6 @@
 		57FFFDE921080AF100ADD5DA /* PPMakeCustomDoneTextField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPMakeCustomDoneTextField.m; sourceTree = "<group>"; };
 		57FFFDEB21080CCA00ADD5DA /* PPMakeCustomTextFieldBaseTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMakeCustomTextFieldBaseTableViewController.h; sourceTree = "<group>"; };
 		57FFFDEC21080CCA00ADD5DA /* PPMakeCustomTextFieldBaseTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPMakeCustomTextFieldBaseTableViewController.m; sourceTree = "<group>"; };
-		57FFFDEF210851AB00ADD5DA /* NSString+PPMakeSupport.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+PPMakeSupport.h"; sourceTree = "<group>"; };
-		57FFFDF0210851AB00ADD5DA /* NSString+PPMakeSupport.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+PPMakeSupport.m"; sourceTree = "<group>"; };
 		57FFFDF221087BD200ADD5DA /* NSString+PPMakeSupport_Unicode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+PPMakeSupport_Unicode.h"; sourceTree = "<group>"; };
 		57FFFDF321087BD200ADD5DA /* NSString+PPMakeSupport_Unicode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+PPMakeSupport_Unicode.m"; sourceTree = "<group>"; };
 		57FFFDF9210959DD00ADD5DA /* NSObject+YYModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+YYModel.m"; sourceTree = "<group>"; };
@@ -1368,10 +1368,10 @@
 		57FFFDEE2108514600ADD5DA /* NSString */ = {
 			isa = PBXGroup;
 			children = (
-				57FFFDEF210851AB00ADD5DA /* NSString+PPMakeSupport.h */,
-				57FFFDF0210851AB00ADD5DA /* NSString+PPMakeSupport.m */,
 				57FFFDF221087BD200ADD5DA /* NSString+PPMakeSupport_Unicode.h */,
 				57FFFDF321087BD200ADD5DA /* NSString+PPMakeSupport_Unicode.m */,
+				57A83EEA22D5178B00AEF5AB /* NSString+PPMakeSupport.h */,
+				57A83EEB22D5178B00AEF5AB /* NSString+PPMakeSupport.m */,
 			);
 			path = NSString;
 			sourceTree = "<group>";
@@ -1832,6 +1832,7 @@
 				57754CBF20FD857C005B3AE7 /* PPMakeCustomKVOViewController.m in Sources */,
 				571519CE2128A5E600F63DFD /* PPMakeNotificationCenter.m in Sources */,
 				57FFFEB7210A5C9B00ADD5DA /* MJRefreshBackStateFooter.m in Sources */,
+				57A83EEC22D5178B00AEF5AB /* NSString+PPMakeSupport.m in Sources */,
 				5798F8C320D241E300C20029 /* NSMutableAttributedString+PPMakeSupport.m in Sources */,
 				57FFFEDC210A5D4000ADD5DA /* MJProperty.m in Sources */,
 				572D03E420EF1C3D000FFC23 /* PPMakeKitExampleListCell.m in Sources */,
@@ -1933,7 +1934,6 @@
 				57A1F01420E8CB02007B1B41 /* PPMakeMineViewController.m in Sources */,
 				57B8A19B2136533E00D324D6 /* ZMMatch.m in Sources */,
 				57FFFEDB210A5D4000ADD5DA /* NSObject+MJKeyValue.m in Sources */,
-				57FFFDF1210851AB00ADD5DA /* NSString+PPMakeSupport.m in Sources */,
 				572D040A20F49E1C000FFC23 /* PPMakeCornerAndShadowViewController.m in Sources */,
 				57FFFEB6210A5C9B00ADD5DA /* MJRefreshBackGifFooter.m in Sources */,
 				57FFFEBF210A5C9B00ADD5DA /* MJRefreshFooter.m in Sources */,

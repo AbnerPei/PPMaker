@@ -2,12 +2,20 @@
 //  NSString+PPMakeSupport.m
 //  PPMakerExample
 //
-//  Created by ╰莪呮想好好宠Nǐつ on 2018/7/25.
-//  Copyright © 2018年 PPAbner. All rights reserved.
+//  Created by PPAbner on 2019/7/10.
+//  Copyright © 2019 PPAbner. All rights reserved.
 //
 
 #import "NSString+PPMakeSupport.h"
 
 @implementation NSString (PPMakeSupport)
 
++ (NSString *)pp_displayName
+{
+    NSString *name = [[NSBundle mainBundle].infoDictionary valueForKey:@"CFBundleDisplayName"];
+    if (!name) {
+        name = [[NSBundle mainBundle].infoDictionary valueForKey:@"CFBundleName"];
+    }
+    return name;
+}
 @end

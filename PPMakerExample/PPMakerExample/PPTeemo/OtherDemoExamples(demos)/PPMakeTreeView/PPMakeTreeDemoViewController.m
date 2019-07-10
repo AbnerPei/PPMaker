@@ -19,6 +19,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    UIViewPropertyAnimator
     // Do any additional setup after loading the view.
     [self configureDefaultDatas];
     BOOL hasSubItme = _item.hasSubItem;

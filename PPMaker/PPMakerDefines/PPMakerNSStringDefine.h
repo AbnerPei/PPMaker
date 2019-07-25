@@ -97,6 +97,15 @@ CG_INLINE NSUInteger lengthCN2EN1(NSString * _Nullable str){
     return length;
 }
 
+#pragma mark --- 是否相同
+CG_INLINE BOOL isEqualString( NSString * _Nullable str1,  NSString * _Nullable str2){
+    if (isSafeStr(str1) && isSafeStr(str2)) {
+        return [str1 isEqualToString:str2];
+    }else{
+        return NO;
+    }
+}
+  
 NS_ASSUME_NONNULL_END
 
 #endif /* PPMakerNSStringDefine_h */

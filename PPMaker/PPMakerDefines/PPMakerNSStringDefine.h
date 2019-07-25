@@ -81,7 +81,6 @@ CG_INLINE NSString *removeSpace(NSString *str){
 }
 
 #pragma mark --- 字符串计算
-
 /** 获取字符串str的length（区分中英文，即一个中文字符长度为2，一个英文字符长度为1）*/
 CG_INLINE NSUInteger lengthCN2EN1(NSString * _Nullable str){
     NSUInteger length = 0;
@@ -95,6 +94,17 @@ CG_INLINE NSUInteger lengthCN2EN1(NSString * _Nullable str){
         }
     }
     return length;
+}
+
+#pragma mark --- info.plst
+CG_INLINE NSString *appName(){
+    NSString *name = [[NSBundle mainBundle].infoDictionary valueForKey:@"CFBundleDisplayName"];
+    if (isSafeStr(name)) {
+        return name;
+    }else{
+       name = [[NSBundle mainBundle].infoDictionary valueForKey:@"CFBundleName"];
+    }
+    return name;
 }
 
 NS_ASSUME_NONNULL_END

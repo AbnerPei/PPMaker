@@ -37,12 +37,25 @@
 //    UIImage *img = [UIImage imageNamed:@"1024"];
 //    NSLog(@"home-img %@",img);
     
-    NSString *str1 = @"1234 ";
-    NSString *str2 = @"5";
-    NSString *str3 = @"a123";
-    NSLog(@"isNumber \n %d \n %d \n %d \n",isNumber(str1),isNumber(str2),isNumber(str3));
-    
+   
+    [self strTest];
 }
+
+- (void)strTest
+{
+    NSString *str1 = @"str1";
+    NSString *str2 = [NSString stringWithFormat:@"str1"];
+    NSString *str3 = str1;
+    NSString *str4 = str1.copy;
+    
+    NSLog(@"\n str1 %p\n str2 %p\n str3 %p\n str4 %p\n",str1,str2,str3,str4);
+    NSLog(@"st1 == str2   --- %d\n",str1 == str2);
+    NSLog(@"st1 == str3   --- %d\n",str1 == str3);
+    NSLog(@"st1 isEqualToString str2   --- %d\n",[str1 isEqualToString:str2]);
+    NSLog(@"st1 isEqualToString str3   --- %d\n",[str1 isEqualToString:str3]);
+
+}
+
 -(void)log
 {
     unsigned int count = 0;
@@ -68,7 +81,6 @@
 
 -(void)configureDatas
 {
-    [self log];
     
     self.titles = @[
                     @"programmingTest",

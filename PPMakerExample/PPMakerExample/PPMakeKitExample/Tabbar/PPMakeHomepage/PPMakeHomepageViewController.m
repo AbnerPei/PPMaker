@@ -43,6 +43,7 @@
     NSLog(@"isNumber \n %d \n %d \n %d \n",isNumber(str1),isNumber(str2),isNumber(str3));
     
 }
+
 -(void)log
 {
     unsigned int count = 0;

@@ -13,16 +13,16 @@
 NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark --- system font
-CG_INLINE UIFont *systemFontOfSize(CGFloat fontSize){
+UIKIT_STATIC_INLINE UIFont *systemFontOfSize(CGFloat fontSize){
     return [UIFont systemFontOfSize:fontSize];
 }
 
-CG_INLINE UIFont *boldSystemFontOfSize(CGFloat fontSize){
+UIKIT_STATIC_INLINE UIFont *boldSystemFontOfSize(CGFloat fontSize){
     return [UIFont boldSystemFontOfSize:fontSize];
 }
 
 #pragma mark --- custom font
-CG_INLINE UIFont *fontWithNameSize(NSString *fontName,CGFloat fontSize){
+UIKIT_STATIC_INLINE UIFont *fontWithNameSize(NSString *fontName,CGFloat fontSize){
     UIFont *font = [UIFont fontWithName:fontName size:fontSize];
     if (font) {
         return font;
@@ -30,15 +30,15 @@ CG_INLINE UIFont *fontWithNameSize(NSString *fontName,CGFloat fontSize){
     return [UIFont systemFontOfSize:fontSize];
 }
 
-CG_INLINE UIFont *fontPingFangSCRegular(CGFloat fontSize){
+UIKIT_STATIC_INLINE UIFont *fontPingFangSCRegular(CGFloat fontSize){
     return fontWithNameSize(kFontNamePingFangSCRegular, fontSize);
 }
 
-CG_INLINE UIFont *fontPingFangSCMedium(CGFloat fontSize){
+UIKIT_STATIC_INLINE UIFont *fontPingFangSCMedium(CGFloat fontSize){
     return fontWithNameSize(kFontNamePingFangSCMedium, fontSize);
 }
 
-CG_INLINE UIFont *fontPingFangSCSemibold(CGFloat fontSize){
+UIKIT_STATIC_INLINE UIFont *fontPingFangSCSemibold(CGFloat fontSize){
     return fontWithNameSize(kFontNamePingFangSCSemibold, fontSize);
 }
 

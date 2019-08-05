@@ -16,6 +16,8 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma mark --- 字符串判断
 NS_INLINE BOOL isSafeStr(NSString * _Nullable str){
     if ([str isKindOfClass:[NSNull class]]
+        || str == [NSNull null]
+        || str == (id)kCFNull
         || str == nil
         || str.length == 0
         || [str isEqualToString:@"(null)"]

@@ -19,7 +19,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    UIViewPropertyAnimator
+
     // Do any additional setup after loading the view.
     [self configureDefaultDatas];
     BOOL hasSubItme = _item.hasSubItem;
@@ -31,6 +31,7 @@
         make.hideAllSeparator(YES);
     }];
 }
+
 -(void)configureDefaultDatas
 {
     HBRoom *room = [[HBRoom alloc]init];

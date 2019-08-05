@@ -36,8 +36,7 @@
 //
 //    UIImage *img = [UIImage imageNamed:@"1024"];
 //    NSLog(@"home-img %@",img);
-    
-   
+       
     [self strTest];
 }
 
@@ -54,6 +53,15 @@
     NSLog(@"st1 isEqualToString str2   --- %d\n",[str1 isEqualToString:str2]);
     NSLog(@"st1 isEqualToString str3   --- %d\n",[str1 isEqualToString:str3]);
 
+    
+}
+
+- (void)str_isNumberTest
+{
+    NSString *str1 = @"1234 ";
+    NSString *str2 = @"5";
+    NSString *str3 = @"a123";
+    NSLog(@"isNumber \n %d \n %d \n %d \n",isNumber(str1),isNumber(str2),isNumber(str3));
 }
 
 -(void)log

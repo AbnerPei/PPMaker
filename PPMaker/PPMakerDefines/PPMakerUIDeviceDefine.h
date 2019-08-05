@@ -34,45 +34,45 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-CG_INLINE CGFloat UIScreenWidth(){
+UIKIT_STATIC_INLINE CGFloat UIScreenWidth(){
     return [UIScreen mainScreen].bounds.size.width;
 }
 
-CG_INLINE CGFloat UIScreenHeight(){
+UIKIT_STATIC_INLINE CGFloat UIScreenHeight(){
     return [UIScreen mainScreen].bounds.size.height;
 }
 
-CG_INLINE BOOL isiPhone(){
+UIKIT_STATIC_INLINE BOOL isiPhone(){
     return [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone;
 }
 
-CG_INLINE BOOL isiPhoneXSeries(){
+UIKIT_STATIC_INLINE BOOL isiPhoneXSeries(){
     return (UIScreenHeight() == 812) || (UIScreenHeight() == 896);
 }
 
-CG_INLINE CGFloat statusBarHeight(){
+UIKIT_STATIC_INLINE CGFloat statusBarHeight(){
     return isiPhoneXSeries() ? 44 : 20;
 }
 
-CG_INLINE CGFloat navgationBarHeight(){
+UIKIT_STATIC_INLINE CGFloat navgationBarHeight(){
     return isiPhoneXSeries() ? 88 : 64;
 }
 
-CG_INLINE CGFloat safeBottomHeight(){
+UIKIT_STATIC_INLINE CGFloat safeBottomHeight(){
     return isiPhoneXSeries() ? 34 : 0.0;
 }
 
-CG_INLINE BOOL iosVersion(CGFloat version){
+UIKIT_STATIC_INLINE BOOL iosVersion(CGFloat version){
     return [[[UIDevice currentDevice] systemVersion] floatValue] >= version ? YES : NO;
 }
 
 /** 屏宽比（【以iPhone6为准做的UI图】）*/
-CG_INLINE CGFloat UIRatio(){
+UIKIT_STATIC_INLINE CGFloat UIRatio(){
     return UIScreenWidth() / 375.0;
 }
 
 /** 宽等比例缩放 （【以iPhone6为准做的UI图】）*/
-CG_INLINE CGFloat UIWidth(CGFloat width){
+UIKIT_STATIC_INLINE CGFloat UIWidth(CGFloat width){
     return width * UIRatio();
 }
 
@@ -87,11 +87,11 @@ CG_INLINE CGFloat UIWidth(CGFloat width){
  *
  * @param bottomViewHeight UI图给的高度，如示例中的50
  */
-CG_INLINE CGFloat UIBottomY(CGFloat bottomViewHeight){
+UIKIT_STATIC_INLINE CGFloat UIBottomY(CGFloat bottomViewHeight){
     return UIScreenHeight() - bottomViewHeight - safeBottomHeight();
 }
 
-CG_INLINE CGFloat UIBottomH(CGFloat bottomViewHeight){
+UIKIT_STATIC_INLINE CGFloat UIBottomH(CGFloat bottomViewHeight){
     return bottomViewHeight + safeBottomHeight();
 }
 

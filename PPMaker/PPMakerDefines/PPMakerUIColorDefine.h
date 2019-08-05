@@ -27,7 +27,7 @@ UIKIT_STATIC_INLINE UIColor *colorR(CGFloat r){
     return colorRA(r, 1.0);
 }
 
-UIKIT_STATIC_INLINE UIColor *colorHexA(NSString * _Nonnull hexStr,CGFloat a){
+UIKIT_STATIC_INLINE UIColor *colorHexStrA(NSString * _Nonnull hexStr,CGFloat a){
     //删除字符串中的空格
     NSString *cString = [[hexStr stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] uppercaseString];
     // String should be 6 or 8 characters
@@ -68,9 +68,25 @@ UIKIT_STATIC_INLINE UIColor *colorHexA(NSString * _Nonnull hexStr,CGFloat a){
     return [UIColor colorWithRed:((float)r / 255.0f) green:((float)g / 255.0f) blue:((float)b / 255.0f) alpha:a];
 }
 
-UIKIT_STATIC_INLINE UIColor *colorHex(NSString * _Nonnull hexStr){
-    return colorHexA(hexStr, 1.0);
+UIKIT_STATIC_INLINE UIColor *colorHexStr(NSString * _Nonnull hexStr){
+    return colorHexStrA(hexStr, 1.0);
 }
+
+
+/**
+ * 十六进制生成color
+ */
+UIKIT_STATIC_INLINE UIColor *colorHexA(uint32_t hex,CGFloat a){
+    return [UIColor colorWithRed:((float)((hex & 0xFF0000) >> 16))/255.0f
+                           green:((float)((hex & 0xFF00) >> 8))/255.0f
+                            blue:((float)(hex & 0xFF))/255.0f
+                           alpha:a];
+}
+
+UIKIT_STATIC_INLINE UIColor *colorHex(uint32_t hex){
+    return colorHexA(hex, 1.0);
+}
+
 
 UIKIT_STATIC_INLINE UIColor *randomColor(){
     NSInteger r = arc4random() % 255;

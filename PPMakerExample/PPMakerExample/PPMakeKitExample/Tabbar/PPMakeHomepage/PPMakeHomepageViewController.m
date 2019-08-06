@@ -37,7 +37,18 @@
 //    UIImage *img = [UIImage imageNamed:@"1024"];
 //    NSLog(@"home-img %@",img);
        
-    [self strTest];
+    [self block_demo1];
+}
+
+- (void)block_demo1
+{
+    int age = 18;
+    void(^Block1)(void) = ^ {
+        NSLog(@"block1 age = %d",age);
+    };
+    age = 28;
+    Block1();
+    
 }
 
 - (void)strTest

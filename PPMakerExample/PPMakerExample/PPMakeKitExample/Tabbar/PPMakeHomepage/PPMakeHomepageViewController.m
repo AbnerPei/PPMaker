@@ -102,6 +102,7 @@
 {
     
     self.titles = @[
+                    @"DoIt",
                     @"programmingTest",
                     @"讲解源码系列",
                     @"实践出真知系列",
@@ -119,6 +120,7 @@
                     ];
     
     self.vcs = @[
+                 @"PPMakeDoItBaseTableViewController",
                  @"PPMake_InterView_ViewController",
                  @"PPMakeExplainSourceCodeBaseTableViewController",
                  @"PPMakePracticeMakesPerfectBaseTableViewController",

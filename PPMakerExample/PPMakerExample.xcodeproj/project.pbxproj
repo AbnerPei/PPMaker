@@ -155,6 +155,8 @@
 		57FFFF09210ACB7D00ADD5DA /* XMRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 57FFFF02210ACB7D00ADD5DA /* XMRequest.m */; };
 		57FFFF0D210B16DE00ADD5DA /* UIScrollView+PPMakeRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 57FFFF0C210B16DE00ADD5DA /* UIScrollView+PPMakeRefresh.m */; };
 		6887CC072265AF3B005DCEBD /* PPMakerConsts.m in Sources */ = {isa = PBXBuildFile; fileRef = 6887CC062265AF3B005DCEBD /* PPMakerConsts.m */; };
+		68F7696622F7DB0400058593 /* PPMakeDoItTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68F7696522F7DB0400058593 /* PPMakeDoItTableViewController.m */; };
+		68F7696D22F7DCD000058593 /* PPParallaxHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 68F7696C22F7DCD000058593 /* PPParallaxHeaderView.m */; };
 		9A5D6A1F3DEC8CE3F078BC96 /* libPods-PPMakerExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B4612079F4DE2B250B981DE9 /* libPods-PPMakerExample.a */; };
 /* End PBXBuildFile section */
 
@@ -480,6 +482,10 @@
 		6887CC0D2267102E005DCEBD /* PPMakerUIImageDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMakerUIImageDefine.h; sourceTree = "<group>"; };
 		6887CC0F2267111D005DCEBD /* PPMakerUIButtonDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMakerUIButtonDefine.h; sourceTree = "<group>"; };
 		6887CC1022681283005DCEBD /* 工具之Chrome.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "工具之Chrome.md"; sourceTree = "<group>"; };
+		68F7696422F7DB0400058593 /* PPMakeDoItTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMakeDoItTableViewController.h; sourceTree = "<group>"; };
+		68F7696522F7DB0400058593 /* PPMakeDoItTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPMakeDoItTableViewController.m; sourceTree = "<group>"; };
+		68F7696B22F7DCD000058593 /* PPParallaxHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPParallaxHeaderView.h; sourceTree = "<group>"; };
+		68F7696C22F7DCD000058593 /* PPParallaxHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPParallaxHeaderView.m; sourceTree = "<group>"; };
 		ABF32A261256CF4200C96682 /* Pods-PPMakerExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PPMakerExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-PPMakerExample/Pods-PPMakerExample.release.xcconfig"; sourceTree = "<group>"; };
 		B4612079F4DE2B250B981DE9 /* libPods-PPMakerExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PPMakerExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -1213,6 +1219,7 @@
 		57CF99A820B45771005EB9E9 /* PPTeemo */ = {
 			isa = PBXGroup;
 			children = (
+				68F7696322F7DACA00058593 /* DoIt */,
 				57BF7765215120C3004E6F41 /* InterView(面试) */,
 				5748A33420FEF24C00F51098 /* OtherDemoExamples(demos) */,
 				57FFFF0E210CB2C800ADD5DA /* PPMakeCharles(抓包) */,
@@ -1706,6 +1713,25 @@
 			path = PPMakerConsts;
 			sourceTree = "<group>";
 		};
+		68F7696322F7DACA00058593 /* DoIt */ = {
+			isa = PBXGroup;
+			children = (
+				68F7696922F7DBA400058593 /* Vinodh-G_ParallaxTableViewHeader */,
+				68F7696422F7DB0400058593 /* PPMakeDoItTableViewController.h */,
+				68F7696522F7DB0400058593 /* PPMakeDoItTableViewController.m */,
+			);
+			path = DoIt;
+			sourceTree = "<group>";
+		};
+		68F7696922F7DBA400058593 /* Vinodh-G_ParallaxTableViewHeader */ = {
+			isa = PBXGroup;
+			children = (
+				68F7696B22F7DCD000058593 /* PPParallaxHeaderView.h */,
+				68F7696C22F7DCD000058593 /* PPParallaxHeaderView.m */,
+			);
+			path = "Vinodh-G_ParallaxTableViewHeader";
+			sourceTree = "<group>";
+		};
 		A4E98DC4B39D356ACAD331A9 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -1863,6 +1889,7 @@
 				57FFFEB1210A5C9B00ADD5DA /* MJRefreshConst.m in Sources */,
 				57FFFEC0210A5C9B00ADD5DA /* MJRefreshHeader.m in Sources */,
 				5798F87020CB899600C20029 /* PPMake+UIImageView.m in Sources */,
+				68F7696622F7DB0400058593 /* PPMakeDoItTableViewController.m in Sources */,
 				57A1F01D20E941D0007B1B41 /* UIFontCacheViewController.m in Sources */,
 				57B8A19021363B0700D324D6 /* NSMutableArray+PPMakeSupport.m in Sources */,
 				573FA5CB213FDB670098CD17 /* UITableViewHeaderFooterView+PPMakeSupport.m in Sources */,
@@ -1907,6 +1934,7 @@
 				5748A33320FEEB0C00F51098 /* PPTool.m in Sources */,
 				57FBF15B2142091A00311650 /* PPMake_MVC_View.m in Sources */,
 				57B8A1B4213D1EA000D324D6 /* PPMakeRunloopBaseTableViewController.m in Sources */,
+				68F7696D22F7DCD000058593 /* PPParallaxHeaderView.m in Sources */,
 				57FFFEB9210A5C9B00ADD5DA /* MJRefreshAutoStateFooter.m in Sources */,
 				57FFFE382109D55100ADD5DA /* AFURLResponseSerialization.m in Sources */,
 				57B8A1A221379B7F00D324D6 /* UITableView+PPMakeSupport.m in Sources */,

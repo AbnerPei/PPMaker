@@ -32,3 +32,10 @@ typedef void(^makeViewGestureBlock)(void);
 /** 添加长按手势 */
 - (void)ppmake_longPressBlock:(makeViewGestureBlock)gestureBlock;
 @end
+
+
+/// comes from https://www.jianshu.com/p/99f98abf0265
+@interface UIView (PPCurrentViewController)
+/// 获取当前view的控制器对象
+- (nullable UIViewController *)ppmake_getCurrentViewController;
+@end

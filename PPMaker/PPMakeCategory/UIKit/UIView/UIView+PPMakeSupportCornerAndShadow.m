@@ -182,3 +182,20 @@ static inline void setShadowView(UIView *shadowView,UIView *currentView){
 
 
 @end
+
+
+@implementation UIView (PPCurrentViewController)
+
+- (UIViewController *)ppmake_getCurrentViewController
+{
+    UIResponder *next = self.nextResponder;
+    do {
+        if ([next isKindOfClass:[UIViewController class]]) {
+            return (UIViewController *)next;
+        }
+        next = next.nextResponder;
+    } while (next != nil);
+    return nil;
+}
+
+@end

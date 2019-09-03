@@ -37,7 +37,7 @@
 //    UIImage *img = [UIImage imageNamed:@"1024"];
 //    NSLog(@"home-img %@",img);
        
-    [self block_demo1];
+    [self block_demo2];
 }
 
 - (void)block_demo1
@@ -49,7 +49,24 @@
     age = 28;
     Block1();
     
+    //block1 age = 18
 }
+
+- (void)block_demo2
+{
+    //auto是系统默认的，可以不写。但是此处为了更突出、更明了还是写上
+    auto int age = 18;
+    static int height = 180;
+    void(^Block2)(void) = ^ {
+        NSLog(@"block2 %d %d",age,height);
+    };
+    age = 28;
+    height = 170;
+    Block2();
+    //block2 18 170
+    
+}
+
 
 - (void)strTest
 {

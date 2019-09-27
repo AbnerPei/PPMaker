@@ -14,8 +14,7 @@
  -------------------------------------------
  iPhone3G/3GS     320*480     @1X     3.5
  -------------------------------------------
- iPhone4/4S       320*480     @2x     3.5
- -------------------------------------------
+ iPhone4/4S       320*480     @2x     3safeBottomHeight_forever--------------------
  iPhone5/5S/5C    320*568     @2x     4
  -------------------------------------------
  iPhone6/6s/7/8   375*667     @2x     4.7
@@ -58,9 +57,36 @@ UIKIT_STATIC_INLINE CGFloat navgationBarHeight(){
     return isiPhoneXSeries() ? 88 : 64;
 }
 
-UIKIT_STATIC_INLINE CGFloat safeBottomHeight(){
+UIKIT_STATIC_INLINE CGFloat safeBottomHeight_easy(){
     return isiPhoneXSeries() ? 34 : 0.0;
 }
+
+UIKIT_STATIC_INLINE CGFloat safeBottomHeight_forever(){
+    UIWindow *window = nil;
+    CGFloat safeBottom = 0;
+    if (@available(iOS 11.0, *)) {
+        if (@available(iOS 13.0, *)) {
+            if ([[UIApplication sharedApplication]  respondsToSelector:@selector(connectedScenes)]) {
+                if ([NSStringFromClass([[UIApplication  sharedApplication].connectedScenes.allObjects firstObject].delegate.class) isEqualToString:@"SceneDelegate"]) {
+                    id c = [[UIApplication sharedApplication].connectedScenes.allObjects firstObject].delegate;
+                    window = (UIWindow *)[c valueForKey:@"window"];
+                }
+            }
+        }
+        if (!window) {
+            if ([NSStringFromClass([[UIApplication sharedApplication] delegate].class) isEqualToString:@"AppDelegate"]) {
+                id c = [[UIApplication sharedApplication] delegate];
+                window = (UIWindow *)[c valueForKey:@"window"];
+                NSLog(@"window %@",window);
+            }
+        }
+        if(window){
+            safeBottom = window.safeAreaInsets.bottom;
+        }
+    }
+    return safeBottom;
+}
+
 
 UIKIT_STATIC_INLINE BOOL iosVersion(CGFloat version){
     return [[[UIDevice currentDevice] systemVersion] floatValue] >= version ? YES : NO;
@@ -88,11 +114,11 @@ UIKIT_STATIC_INLINE CGFloat UIWidth(CGFloat width){
  * @param bottomViewHeight UI图给的高度，如示例中的50
  */
 UIKIT_STATIC_INLINE CGFloat UIBottomY(CGFloat bottomViewHeight){
-    return UIScreenHeight() - bottomViewHeight - safeBottomHeight();
+    return UIScreenHeight() - bottomViewHeight - safeBottomHeight_forever();
 }
 
 UIKIT_STATIC_INLINE CGFloat UIBottomH(CGFloat bottomViewHeight){
-    return bottomViewHeight + safeBottomHeight();
+    return bottomViewHeight + safeBottomHeight_forever();
 }
 
 NS_ASSUME_NONNULL_END

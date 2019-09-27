@@ -10,6 +10,7 @@
 
 #import "PPMakeSystemTabBarController.h"
 #import "PPMakeBaseNavigationController.h"
+#import "PPMakerUIDeviceDefine.h"
 
 @interface AppDelegate ()
 
@@ -19,11 +20,18 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
     // Override point for customization after application launch.
     PPMakeSystemTabBarController *tabbarVC = [[PPMakeSystemTabBarController alloc]init];
     PPMakeBaseNavigationController *navigationC = [[PPMakeBaseNavigationController alloc]initWithRootViewController:tabbarVC];
     self.window.rootViewController = navigationC;
     [self.window makeKeyAndVisible];
+    
+    NSLog(@"11 - %f %f",safeBottomHeight(),safeBottomHeight_forever());
+    NSLog(@"\n 13 %f",safeBottomHeight_forever_13());
+    
+    NSLog(@"\nself.window %@",self.window);
+    
     return YES;
 }
 

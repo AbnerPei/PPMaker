@@ -26,6 +26,12 @@
     NSLog(@"tomorrowDate is %@\n",tomorrowDate);
     NSLog(@"tomorrowStr_line is %@\n",tomorrowStr_line);
     NSLog(@"tomorrowStr_slash is %@\n",tomorrowStr_slash);
+    
+    NSString *before1 = [[NSDate date] pp_strAfter:(NSCalendarUnitDay) interval:-14 wantedDateStyle:NSDateFormatterStyleKeySlash_yyyyMMdd_HHmmss];
+    NSLog(@"before1 %@\n",before1);
+    
+    NSString *after1 = [[NSDate date] pp_strAfter:(NSCalendarUnitDay) interval:14 wantedDateStyle:NSDateFormatterStyleKeySlash_yyyyMMdd_HHmmss];
+    NSLog(@"after1 %@\n",after1);
 
 }
 

@@ -27,11 +27,6 @@
     self.window.rootViewController = navigationC;
     [self.window makeKeyAndVisible];
     
-    NSLog(@"11 - %f %f",safeBottomHeight(),safeBottomHeight_forever());
-    NSLog(@"\n 13 %f",safeBottomHeight_forever_13());
-    
-    NSLog(@"\nself.window %@",self.window);
-    
     return YES;
 }
 

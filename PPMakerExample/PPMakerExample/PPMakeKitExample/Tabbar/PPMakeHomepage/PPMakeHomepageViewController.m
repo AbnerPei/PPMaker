@@ -119,6 +119,7 @@
 {
     
     self.titles = @[
+                    @"NSDate的Category验证",
                     @"DoIt",
                     @"programmingTest",
                     @"讲解源码系列",
@@ -137,6 +138,7 @@
                     ];
     
     self.vcs = @[
+                 @"PPNSDateCategoryDemoViewController",
                  @"PPMakeDoItBaseTableViewController",
                  @"PPMake_InterView_ViewController",
                  @"PPMakeExplainSourceCodeBaseTableViewController",

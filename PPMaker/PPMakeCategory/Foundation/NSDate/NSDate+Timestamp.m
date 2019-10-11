@@ -28,6 +28,6 @@
     }
     //13位是毫秒，10位是秒，ios生成的是10位的。
     NSTimeInterval timeSp = [self timeIntervalSince1970] * 1000;
-    return [NSString stringWithFormat:@"%ld",(NSInteger)timeSp];
+    return [NSString stringWithFormat:@"%ld",(long)timeSp];
 }
 @end

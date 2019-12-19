@@ -89,16 +89,8 @@ Pod::Spec.new do |s|
   			ssImage.source_files = 'PPMaker/PPMakeCategory/UIKit/UIImage/*.{h,m}'
   		end
 
-  		ssUIKit.subspec 'UIColor' do |ssColor|
-  			ssColor.source_files = 'PPMaker/PPMakeCategory/UIKit/UIColor/*.{h,m}'
-  		end
-
   		ssUIKit.subspec 'UIDevice' do |ssDevice|
   			ssDevice.source_files = 'PPMaker/PPMakeCategory/UIKit/UIDevice/*.{h,m}'
-  		end
-
-  		ssUIKit.subspec 'UIFont' do |ssFont|
-  			ssFont.source_files = 'PPMaker/PPMakeCategory/UIKit/UIFont/*.{h,m}'
   		end
 
   		ssUIKit.subspec 'UIButton' do |ssButton|

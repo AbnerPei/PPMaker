@@ -59,22 +59,22 @@ typedef NS_ENUM(NSInteger,PPDateTimeIntervalStyle) {
 ///【单例】初始化一个DateFormatter
 + (NSDateFormatter *)pp_sharedDateFormatter;
 
-/// 0-1 获取interval后的date日期
+/// 0-1 获取timeInterval后的date日期
 /// @param unitFlags 年/月/日/时/分/秒
-/// @param interval 时间间隔，正--向后，负--向前
-- (NSDate *)pp_dateAfter:(NSCalendarUnit)unitFlags interval:(NSInteger)interval;
+/// @param timeInterval 时间间隔，正--向后，负--向前
+- (NSDate *)pp_dateAfter:(NSCalendarUnit)unitFlags timeInterval:(NSInteger)timeInterval;
 
-/// 0-2 获取interval后的指定日期格式的date日期
+/// 0-2 获取timeInterval后的指定日期格式的date日期
 /// @param unitFlags 年/月/日/时/分/秒
-/// @param interval 时间间隔，正--向后，负--向前
+/// @param timeInterval 时间间隔，正--向后，负--向前
 /// @param wantedDateStyle 想要的日期格式
-- (NSDate *)pp_dateAfter:(NSCalendarUnit)unitFlags interval:(NSInteger)interval wantedDateStyle:(NSDateFormatterStyleKey)wantedDateStyle;
+- (NSDate *)pp_dateAfter:(NSCalendarUnit)unitFlags timeInterval:(NSInteger)timeInterval wantedDateStyle:(NSDateFormatterStyleKey)wantedDateStyle;
 
-/// 0-3 获取interval后的str日期
+/// 0-3 获取timeInterval后的str日期
 /// @param unitFlags 年/月/日/时/分/秒
-/// @param interval 时间间隔，正--向后，负--向前
+/// @param timeInterval 时间间隔，正--向后，负--向前
 /// @param wantedDateStyle 想要的日期格式
-- (NSString *)pp_strAfter:(NSCalendarUnit)unitFlags interval:(NSInteger)interval wantedDateStyle:(NSDateFormatterStyleKey)wantedDateStyle;
+- (NSString *)pp_strAfter:(NSCalendarUnit)unitFlags timeInterval:(NSInteger)timeInterval wantedDateStyle:(NSDateFormatterStyleKey)wantedDateStyle;
 
 /// 1-1 获取明天的date日期
 + (NSDate *)pp_dateTomorrow;
@@ -95,6 +95,11 @@ typedef NS_ENUM(NSInteger,PPDateTimeIntervalStyle) {
 /// 3-1 date转date
 /// @param wantedDateStyle 想要的日期格式
 - (NSDate *)pp_dateWithWantedDateStyle:(NSDateFormatterStyleKey)wantedDateStyle;
+
+/// 4-0 根据获取unitFlags类型两个时间对应的差值
+/// @param unitFlags 年/月/日/时/分/秒
+/// @param date 另一个date日期
+- (NSInteger)pp_timeInterval:(NSCalendarUnit)unitFlags date:(NSDate *)date;
 @end
 
 NS_ASSUME_NONNULL_END

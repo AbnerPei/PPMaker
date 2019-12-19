@@ -72,37 +72,37 @@ static NSDateFormatter *_ppDateFormatter = nil;
     return _ppDateFormatter;
 }
 #pragma mark --- 0、获取xx后（前）的日期
-/// 0-1 获取interval后的date日期
+/// 0-1 获取timeInterval后的date日期
 /// @param unitFlags 年/月/日/时/分/秒
-/// @param interval 时间间隔，正--向后，负--向前
-- (NSDate *)pp_dateAfter:(NSCalendarUnit)unitFlags interval:(NSInteger)interval
+/// @param timeInterval 时间间隔，正--向后，负--向前
+- (NSDate *)pp_dateAfter:(NSCalendarUnit)unitFlags timeInterval:(NSInteger)timeInterval
 {
     PPNSDateInitialize();
     NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
-    configureUnit(dateComponents, unitFlags, interval);
+    configureUnit(dateComponents, unitFlags, timeInterval);
     NSDate *date = [_ppCalendar dateByAddingComponents:dateComponents
                                                 toDate:self
                                                options:0];
     return date;
 }
 
-/// 0-2 获取interval后的指定日期格式的date日期
+/// 0-2 获取timeInterval后的指定日期格式的date日期
 /// @param unitFlags 年/月/日/时/分/秒
-/// @param interval 时间间隔，正--向后，负--向前
+/// @param timeInterval 时间间隔，正--向后，负--向前
 /// @param wantedDateStyle 想要的日期格式
-- (NSDate *)pp_dateAfter:(NSCalendarUnit)unitFlags interval:(NSInteger)interval wantedDateStyle:(NSDateFormatterStyleKey)wantedDateStyle
+- (NSDate *)pp_dateAfter:(NSCalendarUnit)unitFlags timeInterval:(NSInteger)timeInterval wantedDateStyle:(NSDateFormatterStyleKey)wantedDateStyle
 {
-    NSString *dateStr = [self pp_strAfter:unitFlags interval:interval wantedDateStyle:wantedDateStyle];
+    NSString *dateStr = [self pp_strAfter:unitFlags timeInterval:timeInterval wantedDateStyle:wantedDateStyle];
     return [_ppDateFormatter dateFromString:dateStr];
 }
 
-/// 0-3 获取interval后的str日期
+/// 0-3 获取timeInterval后的str日期
 /// @param unitFlags 年/月/日/时/分/秒
-/// @param interval 时间间隔，正--向后，负--向前
+/// @param timeInterval 时间间隔，正--向后，负--向前
 /// @param wantedDateStyle 日期格式
-- (NSString *)pp_strAfter:(NSCalendarUnit)unitFlags interval:(NSInteger)interval wantedDateStyle:(NSDateFormatterStyleKey)wantedDateStyle
+- (NSString *)pp_strAfter:(NSCalendarUnit)unitFlags timeInterval:(NSInteger)timeInterval wantedDateStyle:(NSDateFormatterStyleKey)wantedDateStyle
 {
-    NSDate *date = [self pp_dateAfter:unitFlags interval:interval];
+    NSDate *date = [self pp_dateAfter:unitFlags timeInterval:timeInterval];
     return [date pp_strWithWantedDateStyle:wantedDateStyle];
 }
 
@@ -110,7 +110,7 @@ static NSDateFormatter *_ppDateFormatter = nil;
 /// 1-1 获取明天的date日期
 + (NSDate *)pp_dateTomorrow
 {
-    return [[NSDate date] pp_dateAfter:(NSCalendarUnitDay) interval:1];
+    return [[NSDate date] pp_dateAfter:(NSCalendarUnitDay) timeInterval:1];
 }
 
 /// 1-2 获取明天的date日期
@@ -139,7 +139,7 @@ static NSDateFormatter *_ppDateFormatter = nil;
     return [_ppDateFormatter stringFromDate:self];
 }
 
-#pragma mark --- 2、NSDate转NSDate
+#pragma mark --- 3、NSDate转NSDate
 /// 3-1 date转date
 /// @param wantedDateStyle 想要的日期格式
 - (NSDate *)pp_dateWithWantedDateStyle:(NSDateFormatterStyleKey)wantedDateStyle
@@ -149,35 +149,53 @@ static NSDateFormatter *_ppDateFormatter = nil;
     return [_ppDateFormatter dateFromString:dateStr];
 }
 
+#pragma mark --- 4、计算两个date间的差值
+/// 4-0 根据获取unitFlags类型两个时间对应的差值
+/// @param unitFlags 年/月/日/时/分/秒
+/// @param date 另一个date日期
+- (NSInteger)pp_timeInterval:(NSCalendarUnit)unitFlags date:(NSDate *)date
+{
+    PPNSDateInitialize();
+    NSDateComponents *components = [_ppCalendar components:unitFlags fromDate:self toDate:date options:0];
+    switch (<#expression#>) {
+        case <#constant#>:
+            <#statements#>
+            break;
+            
+        default:
+            break;
+    }
+}
+
 #pragma mark --- private method
 static inline void PPNSDateInitialize(){
     [NSDate sharedInstance];
 }
 
-static inline void configureUnit(NSDateComponents *dateComponents,NSCalendarUnit unitFlags,NSInteger interval){
+static inline void configureUnit(NSDateComponents *dateComponents,NSCalendarUnit unitFlags,NSInteger timeInterval){
     switch (unitFlags) {
         case NSCalendarUnitYear:
-            [dateComponents setYear:interval];
+            [dateComponents setYear:timeInterval];
             break;
             
         case NSCalendarUnitMonth:
-            [dateComponents setMonth:interval];
+            [dateComponents setMonth:timeInterval];
             break;
             
         case NSCalendarUnitDay:
-            [dateComponents setDay:interval];
+            [dateComponents setDay:timeInterval];
             break;
             
         case NSCalendarUnitHour:
-            [dateComponents setHour:interval];
+            [dateComponents setHour:timeInterval];
             break;
             
         case NSCalendarUnitMinute:
-            [dateComponents setMinute:interval];
+            [dateComponents setMinute:timeInterval];
             break;
             
         case NSCalendarUnitSecond:
-            [dateComponents setSecond:interval];
+            [dateComponents setSecond:timeInterval];
             break;
             
         default:

@@ -32,6 +32,16 @@
     
     NSString *after1 = [[NSDate date] pp_strAfter:(NSCalendarUnitDay) interval:14 wantedDateStyle:NSDateFormatterStyleKeySlash_yyyyMMdd_HHmmss];
     NSLog(@"after1 %@\n",after1);
+    
+    BOOL isAdd = NO;
+    NSInteger index = 60;
+    if (isAdd) {
+        index = index + 1;
+        NSLog(@"yes %ld",(long)index);
+    }else{
+        index = index - 2;
+        NSLog(@"no %ld",(long)index);
+    }
 
 }
 

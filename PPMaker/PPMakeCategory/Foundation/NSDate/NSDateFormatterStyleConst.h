@@ -44,10 +44,7 @@ extern NSDateFormatterStyleKey const NSDateFormatterStyleKeyCN_MMdd;            
 extern NSDateFormatterStyleKey const NSDateFormatterStyleKeyCN_HHmmss;                ///16时22分55秒
 extern NSDateFormatterStyleKey const NSDateFormatterStyleKeyCN_HHmm;                  ///16时22分
 
-NS_ASSUME_NONNULL_BEGIN
-
 @interface NSDateFormatterStyleConst : NSObject
 
 @end
 
-NS_ASSUME_NONNULL_END

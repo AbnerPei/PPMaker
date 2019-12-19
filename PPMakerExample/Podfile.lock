@@ -1,11 +1,9 @@
 PODS:
-  - HappyDNS (0.3.14)
   - Masonry (1.1.0)
-  - Qiniu (7.2.5):
-    - HappyDNS (~> 0.3)
-  - SDWebImage (4.4.1):
-    - SDWebImage/Core (= 4.4.1)
-  - SDWebImage/Core (4.4.1)
+  - Qiniu (7.2.6)
+  - SDWebImage (4.4.7):
+    - SDWebImage/Core (= 4.4.7)
+  - SDWebImage/Core (4.4.7)
 
 DEPENDENCIES:
   - Masonry (~> 1.1.0)
@@ -13,18 +11,16 @@ DEPENDENCIES:
   - SDWebImage (~> 4.4.1)
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
-    - HappyDNS
+  trunk:
     - Masonry
     - Qiniu
     - SDWebImage
 
 SPEC CHECKSUMS:
-  HappyDNS: dc6a164ee81979093123c241c6353bcf0218add6
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
-  Qiniu: 909b408ee489ea54827e9717be90b94bc9dfbc48
-  SDWebImage: 47e9b5b925cbce75946c23f0c42dd19464189af4
+  Qiniu: 9d1f20dcc348919972b4ee1b1272f9b9d4a7e69e
+  SDWebImage: c10d14a8883ebd89664f02a422006f66a85c0c5d
 
 PODFILE CHECKSUM: 90f30c44f543f0e0781055274da6d735ddf83025
 
-COCOAPODS: 1.5.0
+COCOAPODS: 1.8.3

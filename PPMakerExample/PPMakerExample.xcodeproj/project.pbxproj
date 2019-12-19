@@ -500,7 +500,6 @@
 		6887CC0C2266C5DB005DCEBD /* PPMakerCoreGraphicsDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMakerCoreGraphicsDefine.h; sourceTree = "<group>"; };
 		6887CC0D2267102E005DCEBD /* PPMakerUIImageDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMakerUIImageDefine.h; sourceTree = "<group>"; };
 		6887CC0F2267111D005DCEBD /* PPMakerUIButtonDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMakerUIButtonDefine.h; sourceTree = "<group>"; };
-		6887CC1022681283005DCEBD /* 工具之Chrome.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "工具之Chrome.md"; sourceTree = "<group>"; };
 		68F7696422F7DB0400058593 /* PPMakeDoItTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMakeDoItTableViewController.h; sourceTree = "<group>"; };
 		68F7696522F7DB0400058593 /* PPMakeDoItTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPMakeDoItTableViewController.m; sourceTree = "<group>"; };
 		68F7696B22F7DCD000058593 /* PPParallaxHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPParallaxHeaderView.h; sourceTree = "<group>"; };
@@ -1367,7 +1366,6 @@
 				6887CC0D2267102E005DCEBD /* PPMakerUIImageDefine.h */,
 				6887CC0F2267111D005DCEBD /* PPMakerUIButtonDefine.h */,
 				57D2FFA9226773B100B5EBBD /* PPMakerUIDeviceDefine.h */,
-				6887CC1022681283005DCEBD /* 工具之Chrome.md */,
 				683BF8992351D233007296D7 /* PPMakerMathDefines.h */,
 			);
 			path = PPMakerDefines;

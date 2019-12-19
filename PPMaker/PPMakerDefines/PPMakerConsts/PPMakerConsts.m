@@ -17,7 +17,3 @@ PPMakerRegularExpressionLimitTypeKey const PPMakerRegularExpressionLimitTypeKeyL
 PPMakerRegularExpressionLimitTypeKey const PPMakerRegularExpressionLimitTypeKeyChnese = @"^[\u4e00-\u9fa5]{0,}$"; //汉字
 PPMakerRegularExpressionLimitTypeKey const PPMakerRegularExpressionLimitTypeKeyEmail = @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}";  //邮箱
 
-
-@implementation PPMakerConsts
-
-@end

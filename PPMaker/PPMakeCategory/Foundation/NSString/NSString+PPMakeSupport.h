@@ -8,13 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-NS_ASSUME_NONNULL_BEGIN
-
 @interface NSString (PPMakeSupport)
 
 /** 获取APP名称 */
 + (NSString *)pp_displayName;
 
 @end
-
-NS_ASSUME_NONNULL_END

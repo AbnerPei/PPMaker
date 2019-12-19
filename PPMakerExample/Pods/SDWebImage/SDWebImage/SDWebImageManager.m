@@ -28,7 +28,7 @@
 @property (strong, nonatomic, readwrite, nonnull) SDWebImageDownloader *imageDownloader;
 @property (strong, nonatomic, nonnull) NSMutableSet<NSURL *> *failedURLs;
 @property (strong, nonatomic, nonnull) dispatch_semaphore_t failedURLsLock; // a lock to keep the access to `failedURLs` thread-safe
-@property (strong, nonatomic, nonnull) NSMutableArray<SDWebImageCombinedOperation *> *runningOperations;
+@property (strong, nonatomic, nonnull) NSMutableSet<SDWebImageCombinedOperation *> *runningOperations;
 @property (strong, nonatomic, nonnull) dispatch_semaphore_t runningOperationsLock; // a lock to keep the access to `runningOperations` thread-safe
 
 @end
@@ -56,7 +56,7 @@
         _imageDownloader = downloader;
         _failedURLs = [NSMutableSet new];
         _failedURLsLock = dispatch_semaphore_create(1);
-        _runningOperations = [NSMutableArray new];
+        _runningOperations = [NSMutableSet new];
         _runningOperationsLock = dispatch_semaphore_create(1);
     }
     return self;
@@ -243,28 +243,32 @@
                         // Image refresh hit the NSURLCache cache, do not call the completion block
                     } else if (downloadedImage && (!downloadedImage.images || (options & SDWebImageTransformAnimatedImage)) && [self.delegate respondsToSelector:@selector(imageManager:transformDownloadedImage:withURL:)]) {
                         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
-                            UIImage *transformedImage = [self.delegate imageManager:self transformDownloadedImage:downloadedImage withURL:url];
-
-                            if (transformedImage && finished) {
-                                BOOL imageWasTransformed = ![transformedImage isEqual:downloadedImage];
-                                NSData *cacheData;
-                                // pass nil if the image was transformed, so we can recalculate the data from the image
-                                if (self.cacheSerializer) {
-                                    cacheData = self.cacheSerializer(transformedImage, (imageWasTransformed ? nil : downloadedData), url);
-                                } else {
-                                    cacheData = (imageWasTransformed ? nil : downloadedData);
+                            @autoreleasepool {
+                                UIImage *transformedImage = [self.delegate imageManager:self transformDownloadedImage:downloadedImage withURL:url];
+                                
+                                if (transformedImage && finished) {
+                                    BOOL imageWasTransformed = ![transformedImage isEqual:downloadedImage];
+                                    NSData *cacheData;
+                                    // pass nil if the image was transformed, so we can recalculate the data from the image
+                                    if (self.cacheSerializer) {
+                                        cacheData = self.cacheSerializer(transformedImage, (imageWasTransformed ? nil : downloadedData), url);
+                                    } else {
+                                        cacheData = (imageWasTransformed ? nil : downloadedData);
+                                    }
+                                    [self.imageCache storeImage:transformedImage imageData:cacheData forKey:key toDisk:cacheOnDisk completion:nil];
                                 }
-                                [self.imageCache storeImage:transformedImage imageData:cacheData forKey:key toDisk:cacheOnDisk completion:nil];
+                                
+                                [self callCompletionBlockForOperation:strongSubOperation completion:completedBlock image:transformedImage data:downloadedData error:nil cacheType:SDImageCacheTypeNone finished:finished url:url];
                             }
-                            
-                            [self callCompletionBlockForOperation:strongSubOperation completion:completedBlock image:transformedImage data:downloadedData error:nil cacheType:SDImageCacheTypeNone finished:finished url:url];
                         });
                     } else {
                         if (downloadedImage && finished) {
                             if (self.cacheSerializer) {
                                 dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
-                                    NSData *cacheData = self.cacheSerializer(downloadedImage, downloadedData, url);
-                                    [self.imageCache storeImage:downloadedImage imageData:cacheData forKey:key toDisk:cacheOnDisk completion:nil];
+                                    @autoreleasepool {
+                                        NSData *cacheData = self.cacheSerializer(downloadedImage, downloadedData, url);
+                                        [self.imageCache storeImage:downloadedImage imageData:cacheData forKey:key toDisk:cacheOnDisk completion:nil];
+                                    }
                                 });
                             } else {
                                 [self.imageCache storeImage:downloadedImage imageData:downloadedData forKey:key toDisk:cacheOnDisk completion:nil];
@@ -300,7 +304,7 @@
 
 - (void)cancelAll {
     LOCK(self.runningOperationsLock);
-    NSArray<SDWebImageCombinedOperation *> *copiedOperations = [self.runningOperations copy];
+    NSSet<SDWebImageCombinedOperation *> *copiedOperations = [self.runningOperations copy];
     UNLOCK(self.runningOperationsLock);
     [copiedOperations makeObjectsPerformSelector:@selector(cancel)]; // This will call `safelyRemoveOperationFromRunning:` and remove from the array
 }

@@ -9,7 +9,6 @@
 #ifndef PPMakerUIButtonDefine_h
 #define PPMakerUIButtonDefine_h
 
-NS_ASSUME_NONNULL_BEGIN
 
 UIKIT_STATIC_INLINE void setTitleNormal(UIButton *bt,NSString * _Nullable title){
     [bt setTitle:title forState:(UIControlStateNormal)];
@@ -138,7 +137,5 @@ UIKIT_STATIC_INLINE void setAttributedTitle(UIButton *bt,NSAttributedString * _N
     setAttributedTitleNormal(bt, title);
     setAttributedTitleHighlighted(bt, title);
 }
-
-NS_ASSUME_NONNULL_END
 
 #endif /* PPMakerUIButtonDefine_h */

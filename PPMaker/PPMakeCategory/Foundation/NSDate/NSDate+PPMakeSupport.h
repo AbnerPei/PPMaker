@@ -24,8 +24,6 @@
 #import <Foundation/Foundation.h>
 #import "NSDateFormatterStyleConst.h"
 
-NS_ASSUME_NONNULL_BEGIN
-
 typedef NS_ENUM(NSInteger,PPDateUnit) {
     PPDateUnitYear = 0,
     PPDateUnitMonth,
@@ -101,5 +99,3 @@ typedef NS_ENUM(NSInteger,PPDateTimeIntervalStyle) {
 /// @param date 另一个date日期
 - (NSInteger)pp_timeInterval:(NSCalendarUnit)unitFlags date:(NSDate *)date;
 @end
-
-NS_ASSUME_NONNULL_END

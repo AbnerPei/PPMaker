@@ -31,7 +31,6 @@
  *> 更详细的可以参考：[iPhone XR/XS/XS Max 适配，最全iPhone尺寸](https://blog.csdn.net/sinat_15735647/article/details/82762238)
  */
 
-NS_ASSUME_NONNULL_BEGIN
 
 UIKIT_STATIC_INLINE CGFloat UIScreenWidth(){
     return [UIScreen mainScreen].bounds.size.width;
@@ -120,7 +119,5 @@ UIKIT_STATIC_INLINE CGFloat UIBottomY(CGFloat bottomViewHeight){
 UIKIT_STATIC_INLINE CGFloat UIBottomH(CGFloat bottomViewHeight){
     return bottomViewHeight + safeBottomHeight_forever();
 }
-
-NS_ASSUME_NONNULL_END
 
 #endif /* PPMakerUIDeviceDefine_h */

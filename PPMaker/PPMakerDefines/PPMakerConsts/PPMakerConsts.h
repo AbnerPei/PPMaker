@@ -24,13 +24,3 @@ extern PPMakerRegularExpressionLimitTypeKey const PPMakerRegularExpressionLimitT
 extern PPMakerRegularExpressionLimitTypeKey const PPMakerRegularExpressionLimitTypeKeyChnese; //汉字
 extern PPMakerRegularExpressionLimitTypeKey const PPMakerRegularExpressionLimitTypeKeyEmail;  //邮箱
 
-#pragma mark --- 设备(Device)
-
-
-NS_ASSUME_NONNULL_BEGIN
-
-@interface PPMakerConsts : NSObject
-
-@end
-
-NS_ASSUME_NONNULL_END

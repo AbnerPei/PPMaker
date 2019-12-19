@@ -10,8 +10,6 @@
 #define PPMakerUIFontDefine_h
 #import "PPMakerConsts.h"
 
-NS_ASSUME_NONNULL_BEGIN
-
 #pragma mark --- system font
 UIKIT_STATIC_INLINE UIFont *systemFontOfSize(CGFloat fontSize){
     return [UIFont systemFontOfSize:fontSize];
@@ -41,7 +39,5 @@ UIKIT_STATIC_INLINE UIFont *fontPingFangSCMedium(CGFloat fontSize){
 UIKIT_STATIC_INLINE UIFont *fontPingFangSCSemibold(CGFloat fontSize){
     return fontWithNameSize(kFontNamePingFangSCSemibold, fontSize);
 }
-
-NS_ASSUME_NONNULL_END
 
 #endif /* PPMakerUIFontDefine_h */

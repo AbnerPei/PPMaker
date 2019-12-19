@@ -9,8 +9,6 @@
 #ifndef PPMakerUIColorDefine_h
 #define PPMakerUIColorDefine_h
 
-NS_ASSUME_NONNULL_BEGIN
-
 UIKIT_STATIC_INLINE UIColor *colorRGBA(CGFloat r,CGFloat g,CGFloat b,CGFloat a){
     return [UIColor colorWithRed:r / 255.0 green:g / 255.0 blue:b / 255.0 alpha:a];
 }
@@ -123,11 +121,11 @@ UIKIT_STATIC_INLINE UIColor *colorPurple()     {return [UIColor purpleColor];}
 UIKIT_STATIC_INLINE UIColor *colorBrown()      {return [UIColor brownColor];}
 UIKIT_STATIC_INLINE UIColor *colorClear()      {return [UIColor clearColor];}
 
-UIKIT_STATIC_INLINE UIColor *color000000()     {return colorHex(@"0x000000");};
-UIKIT_STATIC_INLINE UIColor *color333333()     {return colorHex(@"0x333333");};
-UIKIT_STATIC_INLINE UIColor *color666666()     {return colorHex(@"0x666666");};
-UIKIT_STATIC_INLINE UIColor *color999999()     {return colorHex(@"0x999999");};
-UIKIT_STATIC_INLINE UIColor *colorffffff()     {return colorHex(@"0xffffff");};
+UIKIT_STATIC_INLINE UIColor *color000000()     {return colorHex(0x000000);};
+UIKIT_STATIC_INLINE UIColor *color333333()     {return colorHex(0x333333);};
+UIKIT_STATIC_INLINE UIColor *color666666()     {return colorHex(0x666666);};
+UIKIT_STATIC_INLINE UIColor *color999999()     {return colorHex(0x999999);};
+UIKIT_STATIC_INLINE UIColor *colorffffff()     {return colorHex(0xffffff);};
 
 #pragma mark --- comes from http://www.sioe.cn/yingyong/yanse-rgb-16/
 /** 浅粉红 */
@@ -160,7 +158,5 @@ UIKIT_STATIC_INLINE UIColor *colorTawny()             {return colorRGB(240, 230,
 UIKIT_STATIC_INLINE UIColor *colorJasmine()           {return colorRGB(245, 222, 179);}
 /** 蛋壳色 */
 UIKIT_STATIC_INLINE UIColor *colorEggShell()          {return colorRGB(252, 230, 201);}
-
-NS_ASSUME_NONNULL_END
 
 #endif /* PPMakerUIColorDefine_h */

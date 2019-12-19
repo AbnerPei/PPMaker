@@ -9,8 +9,6 @@
 #ifndef PPMakerNSUserDefaultsDefine_h
 #define PPMakerNSUserDefaultsDefine_h
 
-NS_ASSUME_NONNULL_BEGIN
-
 NS_INLINE NSUserDefaults *userDefaults(){
     return [NSUserDefaults standardUserDefaults];
 }
@@ -63,7 +61,5 @@ NS_INLINE void ud_setDouble(double value,NSString *key){
 NS_INLINE float ud_doubleForKey(NSString *key){
     return [userDefaults() doubleForKey:key];
 }
-
-NS_ASSUME_NONNULL_END
 
 #endif /* PPMakerNSUserDefaultsDefine_h */

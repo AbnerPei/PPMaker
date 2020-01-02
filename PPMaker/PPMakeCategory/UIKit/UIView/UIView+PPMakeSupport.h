@@ -37,5 +37,5 @@ typedef void(^makeViewGestureBlock)(void);
 /// comes from https://www.jianshu.com/p/99f98abf0265
 @interface UIView (PPCurrentViewController)
 /// 获取当前view的控制器对象
-- (nullable UIViewController *)ppmake_getCurrentViewController;
+- (UIViewController *)ppmake_getCurrentViewController;
 @end

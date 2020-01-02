@@ -117,7 +117,6 @@
     UITapGestureRecognizer *gesture = objc_getAssociatedObject(self, sel);
     if (!gesture){
         gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:sel];
-        gesture.cancelsTouchesInView = NO;
         [self addGestureRecognizer:gesture];
         objc_setAssociatedObject(self, sel, gesture, OBJC_ASSOCIATION_RETAIN);
     }

@@ -155,16 +155,18 @@ static NSDateFormatter *_ppDateFormatter = nil;
 /// @param date 另一个date日期
 - (NSInteger)pp_timeInterval:(NSCalendarUnit)unitFlags date:(NSDate *)date
 {
-    PPNSDateInitialize();
-    NSDateComponents *components = [_ppCalendar components:unitFlags fromDate:self toDate:date options:0];
-    switch (<#expression#>) {
-        case <#constant#>:
-            <#statements#>
-            break;
-            
-        default:
-            break;
-    }
+//    PPNSDateInitialize();
+//    NSDateComponents *components = [_ppCalendar components:unitFlags fromDate:self toDate:date options:0];
+//    switch (<#expression#>) {
+//        case <#constant#>:
+//            <#statements#>
+//            break;
+//
+//        default:
+//            break;
+//    }
+#warning todo
+    return 0;
 }
 
 #pragma mark --- private method

@@ -10,7 +10,6 @@
 #import <Qiniu/QiniuSDK.h>
 #import <CommonCrypto/CommonDigest.h>
 #import <CommonCrypto/CommonHMAC.h>
-#import <HappyDNS/HappyDNS.h>
 #import <Qiniu/QN_GTM_Base64.h>
 
 @interface PPMake_QiNiu_ViewController ()

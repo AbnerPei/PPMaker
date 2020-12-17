@@ -10,4 +10,21 @@
 
 @implementation UITableView (PPMakeSupport)
 
+- (void)registerClasses:(NSArray<Class> *)cellClasses forCellReuseIdentifiers:(NSArray<NSString *> *)identifiers
+{
+    if (cellClasses.count == 0) {
+        return;
+    }
+    
+    if (cellClasses.count != identifiers.count) {
+        return;
+    }
+    
+    for (int i = 0; i < cellClasses.count; i++) {
+        Class cls = cellClasses[i];
+        NSString *identifier = identifiers[i];
+        [self registerClass:cls forCellReuseIdentifier:identifier];
+    }
+}
+
 @end

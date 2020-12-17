@@ -163,6 +163,7 @@
 		6887CC072265AF3B005DCEBD /* PPMakerConsts.m in Sources */ = {isa = PBXBuildFile; fileRef = 6887CC062265AF3B005DCEBD /* PPMakerConsts.m */; };
 		68F7696622F7DB0400058593 /* PPMakeDoItTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68F7696522F7DB0400058593 /* PPMakeDoItTableViewController.m */; };
 		68F7696D22F7DCD000058593 /* PPParallaxHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 68F7696C22F7DCD000058593 /* PPParallaxHeaderView.m */; };
+		841AD232258B067E00DA4731 /* UIColor+PPMakeSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 841AD231258B067E00DA4731 /* UIColor+PPMakeSupport.m */; };
 		9A5D6A1F3DEC8CE3F078BC96 /* libPods-PPMakerExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B4612079F4DE2B250B981DE9 /* libPods-PPMakerExample.a */; };
 /* End PBXBuildFile section */
 
@@ -504,6 +505,8 @@
 		68F7696522F7DB0400058593 /* PPMakeDoItTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPMakeDoItTableViewController.m; sourceTree = "<group>"; };
 		68F7696B22F7DCD000058593 /* PPParallaxHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPParallaxHeaderView.h; sourceTree = "<group>"; };
 		68F7696C22F7DCD000058593 /* PPParallaxHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPParallaxHeaderView.m; sourceTree = "<group>"; };
+		841AD230258B067E00DA4731 /* UIColor+PPMakeSupport.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+PPMakeSupport.h"; sourceTree = "<group>"; };
+		841AD231258B067E00DA4731 /* UIColor+PPMakeSupport.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+PPMakeSupport.m"; sourceTree = "<group>"; };
 		ABF32A261256CF4200C96682 /* Pods-PPMakerExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PPMakerExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-PPMakerExample/Pods-PPMakerExample.release.xcconfig"; sourceTree = "<group>"; };
 		B4612079F4DE2B250B981DE9 /* libPods-PPMakerExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PPMakerExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -858,6 +861,7 @@
 		5798F8B720D2419600C20029 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				841AD22F258B064700DA4731 /* UIColor */,
 				68112D2E236A7F52008210AF /* UIViewController */,
 				57AB4D6D2252713300D4D9AA /* PPMakeUIKitCategory.h */,
 				57FBF15F2142151C00311650 /* UILabel */,
@@ -1770,6 +1774,15 @@
 			path = "Vinodh-G_ParallaxTableViewHeader";
 			sourceTree = "<group>";
 		};
+		841AD22F258B064700DA4731 /* UIColor */ = {
+			isa = PBXGroup;
+			children = (
+				841AD230258B067E00DA4731 /* UIColor+PPMakeSupport.h */,
+				841AD231258B067E00DA4731 /* UIColor+PPMakeSupport.m */,
+			);
+			path = UIColor;
+			sourceTree = "<group>";
+		};
 		A4E98DC4B39D356ACAD331A9 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -2003,6 +2016,7 @@
 				57CB436E20A1BA8A00268DBE /* AppDelegate.m in Sources */,
 				57FBF16521421BEC00311650 /* PPMakeMVCMVVMBaseTableViewController.m in Sources */,
 				57FFFDED21080CCA00ADD5DA /* PPMakeCustomTextFieldBaseTableViewController.m in Sources */,
+				841AD232258B067E00DA4731 /* UIColor+PPMakeSupport.m in Sources */,
 				57A1F01420E8CB02007B1B41 /* PPMakeMineViewController.m in Sources */,
 				57B8A19B2136533E00D324D6 /* ZMMatch.m in Sources */,
 				57FFFEDB210A5D4000ADD5DA /* NSObject+MJKeyValue.m in Sources */,

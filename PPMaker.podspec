@@ -61,11 +61,22 @@ Pod::Spec.new do |s|
   s.source_files  = 'PPMaker/PPMaker.h'
 
   s.subspec 'PPMakeCategory' do |ss|
-  	# ss.source_files = 'PPMaker/PPMakeCategory/*.{h,m}'
+  	ss.source_files = 'PPMaker/PPMakeCategory/*.{h,m}'
+
   	ss.subspec 'Foundation' do |ssFoundation|
-  		ssFoundation.subspec 'NSString' do |ssStr|
-  			ssStr.source_files = 'PPMaker/PPMakeCategory/Foundation/NSString/*.{h,m}'
+      ssFoundation.source_files = 'PPMaker/PPMakeCategory/Foundation/*.{h,m}'
+
+  		ssFoundation.subspec 'NSMutableArray' do |ssMutArray|
+  			ssMutArray.source_files = 'PPMaker/PPMakeCategory/Foundation/NSMutableArray/*.{h,m}'
   		end
+
+      ssFoundation.subspec 'NSDate' do |ssDate|
+        ssDate.source_files = 'PPMaker/PPMakeCategory/Foundation/NSDate/*.{h,m}'
+      end
+
+      ssFoundation.subspec 'NSString' do |ssStr|
+        ssStr.source_files = 'PPMaker/PPMakeCategory/Foundation/NSString/*.{h,m}'
+      end
 
   		ssFoundation.subspec 'NSMutableAttributedString' do |ssMutStr|
   		    ssMutStr.source_files = 'PPMaker/PPMakeCategory/Foundation/NSMutableAttributedString/*.{h,m}'
@@ -77,9 +88,19 @@ Pod::Spec.new do |s|
   	end
 
   	ss.subspec 'UIKit' do |ssUIKit|
+      ssUIKit.source_files = 'PPMaker/PPMakeCategory/UIKit/*.{h,m}'
+
   		ssUIKit.subspec 'UITableViewCell' do |ssCell|
   			ssCell.source_files = 'PPMaker/PPMakeCategory/UIKit/UITableViewCell/*.{h,m}'
   		end
+
+      ssUIKit.subspec 'UITableView' do |ssTableCell|
+        ssTableCell.source_files = 'PPMaker/PPMakeCategory/UIKit/UITableView/*.{h,m}'
+      end
+
+      ssUIKit.subspec 'UIColor' do |ssColor|
+        ssColor.source_files = 'PPMaker/PPMakeCategory/UIKit/UIColor/*.{h,m}'
+      end
 
   		ssUIKit.subspec 'UIScrollView' do |ssScrollView|
   			ssScrollView.source_files = 'PPMaker/PPMakeCategory/UIKit/UIScrollView/*.{h,m}'
@@ -102,6 +123,11 @@ Pod::Spec.new do |s|
   			ssView.source_files = 'PPMaker/PPMakeCategory/UIKit/UIView/*.{h,m}'
   			ssView.dependency 'PPMaker/PPMakeCategory/Foundation/NSObject'
   		end
+
+      ssUIKit.subspec 'UIViewController' do |ssViewController|
+        ssViewController.source_files = 'PPMaker/PPMakeCategory/UIKit/UIViewController/*.{h,m}'
+      end
+
   	end
   end
 

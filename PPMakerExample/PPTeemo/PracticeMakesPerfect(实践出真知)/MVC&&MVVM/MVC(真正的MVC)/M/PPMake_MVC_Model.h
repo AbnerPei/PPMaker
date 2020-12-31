@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreGraphics/CoreGraphics.h>
 
 typedef NS_ENUM(NSInteger,PTMake_MVC_M_OrderStatus) {
     PTMake_MVC_M_OrderStatusChuShiZhuangTai = 0,                       //初始状态

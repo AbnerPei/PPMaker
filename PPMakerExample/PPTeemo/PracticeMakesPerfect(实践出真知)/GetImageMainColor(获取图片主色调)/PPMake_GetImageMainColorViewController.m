@@ -8,6 +8,7 @@
 
 #import "PPMake_GetImageMainColorViewController.h"
 #import "PPMakerDefines.h"
+#import <PPMaker/PPMaker.h>
 
 @interface PPMake_GetImageMainColorViewController ()
 @property(nonatomic,strong) UIImageView *lolImgV;

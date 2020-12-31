@@ -8,6 +8,7 @@
 
 #import "HBRoom.h"
 #import "PPMakerDefines.h"
+#import <PPMaker/PPMaker.h>
 
 @implementation HBRoom
 

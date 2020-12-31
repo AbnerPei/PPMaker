@@ -11,6 +11,7 @@
 #import "UIImageView+WebCache.h"
 #import "KGHandler.h"
 #import "PPMakerDefines.h"
+#import <PPMaker/PPMaker.h>
 
 @interface PPMakeKGSubcategoryListCell ()
 @property(nonatomic,strong) UIImageView *specialImgV;

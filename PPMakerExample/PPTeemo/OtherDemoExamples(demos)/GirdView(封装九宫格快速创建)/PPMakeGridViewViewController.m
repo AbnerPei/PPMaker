@@ -9,6 +9,8 @@
 #import "PPMakeGridViewViewController.h"
 #import "PPTool.h"
 #import "PPMakerDefines.h"
+#import <PPMaker/PPTool.h>
+#import <PPMaker/PPMaker.h>
 
 @interface PPMakeGridViewViewController ()
 

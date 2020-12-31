@@ -7,7 +7,7 @@
 //
 
 #import "PPMake_MVC_Model.h"
-
+#import <PPMaker/PPMaker.h>
 
 @implementation PPMake_MVC_Model
 

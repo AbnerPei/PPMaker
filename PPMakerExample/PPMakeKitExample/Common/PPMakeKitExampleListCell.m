@@ -8,6 +8,7 @@
 
 #import "PPMakeKitExampleListCell.h"
 #import "PPMakerDefines.h"
+#import <PPMaker/PPMaker.h>
 
 @interface PPMakeKitExampleListCell ()
 @property(nonatomic,strong) UILabel *titleLB;

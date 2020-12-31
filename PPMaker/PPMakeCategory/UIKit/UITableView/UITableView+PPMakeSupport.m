@@ -16,15 +16,25 @@
         return;
     }
     
-    if (cellClasses.count != identifiers.count) {
+    if (cellClasses.count != identifiers.count && identifiers.count > 0) {
         return;
     }
     
     for (int i = 0; i < cellClasses.count; i++) {
         Class cls = cellClasses[i];
-        NSString *identifier = identifiers[i];
+        NSString *identifier = @"cell";
+        if (identifiers.count > i) {
+            identifier = identifiers[i];
+        }else{
+            identifier = NSStringFromClass([cls class]);
+        }
         [self registerClass:cls forCellReuseIdentifier:identifier];
     }
+}
+
+- (void)registerClasses:(NSArray<Class> *)cellClasses
+{
+    [self registerClasses:cellClasses forCellReuseIdentifiers:nil];
 }
 
 @end

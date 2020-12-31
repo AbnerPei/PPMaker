@@ -8,6 +8,7 @@
 
 #import "UIFontCacheNextViewController.h"
 #import "PPMakerDefines.h"
+#import <PPMaker/PPMaker.h>
 
 @interface UIFontCacheNextViewController ()
 /** 用来持有font的LB */

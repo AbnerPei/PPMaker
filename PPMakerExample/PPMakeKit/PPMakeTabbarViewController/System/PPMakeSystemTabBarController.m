@@ -11,6 +11,7 @@
 #import "PPMakeOrderViewController.h"
 #import "PPMakeMineViewController.h"
 #import "PPMakerDefines.h"
+#import <PPMaker/UIImage+PPMakeSupport.h>
 
 @interface PPMakeSystemTabBarController ()
 
@@ -53,7 +54,7 @@
                               ];
     NSArray *titles = @[
                         @"首页",
-                        @"订单",
+                        @"我的UIKit",
                         @"我的"
                         ];
     UIViewController *vc = [NSClassFromString([vcs objectAtIndex:index]) new];

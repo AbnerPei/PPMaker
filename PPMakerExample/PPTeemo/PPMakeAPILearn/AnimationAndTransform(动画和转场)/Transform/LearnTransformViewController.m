@@ -8,6 +8,7 @@
 
 #import "LearnTransformViewController.h"
 #import "PPMakeBannerView.h"
+#import <PPMaker/PPMaker.h>
 
 @interface LearnTransformViewController ()
 

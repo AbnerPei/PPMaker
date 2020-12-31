@@ -13,7 +13,13 @@
 /// 免去`registerClass: forCellReuseIdentifier`一个一个写
 /// @param cellClasses cellClass数组
 /// @param identifiers identifier数组
-- (void)registerClasses:(nullable NSArray<Class> *)cellClasses forCellReuseIdentifiers:(nonnull NSArray<NSString *> *)identifiers;
+- (void)registerClasses:(nullable NSArray<Class> *)cellClasses forCellReuseIdentifiers:(nullable NSArray<NSString *> *)identifiers;
+
+
+/// 免去`registerClass: forCellReuseIdentifier`一个一个写
+/// @param cellClasses cellClass数组 「利用cellClas创建indentifier」
+- (void)registerClasses:(nullable NSArray<Class> *)cellClasses;
+
 
 @end
 

@@ -9,6 +9,7 @@
 #import "PPMake_MVC_View.h"
 #import "PPMutAttributedStringMaker.h"
 #import "PPMakerDefines.h"
+#import <PPMaker/PPMaker.h>
 
 @interface PPMake_MVC_View ()
 @property(nonatomic,strong) UILabel *orderStatusLB;
@@ -92,7 +93,9 @@
                     maker.fontRange(fontPingFangSCMedium(12), range);
                 } str:str]);
             }];
-            CGFloat btX = [UILabel ppmake_calculateWidthWithFont:fontPingFangSCSemibold(16) height:lbH text:rightTitle]+rightLBX+5;
+#warning 8888
+//            CGFloat btX = [UILabel ppmake_calculateWidthWithFont:fontPingFangSCSemibold(16) height:lbH text:rightTitle]+rightLBX+5;
+            CGFloat btX = kWidth(70);
             CGFloat btW = kWidth(60);
             [PPMAKE(PPMakeTypeBT) pp_make:^(PPMake *make) {
                 make.intoView(self);

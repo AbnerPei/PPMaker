@@ -9,8 +9,12 @@
 #ifndef PPMakeFoundationCategory_h
 #define PPMakeFoundationCategory_h
 
-#import "NSUserDefaults+PPMakeSupport.h"
+#import "NSDate+PPMakeSupport.h"
 #import "NSDate+Timestamp.h"
-
+#import "NSMutableArray+PPMakeSupport.h"
+#import "NSMutableAttributedString+PPMakeSupport.h"
+#import "NSObject+PPMakeSupport.h"
+#import "NSString+PPMakeSupport.h"
+#import "NSString+PPMakeSupport_Unicode.h"
 
 #endif /* PPMakeFoundationCategory_h */

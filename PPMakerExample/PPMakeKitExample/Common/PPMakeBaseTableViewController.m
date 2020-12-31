@@ -8,8 +8,8 @@
 
 #import "PPMakeBaseTableViewController.h"
 #import "PPMakeKitExampleListCell.h"
-#import "UITableView+PPMakeDidSelectedBlock.h"
 #import "PPMakerDefines.h"
+#import <PPMaker/PPMaker.h>
 
 @interface PPMakeBaseTableViewController ()
 

@@ -56,6 +56,13 @@
 //iPhone X系列底部多出来的高 34
 UIKIT_EXTERN const CGFloat kiPhoneXBottomExtraH;
 
+/// 同kWPercentage的功能
+CG_INLINE CGFloat KWIDTH(CGFloat w)
+{
+    CGFloat sw = [UIScreen mainScreen].bounds.size.width;
+    return sw * (w / 375.0);
+}
+
 
 @interface UIDevice (PPMakeSupport)
 

@@ -6,8 +6,8 @@
 //  Copyright © 2018年 PPAbner. All rights reserved.
 //
 
-#import "PPMakeBaseViewController.h"
+#import "PPMakeBaseTableViewController.h"
 
-@interface PPMakeOrderViewController : PPMakeBaseViewController
+@interface PPMakeOrderViewController : PPMakeBaseTableViewController
 
 @end

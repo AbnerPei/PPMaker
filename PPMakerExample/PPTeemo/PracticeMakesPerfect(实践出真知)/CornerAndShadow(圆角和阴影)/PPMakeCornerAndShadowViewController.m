@@ -8,6 +8,8 @@
 
 #import "PPMakeCornerAndShadowViewController.h"
 #import "PPMakerDefines.h"
+#import <PPMaker/PPMaker.h>
+#import <PPMaker/UIView+PPMakeSupportCornerAndShadow.h>
 
 @interface PPMakeCornerAndShadowViewController ()
 {

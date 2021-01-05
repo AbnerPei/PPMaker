@@ -11,6 +11,9 @@
 
 #import "PPMakerConsts.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
+
 #pragma mark --- 字符串判断
 NS_INLINE BOOL isSafeStr(NSString * _Nullable str){
     if ([str isKindOfClass:[NSNull class]]
@@ -114,5 +117,7 @@ NS_INLINE BOOL isEqualString( NSString * _Nullable str1,  NSString * _Nullable s
         return NO;
     }
 }
+
+NS_ASSUME_NONNULL_END
   
 #endif /* PPMakerNSStringDefine_h */

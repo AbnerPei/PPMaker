@@ -9,6 +9,8 @@
 #ifndef PPMakerUIColorDefine_h
 #define PPMakerUIColorDefine_h
 
+NS_ASSUME_NONNULL_BEGIN
+
 UIKIT_STATIC_INLINE UIColor *colorRGBA(CGFloat r,CGFloat g,CGFloat b,CGFloat a){
     return [UIColor colorWithRed:r / 255.0 green:g / 255.0 blue:b / 255.0 alpha:a];
 }
@@ -158,5 +160,7 @@ UIKIT_STATIC_INLINE UIColor *colorTawny()             {return colorRGB(240, 230,
 UIKIT_STATIC_INLINE UIColor *colorJasmine()           {return colorRGB(245, 222, 179);}
 /** 蛋壳色 */
 UIKIT_STATIC_INLINE UIColor *colorEggShell()          {return colorRGB(252, 230, 201);}
+
+NS_ASSUME_NONNULL_END
 
 #endif /* PPMakerUIColorDefine_h */

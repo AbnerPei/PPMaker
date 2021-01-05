@@ -52,14 +52,14 @@
         CGFloat leftX = kWidth(116);
         make.frame(CGRectMake(leftX, 0, kScreenW-leftX-leftMargin, topH));
         make.font(fontPingFangSCSemibold(14));
-        make.textColor(colorHex(@"0xff4d4d")).textAlignment(NSTextAlignmentRight);
+        make.textColor(colorHex(0xff4d4d)).textAlignment(NSTextAlignmentRight);
         make.text(orderStatus);
     }];
     
     CALayer *line = [CALayer layer];
     [self.layer addSublayer:line];
     line.frame = CGRectMake(0, topH-1, kScreenW, 1);
-    line.backgroundColor = colorHex(@"0xf2f2f2").CGColor;
+    line.backgroundColor = colorHex(0xf2f2f2).CGColor;
     
     CGFloat marginV = kHeight(8);
     CGFloat lbH = kHeight(20);
@@ -87,13 +87,12 @@
                 NSString *str = [NSString stringWithFormat:@"%@  %@",rightTitle,showMoneyDetailStr];
                 make.attributedText([NSMutableAttributedString pp_attributedStringMake:^(PPMutAttributedStringMaker *maker) {
                     maker.font(fontPingFangSCSemibold(16));
-                    maker.textColor(colorHex(@"0xff4d4d"));
+                    maker.textColor(colorHex(0xff4d4d));
                     NSRange range = [str rangeOfString:showMoneyDetailStr];
-                    maker.textColorRange(colorHex(@"0x4D88FF"), range);
+                    maker.textColorRange(colorHex(0x4D88FF), range);
                     maker.fontRange(fontPingFangSCMedium(12), range);
                 } str:str]);
             }];
-#warning 8888
 //            CGFloat btX = [UILabel ppmake_calculateWidthWithFont:fontPingFangSCSemibold(16) height:lbH text:rightTitle]+rightLBX+5;
             CGFloat btX = kWidth(70);
             CGFloat btW = kWidth(60);

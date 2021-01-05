@@ -150,24 +150,24 @@ static NSDateFormatter *_ppDateFormatter = nil;
 }
 
 #pragma mark --- 4、计算两个date间的差值
-/// 4-0 根据获取unitFlags类型两个时间对应的差值
-/// @param unitFlags 年/月/日/时/分/秒
-/// @param date 另一个date日期
-- (NSInteger)pp_timeInterval:(NSCalendarUnit)unitFlags date:(NSDate *)date
-{
-//    PPNSDateInitialize();
-//    NSDateComponents *components = [_ppCalendar components:unitFlags fromDate:self toDate:date options:0];
-//    switch (<#expression#>) {
-//        case <#constant#>:
-//            <#statements#>
-//            break;
-//
-//        default:
-//            break;
-//    }
-#warning todo
-    return 0;
-}
+///// 4-0 根据获取unitFlags类型两个时间对应的差值
+///// @param unitFlags 年/月/日/时/分/秒
+///// @param date 另一个date日期
+//- (NSInteger)pp_timeInterval:(NSCalendarUnit)unitFlags date:(NSDate *)date
+//{
+////    PPNSDateInitialize();
+////    NSDateComponents *components = [_ppCalendar components:unitFlags fromDate:self toDate:date options:0];
+////    switch (<#expression#>) {
+////        case <#constant#>:
+////            <#statements#>
+////            break;
+////
+////        default:
+////            break;
+////    }
+//#warning todo
+//    return 0;
+//}
 
 #pragma mark --- private method
 static inline void PPNSDateInitialize(){

@@ -83,7 +83,7 @@
 -(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
 {
     return [PPMAKE(PPMakeTypeView) pp_make:^(PPMake *make) {
-        make.bgColor(colorHex(@"0xf2f2f2"));
+        make.bgColor(colorHex(0xf2f2f2));
     }];
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section

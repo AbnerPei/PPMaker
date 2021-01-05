@@ -67,7 +67,7 @@ static NSString *key = @"pppp8888";
         make.textColor(colorDeepRed());
         make.textAlignment(NSTextAlignmentCenter);
         make.frame(CGRectMake(0, kHeight(400), kScreenW, kHeight(50)));
-        make.bgColor(colorHex(@"0x27f2f2"));
+        make.bgColor(colorHex(0x27f2f2));
         
     }];
     
@@ -113,13 +113,13 @@ static NSString *key = @"pppp8888";
         make.frame(CGRectMake(kWidth(10), kNavBarH, kScreenW-kWidth(20), kHeight(300)));
         NSMutableAttributedString *attributedStr = [NSMutableAttributedString pp_attributedStringMake:^(PPMutAttributedStringMaker *maker) {
             maker.font(fontPingFangSCRegular(16));
-            maker.textColor(colorHex(@"0x222222"));
+            maker.textColor(colorHex(0x222222));
             maker.lineSpacing(4);
             maker.kern(@2);
             maker.specialTextSet(
                                  @[@"秘密",@"UIFont是有缓存的",@"测试方法如下"],
                                  @[fontPingFangSCMedium(18),fontPingFangSCSemibold(22),fontPingFangSCMedium(18)],
-                                 @[coloRviolet(),colorHex(@"0xff4d4d"),color000000()]
+                                 @[coloRviolet(),colorHex(0xff4d4d),color000000()]
                                  );
         } str:@"有一天，我发现了一个秘密:\nUIFont是有缓存的，类似我们常说的缓存池。\n测试方法如下：停留在该界面，摁手机home键，然后再切回来，看控制台打印"];
         make.attributedText(attributedStr);

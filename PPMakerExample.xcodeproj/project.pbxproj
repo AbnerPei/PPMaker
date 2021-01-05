@@ -139,6 +139,8 @@
 		84EF730C259C811D002662F3 /* PPMakerUIHorizontalCollectionViewExampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EF730B259C811D002662F3 /* PPMakerUIHorizontalCollectionViewExampleViewController.m */; };
 		84EF7311259C83AF002662F3 /* PPMakerUIKitExamplesBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EF7310259C83AF002662F3 /* PPMakerUIKitExamplesBaseTableViewController.m */; };
 		84EF7315259C8899002662F3 /* PPMakerUIHorizontalCollectionViewExampleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EF7314259C8899002662F3 /* PPMakerUIHorizontalCollectionViewExampleCell.m */; };
+		84EF74BB25A31324002662F3 /* PPMakerHandyFramBaseTableViewExamples.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EF74BA25A31324002662F3 /* PPMakerHandyFramBaseTableViewExamples.m */; };
+		84EF74C025A31371002662F3 /* PPMakerHandyFrameExampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EF74BF25A31371002662F3 /* PPMakerHandyFrameExampleViewController.m */; };
 		9A5D6A1F3DEC8CE3F078BC96 /* libPods-PPMakerExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B4612079F4DE2B250B981DE9 /* libPods-PPMakerExample.a */; };
 /* End PBXBuildFile section */
 
@@ -427,6 +429,10 @@
 		84EF7310259C83AF002662F3 /* PPMakerUIKitExamplesBaseTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPMakerUIKitExamplesBaseTableViewController.m; sourceTree = "<group>"; };
 		84EF7313259C8899002662F3 /* PPMakerUIHorizontalCollectionViewExampleCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMakerUIHorizontalCollectionViewExampleCell.h; sourceTree = "<group>"; };
 		84EF7314259C8899002662F3 /* PPMakerUIHorizontalCollectionViewExampleCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPMakerUIHorizontalCollectionViewExampleCell.m; sourceTree = "<group>"; };
+		84EF74B925A31324002662F3 /* PPMakerHandyFramBaseTableViewExamples.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMakerHandyFramBaseTableViewExamples.h; sourceTree = "<group>"; };
+		84EF74BA25A31324002662F3 /* PPMakerHandyFramBaseTableViewExamples.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPMakerHandyFramBaseTableViewExamples.m; sourceTree = "<group>"; };
+		84EF74BE25A31371002662F3 /* PPMakerHandyFrameExampleViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMakerHandyFrameExampleViewController.h; sourceTree = "<group>"; };
+		84EF74BF25A31371002662F3 /* PPMakerHandyFrameExampleViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPMakerHandyFrameExampleViewController.m; sourceTree = "<group>"; };
 		ABF32A261256CF4200C96682 /* Pods-PPMakerExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PPMakerExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-PPMakerExample/Pods-PPMakerExample.release.xcconfig"; sourceTree = "<group>"; };
 		B4612079F4DE2B250B981DE9 /* libPods-PPMakerExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PPMakerExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -738,6 +744,7 @@
 		57A1F00920E8CABA007B1B41 /* PPMakeOrder */ = {
 			isa = PBXGroup;
 			children = (
+				84EF74B825A312DE002662F3 /* PPMakerHandyFramExamples */,
 				84EF7308259C80D4002662F3 /* PPMakerUIKitExamples */,
 				57A1F00F20E8CAEF007B1B41 /* PPMakeOrderViewController.h */,
 				57A1F01020E8CAEF007B1B41 /* PPMakeOrderViewController.m */,
@@ -1487,6 +1494,25 @@
 			path = PPMakerUIHorizontalCollectionViewExample;
 			sourceTree = "<group>";
 		};
+		84EF74B825A312DE002662F3 /* PPMakerHandyFramExamples */ = {
+			isa = PBXGroup;
+			children = (
+				84EF74C225A313A4002662F3 /* Views */,
+				84EF74B925A31324002662F3 /* PPMakerHandyFramBaseTableViewExamples.h */,
+				84EF74BA25A31324002662F3 /* PPMakerHandyFramBaseTableViewExamples.m */,
+				84EF74BE25A31371002662F3 /* PPMakerHandyFrameExampleViewController.h */,
+				84EF74BF25A31371002662F3 /* PPMakerHandyFrameExampleViewController.m */,
+			);
+			path = PPMakerHandyFramExamples;
+			sourceTree = "<group>";
+		};
+		84EF74C225A313A4002662F3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		A4E98DC4B39D356ACAD331A9 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -1594,6 +1620,7 @@
 				57FFFE312109D55100ADD5DA /* AFNetworkActivityIndicatorManager.m in Sources */,
 				57FFFEE0210A5D4000ADD5DA /* NSObject+MJClass.m in Sources */,
 				571519E5212D136200F63DFD /* PPMakePracticeMakesPerfectBaseTableViewController.m in Sources */,
+				84EF74C025A31371002662F3 /* PPMakerHandyFrameExampleViewController.m in Sources */,
 				57FFFEEE210A698F00ADD5DA /* KGHandler.m in Sources */,
 				57BF77682151210D004E6F41 /* PPMake_InterView_ViewController.mm in Sources */,
 				57FE008A214F4E3300437F0F /* Product.m in Sources */,
@@ -1696,6 +1723,7 @@
 				84828F69258B2E86001A0D2B /* PPMakerConsts.m in Sources */,
 				57FE0081214B7BA700437F0F /* PPMake_QiNiu_ViewController.m in Sources */,
 				57CB436E20A1BA8A00268DBE /* AppDelegate.m in Sources */,
+				84EF74BB25A31324002662F3 /* PPMakerHandyFramBaseTableViewExamples.m in Sources */,
 				57FBF16521421BEC00311650 /* PPMakeMVCMVVMBaseTableViewController.m in Sources */,
 				57FFFDED21080CCA00ADD5DA /* PPMakeCustomTextFieldBaseTableViewController.m in Sources */,
 				57A1F01420E8CB02007B1B41 /* PPMakeMineViewController.m in Sources */,

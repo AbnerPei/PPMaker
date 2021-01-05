@@ -158,7 +158,6 @@
         self.alpha = 1.0;
     }];
     self.pullingPercent = 1.0;
-#warning ppabner
     //参考：[主题 : self.view.window在逻辑判断中的作用？](http://www.cocoachina.com/bbs/read.php?tid-252512.html)
     // 只要正在刷新，就完全显示
     if (self.window) {

@@ -71,6 +71,7 @@ UIKIT_STATIC_INLINE UIColor * _999999(void){ return UIColorHex(0x999999);}
 + (UIColor *)colorWithHex:(uint32_t)hex alpha:(CGFloat)alpha;
 
 + (UIColor *)RandomColor;
+
 @property (nonatomic, strong, readonly, class) UIColor *RandomColor;
 
 @end

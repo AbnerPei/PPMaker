@@ -94,7 +94,7 @@
     [PPMAKEV pp_make:^(PPMake *make) {
         make.intoView(self.contentView);
         make.frame(CGRectMake(lbX, totalH-1, lbW, 1));
-        make.bgColor(colorHex(@"0xf2f2f2"));
+        make.bgColor(colorHex(0xf2f2f2));
     }];
     
 }

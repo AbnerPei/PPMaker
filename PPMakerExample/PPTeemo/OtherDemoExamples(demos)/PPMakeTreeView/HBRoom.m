@@ -55,7 +55,7 @@
     [PPMAKEV pp_make:^(PPMake *make) {
         make.intoView(self.contentView);
         make.frame(CGRectMake(30, kHeight(50)-1, kScreenW-30, 1));
-        make.bgColor(colorHex(@"0xf2f2f2"));
+        make.bgColor(colorHex(0xf2f2f2));
     }];
 }
 -(void)setupWithRoom:(HBRoom *)room
@@ -92,7 +92,7 @@
     [PPMAKEV pp_make:^(PPMake *make) {
         make.intoView(self.contentView);
         make.frame(CGRectMake(0, kHeight(80)-1, kScreenW, 1));
-        make.bgColor(colorHex(@"0xf2f2f2"));
+        make.bgColor(colorHex(0xf2f2f2));
     }];
 }
 -(void)setupWithHotel:(HBHotel *)hotel

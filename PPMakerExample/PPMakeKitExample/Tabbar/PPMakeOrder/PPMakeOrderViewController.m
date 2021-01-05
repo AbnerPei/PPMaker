@@ -20,9 +20,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.backBT.hidden = YES;
-    self.titleStr = @"订单";
-    
-    
+    self.titleStr = @"我的UI";
     
 }
 
@@ -31,10 +29,12 @@
     
     self.titles = @[
                     @"我的UI系列",
+                    @"HandyFrame示例"
                     ];
     
     self.vcs = @[
                  @"PPMakerUIKitExamplesBaseTableViewController",
+                 @"PPMakerHandyFramBaseTableViewExamples"
                  ];
 }
 

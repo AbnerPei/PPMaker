@@ -29,7 +29,7 @@
         make.textColor(colorDeepRed());
         make.textAlignment(NSTextAlignmentCenter);
         make.frame(CGRectMake(0, kHeight(400), kScreenW, kHeight(50)));
-        make.bgColor(colorHex(@"0x27f2f2"));
+        make.bgColor(colorHex(0x27f2f2));
         make.tapBlock(^{
             UIFontCacheNextViewController *nextVC = [[UIFontCacheNextViewController alloc]init];
             [self.navigationController pushViewController:nextVC animated:YES];

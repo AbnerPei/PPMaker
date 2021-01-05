@@ -94,8 +94,8 @@ typedef NS_ENUM(NSInteger,PPDateTimeIntervalStyle) {
 /// @param wantedDateStyle 想要的日期格式
 - (NSDate *)pp_dateWithWantedDateStyle:(NSDateFormatterStyleKey)wantedDateStyle;
 
-/// 4-0 根据获取unitFlags类型两个时间对应的差值
-/// @param unitFlags 年/月/日/时/分/秒
-/// @param date 另一个date日期
-- (NSInteger)pp_timeInterval:(NSCalendarUnit)unitFlags date:(NSDate *)date;
+///// 4-0 根据获取unitFlags类型两个时间对应的差值
+///// @param unitFlags 年/月/日/时/分/秒
+///// @param date 另一个date日期
+//- (NSInteger)pp_timeInterval:(NSCalendarUnit)unitFlags date:(NSDate *)date;
 @end

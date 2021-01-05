@@ -20,6 +20,7 @@
 #import "UITableViewCell+PPMakeSupport.h"
 #import "UIView+PPMakeSupport.h"
 #import "UIView+PPMakeSupportCornerAndShadow.h"
+#import "UIView+HandyFrame.h"
 #import "UIViewController+UIScreenBrightness.h"
 
 #endif /* PPMakeUIKitCategory_h */

@@ -8,7 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
+
+NS_ASSUME_NONNULL_BEGIN
+
 @interface PPMakeNotification : NSObject
+
 @property(nonatomic,copy,readonly) NSString *name;
 
 @end
@@ -26,4 +30,7 @@
 -(void)removeObserver:(id)observer name:(nullable NSString *)aName object:(nullable id)anObject;
 
 @end
+
+NS_ASSUME_NONNULL_END
+
 

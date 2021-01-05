@@ -60,7 +60,7 @@
     self.p_navigationLine = [PPMAKEV pp_make:^(PPMake *make) {
         make.intoView(self.p_navigationView);
         make.frame(CGRectMake(0, self.p_navigationView.height-1, self.p_navigationView.width, 1));
-        make.bgColor(colorHex(@"0xf2f2f2"));
+        make.bgColor(colorHex(0xf2f2f2));
     }];
 }
 -(void)backAction

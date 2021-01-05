@@ -70,15 +70,15 @@
     self.deleteBT = [PPMAKEBT pp_make:^(PPMake *make) {
         make.intoView(self.contentView);
         make.frame(CGRectMake(kScreenW-110, 90, 100, 40));
-        make.normalAttributedFontColorTitle(fontPingFangSCSemibold(16), colorHex(@"0xff4d4d"), @"删除此行");
-        make.borderColor(colorHex(@"0xf2f2f2"));
+        make.normalAttributedFontColorTitle(fontPingFangSCSemibold(16), colorHex(0xff4d4d), @"删除此行");
+        make.borderColor(colorHex(0xf2f2f2));
         make.borderWidth(2);
     }];
     
     [PPMAKEV pp_make:^(PPMake *make) {
         make.intoView(self.contentView);
         make.frame(CGRectMake(0, 133, kScreenW, 2));
-        make.bgColor(colorHex(@"0xf2f2f2"));
+        make.bgColor(colorHex(0xf2f2f2));
     }];
     
 }

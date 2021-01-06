@@ -34,7 +34,7 @@
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     PPMakerUIHorizontalCollectionViewExampleCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:self.collectionView.configuration.cellIdentifier forIndexPath:indexPath];
-    cell.contentView.backgroundColor = UIColorRandom();
+    cell.contentView.backgroundColor = UIColor.ppmake_randomColor;
     return cell;
 }
 

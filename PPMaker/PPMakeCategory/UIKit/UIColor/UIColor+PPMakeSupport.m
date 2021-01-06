@@ -10,34 +10,37 @@
 
 @implementation UIColor (PPMakeSupport)
 
-+ (UIColor *)colorWithR:(CGFloat)r g:(CGFloat)g b:(CGFloat)b a:(CGFloat)a
++ (UIColor *)ppmake_colorWithR:(CGFloat)r g:(CGFloat)g b:(CGFloat)b a:(CGFloat)a
 {
-    return UIColorRgbA(r, g, b, a);
+    return PPMakeUIColorRgbA(r, g, b, a);
 }
 
-+ (UIColor *)colorWithR:(CGFloat)r g:(CGFloat)g b:(CGFloat)b
++ (UIColor *)ppmake_colorWithR:(CGFloat)r g:(CGFloat)g b:(CGFloat)b
 {
-    return UIColorRgb(r, g, b);
+    return PPMakeUIColorRgb(r, g, b);
 }
 
-+ (UIColor *)colorWithR:(CGFloat)r a:(CGFloat)a
++ (UIColor *)ppmake_colorWithR:(CGFloat)r a:(CGFloat)a
 {
-    return UIColorRa(r, a);
+    return PPMakeUIColorRa(r, a);
 }
 
-+ (UIColor *)colorWithR:(CGFloat)r
++ (UIColor *)ppmake_colorWithR:(CGFloat)r
 {
-    return UIColorR(r);
+    return PPMakeUIColorR(r);
 }
 
-+ (UIColor *)colorWithHex:(uint32_t)hex alpha:(CGFloat)alpha
++ (UIColor *)ppmake_colorWithHex:(uint32_t)hex alpha:(CGFloat)alpha
 {
-    return UIColorHexA(hex, alpha);
+    return PPMakeUIColorHexA(hex, alpha);
 }
 
-+ (UIColor *)RandomColor
++ (UIColor *)ppmake_randomColor
 {
-    return UIColorRandom();
+    NSInteger r = arc4random() % 255;
+    NSInteger g = arc4random() % 255;
+    NSInteger b = arc4random() % 255;
+    return PPMakeUIColorRgb(r, g, b);
 }
 
 @end

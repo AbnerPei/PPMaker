@@ -4,6 +4,9 @@
 //
 //  Created by PPAbner on 2021/1/4.
 //
+/*
+  声明：该Category严重"抄袭"[casatwy](https://github.com/casatwy) 的HandyAutoLayout中的HandyFrame，只不过在自己使用中，加以改造，以便自己更方便使用。
+ */
 
 #import <UIKit/UIKit.h>
 

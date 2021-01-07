@@ -44,7 +44,7 @@ static NSDateFormatter *_ppDateFormatter = nil;
 }
 
 #pragma mark --- 单例初始化（内部用）
-+(void)sharedInstance
++ (void)sharedInstance
 {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
@@ -58,19 +58,21 @@ static NSDateFormatter *_ppDateFormatter = nil;
     });
     
 }
+
 #pragma mark --- 初始化一个Calendar【单例】
-+(NSCalendar *)ppmake_sharedCalendar
++ (NSCalendar *)ppmake_sharedCalendar
 {
     PPNSDateInitialize();
     return _ppCalendar;
 }
 
 #pragma mark --- 初始化一个DateFormatter【单例】
-+(NSDateFormatter *)ppmake_sharedDateFormatter
++ (NSDateFormatter *)ppmake_sharedDateFormatter
 {
     PPNSDateInitialize();
     return _ppDateFormatter;
 }
+
 #pragma mark --- 0、获取xx后（前）的日期
 /// 0-1 获取timeInterval后的date日期
 /// @param unitFlags 年/月/日/时/分/秒
@@ -169,6 +171,151 @@ static NSDateFormatter *_ppDateFormatter = nil;
 //    return 0;
 //}
 
+#pragma mark --- 根据获取unit类型两个时间对应的差值
+- (NSUInteger)ppmake_timeInterValByUnit:(PPDateUnit)unit
+                           comparedDate:(NSDate *)comparedDate
+{
+    
+    NSDate *fromDate = self;
+    NSDate *toDate = comparedDate;
+    PPNSDateInitialize();
+    
+    BOOL isAscend = NO;
+    if ([fromDate earlierDate:toDate] == fromDate) {
+        isAscend = YES;
+    }
+    NSDate *startDate = isAscend?fromDate:toDate;
+    NSDate *endDate = isAscend?toDate:fromDate;
+    
+    NSCalendarUnit calendarUnit;
+    switch (unit) {
+        case PPDateUnitYear:
+            calendarUnit = NSCalendarUnitYear;
+            break;
+        case PPDateUnitMonth:
+            calendarUnit = NSCalendarUnitMonth;
+            break;
+        case PPDateUnitDay:
+            calendarUnit = NSCalendarUnitDay;
+            break;
+        case PPDateUnitHour:
+            calendarUnit = NSCalendarUnitHour;
+            break;
+        case PPDateUnitMinute:
+            calendarUnit = NSCalendarUnitMinute;
+            break;
+        case PPDateUnitSecond:
+            calendarUnit = NSCalendarUnitSecond;
+            break;
+            
+        default:
+            calendarUnit = NSCalendarUnitDay;
+            break;
+    }
+    NSDateComponents *comps = [_ppCalendar components:calendarUnit
+                                             fromDate:startDate
+                                               toDate:endDate
+                                              options:0];
+    
+    switch (unit) {
+        case PPDateUnitYear:
+            return (NSUInteger)comps.year;
+            break;
+        case PPDateUnitMonth:
+            return (NSUInteger)comps.month;
+            break;
+        case PPDateUnitDay:
+            return (NSUInteger)comps.day;
+            break;
+        case PPDateUnitHour:
+            return (NSUInteger)comps.hour;
+            break;
+        case PPDateUnitMinute:
+            return (NSUInteger)comps.minute;
+            break;
+        case PPDateUnitSecond:
+            return (NSUInteger)comps.second;
+            break;
+            
+        default:
+            return (NSUInteger)comps.day;
+            break;
+    }
+}
+
+- (NSDate *)ppmake_dateAfterWithUnit:(PPDateUnit)unit
+                      unitCount:(NSInteger)unitCount
+{
+    PPNSDateInitialize();
+    NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
+    configureUnit(dateComponents, unit, unitCount);
+    NSDate *date = [_ppCalendar dateByAddingComponents:dateComponents
+                                                toDate:self
+                                               options:0];
+    return date;
+}
+
+- (NSString *)ppmake_strAfterWithUnit:(PPDateUnit)unit
+                            unitCount:(NSInteger)unitCount
+                      wantedDateStyle:(NSDateFormatterStyleKey)wantedDateStyle
+{
+    NSDate *wantedDate = [self ppmake_dateAfterWithUnit:unit
+                                          unitCount:unitCount];
+    return [wantedDate ppmake_strWithWantedDateStyle:wantedDateStyle];
+}
+
+#pragma mark --- 获取给定日期是星期X/周X
+- (NSString *)ppmake_strForWeekIsZhou:(BOOL)isZhou
+{
+    NSArray *weekStrs;
+    if (isZhou) {
+        weekStrs = [NSArray arrayWithObjects: [NSNull null], @"周日", @"周一", @"周二", @"周三", @"周四", @"周五", @"周六", nil];
+    }else{
+        weekStrs  = [NSArray arrayWithObjects: [NSNull null], @"星期日", @"星期一", @"星期二", @"星期三", @"星期四", @"星期五", @"星期六", nil];
+    }
+    
+    PPNSDateInitialize();
+    NSTimeZone *timeZone = [[NSTimeZone alloc] initWithName:@"Asia/Shanghai"];
+    [_ppCalendar setTimeZone: timeZone];
+    NSDateComponents *theComponents = [_ppCalendar components:NSCalendarUnitWeekday fromDate:self];
+    return [weekStrs objectAtIndex:theComponents.weekday];
+}
+
+#pragma mark --- 当前给定日期的月份总共有XX天
+- (NSInteger)ppmake_daysInMonth
+{
+    return [_ppCalendar rangeOfUnit:NSCalendarUnitDay inUnit:NSCalendarUnitMonth forDate:self].length;
+}
+
+#pragma mark --- 根据specialStyle类型返回想要的时间字符串 如@"2018-01-18 09:34" =====> @"01-18 周四"
+- (NSString *)ppmake_strWithSpecialStyle:(PPDateSpecialStyle)specialStyle
+{
+    NSString *mmddStr = [self ppmake_strWithWantedDateStyle:dateStyleExchange(specialStyle)];
+    NSString *weekStr = [self ppmake_strForWeekIsZhou:YES];
+    NSString *str = [NSString stringWithFormat:@"%@ %@",mmddStr,weekStr];
+    return str;
+}
+
+static inline NSDateFormatterStyleKey dateStyleExchange(PPDateSpecialStyle specialStyle){
+    NSDateFormatterStyleKey dateStyle ;
+    switch (specialStyle) {
+        case PPDateSpecialStyleLine_MMdd_Zhou:
+            dateStyle = NSDateFormatterStyleKeyLine_MMdd;
+            break;
+            
+        case PPDateSpecialStyleCN_MMdd_Zhou:
+            dateStyle = NSDateFormatterStyleKeyCN_MMdd;
+            break;
+            
+        default:
+            dateStyle = NSDateFormatterStyleKeyLine_yyyyMMdd;
+            break;
+    }
+    return dateStyle;
+}
+
+
+
 #pragma mark --- private method
 static inline void PPNSDateInitialize(){
     [NSDate sharedInstance];
@@ -236,3 +383,226 @@ static NSInteger splitDate(NSCalendarUnit calendarUnit,NSDate *date){
 }
 
 @end
+
+
+//================NSString (DateSupport)==================start
+@implementation NSString (DateSupport)
+#pragma mark --- 根据已知时间格式的时间字符串，返回一个NSDate对象。
+- (NSDate *)ppmake_dateWithOriginalDateStyle:(NSDateFormatterStyleKey)originalDateStyle
+{
+    NSDateFormatter *format = [NSDate ppmake_sharedDateFormatter];
+    format.dateFormat = originalDateStyle;
+    NSDate *date = [format dateFromString:self];
+    return date;
+}
+
+- (NSDate *)ppmake_dateWithOriginalDateStyle:(NSDateFormatterStyleKey)originalDateStyle wantedDateStyle:(NSDateFormatterStyleKey)wantedDateStyle
+{
+    NSDate *originalDate = [self ppmake_dateWithOriginalDateStyle:originalDateStyle];
+    return [originalDate ppmake_dateWithWantedDateStyle:wantedDateStyle];
+}
+
+#pragma mark --- 根据已知时间格式的时间字符串，返回另一种时间格式的时间字符串
+- (NSString *)ppmake_strWithOriginalDateStyle:(NSDateFormatterStyleKey)originalDateStyle wantedDateStyle:(NSDateFormatterStyleKey)wantedDateStyle
+{
+    NSDate *originalDate = [self ppmake_dateWithOriginalDateStyle:originalDateStyle];
+    NSString *newDateStr = [originalDate ppmake_strWithWantedDateStyle:wantedDateStyle];
+    return newDateStr;
+}
+
+#pragma mark --- 通用的处理xx天/月/时...后的日期
+- (NSDate *)ppmake_dateAfterWithUnit:(PPDateUnit)unit
+                      unitCount:(NSInteger)unitCount
+              originalDateStyle:(NSDateFormatterStyleKey)originalDateStyle
+{
+    NSDate *originalDate = [self ppmake_dateWithOriginalDateStyle:originalDateStyle];
+    return [originalDate ppmake_dateAfterWithUnit:unit
+                                    unitCount:unitCount];
+}
+
+- (NSString *)ppmake_strAfterWithUnit:(PPDateUnit)unit
+                       unitCount:(NSInteger)unitCount
+               originalDateStyle:(NSDateFormatterStyleKey)originalDateStyle
+                 wantedDateStyle:(NSDateFormatterStyleKey)wantedDateStyle
+{
+    NSDate *wantedDate = [self ppmake_dateAfterWithUnit:unit unitCount:unitCount originalDateStyle:originalDateStyle];
+    return [wantedDate ppmake_strWithWantedDateStyle:wantedDateStyle];
+}
+
+#pragma mark --- 根据获取unit类型两个时间对应的差值 (默认day)
+-(NSUInteger)ppmake_timeInterValByUnit:(PPDateUnit)unit
+                   comparedDateStr:(NSString *)comparedDateStr
+                 originalDateStyle:(NSDateFormatterStyleKey)originalDateStyle
+                 comparedDateStyle:(NSDateFormatterStyleKey)comparedDateStyle
+{
+    NSDate *fromDate = [self ppmake_dateWithOriginalDateStyle:originalDateStyle];
+    NSDate *toDate = [comparedDateStr ppmake_dateWithOriginalDateStyle:comparedDateStyle];
+    return [fromDate ppmake_timeInterValByUnit:unit
+                              comparedDate:toDate];
+}
+
+#pragma mark --- x分钟前/x小时前/昨天/x天前/x个月前/x年前
+- (NSString *)ppmake_strAgoWithOriginalDateStyle:(NSDateFormatterStyleKey)originalDateStyle
+{
+    NSDate *date = [self ppmake_dateWithOriginalDateStyle:originalDateStyle];
+    NSDate *nowDate = [NSDate date];
+    NSTimeInterval time = [nowDate timeIntervalSinceDate:date];
+    
+    int year = (int)(nowDate.ppmake_year - date.ppmake_year);
+    int month = (int)(nowDate.ppmake_month - date.ppmake_month);
+    int day = (int)(nowDate.ppmake_day - date.ppmake_day);
+    
+    NSTimeInterval retTime = 1.0;
+    if (time < 3600) { // 小于一小时
+        retTime = time / 60;
+        retTime = retTime <= 0.0 ? 1.0 : retTime;
+        return retTime < 1.0 ? @"刚刚" : [NSString stringWithFormat:@"%.0f分钟前", retTime];
+        
+    } else if (time < 3600 * 24) { // 小于一天，也就是今天
+        retTime = time / 3600;
+        retTime = retTime <= 0.0 ? 1.0 : retTime;
+        return [NSString stringWithFormat:@"%.0f小时前", retTime];
+    } else if (time < 3600 * 24 * 2) {
+        return @"昨天";
+    }
+    // 第一个条件是同年，且相隔时间在一个月内
+    // 第二个条件是隔年，对于隔年，只能是去年12月与今年1月这种情况
+    else if ((abs(year) == 0 && abs(month) <= 1)
+             || (abs(year) == 1 && nowDate.ppmake_month == 1 && date.ppmake_month == 12)) {
+        int retDay = 0;
+        if (year == 0) { // 同年
+            if (month == 0) { // 同月
+                retDay = day;
+            }
+        }
+        
+        if (retDay <= 0) {
+            // 获取发布日期中，该月有多少天
+            int totalDays = (int)[date ppmake_daysInMonth];
+            // 当前天数 + （发布日期月中的总天数-发布日期月中发布日，即等于距离今天的天数）
+            retDay = (int)[nowDate ppmake_day] + (totalDays - (int)[date ppmake_day]);
+        }
+        
+        return [NSString stringWithFormat:@"%d天前", (abs)(retDay)];
+    } else  {
+        if (abs(year) <= 1) {
+            if (year == 0) { // 同年
+                return [NSString stringWithFormat:@"%d个月前", abs(month)];
+            }
+            
+            // 隔年
+            int month = (int)[nowDate ppmake_month];
+            int preMonth = (int)[date ppmake_month];
+            if (month == 12 && preMonth == 12) {// 隔年，但同月，就作为满一年来计算
+                return @"1年前";
+            }
+            return [NSString stringWithFormat:@"%d个月前", (abs)(12 - preMonth + month)];
+        }
+        
+        return [NSString stringWithFormat:@"%d年前", abs(year)];
+    }
+    
+    return @"1小时前";
+}
+
+#pragma mark --- 获取给定日期是星期X/周X
+- (NSString *)ppmake_strForWeekIsZhou:(BOOL)isZhou originalDateStyle:(NSDateFormatterStyleKey)originalDateStyle
+{
+    NSDate *date = [self ppmake_dateWithOriginalDateStyle:originalDateStyle];
+    return [date ppmake_strForWeekIsZhou:isZhou];
+}
+
+#pragma mark --- 根据specialStyle类型返回想要的时间字符串 如@"2018-01-18 09:34" =====> @"01-18 周四"
+- (NSString *)ppmake_strWithSpecialStyle:(PPDateSpecialStyle)specialStyle originalDateStyle:(NSDateFormatterStyleKey)originalDateStyle
+{
+    NSDate *date = [self ppmake_dateWithOriginalDateStyle:originalDateStyle];
+    return [date ppmake_strWithSpecialStyle:specialStyle];
+}
+
+- (NSString *)ppmake_strTimeIntervalWithStyle:(PPDateTimeIntervalStyle)style comparedDateStr:(NSString *)comparedDateStr
+{
+    NSString *oneStr = [self ppmake_replaceT];
+    if (oneStr.length >= 19) {
+        oneStr = [oneStr substringToIndex:19];
+    }
+    NSString *twoStr = [comparedDateStr ppmake_replaceT];
+    if (twoStr.length >= 19) {
+        twoStr = [twoStr substringToIndex:19];
+    }
+
+    NSUInteger timeInterval = [oneStr ppmake_timeInterValByUnit:PPDateUnitSecond comparedDateStr:twoStr originalDateStyle:NSDateFormatterStyleKeyLine_yyyyMMdd_HHmmss comparedDateStyle:NSDateFormatterStyleKeyLine_yyyyMMdd_HHmmss];
+    
+    int days = (int)(timeInterval/(3600*24));
+    int hours = (int)((timeInterval-days*24*3600)/3600);
+    int minutes = (int)(timeInterval-days*24*3600-hours*3600)/60;
+    int seconds = (int)(timeInterval-days*24*3600-hours*3600-minutes*60);
+    
+    switch (style) {
+        case PPDateTimeIntervalStyleCN_HHmm:
+            if (hours == 0 && minutes == 0) {
+                   return @"";
+               }
+            return [NSString stringWithFormat:@"%d时%d分",hours,minutes];
+            break;
+            
+        case PPDateTimeIntervalStyleEN_HHmm:
+            if (hours == 0 && minutes == 0) {
+                   return @"";
+               }
+            return [NSString stringWithFormat:@"%dh%dm",hours,minutes];
+            break;
+            
+            case PPDateTimeIntervalStyleColonHHmmss:
+            return [NSString stringWithFormat:@"%02d:%02d:%02d",hours,minutes,seconds];
+            break;
+            
+        case PPDateTimeIntervalStyleColonddHHmmss:
+        {
+            if (days > 0) {
+                if (days > 10) {
+                    return [NSString stringWithFormat:@"%d:%02d:%02d:%02d",days,hours,minutes,seconds];
+                }else{
+                    return [NSString stringWithFormat:@"%02d:%02d:%02d:%02d",days,hours,minutes,seconds];
+                }
+            }else{
+                return [NSString stringWithFormat:@"%02d:%02d:%02d",hours,minutes,seconds];
+            }
+        }
+            break;
+            
+        case PPDateTimeIntervalStyleCN_day_ColonHHmmss:
+        {
+            if (days > 0) {
+                return [NSString stringWithFormat:@"%d天%02d:%02d:%02d",days,hours,minutes,seconds];
+            }else{
+                return [NSString stringWithFormat:@"%02d:%02d:%02d",hours,minutes,seconds];
+            }
+        }
+            break;
+        default:
+            return @"";
+            break;
+    }
+}
+
+@end
+//================NSString (DateSupport)==================end
+
+
+//================NSString (MatchDateFormatterStyle)==================start
+@implementation NSString (MatchDateFormatterStyle)
+- (NSString *)ppmake_replaceT
+{
+    return replaceOneStrWithOtherStr(@"T", @" ",self);
+}
+
+//替换totalStr中所有的oneStr为otherStr
+static inline NSString * replaceOneStrWithOtherStr(NSString *oneStr,NSString *otherStr,NSString *totalStr){
+    NSString *str = totalStr;
+    if ([str containsString:oneStr]) {
+        str = [str stringByReplacingOccurrencesOfString:oneStr withString:otherStr];
+    }
+    return str;
+}
+@end
+//================NSString (MatchDateFormatterStyle)==================end

@@ -39,8 +39,11 @@ typedef NS_ENUM(NSInteger,PPDateSpecialStyle) {
 };
 
 typedef NS_ENUM(NSInteger,PPDateTimeIntervalStyle) {
-    PPDateTimeIntervalStyleCN_HHmm = 0,      //2时30分
-    PPDateTimeIntervalStyleEN_HHmm           //2h30m
+    PPDateTimeIntervalStyleCN_HHmm = 0,        ///2时30分
+    PPDateTimeIntervalStyleEN_HHmm,            ///2h30m
+    PPDateTimeIntervalStyleColonHHmmss,        ///08:32:12
+    PPDateTimeIntervalStyleColonddHHmmss,      ///05:08:32:12
+    PPDateTimeIntervalStyleCN_day_ColonHHmmss, ///2天08:32:12，如果天数小于等于0不展示
 };
 
 @interface NSDate (PPMakeSupport)
@@ -98,4 +101,132 @@ typedef NS_ENUM(NSInteger,PPDateTimeIntervalStyle) {
 ///// @param unitFlags 年/月/日/时/分/秒
 ///// @param date 另一个date日期
 //- (NSInteger)ppmake_timeInterval:(NSCalendarUnit)unitFlags date:(NSDate *)date;
+/**
+ 根据获取unit类型两个时间对应的差值 (默认day)
+
+ @param unit 年/月/日/时/分/秒
+ @param comparedDate 另一个date
+ */
+- (NSUInteger)ppmake_timeInterValByUnit:(PPDateUnit)unit
+                           comparedDate:(NSDate *)comparedDate;
+
+/**
+ 【通用】获取unitCount后的日期【from self】
+
+ @param unit 年/月/日/时/分/秒
+ @param unitCount 间隔
+ */
+- (NSDate *)ppmake_dateAfterWithUnit:(PPDateUnit)unit
+                           unitCount:(NSInteger)unitCount;
+- (NSString *)ppmake_strAfterWithUnit:(PPDateUnit)unit
+                            unitCount:(NSInteger)unitCount
+                      wantedDateStyle:(NSDateFormatterStyleKey)wantedDateStyle;
+
+/**
+ 获取给定日期是星期X/周X
+
+ @param isZhou YES：返回如@"周三"，NO:返回如@"星期三"
+ */
+- (NSString *)ppmake_strForWeekIsZhou:(BOOL)isZhou;
+
+/**
+ 当前给定日期的月份总共有XX天
+ */
+- (NSInteger)ppmake_daysInMonth;
+
+/**
+ 根据specialStyle类型返回想要的时间字符串 如@"2018-01-18 09:34" =====> @"01-18 周四"
+
+ @param specialStyle 参考PPDateSpecialStyle。
+ */
+- (NSString *)ppmake_strWithSpecialStyle:(PPDateSpecialStyle)specialStyle;
+
+@end
+
+@interface NSString (DateSupport)
+
+
+/**
+ 根据已知时间格式的时间字符串，返回一个NSDate对象。
+ 比如：@"2017/08/21 14:24"，则后面的originalDateStyle必选传PPNSDateStyleSlash_yyyyMMdd_HHmm；
+ - * 后期可能会优化让其自动对应。
+ */
+- (NSDate *)ppmake_dateWithOriginalDateStyle:(NSDateFormatterStyleKey)originalDateStyle;
+- (NSDate *)ppmake_dateWithOriginalDateStyle:(NSDateFormatterStyleKey)originalDateStyle
+                             wantedDateStyle:(NSDateFormatterStyleKey)wantedDateStyle;
+
+/**
+ 根据已知时间格式的时间字符串，返回另一种时间格式的时间字符串
+ 结果如：@"2017/08/21 14:24" ==> @"2017-08-21 14:24"
+ @param originalDateStyle 如：PPNSDateStyleSlash_yyyyMMdd_HHmm
+ @param wantedDateStyle 如：PPNSDateStyleLine_yyyyMMdd_HHmm,
+ */
+- (NSString *)ppmake_strWithOriginalDateStyle:(NSDateFormatterStyleKey)originalDateStyle
+                              wantedDateStyle:(NSDateFormatterStyleKey)wantedDateStyle;
+
+/**
+ 【通用】获取unitCount后的日期
+ 
+ @param unit 年/月/日/时/分/秒
+ @param unitCount 间隔
+ */
+- (NSDate *)ppmake_dateAfterWithUnit:(PPDateUnit)unit
+                           unitCount:(NSInteger)unitCount
+                   originalDateStyle:(NSDateFormatterStyleKey)originalDateStyle;
+
+- (NSString *)ppmake_strAfterWithUnit:(PPDateUnit)unit
+                            unitCount:(NSInteger)unitCount
+                    originalDateStyle:(NSDateFormatterStyleKey)originalDateStyle
+                      wantedDateStyle:(NSDateFormatterStyleKey)wantedDateStyle;
+
+/**
+ 根据获取unit类型两个时间对应的差值 (默认day)
+ 
+ @param unit 年/月/日/时/分/秒
+ @param comparedDateStr 另一个时间字符串
+ */
+- (NSUInteger)ppmake_timeInterValByUnit:(PPDateUnit)unit
+                        comparedDateStr:(NSString *)comparedDateStr
+                      originalDateStyle:(NSDateFormatterStyleKey)originalDateStyle
+                      comparedDateStyle:(NSDateFormatterStyleKey)comparedDateStyle;
+
+/**
+ x分钟前/x小时前/昨天/x天前/x个月前/x年前
+ */
+- (NSString *)ppmake_strAgoWithOriginalDateStyle:(NSDateFormatterStyleKey)originalDateStyle;
+
+/**
+ 获取给定日期是星期X/周X
+ 
+ @param isZhou YES：返回如@"周三"，NO:返回如@"星期三"
+ */
+- (NSString *)ppmake_strForWeekIsZhou:(BOOL)isZhou
+                    originalDateStyle:(NSDateFormatterStyleKey)originalDateStyle;
+
+/**
+ 根据specialStyle类型返回想要的时间字符串 如@"2018-01-18 09:34" =====> @"01-18 周四"
+ 
+ @param specialStyle 参考PPDateSpecialStyle。
+ */
+- (NSString *)ppmake_strWithSpecialStyle:(PPDateSpecialStyle)specialStyle
+                       originalDateStyle:(NSDateFormatterStyleKey)originalDateStyle;
+
+
+/**
+ 获取时间差
+【 just for 】2018-06-06T07:00:00 &&  2018-06-06T09:20:00  =>  2时20分
+ @param style <#style description#>
+ @param comparedDateStr <#comparedDateStr description#>
+ */
+- (NSString *)ppmake_strTimeIntervalWithStyle:(PPDateTimeIntervalStyle)style
+                              comparedDateStr:(NSString *)comparedDateStr;
+@end
+
+
+/**
+ 匹配DateFormatter的样式
+ 比如：2018-01-09T16:40:00 -----> 2018-01-09 16:40:00 【@"T"替换为@" "】
+ */
+@interface NSString (MatchDateFormatterStyle)
+- (NSString *)ppmake_replaceT;
 @end

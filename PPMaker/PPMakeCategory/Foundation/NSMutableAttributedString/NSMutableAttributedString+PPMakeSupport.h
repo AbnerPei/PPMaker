@@ -82,12 +82,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface PPMutAttributedStringMaker : NSObject
 
-+ (instancetype)new NS_UNAVAILABLE;
-- (instancetype)init NS_UNAVAILABLE;
-- (instancetype)initWithStr:(NSString *)str;
-
-@property (nonatomic, strong, readonly, nullable) NSMutableAttributedString *attributedString;
-
 /** 字体 */
 @property (nonatomic, copy, readonly) PPMutAttributedStringMaker *(^font)(UIFont *font);
 @property (nonatomic, copy, readonly) PPMutAttributedStringMaker *(^fontRange)(UIFont *font,NSRange range);

@@ -12,11 +12,12 @@
 
 + (NSMutableAttributedString *)ppmake_attributedStringWithMake:(void (^)(PPMutAttributedStringMaker * _Nonnull))make str:(NSString *)str
 {
-    PPMutAttributedStringMaker *asMaker = [[PPMutAttributedStringMaker alloc] initWithStr:str];
+    PPMutAttributedStringMaker *asMaker = [[PPMutAttributedStringMaker alloc] init];
+    NSMutableAttributedString *mutStr = [[NSMutableAttributedString alloc] initWithString:str];
     if (make) {
         make(asMaker);
     }
-    return asMaker.attributedString;
+    return mutStr;
 }
 
 - (NSRange)ppmake_allRange
@@ -241,19 +242,6 @@ return ps._attr_;
 @end
 
 @implementation PPMutAttributedStringMaker
-- (instancetype)initWithStr:(NSString *)str
-{
-    self = [super init];
-    if (self) {
-        self.mutAttrbutedStr = [[NSMutableAttributedString alloc] initWithString:str];
-    }
-    return self;
-}
-
-- (NSMutableAttributedString *)attributedString
-{
-    return _mutAttrbutedStr;
-}
 
 #pragma mark --- 字体
 - (PPMutAttributedStringMaker *(^)(UIFont *))font

@@ -152,7 +152,6 @@
 		B6D8C1B434059278384511986DC87A4B /* UIImage+GIF.h in Headers */ = {isa = PBXBuildFile; fileRef = 15DBAF3BFADC5D4B5919C2A45140257B /* UIImage+GIF.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		B7F2230C6A62B8BD59C88196B244AD3A /* QNALAssetFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 811B2078CC7D183AFBBD590F8EA82B8F /* QNALAssetFile.m */; };
 		B866622FCF22B732D54DB1FE57535419 /* UIView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9B7D52B2C49BA4E46E36479DF5BFA /* UIView+WebCache.m */; };
-		B90586032427FA0B35ED43D41280DF53 /* PPMutAttributedStringMaker.h in Headers */ = {isa = PBXBuildFile; fileRef = D88DD0051537FD8FBC6FDD875316A894 /* PPMutAttributedStringMaker.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		B946AFB1A725D85E07F645A7EF086383 /* NSArray+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 235651EE2AC47F6BE3D1951BB714704D /* NSArray+MASAdditions.m */; };
 		B94E7773C4096DE2E56869AF65ECC07A /* SDWebImageTransition.h in Headers */ = {isa = PBXBuildFile; fileRef = 797E779AE9CB3D6421BC1E330E82A2B7 /* SDWebImageTransition.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		BA575740B77696CFFA157A58D53C73C2 /* UIButton+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = DC4C99E9F61AFD387B5DFDD848251731 /* UIButton+WebCache.m */; };
@@ -177,7 +176,6 @@
 		D72849B1031F5DFCB8B038FAF9897276 /* SDWebImageCodersManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 48AA7C3E9F968D2103E38B5295E7DCE8 /* SDWebImageCodersManager.m */; };
 		D72EE0E749232B2C899702FC1C9402BB /* Masonry-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BC434AB569C9BB83437F48FA082AAD78 /* Masonry-dummy.m */; };
 		D73A65AFD60B81D6BA47B8338D830A43 /* SDWebImageFrame.h in Headers */ = {isa = PBXBuildFile; fileRef = 76260A4CA35334007E39CABA448044FA /* SDWebImageFrame.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		D78A84321C09115ECF057799ABB2DC68 /* PPMutAttributedStringMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = D0488CB19E3D70B29F277E27ABC6F0FC /* PPMutAttributedStringMaker.m */; };
 		D7A644E667989A1602312D4F113B6332 /* SDWebImageDownloaderOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C5D899856FBBBBF09ADF478CE49B430 /* SDWebImageDownloaderOperation.m */; };
 		DA134752FA54ED66260AD4EC0CD75F7B /* QNUrlSafeBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 772D357FE3104B2BFB7700066342E3AC /* QNUrlSafeBase64.m */; };
 		DAA1A8FCCC58FE88F3369B8116B3FFD5 /* QNVersion.h in Headers */ = {isa = PBXBuildFile; fileRef = FC29E81569CB77D40107459C741BD475 /* QNVersion.h */; settings = {ATTRIBUTES = (Project, ); }; };
@@ -399,13 +397,11 @@
 		CAAA24CFF46ACD40BFAAE8807937FC76 /* QNUrlSafeBase64.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = QNUrlSafeBase64.h; path = QiniuSDK/Common/QNUrlSafeBase64.h; sourceTree = "<group>"; };
 		CCCD0480E4480429C0CEAFAB5227B387 /* Pods-PPMakerExample-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PPMakerExample-dummy.m"; sourceTree = "<group>"; };
 		CE420E9170D900A55717655FC5080915 /* NSButton+WebCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSButton+WebCache.h"; path = "SDWebImage/NSButton+WebCache.h"; sourceTree = "<group>"; };
-		D0488CB19E3D70B29F277E27ABC6F0FC /* PPMutAttributedStringMaker.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PPMutAttributedStringMaker.m; path = PPMaker/PPMutAttributedStringMaker/PPMutAttributedStringMaker.m; sourceTree = "<group>"; };
 		D1ED1C139404BA3D769254C233B34CF2 /* NSString+PPMakeSupport.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSString+PPMakeSupport.m"; path = "PPMaker/PPMakeCategory/Foundation/NSString/NSString+PPMakeSupport.m"; sourceTree = "<group>"; };
 		D4DD3FF8AF8F712856CEE67F9612B468 /* UIDevice+PPMakeSupport.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIDevice+PPMakeSupport.h"; path = "PPMaker/PPMakeCategory/UIKit/UIDevice/UIDevice+PPMakeSupport.h"; sourceTree = "<group>"; };
 		D56FFE19FBA973EB1068F80BA733A9AD /* NSObject+PPMakeSupport.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSObject+PPMakeSupport.h"; path = "PPMaker/PPMakeCategory/Foundation/NSObject/NSObject+PPMakeSupport.h"; sourceTree = "<group>"; };
 		D7ED0D0BB7B207967928143FDE14B161 /* NSMutableAttributedString+PPMakeSupport.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSMutableAttributedString+PPMakeSupport.m"; path = "PPMaker/PPMakeCategory/Foundation/NSMutableAttributedString/NSMutableAttributedString+PPMakeSupport.m"; sourceTree = "<group>"; };
 		D8404622E1D0F122EF63C75F897E2E34 /* PPMakeUIKitCategory.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PPMakeUIKitCategory.h; path = PPMaker/PPMakeCategory/UIKit/PPMakeUIKitCategory.h; sourceTree = "<group>"; };
-		D88DD0051537FD8FBC6FDD875316A894 /* PPMutAttributedStringMaker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PPMutAttributedStringMaker.h; path = PPMaker/PPMutAttributedStringMaker/PPMutAttributedStringMaker.h; sourceTree = "<group>"; };
 		D9220D26800A7DBA0053A91897463AA6 /* PPMaker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PPMaker.debug.xcconfig; sourceTree = "<group>"; };
 		D93879588BCB4E4772ABB20DEC19941F /* QNUserAgent.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = QNUserAgent.m; path = QiniuSDK/Http/QNUserAgent.m; sourceTree = "<group>"; };
 		D9C99AD8BCED082A9B04FD5921AD154F /* PPMake.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PPMake.m; path = PPMaker/PPMake/PPMake.m; sourceTree = "<group>"; };
@@ -701,7 +697,6 @@
 		830F26EA75CB63E61F3500249FA88103 /* PPMaker */ = {
 			isa = PBXGroup;
 			children = (
-				B5C7EC26539CAF3735062D7E3728ECB7 /* PPMutAttributedStringMaker */,
 				8F326BE0B9ED71638782E2851148CD12 /* PPMaker.h */,
 				39B4CE534FA17DDDE955F987A1E2961D /* Pod */,
 				FF0CDBF847ED7B01730272BD74EF8F18 /* PPMake */,
@@ -765,15 +760,6 @@
 				A926DB2B918CC0BBC52D05B290FCC5D7 /* NSMutableArray+PPMakeSupport.m */,
 			);
 			name = NSMutableArray;
-			sourceTree = "<group>";
-		};
-		B5C7EC26539CAF3735062D7E3728ECB7 /* PPMutAttributedStringMaker */ = {
-			isa = PBXGroup;
-			children = (
-				D88DD0051537FD8FBC6FDD875316A894 /* PPMutAttributedStringMaker.h */,
-				D0488CB19E3D70B29F277E27ABC6F0FC /* PPMutAttributedStringMaker.m */,
-			);
-			name = PPMutAttributedStringMaker;
 			sourceTree = "<group>";
 		};
 		B6857E23090BAD7833A2CE7953668C31 /* UIColor */ = {
@@ -1127,7 +1113,6 @@
 				14F67C6FD7CBF6328AE49BC0837F4B6A /* PPMakeFoundationCategory.h in Headers */,
 				6B7FB48A6C232F79BA970264B95ADFE6 /* PPMaker.h in Headers */,
 				22C749220199A06A3C6C2901590463F9 /* PPMakeUIKitCategory.h in Headers */,
-				B90586032427FA0B35ED43D41280DF53 /* PPMutAttributedStringMaker.h in Headers */,
 				2C63D03918773AF1EDD560C2D4A50E12 /* PPTool.h in Headers */,
 				6B93D1C5AA0F86D379CFD17DBE334D12 /* UIButton+PPMakeSupport.h in Headers */,
 				5B94972B14BF9E29314BCEC79597EA39 /* UIColor+PPMakeSupport.h in Headers */,
@@ -1323,7 +1308,6 @@
 				0C1706455CC610EC3FBC263497DF8E24 /* PPMake+UITableView.m in Sources */,
 				566CFF18549E503C1EF28127E457A79E /* PPMake.m in Sources */,
 				C2A67A460B42886500CE1EA8EAF4F42F /* PPMaker-dummy.m in Sources */,
-				D78A84321C09115ECF057799ABB2DC68 /* PPMutAttributedStringMaker.m in Sources */,
 				ADB288DD691EEDCA2834C85D1EC6E069 /* PPTool.m in Sources */,
 				5635DAE766A37984C9F030485B1D826F /* UIButton+PPMakeSupport.m in Sources */,
 				2E6D75A91427D828A6238CC134BC7879 /* UIColor+PPMakeSupport.m in Sources */,

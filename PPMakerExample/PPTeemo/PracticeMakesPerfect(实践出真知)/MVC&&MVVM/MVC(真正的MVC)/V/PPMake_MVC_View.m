@@ -7,7 +7,6 @@
 //
 
 #import "PPMake_MVC_View.h"
-#import "PPMutAttributedStringMaker.h"
 #import "PPMakerDefines.h"
 #import <PPMaker/PPMaker.h>
 

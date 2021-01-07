@@ -73,6 +73,22 @@ static NSDateFormatter *_ppDateFormatter = nil;
     return _ppDateFormatter;
 }
 
+/// 根据指定的相同时间格式，计算两个时间字符串间的时间差（单位是秒）
++ (NSInteger)pp_timeIntervalWithCommonDateStyle:(NSDateFormatterStyleKey)commonDateStyle
+                                      aDateStr:(NSString *)aDateStr
+                                      bDateStr:(NSString *)bDateStr
+{
+    PPNSDateInitialize();
+    
+    _ppDateFormatter.dateFormat = commonDateStyle;
+    NSDate *aDate = [_ppDateFormatter dateFromString:aDateStr];
+    NSDate *bDate = [_ppDateFormatter dateFromString:bDateStr];
+    
+    NSInteger timeInterval = (NSInteger)[aDate timeIntervalSinceDate:bDate];
+    
+    return ABS(timeInterval);
+}
+
 #pragma mark --- 0、获取xx后（前）的日期
 /// 0-1 获取timeInterval后的date日期
 /// @param unitFlags 年/月/日/时/分/秒
@@ -279,6 +295,36 @@ static NSDateFormatter *_ppDateFormatter = nil;
     [_ppCalendar setTimeZone: timeZone];
     NSDateComponents *theComponents = [_ppCalendar components:NSCalendarUnitWeekday fromDate:self];
     return [weekStrs objectAtIndex:theComponents.weekday];
+}
+
+#pragma mark --- 是否是闰年
+- (BOOL)ppmake_isLeapYear
+{
+    return [NSDate ppmake_isLeapYearWithYear:self.ppmake_year];
+}
+
++ (BOOL)ppmake_isLeapYearWithYear:(NSUInteger)year{
+    if ((year % 4  == 0 && year % 100 != 0) || year % 400 == 0) {
+        return YES;
+    }
+    return NO;
+}
+
+#pragma mark --- 是否同一年
+- (BOOL)ppmake_isSameYearWithADate:(NSDate *)aDate
+{
+    PPNSDateInitialize();
+    NSDateComponents *components1 = [_ppCalendar components:NSCalendarUnitYear fromDate:self];
+    NSDateComponents *components2 = [_ppCalendar components:NSCalendarUnitYear fromDate:aDate];
+    return (components1.year == components2.year);
+}
+
+#pragma mark --- 是否是月末
+- (BOOL)ppmake_isMonthEnd
+{
+    NSInteger daysInMonth = [self ppmake_daysInMonth];;
+    NSDateComponents *components = [_ppCalendar components:NSCalendarUnitDay fromDate:self];
+    return components.day >= daysInMonth ? YES:NO;
 }
 
 #pragma mark --- 当前给定日期的月份总共有XX天

@@ -57,8 +57,12 @@ typedef NS_ENUM(NSInteger,PPDateTimeIntervalStyle) {
 
 ///【单例】初始化一个Calendar
 + (NSCalendar *)ppmake_sharedCalendar;
+
 ///【单例】初始化一个DateFormatter
 + (NSDateFormatter *)ppmake_sharedDateFormatter;
+
+/// 根据指定的相同时间格式，计算两个时间字符串间的时间差{绝对值}（单位是秒）
++ (NSInteger)ppmake_timeIntervalWithCommonDateStyle:(NSDateFormatterStyleKey)commonDateStyle aDateStr:(NSString *)aDateStr bDateStr:(NSString *)bDateStr;
 
 /// 0-1 获取timeInterval后的date日期
 /// @param unitFlags 年/月/日/时/分/秒
@@ -101,21 +105,16 @@ typedef NS_ENUM(NSInteger,PPDateTimeIntervalStyle) {
 ///// @param unitFlags 年/月/日/时/分/秒
 ///// @param date 另一个date日期
 //- (NSInteger)ppmake_timeInterval:(NSCalendarUnit)unitFlags date:(NSDate *)date;
-/**
- 根据获取unit类型两个时间对应的差值 (默认day)
 
- @param unit 年/月/日/时/分/秒
- @param comparedDate 另一个date
- */
+/// 根据获取unit类型两个时间对应的差值 (默认day)
+/// @param unit 年/月/日/时/分/秒
+/// @param comparedDate 另一个date
 - (NSUInteger)ppmake_timeInterValByUnit:(PPDateUnit)unit
                            comparedDate:(NSDate *)comparedDate;
 
-/**
- 【通用】获取unitCount后的日期【from self】
-
- @param unit 年/月/日/时/分/秒
- @param unitCount 间隔
- */
+/// 【通用】获取unitCount后的日期【from self】
+/// @param unit 年/月/日/时/分/秒
+/// @param unitCount 间隔
 - (NSDate *)ppmake_dateAfterWithUnit:(PPDateUnit)unit
                            unitCount:(NSInteger)unitCount;
 - (NSString *)ppmake_strAfterWithUnit:(PPDateUnit)unit
@@ -129,9 +128,18 @@ typedef NS_ENUM(NSInteger,PPDateTimeIntervalStyle) {
  */
 - (NSString *)ppmake_strForWeekIsZhou:(BOOL)isZhou;
 
-/**
- 当前给定日期的月份总共有XX天
- */
+
+/// 是否是闰年
+- (BOOL)ppmake_isLeapYear;
++ (BOOL)ppmake_isLeapYearWithYear:(NSUInteger)year;
+
+/// 是否是同年
+- (BOOL)ppmake_isSameYearWithADate:(NSDate *)aDate;
+
+/// 是否是月末
+- (BOOL)ppmake_isMonthEnd;
+
+/// 当前给定日期的月份总共有XX天
 - (NSInteger)ppmake_daysInMonth;
 
 /**

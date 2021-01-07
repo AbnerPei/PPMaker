@@ -43,4 +43,55 @@
     return PPMakeUIColorRgb(r, g, b);
 }
 
++ (UIColor *)ppmake_000000
+{
+    return PPMakeUIColorHex(0x000000);
+}
+
++ (UIColor *)ppmake_111111
+{
+    return PPMakeUIColorHex(0x111111);
+}
+
++ (UIColor *)ppmake_222222
+{
+    return PPMakeUIColorHex(0x222222);
+}
+
++ (UIColor *)ppmake_333333
+{
+    return PPMakeUIColorHex(0x333333);
+}
+
++ (UIColor *)ppmake_444444
+{
+    return PPMakeUIColorHex(0x444444);
+}
+
++ (UIColor *)ppmake_555555
+{
+    return PPMakeUIColorHex(0x555555);
+}
+
++ (UIColor *)ppmake_666666
+{
+    return PPMakeUIColorHex(0x666666);
+}
+
++ (UIColor *)ppmake_777777
+{
+    return PPMakeUIColorHex(0x777777);
+}
+
++ (UIColor *)ppmake_888888
+{
+    return PPMakeUIColorHex(0x888888);
+}
+
++ (UIColor *)ppmake_999999
+{
+    return PPMakeUIColorHex(0x999999);
+}
+
+
 @end

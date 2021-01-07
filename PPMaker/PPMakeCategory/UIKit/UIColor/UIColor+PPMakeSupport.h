@@ -41,17 +41,6 @@ UIKIT_STATIC_INLINE UIColor * PPMakeUIColorHex(UInt32 hex){
     return PPMakeUIColorHexA(hex, 1.0);
 }
 
-//UIKIT_STATIC_INLINE UIColor * _000000(void){ return PPMakeUIColorHex(0x000000);}
-//UIKIT_STATIC_INLINE UIColor * _111111(void){ return PPMakeUIColorHex(0x111111);}
-//UIKIT_STATIC_INLINE UIColor * _222222(void){ return PPMakeUIColorHex(0x222222);}
-//UIKIT_STATIC_INLINE UIColor * _333333(void){ return PPMakeUIColorHex(0x333333);}
-//UIKIT_STATIC_INLINE UIColor * _444444(void){ return PPMakeUIColorHex(0x444444);}
-//UIKIT_STATIC_INLINE UIColor * _555555(void){ return PPMakeUIColorHex(0x555555);}
-//UIKIT_STATIC_INLINE UIColor * _666666(void){ return PPMakeUIColorHex(0x666666);}
-//UIKIT_STATIC_INLINE UIColor * _777777(void){ return PPMakeUIColorHex(0x777777);}
-//UIKIT_STATIC_INLINE UIColor * _888888(void){ return PPMakeUIColorHex(0x888888);}
-//UIKIT_STATIC_INLINE UIColor * _999999(void){ return PPMakeUIColorHex(0x999999);}
-
 @interface UIColor (PPMakeSupport)
 
 + (UIColor *)ppmake_colorWithR:(CGFloat)r g:(CGFloat)g b:(CGFloat)b a:(CGFloat)a;
@@ -64,6 +53,36 @@ UIKIT_STATIC_INLINE UIColor * PPMakeUIColorHex(UInt32 hex){
 
 + (UIColor *)ppmake_randomColor;
 @property (nonatomic, strong, readonly, class) UIColor *ppmake_randomColor;
+
++ (UIColor *)ppmake_000000;
+@property (nonatomic, strong, readonly, class) UIColor *ppmake_000000;
+
++ (UIColor *)ppmake_111111;
+@property (nonatomic, strong, readonly, class) UIColor *ppmake_111111;
+
++ (UIColor *)ppmake_222222;
+@property (nonatomic, strong, readonly, class) UIColor *ppmake_222222;
+
++ (UIColor *)ppmake_333333;
+@property (nonatomic, strong, readonly, class) UIColor *ppmake_333333;
+
++ (UIColor *)ppmake_444444;
+@property (nonatomic, strong, readonly, class) UIColor *ppmake_444444;
+
++ (UIColor *)ppmake_555555;
+@property (nonatomic, strong, readonly, class) UIColor *ppmake_555555;
+
++ (UIColor *)ppmake_666666;
+@property (nonatomic, strong, readonly, class) UIColor *ppmake_666666;
+
++ (UIColor *)ppmake_777777;
+@property (nonatomic, strong, readonly, class) UIColor *ppmake_777777;
+
++ (UIColor *)ppmake_888888;
+@property (nonatomic, strong, readonly, class) UIColor *ppmake_888888;
+
++ (UIColor *)ppmake_999999;
+@property (nonatomic, strong, readonly, class) UIColor *ppmake_999999;
 
 @end
 

@@ -19,9 +19,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    NSDate *tomorrowDate = [NSDate pp_dateTomorrow];
-    NSString *tomorrowStr_line = [NSDate pp_strTomorrowWithWantedDateStyle:(NSDateFormatterStyleKeyLine_yyyyMMdd_HHmmss)];
-    NSString *tomorrowStr_slash = [tomorrowDate pp_strWithWantedDateStyle:NSDateFormatterStyleKeySlash_yyyyMMdd_HHmmss];
+    NSDate *tomorrowDate = [NSDate ppmake_dateTomorrow];
+    NSString *tomorrowStr_line = [NSDate ppmake_strTomorrowWithWantedDateStyle:(NSDateFormatterStyleKeyLine_yyyyMMdd_HHmmss)];
+    NSString *tomorrowStr_slash = [tomorrowDate ppmake_strWithWantedDateStyle:NSDateFormatterStyleKeySlash_yyyyMMdd_HHmmss];
     
     NSLog(@"tomorrowDate is %@\n",tomorrowDate);
     NSLog(@"tomorrowStr_line is %@\n",tomorrowStr_line);

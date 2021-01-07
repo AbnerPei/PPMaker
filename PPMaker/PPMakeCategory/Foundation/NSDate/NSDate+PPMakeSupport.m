@@ -13,32 +13,32 @@
 static NSCalendar *_ppCalendar = nil;
 static NSDateFormatter *_ppDateFormatter = nil;
 
-- (NSInteger)pp_year
+- (NSInteger)ppmake_year
 {
     return splitDate(NSCalendarUnitYear,self);
 }
 
-- (NSInteger)pp_month
+- (NSInteger)ppmake_month
 {
     return splitDate(NSCalendarUnitMonth, self);
 }
 
-- (NSInteger)pp_day
+- (NSInteger)ppmake_day
 {
     return splitDate(NSCalendarUnitDay, self);
 }
 
-- (NSInteger)pp_hour
+- (NSInteger)ppmake_hour
 {
     return splitDate(NSCalendarUnitHour, self);
 }
 
-- (NSInteger)pp_minute
+- (NSInteger)ppmake_minute
 {
     return splitDate(NSCalendarUnitMinute, self);
 }
 
-- (NSInteger)pp_second
+- (NSInteger)ppmake_second
 {
     return splitDate(NSCalendarUnitSecond, self);
 }
@@ -59,14 +59,14 @@ static NSDateFormatter *_ppDateFormatter = nil;
     
 }
 #pragma mark --- 初始化一个Calendar【单例】
-+(NSCalendar *)pp_sharedCalendar
++(NSCalendar *)ppmake_sharedCalendar
 {
     PPNSDateInitialize();
     return _ppCalendar;
 }
 
 #pragma mark --- 初始化一个DateFormatter【单例】
-+(NSDateFormatter *)pp_sharedDateFormatter
++(NSDateFormatter *)ppmake_sharedDateFormatter
 {
     PPNSDateInitialize();
     return _ppDateFormatter;
@@ -75,7 +75,7 @@ static NSDateFormatter *_ppDateFormatter = nil;
 /// 0-1 获取timeInterval后的date日期
 /// @param unitFlags 年/月/日/时/分/秒
 /// @param timeInterval 时间间隔，正--向后，负--向前
-- (NSDate *)pp_dateAfter:(NSCalendarUnit)unitFlags timeInterval:(NSInteger)timeInterval
+- (NSDate *)ppmake_dateAfter:(NSCalendarUnit)unitFlags timeInterval:(NSInteger)timeInterval
 {
     PPNSDateInitialize();
     NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
@@ -90,9 +90,9 @@ static NSDateFormatter *_ppDateFormatter = nil;
 /// @param unitFlags 年/月/日/时/分/秒
 /// @param timeInterval 时间间隔，正--向后，负--向前
 /// @param wantedDateStyle 想要的日期格式
-- (NSDate *)pp_dateAfter:(NSCalendarUnit)unitFlags timeInterval:(NSInteger)timeInterval wantedDateStyle:(NSDateFormatterStyleKey)wantedDateStyle
+- (NSDate *)ppmake_dateAfter:(NSCalendarUnit)unitFlags timeInterval:(NSInteger)timeInterval wantedDateStyle:(NSDateFormatterStyleKey)wantedDateStyle
 {
-    NSString *dateStr = [self pp_strAfter:unitFlags timeInterval:timeInterval wantedDateStyle:wantedDateStyle];
+    NSString *dateStr = [self ppmake_strAfter:unitFlags timeInterval:timeInterval wantedDateStyle:wantedDateStyle];
     return [_ppDateFormatter dateFromString:dateStr];
 }
 
@@ -100,39 +100,39 @@ static NSDateFormatter *_ppDateFormatter = nil;
 /// @param unitFlags 年/月/日/时/分/秒
 /// @param timeInterval 时间间隔，正--向后，负--向前
 /// @param wantedDateStyle 日期格式
-- (NSString *)pp_strAfter:(NSCalendarUnit)unitFlags timeInterval:(NSInteger)timeInterval wantedDateStyle:(NSDateFormatterStyleKey)wantedDateStyle
+- (NSString *)ppmake_strAfter:(NSCalendarUnit)unitFlags timeInterval:(NSInteger)timeInterval wantedDateStyle:(NSDateFormatterStyleKey)wantedDateStyle
 {
-    NSDate *date = [self pp_dateAfter:unitFlags timeInterval:timeInterval];
-    return [date pp_strWithWantedDateStyle:wantedDateStyle];
+    NSDate *date = [self ppmake_dateAfter:unitFlags timeInterval:timeInterval];
+    return [date ppmake_strWithWantedDateStyle:wantedDateStyle];
 }
 
 #pragma mark --- 1、获取明天的日期
 /// 1-1 获取明天的date日期
-+ (NSDate *)pp_dateTomorrow
++ (NSDate *)ppmake_dateTomorrow
 {
-    return [[NSDate date] pp_dateAfter:(NSCalendarUnitDay) timeInterval:1];
+    return [[NSDate date] ppmake_dateAfter:(NSCalendarUnitDay) timeInterval:1];
 }
 
 /// 1-2 获取明天的date日期
 /// @param wantedDateStyle 想要的日期格式
-+ (NSDate *)pp_dateTomorrowWithWantedDateStyle:(NSDateFormatterStyleKey)wantedDateStyle
++ (NSDate *)ppmake_dateTomorrowWithWantedDateStyle:(NSDateFormatterStyleKey)wantedDateStyle
 {
-    NSDate *date = [NSDate pp_dateTomorrow];
-    return [date pp_dateWithWantedDateStyle:wantedDateStyle];
+    NSDate *date = [NSDate ppmake_dateTomorrow];
+    return [date ppmake_dateWithWantedDateStyle:wantedDateStyle];
 }
 
 /// 1-3 获取明天的str日期
 /// @param wantedDateStyle 日期格式
-+ (NSString *)pp_strTomorrowWithWantedDateStyle:(NSDateFormatterStyleKey)wantedDateStyle
++ (NSString *)ppmake_strTomorrowWithWantedDateStyle:(NSDateFormatterStyleKey)wantedDateStyle
 {
-    NSDate *date = [NSDate pp_dateTomorrow];
-    return [date pp_strWithWantedDateStyle:wantedDateStyle];
+    NSDate *date = [NSDate ppmake_dateTomorrow];
+    return [date ppmake_strWithWantedDateStyle:wantedDateStyle];
 }
 
 #pragma mark --- 2、NSDate转NSString
 /// 2-1 date转str
 /// @param wantedDateStyle 日期格式
-- (NSString *)pp_strWithWantedDateStyle:(NSDateFormatterStyleKey)wantedDateStyle
+- (NSString *)ppmake_strWithWantedDateStyle:(NSDateFormatterStyleKey)wantedDateStyle
 {
     PPNSDateInitialize();
     _ppDateFormatter.dateFormat = wantedDateStyle;
@@ -142,10 +142,10 @@ static NSDateFormatter *_ppDateFormatter = nil;
 #pragma mark --- 3、NSDate转NSDate
 /// 3-1 date转date
 /// @param wantedDateStyle 想要的日期格式
-- (NSDate *)pp_dateWithWantedDateStyle:(NSDateFormatterStyleKey)wantedDateStyle
+- (NSDate *)ppmake_dateWithWantedDateStyle:(NSDateFormatterStyleKey)wantedDateStyle
 {
     //先把date转成对应时间格式的string类型日期，再把string类型日期转为date类型的日期
-    NSString *dateStr = [self pp_strWithWantedDateStyle:wantedDateStyle];
+    NSString *dateStr = [self ppmake_strWithWantedDateStyle:wantedDateStyle];
     return [_ppDateFormatter dateFromString:dateStr];
 }
 
@@ -153,7 +153,7 @@ static NSDateFormatter *_ppDateFormatter = nil;
 ///// 4-0 根据获取unitFlags类型两个时间对应的差值
 ///// @param unitFlags 年/月/日/时/分/秒
 ///// @param date 另一个date日期
-//- (NSInteger)pp_timeInterval:(NSCalendarUnit)unitFlags date:(NSDate *)date
+//- (NSInteger)ppmake_timeInterval:(NSCalendarUnit)unitFlags date:(NSDate *)date
 //{
 ////    PPNSDateInitialize();
 ////    NSDateComponents *components = [_ppCalendar components:unitFlags fromDate:self toDate:date options:0];

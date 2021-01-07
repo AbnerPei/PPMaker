@@ -71,14 +71,17 @@ if (!self.creatingV.layer.masksToBounds) { \
     }
     return m;
 }
+
 - (UIView *)createdView
 {
     return self.creatingV;
 }
+
 - (PPMakeType)makeType
 {
     return self.mType;
 }
+
 #pragma mark --- 父视图
 - (PPMake *(^)(UIView *))intoView
 {
@@ -89,6 +92,7 @@ if (!self.creatingV.layer.masksToBounds) { \
         return self;
     };
 }
+
 #pragma mark --- frame
 - (PPMake *(^)(CGRect))frame
 {
@@ -97,6 +101,7 @@ if (!self.creatingV.layer.masksToBounds) { \
         return self;
     };
 }
+
 #pragma mark --- 背景色
 - (PPMake *(^)(UIColor *))bgColor
 {
@@ -105,6 +110,7 @@ if (!self.creatingV.layer.masksToBounds) { \
         return self;
     };
 }
+
 #pragma mark --- 是否隐藏
 - (PPMake *(^)(BOOL))hidden
 {
@@ -113,6 +119,7 @@ if (!self.creatingV.layer.masksToBounds) { \
         return self;
     };
 }
+
 - (PPMake *(^)(NSInteger))tag
 {
     return ^PPMake *(NSInteger t){
@@ -120,6 +127,7 @@ if (!self.creatingV.layer.masksToBounds) { \
         return self;
     };
 }
+
 - (PPMake *(^)(BOOL))userInteractionEnabled
 {
     return ^PPMake *(BOOL userIE){
@@ -127,6 +135,7 @@ if (!self.creatingV.layer.masksToBounds) { \
         return self;
     };
 }
+
 - (PPMake *(^)(UIViewContentMode))contentMode
 {
     return ^PPMake *(UIViewContentMode cm){
@@ -134,6 +143,7 @@ if (!self.creatingV.layer.masksToBounds) { \
         return self;
     };
 }
+
 - (PPMake *(^)(CGFloat))cornerRadius
 {
     return ^PPMake *(CGFloat cr){
@@ -142,6 +152,7 @@ if (!self.creatingV.layer.masksToBounds) { \
         return self;
     };
 }
+
 - (PPMake *(^)(CGFloat))borderWidth
 {
     return ^PPMake *(CGFloat bw){
@@ -150,6 +161,7 @@ if (!self.creatingV.layer.masksToBounds) { \
         return self;
     };
 }
+
 - (PPMake *(^)(UIColor *))borderColor
 {
     return ^PPMake *(UIColor *bc){
@@ -175,6 +187,7 @@ if (!self.creatingV.layer.masksToBounds) { \
         return self;
     };
 }
+
 - (PPMake *(^)(makeViewGestureBlock))tapBlock
 {
     return ^PPMake *(makeViewGestureBlock mb){
@@ -184,6 +197,7 @@ if (!self.creatingV.layer.masksToBounds) { \
         return self;
     };
 }
+
 - (PPMake *(^)(makeViewGestureBlock))longPressBlock
 {
     return ^PPMake *(makeViewGestureBlock mb){
@@ -197,6 +211,7 @@ if (!self.creatingV.layer.masksToBounds) { \
 @end
 
 @implementation UIView (PPMake)
+
 - (void)pp_make:(void (^)(PPMake *))make
 {
     PPMakeType makeType = PPMakeTypeView;

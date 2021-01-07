@@ -67,7 +67,7 @@
         make.intoView(self.contentView);
         make.frame(CGRectMake(lbX, lbY, lbW, lbH));
         make.textColor(colorBlack());
-        make.font(fontPingFangSCMedium(14));
+        make.font(PPMakeUIFontPingFangSCMedium(14));
     }];
     
     //耳机🎧
@@ -87,7 +87,7 @@
     self.playCountLB = [PPMAKELB pp_make:^(PPMake *make) {
         make.intoView(self.contentView);
         make.frame(CGRectMake(playCountX, playCountY, playCountW, lbH));
-        make.font(fontPingFangSCRegular(12));
+        make.font(PPMakeUIFontPingFangSCRegular(12));
         make.textColor(color999999());
     }];
     

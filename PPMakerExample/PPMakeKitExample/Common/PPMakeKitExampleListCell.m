@@ -51,7 +51,7 @@
     self.titleLB = [PPMAKELB pp_make:^(PPMake *make) {
         make.intoView(contentV);
         make.frame(CGRectMake(titleX, titleY, titleW, titleH));
-        make.font(fontPingFangSCSemibold(16));
+        make.font(PPMakeUIFontPingFangSCSemibold(16));
         make.textColor(colorBlack());
     }];
     

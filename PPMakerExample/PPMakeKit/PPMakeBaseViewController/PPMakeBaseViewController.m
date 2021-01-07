@@ -49,7 +49,7 @@
     self.p_titleLB = [PPMAKELB pp_make:^(PPMake *make) {
         make.intoView(self.p_navigationView);
         make.frame(CGRectMake(self.p_backBT.right, self.p_backBT.top, kScreenW-backBT_W*2, backBT_H));
-        make.font(fontPingFangSCSemibold(18));
+        make.font(PPMakeUIFontPingFangSCSemibold(18));
         make.textColor(colorBlack());
         make.textAlignment(NSTextAlignmentCenter);
         if (self.p_titleStr && self.p_titleStr.length > 0) {

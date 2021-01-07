@@ -51,7 +51,7 @@
         make.intoView(self);
         CGFloat leftX = kWidth(116);
         make.frame(CGRectMake(leftX, 0, kScreenW-leftX-leftMargin, topH));
-        make.font(fontPingFangSCSemibold(14));
+        make.font(PPMakeUIFontPingFangSCSemibold(14));
         make.textColor(colorHex(0xff4d4d)).textAlignment(NSTextAlignmentRight);
         make.text(orderStatus);
     }];
@@ -76,7 +76,7 @@
             make.intoView(self);
             make.text(leftTitle).textColor(color666666());
             make.frame(CGRectMake(leftMargin, lbY, leftTextW, lbH));
-            make.font(fontPingFangSCMedium(14));
+            make.font(PPMakeUIFontPingFangSCMedium(14));
         }];
         //右边
         if (i == 1) {
@@ -85,12 +85,12 @@
                 make.frame(CGRectMake(rightLBX, lbY, rightLBW, lbH));
                 NSString *showMoneyDetailStr = @"费用明细";
                 NSString *str = [NSString stringWithFormat:@"%@  %@",rightTitle,showMoneyDetailStr];
-                make.attributedText([NSMutableAttributedString pp_attributedStringMake:^(PPMutAttributedStringMaker *maker) {
-                    maker.font(fontPingFangSCSemibold(16));
+                make.attributedText([NSMutableAttributedString ppmake_attributedStringWithMake:^(PPMutAttributedStringMaker *maker) {
+                    maker.font(PPMakeUIFontPingFangSCSemibold(16));
                     maker.textColor(colorHex(0xff4d4d));
                     NSRange range = [str rangeOfString:showMoneyDetailStr];
                     maker.textColorRange(colorHex(0x4D88FF), range);
-                    maker.fontRange(fontPingFangSCMedium(12), range);
+                    maker.fontRange(PPMakeUIFontPingFangSCMedium(12), range);
                 } str:str]);
             }];
 //            CGFloat btX = [UILabel ppmake_calculateWidthWithFont:fontPingFangSCSemibold(16) height:lbH text:rightTitle]+rightLBX+5;
@@ -110,7 +110,7 @@
             [PPMAKE(PPMakeTypeLB) pp_make:^(PPMake *make) {
                 make.intoView(self);
                 make.frame(CGRectMake(rightLBX, lbY, rightLBW, lbH));
-                make.font(fontPingFangSCSemibold(14));
+                make.font(PPMakeUIFontPingFangSCSemibold(14));
                 make.textColor(colorBlack());
                 make.text(rightTitle);
             }];
@@ -124,7 +124,7 @@
 void _createOrderStatusTextLB(CGFloat textX,CGFloat textH,UIView *view){
     [PPMAKE(PPMakeTypeLB) pp_make:^(PPMake *make) {
         make.intoView(view);
-        make.font(fontPingFangSCSemibold(16));
+        make.font(PPMakeUIFontPingFangSCSemibold(16));
         make.textColor(colorBlack()).text(@"订单状态");
         make.frame(CGRectMake(textX, 0, kWidth(100), textH));
     }];

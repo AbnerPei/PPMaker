@@ -8,8 +8,8 @@
 
 #import "PPMakeCustomDoneTextFieldViewController.h"
 #import "PPMakeCustomDoneTextField.h"
-#import "PPMutAttributedStringMaker.h"
 #import "PPMakerDefines.h"
+#import <PPMaker/PPMaker.h>
 
 @interface PPMakeCustomDoneTextFieldViewController ()
 
@@ -21,10 +21,10 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     PPMakeCustomDoneTextField *tf = [[PPMakeCustomDoneTextField alloc]initWithFrame:CGRectMake(20, 100, 200, 50)];
-    tf.font = fontPingFangSCSemibold(16);
+    tf.font = PPMakeUIFontPingFangSCSemibold(16);
     
-    tf.attributedPlaceholder = [NSMutableAttributedString pp_attributedStringMake:^(PPMutAttributedStringMaker *maker) {
-        maker.font(fontPingFangSCMedium(16));
+    tf.attributedPlaceholder = [NSMutableAttributedString ppmake_attributedStringWithMake:^(PPMutAttributedStringMaker *maker) {
+        maker.font(PPMakeUIFontPingFangSCMedium(16));
         maker.textColor(color666666());
     } str:@"测试一个Done的TextField"];
     [self.view addSubview:tf];

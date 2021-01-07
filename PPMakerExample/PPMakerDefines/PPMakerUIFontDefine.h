@@ -11,16 +11,16 @@
 #import "PPMakerConsts.h"
 
 #pragma mark --- system font
-UIKIT_STATIC_INLINE UIFont *systemFontOfSize(CGFloat fontSize){
+UIKIT_STATIC_INLINE UIFont *PPMakeUIFontSystemFontOfSize(CGFloat fontSize){
     return [UIFont systemFontOfSize:fontSize];
 }
 
-UIKIT_STATIC_INLINE UIFont *boldSystemFontOfSize(CGFloat fontSize){
+UIKIT_STATIC_INLINE UIFont *PPMakeUIFontBoldSystemFontOfSize(CGFloat fontSize){
     return [UIFont boldSystemFontOfSize:fontSize];
 }
 
 #pragma mark --- custom font
-UIKIT_STATIC_INLINE UIFont *fontWithNameSize(NSString *fontName,CGFloat fontSize){
+UIKIT_STATIC_INLINE UIFont *PPMakeUIFontWithNameSize(NSString *fontName,CGFloat fontSize){
     UIFont *font = [UIFont fontWithName:fontName size:fontSize];
     if (font) {
         return font;
@@ -28,16 +28,16 @@ UIKIT_STATIC_INLINE UIFont *fontWithNameSize(NSString *fontName,CGFloat fontSize
     return [UIFont systemFontOfSize:fontSize];
 }
 
-UIKIT_STATIC_INLINE UIFont *fontPingFangSCRegular(CGFloat fontSize){
-    return fontWithNameSize(kFontNamePingFangSCRegular, fontSize);
+UIKIT_STATIC_INLINE UIFont *PPMakeUIFontPingFangSCRegular(CGFloat fontSize){
+    return PPMakeUIFontWithNameSize(kFontNamePingFangSCRegular, fontSize);
 }
 
-UIKIT_STATIC_INLINE UIFont *fontPingFangSCMedium(CGFloat fontSize){
-    return fontWithNameSize(kFontNamePingFangSCMedium, fontSize);
+UIKIT_STATIC_INLINE UIFont *PPMakeUIFontPingFangSCMedium(CGFloat fontSize){
+    return PPMakeUIFontWithNameSize(kFontNamePingFangSCMedium, fontSize);
 }
 
-UIKIT_STATIC_INLINE UIFont *fontPingFangSCSemibold(CGFloat fontSize){
-    return fontWithNameSize(kFontNamePingFangSCSemibold, fontSize);
+UIKIT_STATIC_INLINE UIFont *PPMakeUIFontPingFangSCSemibold(CGFloat fontSize){
+    return PPMakeUIFontWithNameSize(kFontNamePingFangSCSemibold, fontSize);
 }
 
 #endif /* PPMakerUIFontDefine_h */

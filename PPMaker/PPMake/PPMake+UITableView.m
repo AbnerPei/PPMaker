@@ -20,6 +20,7 @@
         return self;
     };
 }
+
 #pragma mark --- 隐藏分割线(all)
 - (PPMake *(^)(BOOL))hideAllSeparator
 {
@@ -32,6 +33,7 @@
         return self;
     };
 }
+
 #pragma mark --- 隐藏分割线(extra)
 - (PPMake *(^)(BOOL))hideExtraSeparator
 {
@@ -44,6 +46,7 @@
         return self;
     };
 }
+
 - (PPMake *(^)(BOOL))hasEstimatedHeight
 {
     PPMakeTableVAssert

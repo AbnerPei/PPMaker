@@ -14,6 +14,5 @@
 #import "PPMakerUIFontDefine.h"
 #import "PPMakerNSUserDefaultsDefine.h"
 #import "PPMakerNSStringDefine.h"
-#import "PPMakerCoreGraphicsDefine.h"
 
 #endif /* PPMakerDefines_h */

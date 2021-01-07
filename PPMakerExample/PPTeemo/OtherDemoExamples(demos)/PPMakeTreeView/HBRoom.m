@@ -39,14 +39,14 @@
 {
     self.roomNameLB = [PPMAKELB pp_make:^(PPMake *make) {
         make.intoView(self.contentView);
-        make.font(fontPingFangSCRegular(16));
+        make.font(PPMakeUIFontPingFangSCRegular(16));
         make.textColor(colorBlack());
         make.frame(CGRectMake(30, 0, kScreenW/2-30, kHeight(50)));
     }];
     
     self.roomPriceLB = [PPMAKELB pp_make:^(PPMake *make) {
         make.intoView(self.contentView);
-        make.font(fontPingFangSCSemibold(18));
+        make.font(PPMakeUIFontPingFangSCSemibold(18));
         make.textColor(colorRed());
         make.frame(CGRectMake(kScreenW/2, 0, kScreenW/2-10, kHeight(50)));
         make.textAlignment(NSTextAlignmentRight);
@@ -84,7 +84,7 @@
 {
     self.hotelNameLB = [PPMAKELB pp_make:^(PPMake *make) {
         make.intoView(self.contentView);
-        make.font(fontPingFangSCRegular(16));
+        make.font(PPMakeUIFontPingFangSCRegular(16));
         make.textColor(colorBlack());
         make.frame(CGRectMake(10, 0, kScreenW-20, kHeight(80)));
     }];

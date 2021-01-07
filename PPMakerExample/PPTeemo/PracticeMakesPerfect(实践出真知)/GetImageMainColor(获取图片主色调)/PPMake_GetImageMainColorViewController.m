@@ -36,7 +36,7 @@
     [PPMAKEBT pp_make:^(PPMake *make) {
         make.intoView(self.view);
         make.frame(CGRectMake(50, 310, kScreenW-100, 40));
-        make.normalAttributedFontColorTitle(fontPingFangSCSemibold(14), [UIColor redColor], @"点击一下");
+        make.normalAttributedFontColorTitle(PPMakeUIFontPingFangSCSemibold(14), [UIColor redColor], @"点击一下");
         make.actionBlock(^{
             i++;
             [self.lolImgV pp_make:^(PPMake *make) {

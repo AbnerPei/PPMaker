@@ -26,7 +26,7 @@
        make.bgColor(colorHexA(0xff4d4d, 0.3));
        make.borderWidth(1);
        make.borderColor(colorTawny());
-       make.normalAttributedFontColorTitle(fontPingFangSCSemibold(14), colorHex(0xff4d4d), @"我是一个button");
+       make.normalAttributedFontColorTitle(PPMakeUIFontPingFangSCSemibold(14), colorHex(0xff4d4d), @"我是一个button");
        //button的block点击事件
        make.actionBlock(^{
            NSLog(@"点击了一下button");

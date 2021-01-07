@@ -20,11 +20,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    UIFont *creatingFont = fontPingFangSCSemibold(14);
+    UIFont *creatingFont = PPMakeUIFontPingFangSCSemibold(14);
     
     self.fontTestLB = [PPMAKELB pp_make:^(PPMake *make) {
         make.intoView(self.view);
-        make.font(fontPingFangSCSemibold(14));
+        make.font(PPMakeUIFontPingFangSCSemibold(14));
         make.text(@"next lb UIFont是有缓存的");
         make.textColor(colorDeepRed());
         make.textAlignment(NSTextAlignmentCenter);

@@ -7,7 +7,6 @@
 //
 
 #import "LearnTransformViewController.h"
-#import "PPMakeBannerView.h"
 #import <PPMaker/PPMaker.h>
 
 @interface LearnTransformViewController ()
@@ -23,27 +22,6 @@
     [self demo2];
 }
 
--(void)demo3
-{
-    /*
-http://app.image.jinri.cn/banner/2817d3be-6b52-48a3-9280-f5b3f84f39ba.png,
-http://app.image.jinri.cn/banner/70c30df2-9de8-418a-a7cd-98bdf4de838e.png,
-http://app.image.jinri.cn/banner/78d595b0-39f5-41fe-861c-a939386902f5.jpg
-     */
-    NSArray *urls = @[
-                      @"http://app.image.jinri.cn/banner/2817d3be-6b52-48a3-9280-f5b3f84f39ba.png",
-                      @"http://app.image.jinri.cn/banner/70c30df2-9de8-418a-a7cd-98bdf4de838e.png",
-                      @"http://app.image.jinri.cn/banner/78d595b0-39f5-41fe-861c-a939386902f5.jpg"
-                      ];
-    PPMakeBannerView *bannerV = [PPMakeBannerView cycleRollViewWithFrame:CGRectMake(0, 100, kScreenW, 166)];
-    [bannerV setImgUrls:urls autoCycleRoll:YES clickImgBlock:^(NSInteger selectedIndex) {
-        NSLog(@"点击 %ld",(long)selectedIndex);
-    }];
-    bannerV.backgroundColor = [UIColor purpleColor];
-    
-    [self.view addSubview:bannerV];
-    
-}
 
 #pragma mark --- 缩放
 -(void)demo1

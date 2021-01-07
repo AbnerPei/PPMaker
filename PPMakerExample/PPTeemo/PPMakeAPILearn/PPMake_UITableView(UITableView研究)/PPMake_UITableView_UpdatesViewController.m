@@ -57,20 +57,20 @@
         make.intoView(self.contentView);
         make.frame(CGRectMake(10, 10, kScreenW-20, 30));
         make.textColor(coloRviolet());
-        make.font(fontPingFangSCSemibold(18));
+        make.font(PPMakeUIFontPingFangSCSemibold(18));
     }];
     
     self.numberLB = [PPMAKELB pp_make:^(PPMake *make) {
         make.intoView(self.contentView);
         make.frame(CGRectMake(10, 50, kScreenW-20, 30));
         make.textColor(colorBlack());
-        make.font(fontPingFangSCRegular(14));
+        make.font(PPMakeUIFontPingFangSCRegular(14));
     }];
     
     self.deleteBT = [PPMAKEBT pp_make:^(PPMake *make) {
         make.intoView(self.contentView);
         make.frame(CGRectMake(kScreenW-110, 90, 100, 40));
-        make.normalAttributedFontColorTitle(fontPingFangSCSemibold(16), colorHex(0xff4d4d), @"删除此行");
+        make.normalAttributedFontColorTitle(PPMakeUIFontPingFangSCSemibold(16), colorHex(0xff4d4d), @"删除此行");
         make.borderColor(colorHex(0xf2f2f2));
         make.borderWidth(2);
     }];
@@ -200,7 +200,7 @@
             make.frame(CGRectMake(10, 5, 120, 40));
             make.cornerRadius(20);
             make.textAlignment(NSTextAlignmentCenter);
-            make.font(fontPingFangSCMedium(16));
+            make.font(PPMakeUIFontPingFangSCMedium(16));
             make.textColor(colorOrange());
         }];
         

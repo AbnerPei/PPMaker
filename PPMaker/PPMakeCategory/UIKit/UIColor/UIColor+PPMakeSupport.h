@@ -41,16 +41,16 @@ UIKIT_STATIC_INLINE UIColor * PPMakeUIColorHex(UInt32 hex){
     return PPMakeUIColorHexA(hex, 1.0);
 }
 
-UIKIT_STATIC_INLINE UIColor * _000000(void){ return PPMakeUIColorHex(0x000000);}
-UIKIT_STATIC_INLINE UIColor * _111111(void){ return PPMakeUIColorHex(0x111111);}
-UIKIT_STATIC_INLINE UIColor * _222222(void){ return PPMakeUIColorHex(0x222222);}
-UIKIT_STATIC_INLINE UIColor * _333333(void){ return PPMakeUIColorHex(0x333333);}
-UIKIT_STATIC_INLINE UIColor * _444444(void){ return PPMakeUIColorHex(0x444444);}
-UIKIT_STATIC_INLINE UIColor * _555555(void){ return PPMakeUIColorHex(0x555555);}
-UIKIT_STATIC_INLINE UIColor * _666666(void){ return PPMakeUIColorHex(0x666666);}
-UIKIT_STATIC_INLINE UIColor * _777777(void){ return PPMakeUIColorHex(0x777777);}
-UIKIT_STATIC_INLINE UIColor * _888888(void){ return PPMakeUIColorHex(0x888888);}
-UIKIT_STATIC_INLINE UIColor * _999999(void){ return PPMakeUIColorHex(0x999999);}
+//UIKIT_STATIC_INLINE UIColor * _000000(void){ return PPMakeUIColorHex(0x000000);}
+//UIKIT_STATIC_INLINE UIColor * _111111(void){ return PPMakeUIColorHex(0x111111);}
+//UIKIT_STATIC_INLINE UIColor * _222222(void){ return PPMakeUIColorHex(0x222222);}
+//UIKIT_STATIC_INLINE UIColor * _333333(void){ return PPMakeUIColorHex(0x333333);}
+//UIKIT_STATIC_INLINE UIColor * _444444(void){ return PPMakeUIColorHex(0x444444);}
+//UIKIT_STATIC_INLINE UIColor * _555555(void){ return PPMakeUIColorHex(0x555555);}
+//UIKIT_STATIC_INLINE UIColor * _666666(void){ return PPMakeUIColorHex(0x666666);}
+//UIKIT_STATIC_INLINE UIColor * _777777(void){ return PPMakeUIColorHex(0x777777);}
+//UIKIT_STATIC_INLINE UIColor * _888888(void){ return PPMakeUIColorHex(0x888888);}
+//UIKIT_STATIC_INLINE UIColor * _999999(void){ return PPMakeUIColorHex(0x999999);}
 
 @interface UIColor (PPMakeSupport)
 

@@ -74,7 +74,7 @@ static NSDateFormatter *_ppDateFormatter = nil;
 }
 
 /// 根据指定的相同时间格式，计算两个时间字符串间的时间差（单位是秒）
-+ (NSInteger)pp_timeIntervalWithCommonDateStyle:(NSDateFormatterStyleKey)commonDateStyle
++ (NSInteger)ppmake_timeIntervalWithCommonDateStyle:(NSDateFormatterStyleKey)commonDateStyle
                                       aDateStr:(NSString *)aDateStr
                                       bDateStr:(NSString *)bDateStr
 {

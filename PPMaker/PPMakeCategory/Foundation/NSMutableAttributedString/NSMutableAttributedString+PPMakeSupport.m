@@ -8,12 +8,17 @@
 
 #import "NSMutableAttributedString+PPMakeSupport.h"
 
+@interface PPMutAttributedStringMaker ()
+@property(nonatomic,strong) NSMutableAttributedString *mutAttrbutedStr;
+@end
+
 @implementation NSMutableAttributedString (PPMakeSupport)
 
 + (NSMutableAttributedString *)ppmake_attributedStringWithMake:(void (^)(PPMutAttributedStringMaker * _Nonnull))make str:(NSString *)str
 {
     PPMutAttributedStringMaker *asMaker = [[PPMutAttributedStringMaker alloc] init];
     NSMutableAttributedString *mutStr = [[NSMutableAttributedString alloc] initWithString:str];
+    asMaker.mutAttrbutedStr = mutStr;
     if (make) {
         make(asMaker);
     }
@@ -236,10 +241,6 @@ return ps._attr_;
 
 @end
 
-
-@interface PPMutAttributedStringMaker ()
-@property(nonatomic,strong) NSMutableAttributedString *mutAttrbutedStr;
-@end
 
 @implementation PPMutAttributedStringMaker
 

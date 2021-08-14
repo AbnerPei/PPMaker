@@ -9,7 +9,7 @@
 #import "PPMakeBaseTableViewController.h"
 #import "PPMakeKitExampleListCell.h"
 #import "PPMakerDefines.h"
-#import <PPMaker/PPMaker.h>
+#import "PPMaker.h"
 
 @interface PPMakeBaseTableViewController ()
 

@@ -8,7 +8,7 @@
 
 #import "PPMake_MVC_View.h"
 #import "PPMakerDefines.h"
-#import <PPMaker/PPMaker.h>
+#import "PPMaker.h"
 
 @interface PPMake_MVC_View ()
 @property(nonatomic,strong) UILabel *orderStatusLB;

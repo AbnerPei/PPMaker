@@ -1,49 +1,5 @@
 PODS:
   - Masonry (1.1.0)
-  - PPMaker (0.0.260):
-    - PPMaker/PPMake (= 0.0.260)
-    - PPMaker/PPMakeCategory (= 0.0.260)
-    - PPMaker/PPMutAttributedStringMaker (= 0.0.260)
-    - PPMaker/PPToolMaker (= 0.0.260)
-  - PPMaker/PPMake (0.0.260):
-    - PPMaker/PPMakeCategory
-  - PPMaker/PPMakeCategory (0.0.260):
-    - PPMaker/PPMakeCategory/Foundation (= 0.0.260)
-    - PPMaker/PPMakeCategory/UIKit (= 0.0.260)
-  - PPMaker/PPMakeCategory/Foundation (0.0.260):
-    - PPMaker/PPMakeCategory/Foundation/NSDate (= 0.0.260)
-    - PPMaker/PPMakeCategory/Foundation/NSMutableArray (= 0.0.260)
-    - PPMaker/PPMakeCategory/Foundation/NSMutableAttributedString (= 0.0.260)
-    - PPMaker/PPMakeCategory/Foundation/NSObject (= 0.0.260)
-    - PPMaker/PPMakeCategory/Foundation/NSString (= 0.0.260)
-  - PPMaker/PPMakeCategory/Foundation/NSDate (0.0.260)
-  - PPMaker/PPMakeCategory/Foundation/NSMutableArray (0.0.260)
-  - PPMaker/PPMakeCategory/Foundation/NSMutableAttributedString (0.0.260)
-  - PPMaker/PPMakeCategory/Foundation/NSObject (0.0.260)
-  - PPMaker/PPMakeCategory/Foundation/NSString (0.0.260)
-  - PPMaker/PPMakeCategory/UIKit (0.0.260):
-    - PPMaker/PPMakeCategory/UIKit/UIButton (= 0.0.260)
-    - PPMaker/PPMakeCategory/UIKit/UIColor (= 0.0.260)
-    - PPMaker/PPMakeCategory/UIKit/UIDevice (= 0.0.260)
-    - PPMaker/PPMakeCategory/UIKit/UIImage (= 0.0.260)
-    - PPMaker/PPMakeCategory/UIKit/UIScrollView (= 0.0.260)
-    - PPMaker/PPMakeCategory/UIKit/UITableView (= 0.0.260)
-    - PPMaker/PPMakeCategory/UIKit/UITableViewCell (= 0.0.260)
-    - PPMaker/PPMakeCategory/UIKit/UIView (= 0.0.260)
-    - PPMaker/PPMakeCategory/UIKit/UIViewController (= 0.0.260)
-  - PPMaker/PPMakeCategory/UIKit/UIButton (0.0.260):
-    - PPMaker/PPMakeCategory/Foundation/NSObject
-  - PPMaker/PPMakeCategory/UIKit/UIColor (0.0.260)
-  - PPMaker/PPMakeCategory/UIKit/UIDevice (0.0.260)
-  - PPMaker/PPMakeCategory/UIKit/UIImage (0.0.260)
-  - PPMaker/PPMakeCategory/UIKit/UIScrollView (0.0.260)
-  - PPMaker/PPMakeCategory/UIKit/UITableView (0.0.260)
-  - PPMaker/PPMakeCategory/UIKit/UITableViewCell (0.0.260)
-  - PPMaker/PPMakeCategory/UIKit/UIView (0.0.260):
-    - PPMaker/PPMakeCategory/Foundation/NSObject
-  - PPMaker/PPMakeCategory/UIKit/UIViewController (0.0.260)
-  - PPMaker/PPMutAttributedStringMaker (0.0.260)
-  - PPMaker/PPToolMaker (0.0.260)
   - Qiniu (7.2.6)
   - SDWebImage (4.4.7):
     - SDWebImage/Core (= 4.4.7)
@@ -51,26 +7,20 @@ PODS:
 
 DEPENDENCIES:
   - Masonry (~> 1.1.0)
-  - PPMaker (from `../PPMaker`)
   - Qiniu (~> 7.2.5)
   - SDWebImage (~> 4.4.1)
 
 SPEC REPOS:
-  trunk:
+  https://github.com/CocoaPods/Specs.git:
     - Masonry
     - Qiniu
     - SDWebImage
 
-EXTERNAL SOURCES:
-  PPMaker:
-    :path: "../PPMaker"
-
 SPEC CHECKSUMS:
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
-  PPMaker: f213d92b8b742dcec7dd2fe516034db4183aac34
   Qiniu: 9d1f20dcc348919972b4ee1b1272f9b9d4a7e69e
   SDWebImage: c10d14a8883ebd89664f02a422006f66a85c0c5d
 
-PODFILE CHECKSUM: 630b3ad579f5916f655ee5d83c5855a100185aee
+PODFILE CHECKSUM: 3db6d97dfc67ba70b86d56ce9207291c9418636d
 
-COCOAPODS: 1.10.0
+COCOAPODS: 1.10.1

@@ -8,7 +8,7 @@
 
 #import "PPMakerUIHorizontalCollectionViewExampleViewController.h"
 #import "PPMakerUIHorizontalCollectionView.h"
-#import <PPMaker/PPMaker.h>
+#import "PPMaker.h"
 #import "PPMakerUIHorizontalCollectionViewExampleCell.h"
 
 @interface PPMakerUIHorizontalCollectionViewExampleViewController ()<UICollectionViewDataSource,UICollectionViewDelegate>

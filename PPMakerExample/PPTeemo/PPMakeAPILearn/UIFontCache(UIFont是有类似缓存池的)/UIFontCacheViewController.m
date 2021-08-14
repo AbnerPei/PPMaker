@@ -45,7 +45,7 @@
 #import "UIFontCacheViewController.h"
 #import "UIFontCacheNextViewController.h"
 #import "PPMakerDefines.h"
-#import <PPMaker/PPMaker.h>
+#import "PPMaker.h"
 
 static NSString *key = @"pppp8888";
 

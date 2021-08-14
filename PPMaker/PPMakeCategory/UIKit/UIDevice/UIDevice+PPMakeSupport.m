@@ -86,7 +86,7 @@ const CGFloat kiPhoneXBottomExtraH = 34;
 /** 设备是否是iPhoneX系列手机*/
 + (BOOL)ppmake_isiPhoneXSeries
 {
-    return kScreenH == 812 || kScreenH == 896;
+    return ksafeAreaInsetsBottom > 0.0;
 }
 /** 判断iOS版本 */
 + (BOOL)ppmake_isiOS:(CGFloat)iOSVersion

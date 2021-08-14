@@ -13,7 +13,7 @@
 #import "MJRefresh.h"
 #import "MJExtension.h"
 #import "AppDelegate.h"
-#import <PPMaker/PPMaker.h>
+#import "PPMaker.h"
 
 @interface PPMakeExplainSourceCodemMJRefreshDemoViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property(nonatomic,strong) UITableView *tableView;
@@ -34,6 +34,11 @@
     //默认从第0页开始查询
     self.currentPage = 1; //酷狗后台默认传0或者小于0的数都是1.
     [self createUI];
+    
+    NSMutableArray *testArray = [NSMutableArray arrayWithObjects:@"2",@"3", nil];
+    NSString *str = nil;
+//    [testArray ppmake_addObject:str];
+    [testArray ppmake_insertObject:@"4" atIndex:-6];
 
 }
 -(void)createUI

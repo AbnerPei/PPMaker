@@ -13,9 +13,16 @@
 @end
 
 @implementation NSMutableArray (PPMakeExtendedMutableArray)
-/* 可变数组添加一个不重复的元素 ，如果可以重复，请用系统的addObject:方法 */
-- (void)ppmake_addObject:(id)anObject
+
+- (void)ppmake_addObjectIfNotExist:(id)anObject
 {
+    if (!anObject) {
+#if DEBUG
+        NSAssert(NO, @"往数组里添加（add）的元素不能为nil。");
+#endif
+        return;
+    }
+    
     if (![self containsObject:anObject]) {
         [self addObject:anObject];
     }

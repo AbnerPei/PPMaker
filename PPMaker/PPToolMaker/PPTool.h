@@ -7,6 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreGraphics/CoreGraphics.h>
+
 typedef void(^pptoolGridViewItemPropertyBlock)(CGFloat itemX,CGFloat itemY,CGFloat itemW,NSInteger currentIndex);
 
 @interface PPTool : NSObject

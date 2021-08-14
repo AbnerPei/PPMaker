@@ -7,7 +7,7 @@
 //
 
 #import "PPMakerHandyFrameExampleViewController.h"
-#import <PPMaker/PPMaker.h>
+#import "PPMaker.h"
 
 @interface PPMakerHandyFrameExampleViewController ()
 

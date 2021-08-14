@@ -8,7 +8,7 @@
 
 #import "PPMakeRuntimeButtonTimeIntervalViewController.h"
 #import "PPMakerDefines.h"
-#import <PPMaker/PPMaker.h>
+#import "PPMaker.h"
 
 @interface PPMakeRuntimeButtonTimeIntervalViewController ()
 

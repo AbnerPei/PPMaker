@@ -8,7 +8,7 @@
 
 #import "PPMake_InterView_ViewController.h"
 #import "Masonry.h"
-#import <PPMaker/PPMaker.h>
+#import "PPMaker.h"
 
 @interface Competition : NSObject
 @property(nonatomic,assign) NSUInteger status;

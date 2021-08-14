@@ -9,6 +9,6 @@ target 'PPMakerExample' do
   pod 'SDWebImage', '~> 4.4.1'
   pod 'Qiniu', '~> 7.2.5'
   pod 'Masonry', '~> 1.1.0'
-  pod "PPMaker", :path => "../PPMaker"
+#  pod "PPMaker", :path => "../PPMaker"
   
 end

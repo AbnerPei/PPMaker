@@ -8,7 +8,7 @@
 
 #import "PPMake_UITableView_UpdatesViewController.h"
 #import "PPMakerDefines.h"
-#import <PPMaker/PPMaker.h>
+#import "PPMaker.h"
 
 @interface PPMakeTableViewUpdateRowModel : NSObject
 @property(nonatomic,copy) NSString *title;

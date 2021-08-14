@@ -9,7 +9,7 @@
 #import "PPMakeCustomDoneTextFieldViewController.h"
 #import "PPMakeCustomDoneTextField.h"
 #import "PPMakerDefines.h"
-#import <PPMaker/PPMaker.h>
+#import "PPMaker.h"
 
 @interface PPMakeCustomDoneTextFieldViewController ()
 

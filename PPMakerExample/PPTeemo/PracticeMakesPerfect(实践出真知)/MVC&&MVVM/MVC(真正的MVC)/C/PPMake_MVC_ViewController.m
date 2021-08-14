@@ -10,7 +10,7 @@
 #import "PPMake_MVC_View.h"
 #import "PPMake_MVC_Model.h"
 #import "PPMakerDefines.h"
-#import <PPMaker/PPMaker.h>
+#import "PPMaker.h"
 
 @interface PPMake_MVC_ViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property(nonatomic,strong) UITableView *tableView;

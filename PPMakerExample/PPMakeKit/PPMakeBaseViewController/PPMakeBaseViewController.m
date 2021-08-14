@@ -8,7 +8,7 @@
 
 #import "PPMakeBaseViewController.h"
 #import "PPMakerDefines.h"
-#import <PPMaker/PPMaker.h>
+#import "PPMaker.h"
 
 @interface PPMakeBaseViewController ()
 /** 用UIView对象创建的导航栏,如果觉得不合适，可以隐藏掉，设置自己需要的 */

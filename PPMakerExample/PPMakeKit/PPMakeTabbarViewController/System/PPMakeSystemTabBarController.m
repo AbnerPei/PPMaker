@@ -11,7 +11,7 @@
 #import "PPMakeOrderViewController.h"
 #import "PPMakeMineViewController.h"
 #import "PPMakerDefines.h"
-#import <PPMaker/UIImage+PPMakeSupport.h>
+#import "UIImage+PPMakeSupport.h"
 
 @interface PPMakeSystemTabBarController ()
 

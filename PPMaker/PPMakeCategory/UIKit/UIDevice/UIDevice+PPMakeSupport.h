@@ -63,6 +63,30 @@ CG_INLINE CGFloat KWIDTH(CGFloat w)
     return sw * (w / 375.0);
 }
 
+#define ksafeAreaInsetsBottom \
+({CGFloat ksafeAreaInsetsBottom = 0; \
+if (@available(iOS 11.0, *)) { \
+    UIWindow *window = nil; \
+    if (@available(iOS 13.0, *)) { \
+        if ([[UIApplication sharedApplication]  respondsToSelector:@selector(connectedScenes)]) { \
+            if ([NSStringFromClass([[UIApplication  sharedApplication].connectedScenes.allObjects firstObject].delegate.class) isEqualToString:@"SceneDelegate"]) { \
+                id c = [[UIApplication sharedApplication].connectedScenes.allObjects firstObject].delegate; \
+                window = (UIWindow *)[c valueForKey:@"window"]; \
+            } \
+        } \
+    } \
+    if (!window) { \
+        if ([NSStringFromClass([[UIApplication sharedApplication] delegate].class) isEqualToString:@"AppDelegate"]) { \
+            id c = [[UIApplication sharedApplication] delegate]; \
+            window = (UIWindow *)[c valueForKey:@"window"]; \
+        } \
+    } \
+    if(window){ \
+        ksafeAreaInsetsBottom = window.safeAreaInsets.bottom; \
+    } \
+} \
+(ksafeAreaInsetsBottom);}) \
+
 
 @interface UIDevice (PPMakeSupport)
 

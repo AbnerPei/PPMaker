@@ -139,6 +139,9 @@
 		84EF74BB25A31324002662F3 /* PPMakerHandyFramBaseTableViewExamples.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EF74BA25A31324002662F3 /* PPMakerHandyFramBaseTableViewExamples.m */; };
 		84EF74C025A31371002662F3 /* PPMakerHandyFrameExampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EF74BF25A31371002662F3 /* PPMakerHandyFrameExampleViewController.m */; };
 		9A5D6A1F3DEC8CE3F078BC96 /* libPods-PPMakerExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B4612079F4DE2B250B981DE9 /* libPods-PPMakerExample.a */; };
+		EE22721226C7FBF10012D10A /* PPMakePerson.m in Sources */ = {isa = PBXBuildFile; fileRef = EE22721126C7FBF10012D10A /* PPMakePerson.m */; };
+		EE22721526C7FC0B0012D10A /* PPMakeStudent.m in Sources */ = {isa = PBXBuildFile; fileRef = EE22721426C7FC0B0012D10A /* PPMakeStudent.m */; };
+		EE22721926C7FC260012D10A /* PPMakeDog.m in Sources */ = {isa = PBXBuildFile; fileRef = EE22721826C7FC260012D10A /* PPMakeDog.m */; };
 		EEDEC97B26C7588200845503 /* PPMakeCategoryBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EEDEC97A26C7588200845503 /* PPMakeCategoryBaseTableViewController.m */; };
 		EEDEC97F26C759CC00845503 /* PPNSArrayCategoryDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EEDEC97E26C759CC00845503 /* PPNSArrayCategoryDemoViewController.m */; };
 		EEDEC9D426C75A8700845503 /* PPTool.m in Sources */ = {isa = PBXBuildFile; fileRef = EEDEC98226C75A8700845503 /* PPTool.m */; };
@@ -456,6 +459,12 @@
 		84EF74BF25A31371002662F3 /* PPMakerHandyFrameExampleViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPMakerHandyFrameExampleViewController.m; sourceTree = "<group>"; };
 		ABF32A261256CF4200C96682 /* Pods-PPMakerExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PPMakerExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-PPMakerExample/Pods-PPMakerExample.release.xcconfig"; sourceTree = "<group>"; };
 		B4612079F4DE2B250B981DE9 /* libPods-PPMakerExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PPMakerExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE22721026C7FBF10012D10A /* PPMakePerson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMakePerson.h; sourceTree = "<group>"; };
+		EE22721126C7FBF10012D10A /* PPMakePerson.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPMakePerson.m; sourceTree = "<group>"; };
+		EE22721326C7FC0B0012D10A /* PPMakeStudent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMakeStudent.h; sourceTree = "<group>"; };
+		EE22721426C7FC0B0012D10A /* PPMakeStudent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPMakeStudent.m; sourceTree = "<group>"; };
+		EE22721726C7FC260012D10A /* PPMakeDog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMakeDog.h; sourceTree = "<group>"; };
+		EE22721826C7FC260012D10A /* PPMakeDog.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPMakeDog.m; sourceTree = "<group>"; };
 		EEDEC97926C7588200845503 /* PPMakeCategoryBaseTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMakeCategoryBaseTableViewController.h; sourceTree = "<group>"; };
 		EEDEC97A26C7588200845503 /* PPMakeCategoryBaseTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPMakeCategoryBaseTableViewController.m; sourceTree = "<group>"; };
 		EEDEC97D26C759CC00845503 /* PPNSArrayCategoryDemoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPNSArrayCategoryDemoViewController.h; sourceTree = "<group>"; };
@@ -1378,6 +1387,8 @@
 		57FFFEE4210A5F6500ADD5DA /* PPMakeModels */ = {
 			isa = PBXGroup;
 			children = (
+				EE22721626C7FC120012D10A /* PPMakeDog */,
+				EE22720F26C7FBCA0012D10A /* PPMakePerson */,
 				57FFFEE5210A5F6500ADD5DA /* KuGou */,
 			);
 			path = PPMakeModels;
@@ -1561,6 +1572,34 @@
 				ABF32A261256CF4200C96682 /* Pods-PPMakerExample.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		EE22720E26C7FBA60012D10A /* PPMakeStudent */ = {
+			isa = PBXGroup;
+			children = (
+				EE22721326C7FC0B0012D10A /* PPMakeStudent.h */,
+				EE22721426C7FC0B0012D10A /* PPMakeStudent.m */,
+			);
+			path = PPMakeStudent;
+			sourceTree = "<group>";
+		};
+		EE22720F26C7FBCA0012D10A /* PPMakePerson */ = {
+			isa = PBXGroup;
+			children = (
+				EE22720E26C7FBA60012D10A /* PPMakeStudent */,
+				EE22721026C7FBF10012D10A /* PPMakePerson.h */,
+				EE22721126C7FBF10012D10A /* PPMakePerson.m */,
+			);
+			path = PPMakePerson;
+			sourceTree = "<group>";
+		};
+		EE22721626C7FC120012D10A /* PPMakeDog */ = {
+			isa = PBXGroup;
+			children = (
+				EE22721726C7FC260012D10A /* PPMakeDog.h */,
+				EE22721826C7FC260012D10A /* PPMakeDog.m */,
+			);
+			path = PPMakeDog;
 			sourceTree = "<group>";
 		};
 		EEDEC97826C7584300845503 /* PPMakeCategory */ = {
@@ -1923,6 +1962,7 @@
 				57FFFEEE210A698F00ADD5DA /* KGHandler.m in Sources */,
 				57BF77682151210D004E6F41 /* PPMake_InterView_ViewController.mm in Sources */,
 				57FE008A214F4E3300437F0F /* Product.m in Sources */,
+				EE22721926C7FC260012D10A /* PPMakeDog.m in Sources */,
 				57FFFE332109D55100ADD5DA /* UIButton+AFNetworking.m in Sources */,
 				573701DC2114F7240060B4B5 /* UIFontCacheNextViewController.m in Sources */,
 				57754CB920FD81D7005B3AE7 /* PPKVOPerson.m in Sources */,
@@ -1985,6 +2025,7 @@
 				57370215211830D90060B4B5 /* PPMakeTreeItem.m in Sources */,
 				57FFFF07210ACB7D00ADD5DA /* XMEngine.m in Sources */,
 				57FFFEE3210A5D4000ADD5DA /* MJFoundation.m in Sources */,
+				EE22721226C7FBF10012D10A /* PPMakePerson.m in Sources */,
 				57FFFE392109D55100ADD5DA /* AFHTTPSessionManager.m in Sources */,
 				57FFFEE8210A5FA500ADD5DA /* KGBaseRequestResult.m in Sources */,
 				573702122118300D0060B4B5 /* PPMakeTreeDemoViewController.m in Sources */,
@@ -2011,6 +2052,7 @@
 				57FBF15B2142091A00311650 /* PPMake_MVC_View.m in Sources */,
 				57B8A1B4213D1EA000D324D6 /* PPMakeRunloopBaseTableViewController.m in Sources */,
 				68F7696D22F7DCD000058593 /* PPParallaxHeaderView.m in Sources */,
+				EE22721526C7FC0B0012D10A /* PPMakeStudent.m in Sources */,
 				57FFFEB9210A5C9B00ADD5DA /* MJRefreshAutoStateFooter.m in Sources */,
 				57FFFE382109D55100ADD5DA /* AFURLResponseSerialization.m in Sources */,
 				57B4CCE8214656E300E21EAF /* PPMakeAPILearn_Shake_ViewController.m in Sources */,

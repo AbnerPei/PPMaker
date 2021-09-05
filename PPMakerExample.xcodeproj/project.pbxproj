@@ -139,6 +139,7 @@
 		84EF74BB25A31324002662F3 /* PPMakerHandyFramBaseTableViewExamples.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EF74BA25A31324002662F3 /* PPMakerHandyFramBaseTableViewExamples.m */; };
 		84EF74C025A31371002662F3 /* PPMakerHandyFrameExampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EF74BF25A31371002662F3 /* PPMakerHandyFrameExampleViewController.m */; };
 		9A5D6A1F3DEC8CE3F078BC96 /* libPods-PPMakerExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B4612079F4DE2B250B981DE9 /* libPods-PPMakerExample.a */; };
+		EE0171F426CBB2FA005D05FF /* PPMakeIE_DispathchOnceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE0171F326CBB2FA005D05FF /* PPMakeIE_DispathchOnceViewController.m */; };
 		EE22721226C7FBF10012D10A /* PPMakePerson.m in Sources */ = {isa = PBXBuildFile; fileRef = EE22721126C7FBF10012D10A /* PPMakePerson.m */; };
 		EE22721526C7FC0B0012D10A /* PPMakeStudent.m in Sources */ = {isa = PBXBuildFile; fileRef = EE22721426C7FC0B0012D10A /* PPMakeStudent.m */; };
 		EE22721926C7FC260012D10A /* PPMakeDog.m in Sources */ = {isa = PBXBuildFile; fileRef = EE22721826C7FC260012D10A /* PPMakeDog.m */; };
@@ -459,6 +460,8 @@
 		84EF74BF25A31371002662F3 /* PPMakerHandyFrameExampleViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPMakerHandyFrameExampleViewController.m; sourceTree = "<group>"; };
 		ABF32A261256CF4200C96682 /* Pods-PPMakerExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PPMakerExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-PPMakerExample/Pods-PPMakerExample.release.xcconfig"; sourceTree = "<group>"; };
 		B4612079F4DE2B250B981DE9 /* libPods-PPMakerExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PPMakerExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE0171F226CBB2FA005D05FF /* PPMakeIE_DispathchOnceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMakeIE_DispathchOnceViewController.h; sourceTree = "<group>"; };
+		EE0171F326CBB2FA005D05FF /* PPMakeIE_DispathchOnceViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPMakeIE_DispathchOnceViewController.m; sourceTree = "<group>"; };
 		EE22721026C7FBF10012D10A /* PPMakePerson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMakePerson.h; sourceTree = "<group>"; };
 		EE22721126C7FBF10012D10A /* PPMakePerson.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPMakePerson.m; sourceTree = "<group>"; };
 		EE22721326C7FC0B0012D10A /* PPMakeStudent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMakeStudent.h; sourceTree = "<group>"; };
@@ -851,6 +854,7 @@
 		57A1F01920E941A4007B1B41 /* PPMakeAPILearn */ = {
 			isa = PBXGroup;
 			children = (
+				EEE176FD26E499DF008E9036 /* 锁 */,
 				57B4CCE52146569C00E21EAF /* 震动 */,
 				57B8A1D9213E4EB900D324D6 /* PPMake_UITableView(UITableView研究) */,
 				57B8A17B213402BD00D324D6 /* Multithreading(多线程) */,
@@ -897,6 +901,7 @@
 		57B8A1802134F3B000D324D6 /* InfrastructureExplore(底层探究) */ = {
 			isa = PBXGroup;
 			children = (
+				EE0171F126CBB28C005D05FF /* dispatch_once原理 */,
 				57B8A1822134F3F000D324D6 /* PPMakeInfrastructureExploreBaseTableViewController.h */,
 				57B8A1832134F3F000D324D6 /* PPMakeInfrastructureExploreBaseTableViewController.m */,
 				57B8A1812134F3C700D324D6 /* Block探究 */,
@@ -1574,6 +1579,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		EE0171F126CBB28C005D05FF /* dispatch_once原理 */ = {
+			isa = PBXGroup;
+			children = (
+				EE0171F226CBB2FA005D05FF /* PPMakeIE_DispathchOnceViewController.h */,
+				EE0171F326CBB2FA005D05FF /* PPMakeIE_DispathchOnceViewController.m */,
+			);
+			path = "dispatch_once原理";
+			sourceTree = "<group>";
+		};
 		EE22720E26C7FBA60012D10A /* PPMakeStudent */ = {
 			isa = PBXGroup;
 			children = (
@@ -1859,6 +1873,13 @@
 			path = PPMake;
 			sourceTree = "<group>";
 		};
+		EEE176FD26E499DF008E9036 /* 锁 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "锁";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -2023,6 +2044,7 @@
 				57FFFE322109D55100ADD5DA /* UIImageView+AFNetworking.m in Sources */,
 				EEDEC9D726C75A8700845503 /* UILabel+PPMakeSupport.m in Sources */,
 				57370215211830D90060B4B5 /* PPMakeTreeItem.m in Sources */,
+				EE0171F426CBB2FA005D05FF /* PPMakeIE_DispathchOnceViewController.m in Sources */,
 				57FFFF07210ACB7D00ADD5DA /* XMEngine.m in Sources */,
 				57FFFEE3210A5D4000ADD5DA /* MJFoundation.m in Sources */,
 				EE22721226C7FBF10012D10A /* PPMakePerson.m in Sources */,

@@ -27,10 +27,12 @@
 -(void)configureDatas
 {
     self.titles = @[
-                    @"Block底层探究"
+                    @"Block底层探究",
+                    @"dispatch_once原理"
                     ];
     self.vcs = @[
-                 @"PPMakeIE_BlockViewController"
+                 @"PPMakeIE_BlockViewController",
+                 @"PPMakeIE_DispathchOnceViewController"
                  ];
     
 }

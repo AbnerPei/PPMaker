@@ -143,6 +143,7 @@
 		EE22721226C7FBF10012D10A /* PPMakePerson.m in Sources */ = {isa = PBXBuildFile; fileRef = EE22721126C7FBF10012D10A /* PPMakePerson.m */; };
 		EE22721526C7FC0B0012D10A /* PPMakeStudent.m in Sources */ = {isa = PBXBuildFile; fileRef = EE22721426C7FC0B0012D10A /* PPMakeStudent.m */; };
 		EE22721926C7FC260012D10A /* PPMakeDog.m in Sources */ = {isa = PBXBuildFile; fileRef = EE22721826C7FC260012D10A /* PPMakeDog.m */; };
+		EEAF016226E51E81003A9A92 /* C_Pointer.c in Sources */ = {isa = PBXBuildFile; fileRef = EEAF016126E51E81003A9A92 /* C_Pointer.c */; };
 		EEDEC97B26C7588200845503 /* PPMakeCategoryBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EEDEC97A26C7588200845503 /* PPMakeCategoryBaseTableViewController.m */; };
 		EEDEC97F26C759CC00845503 /* PPNSArrayCategoryDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EEDEC97E26C759CC00845503 /* PPNSArrayCategoryDemoViewController.m */; };
 		EEDEC9D426C75A8700845503 /* PPTool.m in Sources */ = {isa = PBXBuildFile; fileRef = EEDEC98226C75A8700845503 /* PPTool.m */; };
@@ -174,6 +175,10 @@
 		EEDEC9EE26C75A8700845503 /* PPMake+UILabel.m in Sources */ = {isa = PBXBuildFile; fileRef = EEDEC9CE26C75A8700845503 /* PPMake+UILabel.m */; };
 		EEDEC9EF26C75A8700845503 /* PPMake.m in Sources */ = {isa = PBXBuildFile; fileRef = EEDEC9D126C75A8700845503 /* PPMake.m */; };
 		EEDEC9F026C75A8700845503 /* PPMake+UIButton.m in Sources */ = {isa = PBXBuildFile; fileRef = EEDEC9D326C75A8700845503 /* PPMake+UIButton.m */; };
+		EEE1770026E49B57008E9036 /* PPMakeLockBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EEE176FF26E49B57008E9036 /* PPMakeLockBaseTableViewController.m */; };
+		EEE1770426E49CDC008E9036 /* PPMakeSynchronizedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EEE1770326E49CDC008E9036 /* PPMakeSynchronizedViewController.m */; };
+		EEE1770826E49D07008E9036 /* PPMakeNSRecursiveLockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EEE1770726E49D07008E9036 /* PPMakeNSRecursiveLockViewController.m */; };
+		EEE1770C26E49D32008E9036 /* PPMakeNSLockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EEE1770B26E49D32008E9036 /* PPMakeNSLockViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -468,6 +473,7 @@
 		EE22721426C7FC0B0012D10A /* PPMakeStudent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPMakeStudent.m; sourceTree = "<group>"; };
 		EE22721726C7FC260012D10A /* PPMakeDog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMakeDog.h; sourceTree = "<group>"; };
 		EE22721826C7FC260012D10A /* PPMakeDog.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPMakeDog.m; sourceTree = "<group>"; };
+		EEAF016126E51E81003A9A92 /* C_Pointer.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = C_Pointer.c; sourceTree = "<group>"; };
 		EEDEC97926C7588200845503 /* PPMakeCategoryBaseTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMakeCategoryBaseTableViewController.h; sourceTree = "<group>"; };
 		EEDEC97A26C7588200845503 /* PPMakeCategoryBaseTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPMakeCategoryBaseTableViewController.m; sourceTree = "<group>"; };
 		EEDEC97D26C759CC00845503 /* PPNSArrayCategoryDemoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPNSArrayCategoryDemoViewController.h; sourceTree = "<group>"; };
@@ -534,6 +540,14 @@
 		EEDEC9D126C75A8700845503 /* PPMake.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPMake.m; sourceTree = "<group>"; };
 		EEDEC9D226C75A8700845503 /* PPMake+UILabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PPMake+UILabel.h"; sourceTree = "<group>"; };
 		EEDEC9D326C75A8700845503 /* PPMake+UIButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PPMake+UIButton.m"; sourceTree = "<group>"; };
+		EEE176FE26E49B57008E9036 /* PPMakeLockBaseTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMakeLockBaseTableViewController.h; sourceTree = "<group>"; };
+		EEE176FF26E49B57008E9036 /* PPMakeLockBaseTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPMakeLockBaseTableViewController.m; sourceTree = "<group>"; };
+		EEE1770226E49CDC008E9036 /* PPMakeSynchronizedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMakeSynchronizedViewController.h; sourceTree = "<group>"; };
+		EEE1770326E49CDC008E9036 /* PPMakeSynchronizedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPMakeSynchronizedViewController.m; sourceTree = "<group>"; };
+		EEE1770626E49D07008E9036 /* PPMakeNSRecursiveLockViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMakeNSRecursiveLockViewController.h; sourceTree = "<group>"; };
+		EEE1770726E49D07008E9036 /* PPMakeNSRecursiveLockViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPMakeNSRecursiveLockViewController.m; sourceTree = "<group>"; };
+		EEE1770A26E49D32008E9036 /* PPMakeNSLockViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMakeNSLockViewController.h; sourceTree = "<group>"; };
+		EEE1770B26E49D32008E9036 /* PPMakeNSLockViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPMakeNSLockViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1041,6 +1055,7 @@
 		57CF99A820B45771005EB9E9 /* PPTeemo */ = {
 			isa = PBXGroup;
 			children = (
+				EEAF015D26E51DA6003A9A92 /* C语言 */,
 				EEDEC97826C7584300845503 /* PPMakeCategory */,
 				68F7696322F7DACA00058593 /* DoIt */,
 				57BF7765215120C3004E6F41 /* InterView(面试) */,
@@ -1616,6 +1631,14 @@
 			path = PPMakeDog;
 			sourceTree = "<group>";
 		};
+		EEAF015D26E51DA6003A9A92 /* C语言 */ = {
+			isa = PBXGroup;
+			children = (
+				EEAF016126E51E81003A9A92 /* C_Pointer.c */,
+			);
+			path = "C语言";
+			sourceTree = "<group>";
+		};
 		EEDEC97826C7584300845503 /* PPMakeCategory */ = {
 			isa = PBXGroup;
 			children = (
@@ -1876,8 +1899,40 @@
 		EEE176FD26E499DF008E9036 /* 锁 */ = {
 			isa = PBXGroup;
 			children = (
+				EEE1770926E49D1D008E9036 /* NSLock */,
+				EEE1770526E49CE2008E9036 /* NSRecursiveLock */,
+				EEE1770126E49C8A008E9036 /* @synchronized */,
+				EEE176FE26E49B57008E9036 /* PPMakeLockBaseTableViewController.h */,
+				EEE176FF26E49B57008E9036 /* PPMakeLockBaseTableViewController.m */,
 			);
 			path = "锁";
+			sourceTree = "<group>";
+		};
+		EEE1770126E49C8A008E9036 /* @synchronized */ = {
+			isa = PBXGroup;
+			children = (
+				EEE1770226E49CDC008E9036 /* PPMakeSynchronizedViewController.h */,
+				EEE1770326E49CDC008E9036 /* PPMakeSynchronizedViewController.m */,
+			);
+			path = "@synchronized";
+			sourceTree = "<group>";
+		};
+		EEE1770526E49CE2008E9036 /* NSRecursiveLock */ = {
+			isa = PBXGroup;
+			children = (
+				EEE1770626E49D07008E9036 /* PPMakeNSRecursiveLockViewController.h */,
+				EEE1770726E49D07008E9036 /* PPMakeNSRecursiveLockViewController.m */,
+			);
+			path = NSRecursiveLock;
+			sourceTree = "<group>";
+		};
+		EEE1770926E49D1D008E9036 /* NSLock */ = {
+			isa = PBXGroup;
+			children = (
+				EEE1770A26E49D32008E9036 /* PPMakeNSLockViewController.h */,
+				EEE1770B26E49D32008E9036 /* PPMakeNSLockViewController.m */,
+			);
+			path = NSLock;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1988,6 +2043,8 @@
 				573701DC2114F7240060B4B5 /* UIFontCacheNextViewController.m in Sources */,
 				57754CB920FD81D7005B3AE7 /* PPKVOPerson.m in Sources */,
 				57FFFE302109D55100ADD5DA /* UIRefreshControl+AFNetworking.m in Sources */,
+				EEE1770426E49CDC008E9036 /* PPMakeSynchronizedViewController.m in Sources */,
+				EEE1770C26E49D32008E9036 /* PPMakeNSLockViewController.m in Sources */,
 				571519E8212D13CA00F63DFD /* PPMakeDeepCopyAndShallowCopyViewController.m in Sources */,
 				57FFFEDD210A5D4000ADD5DA /* NSObject+MJCoding.m in Sources */,
 				57FFFDAD2106B9E700ADD5DA /* PPMakeAlgorithmBaseViewController.m in Sources */,
@@ -2033,6 +2090,7 @@
 				57FFFEC0210A5C9B00ADD5DA /* MJRefreshHeader.m in Sources */,
 				EEDEC9EA26C75A8700845503 /* NSDate+PPMakeSupport.m in Sources */,
 				EEDEC97B26C7588200845503 /* PPMakeCategoryBaseTableViewController.m in Sources */,
+				EEE1770826E49D07008E9036 /* PPMakeNSRecursiveLockViewController.m in Sources */,
 				68F7696622F7DB0400058593 /* PPMakeDoItTableViewController.m in Sources */,
 				57A1F01D20E941D0007B1B41 /* UIFontCacheViewController.m in Sources */,
 				683BF86523508648007296D7 /* PPNSDateCategoryDemoViewController.m in Sources */,
@@ -2047,6 +2105,7 @@
 				EE0171F426CBB2FA005D05FF /* PPMakeIE_DispathchOnceViewController.m in Sources */,
 				57FFFF07210ACB7D00ADD5DA /* XMEngine.m in Sources */,
 				57FFFEE3210A5D4000ADD5DA /* MJFoundation.m in Sources */,
+				EEAF016226E51E81003A9A92 /* C_Pointer.c in Sources */,
 				EE22721226C7FBF10012D10A /* PPMakePerson.m in Sources */,
 				57FFFE392109D55100ADD5DA /* AFHTTPSessionManager.m in Sources */,
 				57FFFEE8210A5FA500ADD5DA /* KGBaseRequestResult.m in Sources */,
@@ -2134,6 +2193,7 @@
 				57FFFE342109D55100ADD5DA /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				EEDEC9E526C75A8700845503 /* NSArray+PPMakerSupport_Safe.m in Sources */,
 				EEDEC9E226C75A8700845503 /* NSMutableAttributedString+PPMakeSupport.m in Sources */,
+				EEE1770026E49B57008E9036 /* PPMakeLockBaseTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

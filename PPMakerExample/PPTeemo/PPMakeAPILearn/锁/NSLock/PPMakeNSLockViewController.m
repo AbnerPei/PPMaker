@@ -10,6 +10,8 @@
 
 @interface PPMakeNSLockViewController ()
 
+@property (nonatomic, strong) NSMutableArray *testArray;
+
 @end
 
 @implementation PPMakeNSLockViewController
@@ -17,16 +19,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+//    NSLock *lock = [[NSLock alloc] init];
+    [self test1];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)test1
+{
+    for (int i = 0; i < 2000; i++) {
+        self.testArray = [NSMutableArray array];
+    }
 }
-*/
 
 @end

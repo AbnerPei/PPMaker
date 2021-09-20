@@ -24,11 +24,13 @@
 {
     self.titles = @[
                     @"NSURLSession",
+                    @"【恶补系列】之UICollectionView",
                     @"UITableView",
                     @"震动"
                     ];
     self.vcs = @[
                  @"PPMakeNSURLSessionViewController",
+                 @"PPMakeUICollectionViewBaseTableViewController",
                  @"PPMakeAPILearn_UITableView_BaseTableViewController",
                  @"PPMakeAPILearn_Shake_ViewController"
                  ];

@@ -143,6 +143,10 @@
 		EE22721226C7FBF10012D10A /* PPMakePerson.m in Sources */ = {isa = PBXBuildFile; fileRef = EE22721126C7FBF10012D10A /* PPMakePerson.m */; };
 		EE22721526C7FC0B0012D10A /* PPMakeStudent.m in Sources */ = {isa = PBXBuildFile; fileRef = EE22721426C7FC0B0012D10A /* PPMakeStudent.m */; };
 		EE22721926C7FC260012D10A /* PPMakeDog.m in Sources */ = {isa = PBXBuildFile; fileRef = EE22721826C7FC260012D10A /* PPMakeDog.m */; };
+		EE358DA426F775AB005F71D1 /* PPMakeUICollectionViewBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE358DA326F775AB005F71D1 /* PPMakeUICollectionViewBaseTableViewController.m */; };
+		EE358DAD26F77732005F71D1 /* PPMakeAPILearn_UICollectionView_Demo1_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE358DAC26F77732005F71D1 /* PPMakeAPILearn_UICollectionView_Demo1_ViewController.m */; };
+		EE358DB126F806D9005F71D1 /* PPMakeAPILearn_UICollectionView_Demo2_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE358DB026F806D9005F71D1 /* PPMakeAPILearn_UICollectionView_Demo2_ViewController.m */; };
+		EE358DB526F809E8005F71D1 /* PPMakeAPILearn_UICollectionView_Index_Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = EE358DB426F809E8005F71D1 /* PPMakeAPILearn_UICollectionView_Index_Cell.m */; };
 		EEDEC97B26C7588200845503 /* PPMakeCategoryBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EEDEC97A26C7588200845503 /* PPMakeCategoryBaseTableViewController.m */; };
 		EEDEC97F26C759CC00845503 /* PPNSArrayCategoryDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EEDEC97E26C759CC00845503 /* PPNSArrayCategoryDemoViewController.m */; };
 		EEDEC9D426C75A8700845503 /* PPTool.m in Sources */ = {isa = PBXBuildFile; fileRef = EEDEC98226C75A8700845503 /* PPTool.m */; };
@@ -468,6 +472,14 @@
 		EE22721426C7FC0B0012D10A /* PPMakeStudent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPMakeStudent.m; sourceTree = "<group>"; };
 		EE22721726C7FC260012D10A /* PPMakeDog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMakeDog.h; sourceTree = "<group>"; };
 		EE22721826C7FC260012D10A /* PPMakeDog.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPMakeDog.m; sourceTree = "<group>"; };
+		EE358DA226F775AB005F71D1 /* PPMakeUICollectionViewBaseTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMakeUICollectionViewBaseTableViewController.h; sourceTree = "<group>"; };
+		EE358DA326F775AB005F71D1 /* PPMakeUICollectionViewBaseTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPMakeUICollectionViewBaseTableViewController.m; sourceTree = "<group>"; };
+		EE358DAB26F77732005F71D1 /* PPMakeAPILearn_UICollectionView_Demo1_ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMakeAPILearn_UICollectionView_Demo1_ViewController.h; sourceTree = "<group>"; };
+		EE358DAC26F77732005F71D1 /* PPMakeAPILearn_UICollectionView_Demo1_ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPMakeAPILearn_UICollectionView_Demo1_ViewController.m; sourceTree = "<group>"; };
+		EE358DAF26F806D9005F71D1 /* PPMakeAPILearn_UICollectionView_Demo2_ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMakeAPILearn_UICollectionView_Demo2_ViewController.h; sourceTree = "<group>"; };
+		EE358DB026F806D9005F71D1 /* PPMakeAPILearn_UICollectionView_Demo2_ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPMakeAPILearn_UICollectionView_Demo2_ViewController.m; sourceTree = "<group>"; };
+		EE358DB326F809E8005F71D1 /* PPMakeAPILearn_UICollectionView_Index_Cell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMakeAPILearn_UICollectionView_Index_Cell.h; sourceTree = "<group>"; };
+		EE358DB426F809E8005F71D1 /* PPMakeAPILearn_UICollectionView_Index_Cell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPMakeAPILearn_UICollectionView_Index_Cell.m; sourceTree = "<group>"; };
 		EEDEC97926C7588200845503 /* PPMakeCategoryBaseTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMakeCategoryBaseTableViewController.h; sourceTree = "<group>"; };
 		EEDEC97A26C7588200845503 /* PPMakeCategoryBaseTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPMakeCategoryBaseTableViewController.m; sourceTree = "<group>"; };
 		EEDEC97D26C759CC00845503 /* PPNSArrayCategoryDemoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPNSArrayCategoryDemoViewController.h; sourceTree = "<group>"; };
@@ -854,6 +866,7 @@
 		57A1F01920E941A4007B1B41 /* PPMakeAPILearn */ = {
 			isa = PBXGroup;
 			children = (
+				EE358DA126F7753B005F71D1 /* UICollectionView(恶补系列) */,
 				EEE176FD26E499DF008E9036 /* 锁 */,
 				57B4CCE52146569C00E21EAF /* 震动 */,
 				57B8A1D9213E4EB900D324D6 /* PPMake_UITableView(UITableView研究) */,
@@ -1616,6 +1629,45 @@
 			path = PPMakeDog;
 			sourceTree = "<group>";
 		};
+		EE358DA126F7753B005F71D1 /* UICollectionView(恶补系列) */ = {
+			isa = PBXGroup;
+			children = (
+				EE358DB226F8099E005F71D1 /* Views */,
+				EE358DAE26F80681005F71D1 /* Demo2(UICollectionView实现UITableView) */,
+				EE358DA526F7765E005F71D1 /* Demo1(基本) */,
+				EE358DA226F775AB005F71D1 /* PPMakeUICollectionViewBaseTableViewController.h */,
+				EE358DA326F775AB005F71D1 /* PPMakeUICollectionViewBaseTableViewController.m */,
+			);
+			path = "UICollectionView(恶补系列)";
+			sourceTree = "<group>";
+		};
+		EE358DA526F7765E005F71D1 /* Demo1(基本) */ = {
+			isa = PBXGroup;
+			children = (
+				EE358DAB26F77732005F71D1 /* PPMakeAPILearn_UICollectionView_Demo1_ViewController.h */,
+				EE358DAC26F77732005F71D1 /* PPMakeAPILearn_UICollectionView_Demo1_ViewController.m */,
+			);
+			path = "Demo1(基本)";
+			sourceTree = "<group>";
+		};
+		EE358DAE26F80681005F71D1 /* Demo2(UICollectionView实现UITableView) */ = {
+			isa = PBXGroup;
+			children = (
+				EE358DAF26F806D9005F71D1 /* PPMakeAPILearn_UICollectionView_Demo2_ViewController.h */,
+				EE358DB026F806D9005F71D1 /* PPMakeAPILearn_UICollectionView_Demo2_ViewController.m */,
+			);
+			path = "Demo2(UICollectionView实现UITableView)";
+			sourceTree = "<group>";
+		};
+		EE358DB226F8099E005F71D1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EE358DB326F809E8005F71D1 /* PPMakeAPILearn_UICollectionView_Index_Cell.h */,
+				EE358DB426F809E8005F71D1 /* PPMakeAPILearn_UICollectionView_Index_Cell.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		EEDEC97826C7584300845503 /* PPMakeCategory */ = {
 			isa = PBXGroup;
 			children = (
@@ -1976,6 +2028,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				57FFFE312109D55100ADD5DA /* AFNetworkActivityIndicatorManager.m in Sources */,
+				EE358DB126F806D9005F71D1 /* PPMakeAPILearn_UICollectionView_Demo2_ViewController.m in Sources */,
 				57FFFEE0210A5D4000ADD5DA /* NSObject+MJClass.m in Sources */,
 				571519E5212D136200F63DFD /* PPMakePracticeMakesPerfectBaseTableViewController.m in Sources */,
 				EEDEC9EF26C75A8700845503 /* PPMake.m in Sources */,
@@ -1990,6 +2043,7 @@
 				57FFFE302109D55100ADD5DA /* UIRefreshControl+AFNetworking.m in Sources */,
 				571519E8212D13CA00F63DFD /* PPMakeDeepCopyAndShallowCopyViewController.m in Sources */,
 				57FFFEDD210A5D4000ADD5DA /* NSObject+MJCoding.m in Sources */,
+				EE358DA426F775AB005F71D1 /* PPMakeUICollectionViewBaseTableViewController.m in Sources */,
 				57FFFDAD2106B9E700ADD5DA /* PPMakeAlgorithmBaseViewController.m in Sources */,
 				84EF730C259C811D002662F3 /* PPMakerUIHorizontalCollectionViewExampleViewController.m in Sources */,
 				57B8A18A2134FF0800D324D6 /* BlockModel.m in Sources */,
@@ -2011,6 +2065,7 @@
 				57FFFDE621080A8600ADD5DA /* PPMakeCustomDoneTextFieldViewController.m in Sources */,
 				57A1F00120E85A58007B1B41 /* PPMakeSystemTabBarController.m in Sources */,
 				57A1EFFB20E85642007B1B41 /* PPMakeBaseNavigationController.m in Sources */,
+				EE358DAD26F77732005F71D1 /* PPMakeAPILearn_UICollectionView_Demo1_ViewController.m in Sources */,
 				57B8A1842134F3F000D324D6 /* PPMakeInfrastructureExploreBaseTableViewController.m in Sources */,
 				EEDEC9EE26C75A8700845503 /* PPMake+UILabel.m in Sources */,
 				57FFFEB4210A5C9B00ADD5DA /* NSBundle+MJRefresh.m in Sources */,
@@ -2037,6 +2092,7 @@
 				57A1F01D20E941D0007B1B41 /* UIFontCacheViewController.m in Sources */,
 				683BF86523508648007296D7 /* PPNSDateCategoryDemoViewController.m in Sources */,
 				57FF3973215C85D90040A48D /* PPMake_GetImageMainColorViewController.m in Sources */,
+				EE358DB526F809E8005F71D1 /* PPMakeAPILearn_UICollectionView_Index_Cell.m in Sources */,
 				57FFFEDE210A5D4000ADD5DA /* MJExtensionConst.m in Sources */,
 				EEDEC9D426C75A8700845503 /* PPTool.m in Sources */,
 				57754CC220FD8592005B3AE7 /* PPMakeHowKVOWorksViewController.m in Sources */,
@@ -2283,7 +2339,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = PPMakerExample/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2308,7 +2364,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = PPMakerExample/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

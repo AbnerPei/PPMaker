@@ -22,21 +22,23 @@
 -(void)configureDatas
 {
     self.titles = @[
-                    @"runtime实战大全",
-                    @"runloop和线程",
-                    @"深拷贝和浅拷贝",
-                    @"底层探究",
-                    @"MVC && MVVM 实战",
-                    @"获取图片主色调"
-                    ];
+        @"底层原理探究",
+        @"runtime实战大全",
+        @"runloop和线程",
+        @"深拷贝和浅拷贝",
+        @"底层探究",
+        @"MVC && MVVM 实战",
+        @"获取图片主色调"
+    ];
     self.vcs = @[
-                 @"PPMakeRuntimeBaseTableViewController",
-                 @"PPMakeRunloopBaseTableViewController",
-                 @"PPMakeDeepCopyAndShallowCopyViewController",
-                 @"PPMakeInfrastructureExploreBaseTableViewController",
-                 @"PPMakeMVCMVVMBaseTableViewController",
-                 @"PPMake_GetImageMainColorViewController"
-                 ];
+        @"PPMake_EOUP_BaseTableViewController",
+        @"PPMakeRuntimeBaseTableViewController",
+        @"PPMakeRunloopBaseTableViewController",
+        @"PPMakeDeepCopyAndShallowCopyViewController",
+        @"PPMakeInfrastructureExploreBaseTableViewController",
+        @"PPMakeMVCMVVMBaseTableViewController",
+        @"PPMake_GetImageMainColorViewController"
+    ];
 }
 
 @end

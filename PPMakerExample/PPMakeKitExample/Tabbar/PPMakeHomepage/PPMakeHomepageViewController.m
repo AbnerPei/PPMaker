@@ -19,12 +19,12 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    NSLog(@"viewWillAppear");
+//    NSLog(@"viewWillAppear");
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSLog(@"viewDidLoad");
+//    NSLog(@"viewDidLoad");
 
     // Do any additional setup after loading the view.
     self.backBT.hidden = YES;
@@ -37,7 +37,7 @@
 //    UIImage *img = [UIImage imageNamed:@"1024"];
 //    NSLog(@"home-img %@",img);
        
-    [self block_demo2];
+//    [self block_demo2];
 }
 
 - (void)block_demo1

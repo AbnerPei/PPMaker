@@ -20,17 +20,19 @@
 //    self.view.layer
 }
 
--(void)configureDatas
+- (void)configureDatas
 {
     self.titles = @[
                     @"NSURLSession",
                     @"UITableView",
-                    @"震动"
+                    @"震动",
+                    @"iOS开发中的锁"
                     ];
     self.vcs = @[
                  @"PPMakeNSURLSessionViewController",
                  @"PPMakeAPILearn_UITableView_BaseTableViewController",
-                 @"PPMakeAPILearn_Shake_ViewController"
+                 @"PPMakeAPILearn_Shake_ViewController",
+                 @"PPMakeLockBaseTableViewController"
                  ];
 }
 

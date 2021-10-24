@@ -10,13 +10,24 @@
 
 typedef void(^makeBtActionBlock)(void);
 
+typedef NS_ENUM(NSInteger, UIButtonLayoutStyle) {
+    UIButtonLayoutStyleLeftImageRightTitle,
+    UIButtonLayoutStyleLeftTitleRightImage,
+    UIButtonLayoutStyleTopImageBottomTitle,
+    UIButtonLayoutStyleTopTitleBottomImage
+};
+
 @interface UIButton (PPMakeSupport)
+
 /**
  * button点击事件block
  */
 - (void)ppmake_actionWithControlEvent:(UIControlEvents)event
                            withBlock:(makeBtActionBlock)actionBlock;
 - (void)ppmake_actionWithBlock:(makeBtActionBlock)actionBlock;
+
+- (void)ppmake_setLayoutStyle:(UIButtonLayoutStyle)style imageTitleSpace:(CGFloat)space;
+
 @end
 
 

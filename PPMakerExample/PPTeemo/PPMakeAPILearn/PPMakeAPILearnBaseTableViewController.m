@@ -27,14 +27,16 @@
                     @"UITableView",
                     @"震动",
                     @"iOS开发中的锁",
-                    @"UIButton-iOS15新API兼容"
+                    @"UIButton-iOS15新API兼容",
+                    @"PathManager（文件路径）"
                     ];
     self.vcs = @[
                  @"PPMakeNSURLSessionViewController",
                  @"PPMakeAPILearn_UITableView_BaseTableViewController",
                  @"PPMakeAPILearn_Shake_ViewController",
                  @"PPMakeLockBaseTableViewController",
-                 @"PPMake__UIButton_iOS15__ViewController"
+                 @"PPMake__UIButton_iOS15__ViewController",
+                 @"PPMake__PathManager__ViewController"
                  ];
 }
 

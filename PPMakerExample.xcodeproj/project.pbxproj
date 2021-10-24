@@ -54,7 +54,6 @@
 		57BF776A215124C8004E6F41 /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 57BF7769215124C8004E6F41 /* libstdc++.tbd */; };
 		57BF7780215280B2004E6F41 /* InterView_001 in Resources */ = {isa = PBXBuildFile; fileRef = 57BF777F215280B2004E6F41 /* InterView_001 */; };
 		57CB436E20A1BA8A00268DBE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 57CB436D20A1BA8A00268DBE /* AppDelegate.m */; };
-		57CB437120A1BA8A00268DBE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57CB437020A1BA8A00268DBE /* ViewController.m */; };
 		57CB437420A1BA8A00268DBE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57CB437220A1BA8A00268DBE /* Main.storyboard */; };
 		57CB437620A1BA8D00268DBE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57CB437520A1BA8D00268DBE /* Assets.xcassets */; };
 		57CB437920A1BA8D00268DBE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57CB437720A1BA8D00268DBE /* LaunchScreen.storyboard */; };
@@ -150,6 +149,8 @@
 		EE358DCA26F843AA005F71D1 /* PPMake_EOUP_Person.m in Sources */ = {isa = PBXBuildFile; fileRef = EE358DC926F843AA005F71D1 /* PPMake_EOUP_Person.m */; };
 		EE358DCD26F843CA005F71D1 /* PPMake_EOUP_Student.m in Sources */ = {isa = PBXBuildFile; fileRef = EE358DCC26F843CA005F71D1 /* PPMake_EOUP_Student.m */; };
 		EE99946227251A51005CBECF /* PPMake__UIButton-iOS15__ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE99946127251A51005CBECF /* PPMake__UIButton-iOS15__ViewController.m */; };
+		EE99946627252161005CBECF /* PPMakePathManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EE99946527252161005CBECF /* PPMakePathManager.m */; };
+		EE99946A272523C5005CBECF /* PPMake__PathManager__ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE999469272523C5005CBECF /* PPMake__PathManager__ViewController.m */; };
 		EEAFF96F26FAC4070096B6F9 /* PPMake_EOUP_load_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EEAFF96E26FAC4070096B6F9 /* PPMake_EOUP_load_ViewController.m */; };
 		EEAFF97226FAC5390096B6F9 /* PPMake_EOUP_load_Person.m in Sources */ = {isa = PBXBuildFile; fileRef = EEAFF97126FAC5390096B6F9 /* PPMake_EOUP_load_Person.m */; };
 		EEDEC97B26C7588200845503 /* PPMakeCategoryBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EEDEC97A26C7588200845503 /* PPMakeCategoryBaseTableViewController.m */; };
@@ -288,8 +289,6 @@
 		57CB436920A1BA8A00268DBE /* PPMakerExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PPMakerExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57CB436C20A1BA8A00268DBE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		57CB436D20A1BA8A00268DBE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		57CB436F20A1BA8A00268DBE /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		57CB437020A1BA8A00268DBE /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		57CB437320A1BA8A00268DBE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		57CB437520A1BA8D00268DBE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		57CB437820A1BA8D00268DBE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -495,6 +494,10 @@
 		EE358DCC26F843CA005F71D1 /* PPMake_EOUP_Student.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPMake_EOUP_Student.m; sourceTree = "<group>"; };
 		EE99946027251A51005CBECF /* PPMake__UIButton-iOS15__ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PPMake__UIButton-iOS15__ViewController.h"; sourceTree = "<group>"; };
 		EE99946127251A51005CBECF /* PPMake__UIButton-iOS15__ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "PPMake__UIButton-iOS15__ViewController.m"; sourceTree = "<group>"; };
+		EE99946427252161005CBECF /* PPMakePathManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMakePathManager.h; sourceTree = "<group>"; };
+		EE99946527252161005CBECF /* PPMakePathManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPMakePathManager.m; sourceTree = "<group>"; };
+		EE999468272523C5005CBECF /* PPMake__PathManager__ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMake__PathManager__ViewController.h; sourceTree = "<group>"; };
+		EE999469272523C5005CBECF /* PPMake__PathManager__ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPMake__PathManager__ViewController.m; sourceTree = "<group>"; };
 		EEAFF96D26FAC4070096B6F9 /* PPMake_EOUP_load_ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMake_EOUP_load_ViewController.h; sourceTree = "<group>"; };
 		EEAFF96E26FAC4070096B6F9 /* PPMake_EOUP_load_ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPMake_EOUP_load_ViewController.m; sourceTree = "<group>"; };
 		EEAFF97026FAC5390096B6F9 /* PPMake_EOUP_load_Person.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPMake_EOUP_load_Person.h; sourceTree = "<group>"; };
@@ -894,6 +897,7 @@
 		57A1F01920E941A4007B1B41 /* PPMakeAPILearn */ = {
 			isa = PBXGroup;
 			children = (
+				EE9994672725236E005CBECF /* PathManager（文件路径） */,
 				EE99945F272519E0005CBECF /* UIButton-iOS15 */,
 				EEE176FD26E499DF008E9036 /* 锁 */,
 				57B4CCE52146569C00E21EAF /* 震动 */,
@@ -1068,8 +1072,6 @@
 				57CF99A820B45771005EB9E9 /* PPTeemo */,
 				57CB436C20A1BA8A00268DBE /* AppDelegate.h */,
 				57CB436D20A1BA8A00268DBE /* AppDelegate.m */,
-				57CB436F20A1BA8A00268DBE /* ViewController.h */,
-				57CB437020A1BA8A00268DBE /* ViewController.m */,
 				57CB437220A1BA8A00268DBE /* Main.storyboard */,
 				57CB437520A1BA8D00268DBE /* Assets.xcassets */,
 				57CB437720A1BA8D00268DBE /* LaunchScreen.storyboard */,
@@ -1718,6 +1720,24 @@
 			path = "UIButton-iOS15";
 			sourceTree = "<group>";
 		};
+		EE9994632725205A005CBECF /* PPMakePathManager */ = {
+			isa = PBXGroup;
+			children = (
+				EE99946427252161005CBECF /* PPMakePathManager.h */,
+				EE99946527252161005CBECF /* PPMakePathManager.m */,
+			);
+			path = PPMakePathManager;
+			sourceTree = "<group>";
+		};
+		EE9994672725236E005CBECF /* PathManager（文件路径） */ = {
+			isa = PBXGroup;
+			children = (
+				EE999468272523C5005CBECF /* PPMake__PathManager__ViewController.h */,
+				EE999469272523C5005CBECF /* PPMake__PathManager__ViewController.m */,
+			);
+			path = "PathManager（文件路径）";
+			sourceTree = "<group>";
+		};
 		EEAFF96C26FAC39D0096B6F9 /* load */ = {
 			isa = PBXGroup;
 			children = (
@@ -1752,6 +1772,7 @@
 		EEDEC98026C75A8700845503 /* PPMaker */ = {
 			isa = PBXGroup;
 			children = (
+				EE9994632725205A005CBECF /* PPMakePathManager */,
 				EEDEC98126C75A8700845503 /* PPToolMaker */,
 				EEDEC98426C75A8700845503 /* PPMaker.h */,
 				EEDEC98526C75A8700845503 /* PPMakeCategory */,
@@ -2155,6 +2176,7 @@
 				EEDEC9DF26C75A8700845503 /* UIViewController+UIScreenBrightness.m in Sources */,
 				57FFFEDC210A5D4000ADD5DA /* MJProperty.m in Sources */,
 				572D03E420EF1C3D000FFC23 /* PPMakeKitExampleListCell.m in Sources */,
+				EE99946A272523C5005CBECF /* PPMake__PathManager__ViewController.m in Sources */,
 				57FFFEF5210AC02F00ADD5DA /* PPMakeExplainSourceCodePracticeMJRefreshBaseTableViewController.m in Sources */,
 				EE358DC226F84121005F71D1 /* PPMake_EOUP_weak_ViewController.m in Sources */,
 				57A1F01120E8CAEF007B1B41 /* PPMakeOrderViewController.m in Sources */,
@@ -2210,7 +2232,6 @@
 				57B8A1E2213E513A00D324D6 /* PPMake_UITableView_UpdatesViewController.m in Sources */,
 				5737021B211960A00060B4B5 /* HBRoom.m in Sources */,
 				57FFFEBB210A5C9B00ADD5DA /* MJRefreshAutoNormalFooter.m in Sources */,
-				57CB437120A1BA8A00268DBE /* ViewController.m in Sources */,
 				57CB437C20A1BA8D00268DBE /* main.m in Sources */,
 				57FFFEC2210A5C9B00ADD5DA /* MJRefreshAutoFooter.m in Sources */,
 				575456A32130032B00D68145 /* PPMakeRuntimeCommonViewController.m in Sources */,
@@ -2239,6 +2260,7 @@
 				572D03FD20F327A2000FFC23 /* LearnTransformViewController.m in Sources */,
 				57FFFEC1210A5C9B00ADD5DA /* MJRefreshBackFooter.m in Sources */,
 				57FFFEC3210A5C9B00ADD5DA /* MJRefreshComponent.m in Sources */,
+				EE99946627252161005CBECF /* PPMakePathManager.m in Sources */,
 				57A1F00E20E8CAD6007B1B41 /* PPMakeHomepageViewController.m in Sources */,
 				57B8A1B8213D1FD500D324D6 /* PPMake_RunloopUnused_ViewController.m in Sources */,
 				5748A33820FEF27200F51098 /* PPMakeGridViewViewController.m in Sources */,

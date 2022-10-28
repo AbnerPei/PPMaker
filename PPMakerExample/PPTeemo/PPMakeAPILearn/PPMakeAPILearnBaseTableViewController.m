@@ -28,7 +28,8 @@
                     @"震动",
                     @"iOS开发中的锁",
                     @"UIButton-iOS15新API兼容",
-                    @"PathManager（文件路径）"
+                    @"PathManager（文件路径）",
+                    @"UIStackView"
                     ];
     self.vcs = @[
                  @"PPMakeNSURLSessionViewController",
@@ -36,7 +37,8 @@
                  @"PPMakeAPILearn_Shake_ViewController",
                  @"PPMakeLockBaseTableViewController",
                  @"PPMake__UIButton_iOS15__ViewController",
-                 @"PPMake__PathManager__ViewController"
+                 @"PPMake__PathManager__ViewController",
+                 @"PPMake__UIStackView__ViewController"
                  ];
 }
 

@@ -11,6 +11,14 @@
 #import "PPMakeStudent.h"
 #import "NSArray+PPMakerSupport_Safe.h"
 
+#include <sys/types.h>
+
+#include <sys/socket.h>
+
+#include <arpa/inet.h>
+
+#include <netdb.h>
+
 @interface PPNSArrayCategoryDemoViewController ()
 
 @end

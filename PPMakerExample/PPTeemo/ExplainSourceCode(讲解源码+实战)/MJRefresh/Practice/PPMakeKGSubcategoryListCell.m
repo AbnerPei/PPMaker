@@ -8,7 +8,7 @@
 
 #import "PPMakeKGSubcategoryListCell.h"
 #import "KGSubcategoryListModel.h"
-#import "UIImageView+WebCache.h"
+//#import "UIImageView+WebCache.h"
 #import "KGHandler.h"
 #import "PPMakerDefines.h"
 #import "PPMaker.h"
@@ -107,9 +107,9 @@
         subcategoryListModel.imgurl = [subcategoryListModel.imgurl stringByReplacingOccurrencesOfString:@"{size}" withString:@"120"];
     }
     
-    [self.specialImgV sd_setImageWithURL:[NSURL URLWithString:subcategoryListModel.imgurl] placeholderImage:[UIImage imageNamed:@"kg_icon_placeholder"] completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
-        self.playImgV.hidden = !image;
-    }];
+//    [self.specialImgV sd_setImageWithURL:[NSURL URLWithString:subcategoryListModel.imgurl] placeholderImage:[UIImage imageNamed:@"kg_icon_placeholder"] completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
+//        self.playImgV.hidden = !image;
+//    }];
     
     self.specialNameLB.text = subcategoryListModel.specialname;
     

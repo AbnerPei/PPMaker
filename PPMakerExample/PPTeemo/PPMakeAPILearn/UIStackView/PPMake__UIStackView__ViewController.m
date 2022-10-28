@@ -24,11 +24,11 @@
     // Do any additional setup after loading the view.
     self.view.backgroundColor = UIColor.grayColor;
     self.models = [NSMutableArray array];
-    [self createDatas];
+    [self createDatas:NO];
     [self.view addSubview:self.tableView];
 }
 
-- (void)createDatas
+- (void)createDatas:(BOOL)isReuse
 {
     NSArray *desArray = @[
         @"善良劫匪拉进来的结束两色风景",
@@ -45,11 +45,24 @@
         @4
     ];
     
-    for (int i = 0; i < 10; i++) {
+    
+    if (isReuse) {
+        for (int i = 0; i < 10; i++) {
+            LMCellModel *cellModel = [[LMCellModel alloc] init];
+            cellModel.desc = desArray[arc4random() % desArray.count];
+            cellModel.imageCount = countArray[arc4random() % countArray.count];
+            [self.models addObject:cellModel];
+        }
+    } else {
         LMCellModel *cellModel = [[LMCellModel alloc] init];
-        cellModel.desc = desArray[arc4random() % desArray.count];
-        cellModel.imageCount = countArray[arc4random() % countArray.count];
+        cellModel.desc = desArray[4];
+        cellModel.imageCount = countArray[3];
         [self.models addObject:cellModel];
+        
+        LMCellModel *cellModel1 = [[LMCellModel alloc] init];
+        cellModel1.desc = desArray[4];
+        cellModel1.imageCount = countArray[0];
+        [self.models addObject:cellModel1];
     }
 }
 
@@ -106,6 +119,18 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
 {
     return 20;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    UIView *v = [[UIView alloc] init];
+    v.backgroundColor = UIColor.grayColor;
+    return v;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 0.001;
 }
 
 @end
